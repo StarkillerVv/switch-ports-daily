@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Switch Ports since GTA5NX — All Unofficial Games Ported to Switch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #eef0f2;
+        --bg-raised: #ffffff;
+        --bg-sunken: #e3e6e9;
+        --ink: #161a1f;
+        --ink-2: #3d454e;
+        --ink-3: #68727d;
+        --line: #ccd1d7;
+        --accent: #d64e06;
+        --accent-ink: #b23f04;
+        --ok: #1c7a3d;
+        --ok-bg: #e2f2e6;
+        --warn: #9a6200;
+        --warn-bg: #fdf0d3;
+        --bad: #b3261e;
+        --bad-bg: #fbe7e5;
+        --info: #1f5fa8;
+        --info-bg: #e1edfa;
+        --neutral-bg: #e6e9ec;
+        --chip-bg: #ffffff;
+        --shadow: 0 1px 2px rgba(16, 20, 24, .06), 0 4px 14px rgba(16, 20, 24, .05);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0e1114;
+          --bg-raised: #171b20;
+          --bg-sunken: #101317;
+          --ink: #eceff2;
+          --ink-2: #c3cad1;
+          --ink-3: #8d97a1;
+          --line: #2b323a;
+          --accent: #ff7d2e;
+          --accent-ink: #ffa25e;
+          --ok: #5fce85;
+          --ok-bg: #17301f;
+          --warn: #f2bc4c;
+          --warn-bg: #3a2d0e;
+          --bad: #ff8a80;
+          --bad-bg: #3a1a17;
+          --info: #7db4f0;
+          --info-bg: #16283d;
+          --neutral-bg: #232a31;
+          --chip-bg: #171b20;
+          --shadow: 0 1px 2px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.3);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Barlow", system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+      a { color: var(--accent-ink); }
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 18px 64px; }
+
+      header.top { padding: 34px 0 8px; }
+      .tid {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 12.5px;
+        letter-spacing: .04em;
+        color: var(--ink-3);
+      }
+      h1 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: clamp(38px, 7vw, 58px);
+        line-height: 1.02;
+        text-transform: uppercase;
+        letter-spacing: .01em;
+        margin: 8px 0 10px;
+      }
+      h1 .nx { color: var(--accent); }
+      .lede { max-width: 74ch; color: var(--ink-2); font-size: 17px; margin: 0 0 6px; }
+      .lede strong { color: var(--ink); }
+      .meta-line { font-size: 13.5px; color: var(--ink-3); margin: 4px 0 0; max-width: 84ch; }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 22px 0 6px;
+      }
+      .stat {
+        background: var(--bg-raised);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 12px 14px 10px;
+        box-shadow: var(--shadow);
+      }
+      .stat b {
+        display: block;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .stat span { font-size: 13px; color: var(--ink-2); }
+      @media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+      .filterbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--bg);
+        padding: 14px 0 10px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 8px;
+      }
+      .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+      .search {
+        flex: 1 1 220px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--chip-bg);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 0 12px;
+      }
+      .search svg { flex: none; color: var(--ink-3); }
+      .search input {
+        border: 0; background: transparent; color: var(--ink);
+        font: inherit; font-size: 15px; width: 100%; outline: none; min-height: 2.4rem;
+      }
+      .chip {
+        font: inherit; font-size: 14px; font-weight: 600;
+        background: var(--chip-bg); color: var(--ink-2);
+        border: 1px solid var(--line); border-radius: 999px;
+        padding: 6px 14px; cursor: pointer; min-height: 2.25rem;
+      }
+      .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+      .result-count { font-size: 13.5px; color: var(--ink-3); margin: 8px 2px 0; }
+      .result-count b { color: var(--ink); }
+
+      section { margin-top: 34px; }
+      section > h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 27px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
+        margin: 0 0 4px;
+        display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+      }
+      section > h2 .n { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--accent); font-weight: 500; }
+      .section-note { color: var(--ink-2); max-width: 82ch; margin: 0 0 16px; font-size: 15px; }
+      .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+      .card {
+        background: var(--bg-raised);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px 18px 14px;
+        box-shadow: var(--shadow);
+        display: flex; flex-direction: column; gap: 8px;
+      }
+      .card.wide { grid-column: 1 / -1; }
+      .card h3 { margin: 0; font-size: 19px; font-weight: 700; line-height: 1.25; }
+      .card h3 .sub { font-weight: 500; color: var(--ink-2); font-size: 15px; }
+      .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+      .badge {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 11px; font-weight: 500; letter-spacing: .03em; text-transform: uppercase;
+        padding: 3px 8px; border-radius: 4px;
+        background: var(--neutral-bg); color: var(--ink-2);
+      }
+      .badge.status-released { background: var(--ok-bg); color: var(--ok); }
+      .badge.status-testing { background: var(--warn-bg); color: var(--warn); }
+      .badge.status-planned { background: var(--info-bg); color: var(--info); }
+      .badge.status-cancelled { background: var(--bad-bg); color: var(--bad); }
+      .facts { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; font-size: 14px; margin: 0; }
+      .facts dt { color: var(--ink-3); font-weight: 600; white-space: nowrap; }
+      .facts dd { margin: 0; color: var(--ink); }
+      .card p { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+      .card p strong, .card li strong { color: var(--ink); }
+      .card ul { margin: 0; padding-left: 18px; font-size: 14.5px; color: var(--ink-2); }
+      .card li { margin: 2px 0; }
+      .src { margin-top: auto; padding-top: 6px; border-top: 1px dashed var(--line); font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+      .src span { color: var(--ink-3); font-family: "IBM Plex Mono", monospace; font-size: 11.5px; text-transform: uppercase; letter-spacing: .03em; padding-top: 2px; }
+      .src a { word-break: break-all; }
+      code { font-family: "IBM Plex Mono", monospace; font-size: .88em; background: var(--bg-sunken); padding: 1px 5px; border-radius: 3px; }
+      .hidden-card { display: none !important; }
+      section.all-hidden { display: none; }
+      .no-results {
+        display: none; text-align: center; padding: 40px 16px; color: var(--ink-2);
+        border: 1px dashed var(--line); border-radius: 8px; margin-top: 24px;
+      }
+      .no-results.show { display: block; }
+
+      .ports { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg-raised); box-shadow: var(--shadow); }
+      .port-row {
+        display: grid; grid-template-columns: 1.25fr 1.5fr .85fr;
+        gap: 4px 16px; align-items: baseline;
+        padding: 11px 18px; border-bottom: 1px solid var(--line); font-size: 15px;
+      }
+      .port-row:last-child { border-bottom: 0; }
+      .port-row .pname { font-weight: 700; }
+      .port-row .pup { color: var(--ink-2); font-size: 14.5px; }
+      .port-row .pauthor { color: var(--ink-3); font-size: 13.5px; text-align: right; }
+      @media (max-width: 640px) {
+        .port-row { grid-template-columns: 1fr; }
+        .port-row .pauthor { text-align: left; }
+      }
+
+      .missing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      @media (max-width: 760px) { .missing-grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 480px) { .missing-grid { grid-template-columns: 1fr; } }
+      .missing {
+        border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px;
+        background: var(--bg-sunken); font-size: 14.5px;
+      }
+      .missing b { display: block; font-size: 15.5px; margin-bottom: 2px; }
+      .missing span { color: var(--ink-2); font-size: 13.5px; }
+
+      .callout {
+        border: 1px solid var(--line); border-left: 4px solid var(--accent);
+        background: var(--bg-raised); border-radius: 6px; padding: 14px 18px; margin-top: 16px;
+        font-size: 15px; color: var(--ink-2);
+      }
+      .callout strong { color: var(--ink); }
+      footer { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 13.5px; color: var(--ink-3); max-width: 84ch; }
+      footer p { margin: 0 0 8px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <div class="tid">UNOFFICIAL / HOMEBREW PORTS ONLY · MODDED SWITCH (ATMOSPHÈRE / CFW) · YOU SUPPLY YOUR OWN GAME FILES</div>
+        <h1>All games ported to <span class="nx">Switch</span></h1>
+        <p class="lede">Every game the research could confirm was <strong>unofficially ported to Nintendo Switch</strong> — not mods for one game, and not official eShop releases. That means homebrew .nro/NSP ports: decompilations, source ports, static recompilations and Android-binary loaders, from the classic 2018–2025 scene through the <strong>2026 explosion</strong> that GTA5NX was part of.</p>
+        <p class="meta-line">Researched 15 November 2026 from three master catalogues — <a href="https://github.com/robzilla10001/switchports/blob/HEAD/README.md">SwitchPorts (SP)</a>, <a href="https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games&amp;">GameBrew (GB)</a> and <a href="https://allrecomps.com/switch-ports/">AllRecomps (AR)</a> — plus the projects' own GitHub repos and GBAtemp threads linked on the cards, and a direct GitHub scrub on 15 November 2026 for ports listed in none of the three catalogues (each repo checked live, with a real Switch build; marked “GitHub scrub find” below). <strong>Excluded as official eShop releases:</strong> GTA: The Trilogy – Definitive Edition (2021), Red Dead Redemption (Double Eleven, 2023), Portal: Companion Collection (2022), Sonic Mania, and the official Doom/Quake Bethesda ports. A few games below (e.g. the Sonic Mania decomp) exist unofficially <em>despite</em> also having an official version — noted where relevant.</p>
+        <div class="stats">
+          <div class="stat"><b>453</b><span>total entries in the SwitchPorts master list on 15 Nov 2026 [SP]</span></div>
+          <div class="stat"><b>138</b><span>SwitchPorts entries updated in the week before 15 Nov 2026 alone [SP]</span></div>
+          <div class="stat"><b>66</b><span>curated Switch ports profiled by AllRecomps (checked Nov 2026) [AR]</span></div>
+          <div class="stat"><b>2 eras</b><span>classic scene 2018–2025, then the 2026 Android-loader + recomp flood</span></div>
+        </div>
+        <div class="callout"><strong>Read “released” carefully for 2026 entries.</strong> In this report “released” means a public build/repo exists in SwitchPorts, GameBrew or AllRecomps — or was verified directly on GitHub in the 15 Nov 2026 scrub — as of 15 Nov 2026. SwitchPorts only introduced status icons (⬛ does not boot / 🟥 boots to title / 🟧 boots, unplayable / 🟨 playable / 🟩 completable / ✳️ feature-complete) in late 2026 and most entries are still unrated; many 2026 builds are v0.1–0.5 — bootable or playable-in-part rather than completable. Treat 2026 recomp/Android entries as <strong>released-but-early</strong> unless a performance note is given. Classic-era (pre-2026) entries are mostly mature and completable.</div>
+      </header>
+
+      <div class="filterbar">
+        <div class="filter-row" role="group" aria-label="Filter the list">
+          <label class="search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+            <input id="q" type="search" placeholder="Search by game, author or original system…" aria-label="Search by game, author or original system" />
+          </label>
+          <button class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="rockstar" aria-pressed="false">Rockstar</button>
+          <button class="chip" data-filter="decomp" aria-pressed="false">Decomp &amp; classics</button>
+          <button class="chip" data-filter="pc" aria-pressed="false">PC source ports</button>
+          <button class="chip" data-filter="android" aria-pressed="false">Android loaders ’26</button>
+          <button class="chip" data-filter="recomp" aria-pressed="false">Recomps ’26</button>
+          <button class="chip" data-filter="wip" aria-pressed="false">In development</button>
+          <button class="chip" data-filter="cancelled" aria-pressed="false">Cancelled / none</button>
+        </div>
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+      </div>
+
+      <div class="no-results" id="noResults">No confirmed port matches that search. Try the game's short name — or check the “cancelled / no port exists” section: some famous games were never ported at all.</div>
+
+      <!-- ============ 1. ROCKSTAR ============ -->
+      <section data-section>
+        <h2><span class="n">01</span> Rockstar &amp; open-world — released</h2>
+        <p class="section-note">The GTA lineage is the spine of the whole scene: re3-nx GTA III (Sep 2020) → reVC Vice City (Oct 2020 / Jul 2021) → the Max Payne .so loader (Feb 2021, the template for all later Android loaders) → the 2026 wave: Bully (Apr), San Andreas (Aug), then LCS, Chinatown Wars and the Max Payne refresh (Oct–Nov), a Vice City Stories static recomp found by GitHub scrub, plus the GTA IV WIP and Max Payne 3 / Midnight Club 3 recomps. Sources per row: [SP] SwitchPorts, [GB] GameBrew, [AR] AllRecomps.</p>
+        <div class="grid">
+          <article class="card" data-cat="rockstar" data-search="grand theft auto iii gta 3 re3 decompilation graber agraber 2020">
+            <h3>Grand Theft Auto III</h3>
+            <div class="badges"><span class="badge">Decompilation · re3</span><span class="badge status-released">Released · playable</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PS2/PC, 2001</dd>
+              <dt>Author</dt><dd>GTAmodding (re3); Switch port Graber (AGraber)</dd>
+              <dt>Switch</dt><dd>23–24 Sep 2020 (re3-nx v1.0); Android-loader alternative v1.0.4, 16 Oct 2026 (mariob0y/gta3-nx)</dd>
+            </dl>
+            <p>Playable; needs PC game files. The re3 project was hit by a Take-Two DMCA (2021, counter-claimed and restored) and then a Take-Two lawsuit (filed Sep 2021) — legally embattled, not cancelled as a playable artefact; Switch builds continued to circulate afterwards.</p>
+            <div class="src"><span>Sources</span><a href="https://gbatemp.net/threads/re3-nx-reverse-engineered-gta-3-for-nintendo-switch.574308/page-20">GBAtemp — re3-nx thread</a><span>[GB] [SP]</span></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="grand theft auto vice city reVC revc flex1911 miami 2020 2021">
+            <h3>Grand Theft Auto: Vice City</h3>
+            <div class="badges"><span class="badge">Decompilation · reVC</span><span class="badge status-released">Released</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PS2/PC, 2002</dd>
+              <dt>Author</dt><dd>Flex1911, based on Graber's re3-nx (re3 “Miami” branch)</dd>
+              <dt>Switch</dt><dd>Early build 14 Oct 2020; full Switch release Jul 2021</dd>
+            </dl>
+            <p>“Mostly functional, a bit buggy / not 100% stable” at first; later builds improved. Needs PC files. Same Take-Two legal history as re3 above.</p>
+            <div class="src"><span>Sources</span><span>[GB] · DualShockers, 17 Jul 2021 · GBAtemp re3 thread</span></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="grand theft auto san andreas gtasa_nx naga95 android loader 2026">
+            <h3>Grand Theft Auto: San Andreas</h3>
+            <div class="badges"><span class="badge">Android-.so loader</span><span class="badge status-released">Released</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PS2, 2004 — Android v2.11.311 used</dd>
+              <dt>Author</dt><dd>NaGaa95 (gtasa_nx)</dd>
+              <dt>Switch</dt><dd>Aug 2026; v1.0.3 15 Aug 2026, v1.0.5 3 Nov 2026</dd>
+            </dl>
+            <p>A wrapper that loads/patches the original Android binary in a minimal Android environment. An upstream Mesa/GLThread update was said to improve performance “quite a lot”.</p>
+            <div class="src"><span>Sources</span><a href="https://gbatemp.net/threads/gta-san-andreas-switch-port.683068/">GBAtemp — GTA San Andreas Switch port</a><span>[SP] [GB] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="gta liberty city stories lcs naga95 android loader psp 2005">
+            <h3>GTA: Liberty City Stories</h3>
+            <div class="badges"><span class="badge">Android loader</span><span class="badge status-released">Released</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PSP, 2005 — Android version used</dd>
+              <dt>Author</dt><dd>NaGaa95 (gtalcs_nx)</dd>
+              <dt>Switch</dt><dd>v1.0.4, 3–4 Nov 2026</dd>
+            </dl>
+            <p>Needs the Android <code>libGame.so</code> + data.</p>
+            <div class="src"><span>Sources</span><span>[SP] [GB] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="gta vice city stories vcs vcsnx fsalamancar static recomp psp 2006 github scrub">
+            <h3>GTA: Vice City Stories</h3>
+            <div class="badges"><span class="badge">Static recompilation</span><span class="badge status-released">Released · early</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PSP, 2006</dd>
+              <dt>Author</dt><dd>fsalamancar (VCSNX)</dd>
+              <dt>Switch</dt><dd>v0.4.0, 18 Oct 2026</dd>
+            </dl>
+            <p>Early static recomp. Found by the 15 Nov 2026 GitHub scrub — it is in none of SwitchPorts, GameBrew or AllRecomps, and it overturns this catalogue's previous “no standalone port found” for VCS (corrected in §08).</p>
+            <div class="src"><span>Source</span><a href="https://github.com/fsalamancar/VCSNX">github.com/fsalamancar/VCSNX</a></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="gta chinatown wars ctw naga95 android loader ds 2009">
+            <h3>GTA: Chinatown Wars</h3>
+            <div class="badges"><span class="badge">Android loader</span><span class="badge status-released">Released</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>Nintendo DS, 2009 — Android version used</dd>
+              <dt>Author</dt><dd>NaGaa95 (gtactw_nx)</dd>
+              <dt>Switch</dt><dd>v1.0.2, 3–4 Nov 2026</dd>
+            </dl>
+            <p>Needs Android data.</p>
+            <div class="src"><span>Sources</span><span>[SP] [GB] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="max payne mobile fgsfdsfgs max_nx android so loader vita 2021 naga95">
+            <h3>Max Payne <span class="sub">(Max Payne Mobile)</span></h3>
+            <div class="badges"><span class="badge">Android-.so loader</span><span class="badge status-released">Released · updated 2026</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PC, 2001 — Android version used</dd>
+              <dt>Author</dt><dd>fgsfdsfgs (max_nx), r1 24 Feb 2021; NaGaa95 update for APK v2.1.131 (v1.0.2, Nov 2026)</dd>
+            </dl>
+            <p>720p/1080p. The author called the original “probably not entirely stable / proof of concept of an AArch64 .so loader”. The loader derives from TheOfficialFloW's Vita .so-loader work — the template the whole Android-loader family grew from.</p>
+            <div class="src"><span>Sources</span><a href="https://github.com/NaGaa95/max_nx_v2.1.131">github.com/NaGaa95/max_nx_v2.1.131</a><span>[GB]</span></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="max payne 3 mp3-nx vasilkovnd rexglue recomp xbox 360 2026">
+            <h3>Max Payne 3</h3>
+            <div class="badges"><span class="badge">Static recompilation · ReXGlue</span><span class="badge status-released">Released · early</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PS3/Xbox 360, 2012 — Xbox 360 version</dd>
+              <dt>Author</dt><dd>VasilkovND (mp3-nx)</dd>
+              <dt>Switch</dt><dd>“Released” 6 Nov 2026</dd>
+            </dl>
+            <p>Early recomp; no performance figure in the catalogue.</p>
+            <div class="src"><span>Source</span><span>[SP]</span></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="bully anniversary edition bully_nx givethesourceplox android wip 2026">
+            <h3>Bully: Anniversary Edition</h3>
+            <div class="badges"><span class="badge">Android compatibility layer</span><span class="badge status-testing">Borderline released / WIP</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PS2, 2006 — Android 64-bit v1.4.311 used</dd>
+              <dt>Author</dt><dd>givethesourceplox (bully_nx)</dd>
+              <dt>Switch</dt><dd>v0.0.2, 3–6 Apr 2026</dd>
+            </dl>
+            <p><strong>“Boots and runs, but it is not finished yet and still contains temporary workarounds”</strong> — do not call it stable or completable.</p>
+            <div class="src"><span>Sources</span><a href="https://gbatemp.net/threads/bully-switch-port-wip.680904/">GBAtemp — Bully Switch port WIP</a><span>[AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="rockstar" data-search="midnight club 3 dub edition remix mcdub3-nx laureladastra recomp xbox 2005">
+            <h3>Midnight Club 3: DUB Edition / Remix</h3>
+            <div class="badges"><span class="badge">Static recompilation</span><span class="badge status-released">Released</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>Xbox, 2005</dd>
+              <dt>Author</dt><dd>laureladastra (mcdub3-nx)</dd>
+              <dt>Switch</dt><dd>v1.1.0, 5 Nov 2026</dd>
+            </dl>
+            <p>Recomp to native Switch/Linux/Mac/Windows.</p>
+            <div class="src"><span>Sources</span><span>[SP] [AR]</span></div>
+          </article>
+        </div>
+        <div class="callout"><strong>No released port found for:</strong> GTA IV (WIP only — §07), GTA V (cancelled — §08), Manhunt (no port in any catalogue or search — §08), Red Dead Redemption (official only — §08).</div>
+      </section>
+
+      <!-- ============ 2. DECOMP CLASSICS ============ -->
+      <section data-section>
+        <h2><span class="n">02</span> Decompilations &amp; console classics</h2>
+        <p class="section-note">The mature classic era (mostly pre-2026): decompiled Nintendo and console games, each needing your own ROM. Harbour Masters' libultraship family is the spine — Ship of Harkinian (Ocarina of Time) → 2 Ship 2 Harkinian (Majora's Mask) → Starship (Star Fox 64) → SpaghettiKart (Mario Kart 64) → Ghostship (Mario 64) → PaperBoat (Paper Mario, §06). All rows [GB] GameBrew unless noted; dates are GameBrew's “last updated” for the Switch build.</p>
+        <div class="ports">
+          <div class="port-row" data-cat="decomp" data-search="super mario 64 sm64ex fgsfdsfgs n64 decompilation 2020"><span class="pname">Super Mario 64 (sm64ex)</span><span class="pup">N64, 1996 · decompilation port · requires own ROM assets</span><span class="pauthor">fgsfdsfgs · 19 May 2020</span></div>
+          <div class="port-row" data-cat="decomp" data-search="super mario 64 ghostship harbour masters libultraship 2026"><span class="pname">Super Mario 64 (Ghostship)</span><span class="pup">N64, 1996 · decompilation (libultraship) · US/JP ROMs; also Android/iOS/PC</span><span class="pauthor">Harbour Masters · v3.0.0, 7 Sep 2026 [SP][AR]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="super mario 64 coop sm64coopdx online coop lua antoinebou12"><span class="pname">Super Mario 64 Co-op (sm64coopdx-switch)</span><span class="pup">N64, 1996 · decompilation, online co-op/Lua · own NA ROM required</span><span class="pauthor">Coop Deluxe; fork antoinebou12 · Sep 2026</span></div>
+          <div class="port-row" data-cat="decomp" data-search="zelda ocarina of time ship of harkinian harbour masters yoshicrystal9 timschneeb"><span class="pname">Zelda: Ocarina of Time — Ship of Harkinian</span><span class="pup">N64, 1998 · decompilation (libultraship) · own ROM</span><span class="pauthor">Harbour Masters · Switch 13 Aug 2024; v9.3.1-nx2 28 Oct 2026</span></div>
+          <div class="port-row" data-cat="decomp" data-search="zelda majoras mask 2 ship 2 harkinian yoshicrystal9 reflex909"><span class="pname">Zelda: Majora's Mask — 2 Ship 2 Harkinian</span><span class="pup">N64, 2000 · decompilation · own US ROM</span><span class="pauthor">2ship2harkinian · v3.0.2-NX 13 Jan 2026; v5.0.1 Sep 2026</span></div>
+          <div class="port-row" data-cat="decomp" data-search="zelda link to the past snesrev zelda3 alexgg1014 ultimate nx"><span class="pname">Zelda: A Link to the Past</span><span class="pup">SNES, 1991 · decompilation (snesrev / zelda3) · NX fork adds 16:9, save states, RetroAchievements · own ROM</span><span class="pauthor">snesrev; fork Alexgg1014 · v0.3 17 Aug 2023; NX v1.3.0 Oct 2026</span></div>
+          <div class="port-row" data-cat="decomp" data-search="zelda links awakening dx hd delsonazevedo alexgg1014 gbc recompilation"><span class="pname">Zelda: Link's Awakening DX (HD)</span><span class="pup">GBC, 1998 · recompilation / reimplementation</span><span class="pauthor">delsonazevedo; NX fork Alexgg1014 · v1.7.3 Apr 2026 / v1.2.0 Oct 2026 [SP]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="zelda oracle ages seasons oracles-decomp toniisound oracles-nx native"><span class="pname">Zelda: Oracle of Ages / Seasons</span><span class="pup">GBC, 2001 · decompilation, native C — “no CPU emulator and no ROM code” · own USA ROMs · 60fps-class</span><span class="pauthor">toniisound (oracles-nx) · v1.0.0, 10 Oct 2026</span></div>
+          <div class="port-row" data-cat="decomp" data-search="zelda minish cap hayatog tmc alexgg1014 gba decompilation"><span class="pname">Zelda: The Minish Cap</span><span class="pup">GBA, 2004 · decompilation port · WIP-leaning</span><span class="pauthor">HayatoG (tmc); NX fork Alexgg1014 · v0.25 Jun 2026 / v2.0.1 Oct 2026 [SP]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="super mario world snesrev wide-snes-nx ly_wx wip"><span class="pname">Super Mario World</span><span class="pup">SNES, 1990 · decompilation (snesrev) · earlier build explicitly WIP</span><span class="pauthor">Lywx/snesrev · WIP v0.1 17 Aug 2023; v1.0.1 Nov 2026</span></div>
+          <div class="port-row" data-cat="decomp" data-search="super metroid snesrev wip decompilation"><span class="pname">Super Metroid</span><span class="pup">SNES, 1994 · decompilation (snesrev sm) · listed as WIP — completeness unverified</span><span class="pauthor">snesrev, Lywx · “wip”, 21 Mar 2023</span></div>
+          <div class="port-row" data-cat="decomp" data-search="perfect dark fgsfdsfgs n64 decompilation split screen"><span class="pname">Perfect Dark</span><span class="pup">N64, 2000 · decompilation · “mostly functional, singleplayer and split-screen multiplayer fully working”; minor gfx/crashes remain · own ROM</span><span class="pauthor">fgsfdsfgs · CI dev build 14 May 2024; builds listed Aug–Nov 2026 [AR]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="star fox 64 starship harbour masters libultraship"><span class="pname">Star Fox 64 — Starship</span><span class="pup">N64, 1997 · decompilation (libultraship) · own US 1.0/1.1 ROM; generate sf64.o2r on PC first</span><span class="pauthor">Harbour Masters · v2.0.0, 25 May 2025 [AR]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="mario kart 64 spaghettikart harbour masters libultraship"><span class="pname">Mario Kart 64 — SpaghettiKart</span><span class="pup">N64, 1996 · decompilation (libultraship) · US ROM only; track editor</span><span class="pauthor">Harbour Masters · v0.9.9.1 22 Jun 2025; v1.0.0 24 Feb 2026 [AR]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="f-zero x nx-diffuser g-diffuser palindromicbreadloaf recompilation 64dd"><span class="pname">F-Zero X — NX-Diffuser / G-Diffuser</span><span class="pup">N64, 1998 · recompilation / decomp port · optional 64DD Expansion Kit support</span><span class="pauthor">PalindromicBreadLoaf · v1.0.1, 14 Aug 2026 [SP][AR]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="star fox snes starfox enhanced kandowontu2 source port"><span class="pname">Star Fox (SNES) — Starfox Enhanced</span><span class="pup">SNES, 1993 · source port / enhancement · early version number</span><span class="pauthor">kandowontu2 · v0.0.8.8.3, 1 Nov 2026 [SP]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="f-zero snes thorhax f-zero-nx-modern recompilation"><span class="pname">F-Zero (SNES)</span><span class="pup">SNES, 1990 · recompilation port · early</span><span class="pauthor">Thorhax · v0.3.0, 19 Sep 2026 [SP]</span></div>
+          <div class="port-row" data-cat="decomp" data-search="sonic hedgehog 1 2 2013 rsdkv4 rubberduckycooly heyjoeway decompilation"><span class="pname">Sonic the Hedgehog 1 &amp; 2 (2013)</span><span class="pup">Mobile/Retro Engine, 2013 (Genesis 1991/92) · decompilation (RSDKv4) · “playable, almost perfectly” (2021) · own Data.rsdk</span><span class="pauthor">Switch fork heyjoeway · v1.3.0 Rev1, 7 Dec 2021</span></div>
+          <div class="port-row" data-cat="decomp" data-search="sonic cd 2011 rsdk heyjoeway decompilation sega cd"><span class="pname">Sonic CD (2011)</span><span class="pup">Mobile/RSDK, 2011 (Sega CD 1993) · decompilation · full decomp port</span><span class="pauthor">heyjoeway · v1.3, 27 Nov 2021</span></div>
+          <div class="port-row" data-cat="decomp" data-search="sonic mania decompilation rsdkv5 rubberduckycooly rsdkmodding unofficial"><span class="pname">Sonic Mania (decomp)</span><span class="pup">PC/consoles, 2017 · decompilation (RSDKv5) · Switch build instructions in repo. Note: Sonic Mania ALSO has an official eShop release — this is the unofficial decomp build</span><span class="pauthor">Rubberduckycooly / RSDKModding · decomp released 2022</span></div>
+          <div class="port-row" data-cat="decomp" data-search="sonic 3 air angel island revisited eukaryot ultra-azu heyjoeway fan remaster"><span class="pname">Sonic 3 A.I.R. (Angel Island Revisited)</span><span class="pup">Genesis, 1994 fan remaster · widescreen remaster port, not a decomp of the original binary alone</span><span class="pauthor">Eukaryot; Switch ultra-azu / heyjoeway · 10 Sep 2022</span></div>
+          <div class="port-row" data-cat="decomp" data-search="sonic robo blast 2 srb2 kart ring racers doom legacy fangame"><span class="pname">Sonic Robo Blast 2 + Kart / Ring Racers</span><span class="pup">PC fangame (Doom Legacy) · source port</span><span class="pauthor">SRB2 team; Switch carstene1ns/heyjoeway/Craftyawesome · SRB2 v2.2.15 r2, 16 Nov 2025</span></div>
+          <div class="port-row" data-cat="decomp" data-search="space cadet pinball 3d pinball averne decompilation windows"><span class="pname">Space Cadet Pinball (3D Pinball)</span><span class="pup">Windows, 1995 · decompilation port</span><span class="pauthor">averne · v1.1.1-NX2 15 Oct 2021; NX3 Oct 2026</span></div>
+          <div class="port-row" data-cat="decomp" data-search="tomb raider openlara xproger engine reimplementation ps1"><span class="pname">Tomb Raider (OpenLara)</span><span class="pup">PS1/Saturn/PC, 1996 · engine reimplementation · own files</span><span class="pauthor">XProger · 8 Jan 2019</span></div>
+          <div class="port-row" data-cat="decomp" data-search="halo combat evolved warthog chupathingyce decompilation xbox cross-play build-6 github scrub"><span class="pname">Halo: Combat Evolved — Warthog</span><span class="pup">Xbox, 2001 · decompilation · early/playable, online cross-play · a different Halo CE port from the OpenCE-nx recomp in §05. GitHub scrub find — in none of the master catalogues</span><span class="pauthor">ChupathingyCE · build-6, 30 Oct 2026 · <a href="https://github.com/ChupathingyCE/warthog-switch">github.com/ChupathingyCE/warthog-switch</a></span></div>
+        </div>
+        <p class="section-note" style="margin-top:12px;">Oracles NX repo: <a href="https://github.com/toniisound/oracles-nx">github.com/toniisound/oracles-nx</a>. Sonic Mania decomp: GitHub Sonic-Mania-Decompilation repo (Switch section), via the research's search results.</p>
+      </section>
+
+      <!-- ============ 3. PC SOURCE PORTS ============ -->
+      <section data-section>
+        <h2><span class="n">03</span> PC game source ports — classic era</h2>
+        <p class="section-note">The “nx-*” scene: PC source ports, mostly by a handful of recurring authors. <strong>fgsfdsfgs</strong> alone accounts for OpenMW, GZDoom, dhewm3 (Doom 3), Doom64EX, Quake/Quake II/Quake III, Xash3D, Perfect Dark, UnrealNX, Serious Sam, Arx Libertatis, the Max Payne loader and sm64ex. All rows [GB] GameBrew unless noted; dates are GameBrew's “last updated” for the Switch build.</p>
+        <div class="ports">
+          <div class="port-row" data-cat="pc" data-search="doom doom ii heretic hexen gzdoom chocolate doom nx lantus modern vintage gamer kgdoom thorhax"><span class="pname">Doom / Doom II (+ Heretic/Hexen via GZDoom)</span><span class="pup">PC, 1993/94 · Chocolate Doom NX; kgDoom; GZDoom</span><span class="pauthor">lantus/MVG 2018 · fgsfdsfgs GZDoom 2023 · Thorhax 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="doom 64 doom64ex fgsfdsfgs n64"><span class="pname">Doom 64 (Doom64EX)</span><span class="pup">N64, 1997 · reverse-engineering port</span><span class="pauthor">fgsfdsfgs · v0.2.0-nx, 24 Oct 2019</span></div>
+          <div class="port-row" data-cat="pc" data-search="doom 3 dhewm3 fgsfdsfgs"><span class="pname">Doom 3</span><span class="pup">PC, 2004 · dhewm3</span><span class="pauthor">fgsfdsfgs · v0.1.0_nx, 22 Oct 2018</span></div>
+          <div class="port-row" data-cat="pc" data-search="quake nxquake quakespasmnx fgsfdsfgs tyrquake thorhax modern"><span class="pname">Quake</span><span class="pup">PC, 1996 · NXQuake (TyrQuake); QuakespasmNX; Thorhax Modern</span><span class="pauthor">fgsfdsfgs · 2018–2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="quake ii nxquake2 yamagi fgsfdsfgs"><span class="pname">Quake II</span><span class="pup">PC, 1997 · NXQuake2 (Yamagi Quake II)</span><span class="pauthor">fgsfdsfgs · build 060, 20 Dec 2022</span></div>
+          <div class="port-row" data-cat="pc" data-search="quake iii arena ioquake3-nx fgsfdsfgs danifunker"><span class="pname">Quake III Arena</span><span class="pup">PC, 1999 · ioquake3-nx</span><span class="pauthor">fgsfdsfgs / danifunker · v0.3.0-nx, 18 Sep 2019</span></div>
+          <div class="port-row" data-cat="pc" data-search="duke nukem 3d eduke32 cpasjuste"><span class="pname">Duke Nukem 3D</span><span class="pup">PC, 1996 · EDuke32</span><span class="pauthor">Cpasjuste · v1.5, 13 Jul 2021</span></div>
+          <div class="port-row" data-cat="pc" data-search="wolfenstein 3d wolf4sdl keeganatorr"><span class="pname">Wolfenstein 3D</span><span class="pup">PC, 1992 · Wolf4SDL-Switch</span><span class="pauthor">keeganatorr · 1.0-beta, 19 Aug 2018</span></div>
+          <div class="port-row" data-cat="pc" data-search="return to castle wolfenstein iortcw capsterx pre-release"><span class="pname">Return to Castle Wolfenstein</span><span class="pup">PC, 2001 · iortcw port · listed pre-release, treat as early</span><span class="pauthor">capsterx · pre-release, 21 Nov 2020</span></div>
+          <div class="port-row" data-cat="pc" data-search="blood nxblood nblood jan200101 wip"><span class="pname">Blood</span><span class="pup">PC, 1997 · NXBlood (NBlood) · WIP</span><span class="pauthor">Jan200101 · WIP, 5 Jun 2019</span></div>
+          <div class="port-row" data-cat="pc" data-search="shadow warrior jfsw alexart878"><span class="pname">Shadow Warrior</span><span class="pup">PC, 1997 · JFSW Switch</span><span class="pauthor">alexart878 · v1.1-NX, 5 Dec 2024</span></div>
+          <div class="port-row" data-cat="pc" data-search="half-life xash3d blue shift opposing force counter-strike 1.6 fwgs fgsfdsfgs datamats clamintus"><span class="pname">Half-Life (+ Blue Shift / Opposing Force / mods)</span><span class="pup">PC, 1998 · Xash3D — HL/BS/OpFor libraries merged upstream, automatic builds. Counter-Strike 1.6: a client .so exists in distributions and NSP forwarders circulate, but thread reports were flaky — best described as playable via Xash3D with caveats</span><span class="pauthor">FWGS team / fgsfdsfgs · 2019–2026</span></div>
+          <div class="port-row" data-cat="pc" data-search="half-life 2 hl2_nx naga95 android source nillerusr 2026"><span class="pname">Half-Life 2</span><span class="pup">PC, 2004 · Android Source-engine wrapper (nillerusr binaries)</span><span class="pauthor">NaGaa95 · v1.0.5, 3 Nov 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="counter-strike source css_nx naga95 nillerusr android loader bots"><span class="pname">Counter-Strike: Source</span><span class="pup">PC, 2004 · Android loader (nillerusr engine) · offline bots + IP servers</span><span class="pauthor">NaGaa95 · v1.0.1–1.0.2, Aug–Nov 2026 [AR]</span></div>
+          <div class="port-row" data-cat="pc" data-search="team fortress 2 reclassic tf2_nx naga95 android source loader"><span class="pname">Team Fortress 2 (ReClassic / Source)</span><span class="pup">PC, 2007 · Android/Source loader</span><span class="pauthor">NaGaa95 · v1.0.2, 3 Nov 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="portal no standalone unofficial port official companion collection oatmeal dome half-life 2 mod"><span class="pname">Portal</span><span class="pup">PC, 2007 · <strong>no standalone unofficial Switch port found</strong> — Portal is official on Switch (Companion Collection). Half-Life 2 was run inside official Portal 1 by OatmealDome (Jun 2022) as a mod with frequent crashes — not a port release</span><span class="pauthor">—</span></div>
+          <div class="port-row" data-cat="pc" data-search="elder scrolls morrowind openmw fgsfdsfgs seamusduncmcgrath"><span class="pname">The Elder Scrolls III: Morrowind</span><span class="pup">PC/Xbox, 2002 · OpenMW</span><span class="pauthor">fgsfdsfgs · v0.46.0-nx2, 28 Oct 2019; new openmw-nx v1.0.0 Oct 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="elder scrolls daggerfall unity chanseyisthebest loader"><span class="pname">The Elder Scrolls II: Daggerfall (Unity)</span><span class="pup">PC, 1996 · Daggerfall Unity loader</span><span class="pauthor">ChanseyIsTheBest · v1.1.1.9s1.0.2, 8 Sep 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="diablo hellfire devilutionx diasurgical devilution lantus"><span class="pname">Diablo + Hellfire</span><span class="pup">PC, 1996 · DevilutionX (from Devilution reverse-engineering); first Switch build lantus 2019</span><span class="pauthor">diasurgical · DevilutionX v1.5.5, 31 Oct 2025</span></div>
+          <div class="port-row" data-cat="pc" data-search="fallout ce community edition ryandeering"><span class="pname">Fallout</span><span class="pup">PC, 1997 · Fallout CE (Community Edition)</span><span class="pauthor">ryandeering · v1.0.0/v1.1.0, Dec 2024 / May 2026</span></div>
+          <div class="port-row" data-cat="pc" data-search="fallout 2 ce ryandeering"><span class="pname">Fallout 2</span><span class="pup">PC, 1998 · Fallout 2 CE</span><span class="pauthor">ryandeering · v1.1.0, Aug 2024 / May 2026</span></div>
+          <div class="port-row" data-cat="pc" data-search="arx fatalis arx libertatis fgsfdsfgs"><span class="pname">Arx Fatalis</span><span class="pup">PC, 2002 · Arx Libertatis</span><span class="pauthor">fgsfdsfgs · v1.2-nx1, 21 Jul 2021</span></div>
+          <div class="port-row" data-cat="pc" data-search="ultima vii exult capsterx"><span class="pname">Ultima VII</span><span class="pup">PC, 1992 · Exult engine</span><span class="pauthor">capsterx · r1.5, 24 Nov 2020</span></div>
+          <div class="port-row" data-cat="pc" data-search="heroes might magic ii fheroes2 engine recreation"><span class="pname">Heroes of Might and Magic II</span><span class="pup">PC, 1996 · fheroes2 (engine recreation)</span><span class="pauthor">fheroes2 team · v1.1.13 Dec 2025; v1.1.18 Nov 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="heroes might magic iii vcmi vcmi_nx naga95"><span class="pname">Heroes of Might and Magic III</span><span class="pup">PC, 1999 · VCMI (vcmi_nx)</span><span class="pauthor">NaGaa95 · v1.8.0 R2, 6 Jul 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="command conquer tiberian dawn red alert vanilla conquer capsterx openra none"><span class="pname">Command &amp; Conquer: Tiberian Dawn / Red Alert</span><span class="pup">PC, 1995/96 · Vanilla Conquer (Remastered Collection cross-platform build). <strong>No Switch OpenRA port found</strong> — OpenRA itself is PC/Mac/Linux only in sources checked</span><span class="pauthor">capsterx · 0-r6, 2 Jan 2021</span></div>
+          <div class="port-row" data-cat="pc" data-search="transport tycoon deluxe openttd rsn8887"><span class="pname">Transport Tycoon Deluxe</span><span class="pup">PC, 1995 · OpenTTD</span><span class="pauthor">rsn8887 · v1.07, 8 May 2021</span></div>
+          <div class="port-row" data-cat="pc" data-search="rollercoaster tycoon 2 openrct2 rsn8887 wander-eule"><span class="pname">RollerCoaster Tycoon 2</span><span class="pup">PC, 2002 · OpenRCT2</span><span class="pauthor">rsn8887 · v1.06, 24 Apr 2021; new build Wander-Eule Sep 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="caesar iii julius augustus bvschaik keriew reimplementation"><span class="pname">Caesar III</span><span class="pup">PC, 1998 · Julius reimplementation + Augustus mod</span><span class="pauthor">multiple · 2023–2025</span></div>
+          <div class="port-row" data-cat="pc" data-search="theme hospital corsixth exvat"><span class="pname">Theme Hospital</span><span class="pup">PC, 1997 · CorsixTH</span><span class="pauthor">Exvat · 2019</span></div>
+          <div class="port-row" data-cat="pc" data-search="x-com ufo defense openxcom alexart878"><span class="pname">X-COM: UFO Defense</span><span class="pup">PC, 1994 · OpenXcom</span><span class="pauthor">alexart878 · v1.0-NX, 21 Nov 2024</span></div>
+          <div class="port-row" data-cat="pc" data-search="dune ii dune legacy carstene1ns reimplementation"><span class="pname">Dune II</span><span class="pup">PC, 1992 · Dune Legacy (enhanced reimplementation)</span><span class="pauthor">carstene1ns · 2025 build, 7 Nov 2025</span></div>
+          <div class="port-row" data-cat="pc" data-search="cave story nxengine-evo cse2 heyjoeway doukutsu-rs freeware"><span class="pname">Cave Story</span><span class="pup">PC freeware, 2004 · NXEngine-evo reimplementation; CSE2 decomp; doukutsu-rs also lists Switch</span><span class="pauthor">nxengine / heyjoeway · 2019–2024</span></div>
+          <div class="port-row" data-cat="pc" data-search="prince of persia sdlpop usineur"><span class="pname">Prince of Persia</span><span class="pup">Apple II/PC, 1989 · SDLPoP</span><span class="pauthor">usineur · v1.3, 13 Oct 2019</span></div>
+          <div class="port-row" data-cat="pc" data-search="another world heart alien flashback fade black raw hota reminiscence f2b usineur cpasjuste"><span class="pname">Another World / Heart of the Alien / Flashback / Fade to Black</span><span class="pup">Amiga/PC, 1991–95 · engine reimplementations (RAW, HOTA, REminiscence, f2b)</span><span class="pauthor">usineur / Cpasjuste et al. · 2018–2021</span></div>
+          <div class="port-row" data-cat="pc" data-search="descent descent ii dxx rebirth aagallag dimag0g thorhax modern"><span class="pname">Descent / Descent II</span><span class="pup">PC, 1995/96 · DXX Switch / DXX-Rebirth; Thorhax Modern builds</span><span class="pauthor">multiple · 2018–2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="serious sam first second encounter serious-engine-tse fgsfdsfgs"><span class="pname">Serious Sam: First &amp; Second Encounter</span><span class="pup">PC, 2001/02 · Serious-Engine-TSE</span><span class="pauthor">fgsfdsfgs · nx1, 29 Dec 2019</span></div>
+          <div class="port-row" data-cat="pc" data-search="system shock shockolate capsterx"><span class="pname">System Shock</span><span class="pup">PC, 1994 · Shockolate source port</span><span class="pauthor">capsterx · v0.8.2-r5, 23 Dec 2020</span></div>
+          <div class="port-row" data-cat="pc" data-search="unreal unreal gold unrealnx fgsfdsfgs loader"><span class="pname">Unreal / Unreal Gold</span><span class="pup">PC, 1998 · UnrealNX loader</span><span class="pauthor">fgsfdsfgs · r2, 27 Oct 2022</span></div>
+          <div class="port-row" data-cat="pc" data-search="alien vs predator gold avp m4xw thorhax modern"><span class="pname">Alien vs Predator Gold</span><span class="pup">PC, 2000 · AvP Gold Switch Edition</span><span class="pauthor">m4xw · v0.0.3, 4 Mar 2019</span></div>
+          <div class="port-row" data-cat="pc" data-search="star trek voyager elite force holomatch voyagernx faithvoid ioquake3"><span class="pname">Star Trek Voyager: Elite Force Holomatch</span><span class="pup">PC, 2000 · VoyagerNX (lilium-voyager/ioquake3 fork)</span><span class="pauthor">faithvoid · v0.8.5.1, 28 Jun 2023</span></div>
+          <div class="port-row" data-cat="pc" data-search="openarena faithvoid q3 derived"><span class="pname">OpenArena</span><span class="pup">PC, 2005 (Q3-derived) · OpenArenaNX</span><span class="pauthor">faithvoid · v0.7.8.1, 28 Jun 2023</span></div>
+          <div class="port-row" data-cat="pc" data-search="tyrian opentyrian opentyrian2000 felixrg andyvand"><span class="pname">Tyrian</span><span class="pup">PC, 1995 · OpenTyrian / OpenTyrian2000</span><span class="pauthor">felixrg et al.; andyvand · 2021; v3.0.0 Feb 2025</span></div>
+          <div class="port-row" data-cat="pc" data-search="commander keen galaxy clonekeen omnispeak eliasoenal"><span class="pname">Commander Keen (Galaxy etc.)</span><span class="pup">PC, 1991 · Commander Keen Switch (CloneKeen/Omnispeak line)</span><span class="pauthor">Elias Oenal · v3.3.0 May 2023; v3.6.0 Feb 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="carmageddon dethrace alexart878 jackazz86"><span class="pname">Carmageddon</span><span class="pup">PC, 1997 · Dethrace</span><span class="pauthor">alexart878 · v1.1, 1 May 2025</span></div>
+          <div class="port-row" data-cat="pc" data-search="vvvvvv nx-vvvvvv nicholematera recomp auggeythecat"><span class="pname">VVVVVV</span><span class="pup">PC, 2010 · NX-VVVVVV; recomp build 2026</span><span class="pauthor">NicholeMattera · v2.3.3 Sep 2021</span></div>
+          <div class="port-row" data-cat="pc" data-search="postal lantus modern vintage gamer"><span class="pname">Postal</span><span class="pup">PC, 1997 · Postal Switch</span><span class="pauthor">lantus · v1.0, 25 May 2018</span></div>
+          <div class="port-row" data-cat="pc" data-search="abuse abuse-sdl capsterx"><span class="pname">Abuse</span><span class="pup">PC, 1996 · Abuse-SDL</span><span class="pauthor">capsterx · 0.8r3, 14 Nov 2020</span></div>
+          <div class="port-row" data-cat="pc" data-search="jazz jackrabbit openjazznx jazz2 reborn deathkiller"><span class="pname">Jazz Jackrabbit / Jazz Jackrabbit 2</span><span class="pup">PC, 1994/98 · OpenJazzNX (2019); Jazz2 Reborn</span><span class="pauthor">multiple · 2019–2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="captain claw openclaw clawswitch djmuted beta"><span class="pname">Captain Claw</span><span class="pup">PC, 1997 · OpenClaw / ClawSwitch</span><span class="pauthor">djmuted · beta4, 12 Oct 2021</span></div>
+          <div class="port-row" data-cat="pc" data-search="sin switch rohit-n"><span class="pname">SiN</span><span class="pup">PC, 1998 · SiN Switch</span><span class="pauthor">rohit-n · v1.2, 4 Feb 2025</span></div>
+          <div class="port-row" data-cat="pc" data-search="eldritch reanimated usineur rohit-n"><span class="pname">Eldritch</span><span class="pup">PC, 2013 · Eldritch Reanimated</span><span class="pauthor">usineur · 2019–2020</span></div>
+          <div class="port-row" data-cat="pc" data-search="lugaru hd usineur"><span class="pname">Lugaru HD</span><span class="pup">PC, 2005 · Lugaru port</span><span class="pauthor">usineur · 1.3-nx1, 5 Jan 2019</span></div>
+          <div class="port-row" data-cat="pc" data-search="aquaria dimag0g open source"><span class="pname">Aquaria</span><span class="pup">PC, 2007 · Aquaria open-source</span><span class="pauthor">dimag0g · v0.3.0, 27 Dec 2020</span></div>
+          <div class="port-row" data-cat="pc" data-search="ur-quan masters star control ii uqm megamod yokaishogun"><span class="pname">The Ur-Quan Masters (Star Control II)</span><span class="pup">PC, 1992 · UQM MegaMod</span><span class="pauthor">YokaiShogun · v0.8.0.85, 6 Feb 2021</span></div>
+          <div class="port-row" data-cat="pc" data-search="freespace 2 open freespace2_nx naga95"><span class="pname">FreeSpace 2</span><span class="pup">PC, 1999 · FreeSpace 2 Open</span><span class="pauthor">NaGaa95 · v1.0.1, 28 Jun 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="yume nikki easyrpg electr0whale rpg maker nro nsp github scrub"><span class="pname">Yume Nikki</span><span class="pup">PC, 2004 · EasyRPG engine port · playable, NRO + NSP. GitHub scrub find — in none of the master catalogues</span><span class="pauthor">Electr0Whale · v1.2.1, 10 Nov 2026 · <a href="https://github.com/Electr0Whale/nx-yumenikki">github.com/Electr0Whale/nx-yumenikki</a></span></div>
+          <div class="port-row" data-cat="pc" data-search="amsterdoom davidstolk source port pc 2000 nro github scrub"><span class="pname">Amsterdoom</span><span class="pup">PC, 2000 · source port · playable, NRO in repo. GitHub scrub find — in none of the master catalogues</span><span class="pauthor">DavidStolk · Nov 2026 · <a href="https://github.com/DavidStolk/amsterdoom-nintendo-switch-port">github.com/DavidStolk/amsterdoom-nintendo-switch-port</a></span></div>
+          <div class="port-row" data-cat="pc" data-search="super mario war brendongl fangame switchports catch-up"><span class="pname">Super Mario War</span><span class="pup">PC fangame · source port · SwitchPorts catch-up</span><span class="pauthor">brendongl · v1.0.0, 22 Oct 2026 [SP]</span></div>
+          <div class="port-row" data-cat="pc" data-search="woody woodpecker escape buzz buzzard park woodyre jjmhalew reimplementation moteur gplv3"><span class="pname">Woody Woodpecker: Escape from Buzz Buzzard Park</span><span class="pup">PC, 2001 · réimplémentation du moteur (WoodyRE, GPLv3) — build Switch expérimental (woodyre.nro), v1.0.11 (dernière 1.0.12) ; nécessite votre propre CD PC. Ajout de rattrapage : entrée préexistante d'AllRecomps (profil vérifié le 27 octobre 2026), absente du catalogue jusqu'ici — pas une nouveauté</span><span class="pauthor">jjmhalew · <a href="https://github.com/jjmhalew/WoodyRE">github.com/jjmhalew/WoodyRE</a> [AR]</span></div>
+          <div class="port-row" data-cat="pc" data-search="outrun cannonball lantus rsn8887 thorhax arcade"><span class="pname">OutRun (Cannonball engine)</span><span class="pup">Arcade, 1986 · Cannonball</span><span class="pauthor">lantus / rsn8887 / Thorhax · 2018–2026</span></div>
+          <div class="port-row" data-cat="pc" data-search="bermuda syndrome heart of darkness hode usineur engine rewrites"><span class="pname">Bermuda Syndrome, Heart of Darkness (HODE)</span><span class="pup">PC, 1996/98 · engine rewrites</span><span class="pauthor">usineur · 2018 / 2020</span></div>
+        </div>
+        <div class="callout"><strong>Also released, classic era</strong> (all [GB], author/date in the GameBrew list): Doki Doki Literature Club (DDLC-LOVE, LukeZGD, 2020), Helltaker (D3fau4, 2020), SuperTuxKart (2025), Hurrican (rsn8887, 2024), OpenLiero/Liero, OpenSupaplex, Enigma, Rocks'n'Diamonds/MirrorMagic, Neverball, Mindustry (SwitchGDX), Cataclysm: Dark Days Ahead [AR], Flare RPG, Shattered Pixel Dungeon, Legend of Sword and Fairy (PAL, usineur, 2024), Ken's Labyrinth (2025), Raptor: Call of the Shadows (2025), Mighty Mike/Power Pete (2025), StepMania, McOsu (osu! practice client), Friday Night Funkin' Rewritten (LÖVE), and Zelda fangames via Solarus (Mystery of Solarus DX etc.).</div>
+      </section>
+
+      <!-- ============ 4. ANDROID LOADERS 2026 ============ -->
+      <section data-section>
+        <h2><span class="n">04</span> The 2026 explosion — Android-loader ports</h2>
+        <p class="section-note">Technique: a generic minimal-Android compatibility layer loads the original Android ARM/ARM64 <code>libGame.so</code> — dozens of Android games ported in Aug–Nov 2026 alone, mainly by <strong>NaGaa95, ChanseyIsTheBest, aks796, Thorhax</strong> and others (iqbalriz, markaurel13, hazevauks, xflipperkast, 1timewire1, delsonazevedo). All require the specified Android APK version's files. Same family as the GTA SA / Bully / Max Payne loaders in §01. All [SP] unless noted.</p>
+        <div class="grid">
+          <article class="card" data-cat="android" data-search="final fantasy chrono trigger chaos rings valkyrie profile mana castlevania symphony square enix rpg naga95">
+            <h3>RPG / Square Enix wave</h3>
+            <div class="badges"><span class="badge">Android loaders</span><span class="badge status-released">Released · Nov 2026</span></div>
+            <p>All by NaGaa95, Nov 2026 [SP][AR]: <strong>Final Fantasy III 3D Remake, Final Fantasy IV 3D Remake + The After Years, Final Fantasy Dimensions I &amp; II, Chrono Trigger</strong> (v1.1.2), <strong>Chaos Rings III, Valkyrie Profile: Lenneth, Adventures of Mana, Castlevania: Symphony of the Night</strong> (v1.0.3).</p>
+            <div class="src"><span>Sources</span><span>[SP] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="android" data-search="professor layton lego star wars kingdom hearts papers please geometry dash subway surfers jetpack joyride cut rope fruit ninja plants zombies">
+            <h3>Other major Android loaders</h3>
+            <div class="badges"><span class="badge">Android loaders</span><span class="badge status-released">Released</span></div>
+            <ul>
+              <li><strong>Professor Layton</strong> Curious Village HD / Pandora's Box HD / Lost Future (“Lost Hope”) HD + Layton Brothers: Mystery Room (NaGaa95)</li>
+              <li><strong>LEGO Star Wars:</strong> The Complete Saga, The Force Awakens; <strong>LEGO Batman:</strong> Beyond Gotham; <strong>LEGO Ninjago:</strong> Shadow of Ronin (NaGaa95)</li>
+              <li><strong>Kingdom Hearts Union χ Dark Road</strong>; <strong>Papers, Please</strong> (ChanseyIsTheBest, Jul 2026); <strong>Geometry Dash</strong> (NaGaa95); Subway Surfers; Jetpack Joyride; Cut the Rope 1/2 + Experiments/Magic/Time Travel; Fruit Ninja Classic+; Plants vs. Zombies 2 + Fusion/Reflourished, Plants vs. Zombies Touch</li>
+              <li><strong>FTL: Faster Than Light</strong> (iPad ARM64 host [AR]); <strong>Geometry Wars 3</strong> (Android ARMv7/dynarmic [AR])</li>
+            </ul>
+            <div class="src"><span>Sources</span><span>[SP] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="android" data-search="32-bit android spider-man dark knight assassins creed call of duty modern combat nova need speed most wanted jet set radio ducktales sonic all-stars dead space asphalt rayman angry birds">
+            <h3>32-bit Android wave <span class="sub">(Sep–Oct 2026)</span></h3>
+            <div class="badges"><span class="badge">Android loaders · 32-bit</span><span class="badge status-released">Released</span></div>
+            <p>The Amazing Spider-Man 2, Ultimate Spider-Man: Total Mayhem, The Dark Knight Rises, Assassin's Creed: Altaïr's Chronicles HD, Call of Duty: Black Ops Zombies, Call of Duty: Strike Team, Modern Combat 3 &amp; 4, N.O.V.A. 3, Need for Speed: Most Wanted (2012) (v0.3.2, Nov 2026, experimental [AR]), Jet Set Radio (v1.2.0 Nov 2026), DuckTales Remastered, Sonic &amp; SEGA All-Stars Racing, Costume Quest, Dead Space (mobile “Sabotage”), Asphalt 8, Space Hulk, Rayman Jungle/Fiesta Run, Smash Hit, Angry Birds Space/Star Wars II, Dan the Man.</p>
+            <div class="src"><span>Sources</span><span>[SP] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="android" data-search="64-bit android angry birds animal crossing pocket camp castle illusion crazy taxi sonic dash daggerfall far cry granny hill climb hitman go deus ex go lara croft go infinity blade nba jam rvgl revolt swordigo ys slay spire">
+            <h3>64-bit Android wave</h3>
+            <div class="badges"><span class="badge">Android loaders · 64-bit</span><span class="badge status-released">Released</span></div>
+            <p>Angry Birds Classic/2/Journey/Reloaded/Epic, Animal Crossing: Pocket Camp, Castle of Illusion, Crazy Taxi (Android), Sonic Dash / Dash 2 / Jump / Jump Fever / Runners Adventure / Sonic 4 Episode II, Far Cry (artslay/NearChuckle_nx v1.0.1 — the catalogue labels it under Android 64; technique as listed there), Granny, Hill Climb Racing, Hitman GO / Deus Ex GO / Lara Croft GO, Infinity Blade, NBA Jam, RVGL (Re-Volt), Swordigo, Very Little Nightmares, Ys Chronicles 1, Slay the Spire 2 (catalogue entry — early, v1.0.0 Aug 2026). Daggerfall Unity is in §03.</p>
+            <div class="src"><span>Sources</span><span>[SP]</span></div>
+          </article>
+
+          <article class="card" data-cat="android" data-search="stupid zombies terremotixx android loader github scrub">
+            <h3>Stupid Zombies</h3>
+            <div class="badges"><span class="badge">Android loader</span><span class="badge status-released">Released · early/playable</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>Android</dd>
+              <dt>Author</dt><dd>Terremotixx (Stupid-Zombies-NX)</dd>
+              <dt>Switch</dt><dd>v1.0.2, 11 Nov 2026</dd>
+            </dl>
+            <p>Found by the 15 Nov 2026 GitHub scrub — in none of SwitchPorts, GameBrew or AllRecomps.</p>
+            <div class="src"><span>Source</span><a href="https://github.com/Terremotixx/Stupid-Zombies-NX">github.com/Terremotixx/Stupid-Zombies-NX</a></div>
+          </article>
+        </div>
+        <div class="callout"><strong>Open question flagged by the research:</strong> whether the 2026 catalogue entries for “Minecraft Java 1.12.2 / Project Zomboid / Slay the Spire 2” are native ports vs. compatibility-layer recreations could not be confirmed from the catalogue alone — they are included in §06 with that flag.</div>
+      </section>
+
+      <!-- ============ 5. RECOMPS 2026 ============ -->
+      <section data-section>
+        <h2><span class="n">05</span> The 2026 explosion — static recompilations</h2>
+        <p class="section-note">Technique: ReXGlue/XenonRecomp-style PowerPC→C++ recompilation + deko3d or NVK/Vulkan renderer; <strong>you build the NRO + shaders from your own disc/ISO — no game data is distributed</strong>. Frequently AI-assisted, per the list maintainer's own disclaimer. Versions/dates are SwitchPorts' “last updated” Nov 2026 snapshot. <strong>Early (0.x) unless noted.</strong> All [SP] unless noted; entries marked “GitHub scrub find” are in none of the three catalogues.</p>
+        <div class="grid">
+          <article class="card" data-cat="recomp" data-search="halo combat evolved opence black burnout conker dead alive def jam fifa street flatout godfather mortal kombat shaolin monks need speed underground carbon most wanted 2005 stevensnd splinter cell chaos theory double agent ssx tricky bloody roar castlevania curse darkness cold fear madagascar gerisson1996 madagascar-nx-port soulcalibur 2 toniisound starcraft ghost thorhax jet set radio future skeammer eladerino unleashed buffy vampire slayer fotlabs xbox original recomp">
+            <h3>Xbox (original) recomps</h3>
+            <div class="badges"><span class="badge">Static recompilation</span><span class="badge status-released">Released · early</span></div>
+            <ul>
+              <li><strong>Halo: Combat Evolved</strong> — OpenCE-nx v1.0.0 Oct 2026 + halo-ce-universal Build 141 Nov 2026 ([AR] notes deko3d, controller + documented multiplayer)</li>
+              <li>Black (v0.2.5), Burnout 3: Takedown (v0.2.4), Conker: Live &amp; Reloaded (v0.57.0), Dead or Alive 2 Ultimate / DOA 3, Def Jam: Fight for NY (v1.0.0), FIFA Street 1/2, FlatOut 2 (v0.2.1), The Godfather (v1.0.2, 13 Nov 2026), Midnight Club 3 (§01), Mortal Kombat: Shaolin Monks (v0.4.1)</li>
+              <li>Need for Speed: Underground (v0.4.0) / Underground 2 (v0.5.13) / Carbon (Xbox — Kaays v0.5.0, 12 Nov 2026, plus a second port by zofo007, v1.1.0, 29 Oct 2026) / Most Wanted (2005) (StevensND v1.0.0, 27 Sep 2026 [SP] — distinct from the 2012 Android loader in §04)</li>
+              <li><strong>Splinter Cell: Chaos Theory</strong> (v0.3.0, Nov 2026); <strong>Splinter Cell: Double Agent</strong> (scda-nx v0.4.9 — SP campaign tested on V1 Switch, light OC; co-op/versus/docked untested)</li>
+              <li>SSX Tricky (v0.1.1), Bloody Roar Extreme, Castlevania: Curse of Darkness (v0.5.0), Cold Fear (v0.0.3)</li>
+              <li><strong>Soulcalibur II</strong> (toniisound, static recomp, v0.4.0, 14 Nov 2026) — early/playable, 720p 16:9. GitHub scrub find. <a href="https://github.com/toniisound/sc2-nx">github.com/toniisound/sc2-nx</a></li>
+              <li><strong>StarCraft: Ghost</strong> (Thorhax, static recomp, v0.4.0, 15 Nov 2026) — early; the Xbox original (2004) was never commercially released. GitHub scrub find. <a href="https://github.com/Thorhax/ScGhost-NX">github.com/Thorhax/ScGhost-NX</a></li>
+              <li><strong>Jet Set Radio Future</strong> — two separate static recomps: skeammer's jsrf-nx (v0.1.0, 1 Nov 2026 — playable, ~60fps handheld on stock clocks) and Eladerino's Jet Set Radio Future Unleashed (v0.5.2-switch, 15 Nov 2026 — early/playable, built on the fan project). Both GitHub scrub finds. <a href="https://github.com/skeammer/jsrf-nx">github.com/skeammer/jsrf-nx</a> · <a href="https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX">github.com/Eladerino/JetSetRadioFuture-Unleashed-NX</a></li>
+              <li><strong>Buffy the Vampire Slayer</strong> (FOTLabs, static recomp, v1.0.1, 21 Oct 2026) — early. GitHub scrub find. <a href="https://github.com/FOTLabs/buffy-nx">github.com/FOTLabs/buffy-nx</a></li>
+              <li><strong>Madagascar</strong> (MADAGASCAR-NX-PORT, par gerisson1996) — recompilation statique (XboxSwitchPortKit, Vulkan/Mesa NVK), v0.1.8, fil de sortie GBAtemp publié le 12 novembre 2026 : jouable du menu au jeu, audio complet, vidéos Bink, aucun overclock requis ; baisses sous 30 images/s par endroits aux fréquences d'origine. Nécessite votre propre disque Xbox. <a href="https://gbatemp.net/threads/release-madagascar-xbox-for-nintendo-switch-native-static-recompilation-port-v0-1-8.686468/">GBAtemp — fil de sortie Madagascar NX</a></li>
+            </ul>
+            <div class="src"><span>Sources</span><a href="https://github.com/itouchdennis/scda-nx">github.com/itouchdennis/scda-nx</a><span>[SP] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="recomp" data-search="dead space gears war dark souls dishonored mass effect metal gear rising call duty black ops openblops-nx hderick nagaa95 zombies sonic unleashed sonic 2006 adventure alice banjo blue dragon lost odyssey kameo castlevania lords shadow condemned mortal kombat street fighter skate simpsons tony hawk naruto torchlight wwe fear fear-nx infriker guitar hero 3 gh3 guillermedev75 modern warfare 2 cod6 greeniesparkles silent hill downpour fungalspores hexic kameo chanseyisthebest shank zhtipu dark souls 2 xdasxcatx xbox 360 recomp rexglue">
+            <h3>Xbox 360 recomps</h3>
+            <div class="badges"><span class="badge">Static recompilation · ReXGlue</span><span class="badge status-released">Released · early</span></div>
+            <ul>
+              <li><strong>Dead Space</strong> (ds1-nx v1.0.0) — <strong>verified playable: 540p/30fps stock, 720p/30 OC, first level tested on hardware</strong> (VasilkovND, Oct 2026); Dead Space 2 (v1.3.0) &amp; 3 (v1.0.1), same author</li>
+              <li>Dante's Inferno (Nov 2026), <strong>Gears of War 2</strong> (gears2-nx v1.1.0, ReXGlue+deko3d [AR]), Max Payne 3 (§01), Dark Souls II: Scholar of the First Sin (XDASCATX, v121, 6 Nov 2026), Dishonored (v0.20, Nov 2026)</li>
+              <li>Mass Effect (v0.2.1 — slow startup, fps dips, black title planet [AR]); Mass Effect 2 is pre-release (§07). Metal Gear Rising: Revengeance (v0.2.2)</li>
+              <li>Call of Duty: Black Ops II (v1.1.0 + PC-decomp Requiem NX beta, Zombies/MP only [AR]); Sonic Unleashed (v1.0.0); Sonic the Hedgehog (2006) (v1.0.3); Sonic Adventure 2 (v1.0.6, XBLA, deko3d/reNut [AR])</li>
+              <li><strong>Call of Duty: Black Ops</strong> — <strong>OpenBLOPS-NX</strong>, source reconstruction for Windows PC &amp; Nintendo Switch, in the same family as the Requiem NX port above (original PC/PS3/Xbox 360, 2010 — PC version used), by HDErick &amp; NaGaa95 (release signed HDErick, NaGa &amp; TheGabr0). First public beta, 13 Nov 2026 — <strong>released but early</strong>: campaign, online multiplayer and online Zombies playable, including the DLC Zombies maps; local split-screen experimental; the author warns this first version contains bugs. Needs your own PC game files (plus the DLC files for DLC content). <a href="https://github.com/HDErick/OpenBLOPS-NX">github.com/HDErick/OpenBLOPS-NX</a></li>
+              <li>Alice: Madness Returns (0.2-beta), Banjo-Kazooie: Nuts &amp; Bolts, Beautiful Katamari, Blue Dragon (v1.3.1), Lost Odyssey (v1.1.0), Kameo: Elements of Power (ChanseyIsTheBest, v1.0.1, 4 Nov 2026), Castlevania: Lords of Shadow (v0.5.0) / Harmony of Despair, Condemned 1 &amp; 2, Mortal Kombat Komplete Edition (MK9, v1.0.6), Ultra Street Fighter IV (v0.8.1), Skate 3 (v0.1.5, Rust engine)</li>
+              <li>The Simpsons Game (v1.0.1 — heavy particles dip below 30fps [AR]), Tony Hawk's Project 8, Naruto: Rise of a Ninja, Mini Ninjas, Torchlight (XBLA, v1.0.5 [AR]), Shank / Shank 2 (zhtipu, v1.0.1 / v1.0.0, 31 Oct / 4 Nov 2026), Silent Hill 3 (360 HD Collection line, v1.0) / Silent Hill Homecoming</li>
+              <li><strong>WWE SmackDown vs. Raw 2011</strong> (SVR2011-NX — <strong>~51fps in-ring overclocked</strong>, ReXGlue+deko3d/NVK, Nov 2026)</li>
+              <li><strong>F.E.A.R.</strong> (fear-nx, par infriker) — recompilation statique (ReXGlue) avec rendu Vulkan/Mesa NVK, v0.2.1 publiée le 6 novembre 2026 : menus et campagne jouables, environ 30 images/s aux fréquences d'origine (25 en combat intense), visée gyroscopique. Nécessite vos propres fichiers Xbox 360 (Title ID 565507D9). <a href="https://github.com/infriker/fear-nx">github.com/infriker/fear-nx</a></li>
+              <li><strong>Guitar Hero III: Legends of Rock</strong> (guillermedev75, ReXGlue) — source-build only; plays full songs at ~34–45fps. GitHub scrub find. <a href="https://github.com/guillermedev75/gh3-nx">github.com/guillermedev75/gh3-nx</a></li>
+              <li><strong>Call of Duty: Modern Warfare 2</strong> (GreenieSparkles, COD6-NX, ReXGlue, v325, 3 Nov 2026) — early/WIP, 20–60fps. GitHub scrub find. <a href="https://github.com/GreenieSparkles/COD6-NX">github.com/GreenieSparkles/COD6-NX</a></li>
+              <li><strong>Silent Hill: Downpour</strong> (fungalspores, static recomp, v0.3.0, 26 Oct 2026) — early, 30fps. GitHub scrub find. <a href="https://github.com/fungalspores/silent-hill-downpour-switch">github.com/fungalspores/silent-hill-downpour-switch</a></li>
+              <li>Plus many XBLA/puzzle titles: Peggle 1/2, Bejeweled 3, Hexic HD / Hexic 2 (ChanseyIsTheBest, v1.0.0 / v1.0.1, 4–5 Nov 2026), Zuma, Pac-Man CE DX, Feeding Frenzy 1/2, etc. Guardian Heroes / Hard Corps: Uprising are pre-release (§07)</li>
+            </ul>
+            <div class="src"><span>Sources</span><a href="https://github.com/VasilkovND/ds1-nx">github.com/VasilkovND/ds1-nx</a><a href="https://github.com/Spaced1127/SVR2011-NX-Port">github.com/Spaced1127/SVR2011-NX-Port</a><span>[SP] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="recomp" data-search="tekken 3 wipeout digimon world serial experiments lain ms pac-man maze madness ps1 recomp deko3d markaurel13">
+            <h3>PS1 recomps</h3>
+            <div class="badges"><span class="badge">Static recompilation</span><span class="badge status-released">Released</span></div>
+            <ul>
+              <li><strong>Tekken 3</strong> (tekken3-nx v1.3) — <strong>“rock-solid 60 FPS on stock clocks”</strong>, static recomp MIPS→ARM64 + deko3d (markaurel13, Oct–Nov 2026)</li>
+              <li>WipEout (wipeout-rewrite, Jul 2026), Digimon World 3 (0.9.0 preview), Serial Experiments Lain (lainNX), Ms. Pac-Man Maze Madness</li>
+            </ul>
+            <div class="src"><span>Sources</span><a href="https://github.com/markaurel13/tekken3-nx">github.com/markaurel13/tekken3-nx</a><span>[SP]</span></div>
+          </article>
+
+          <article class="card" data-cat="recomp" data-search="jak daxter trilogy opengoal fildicio sly cooper dragon ball budokai tenkaichi rampage scooby-doo night 100 frights matthewperiut ben 10 protector earth lalemniscata king fighters 2002 unlimited match tbittech biko 3 ruje0504 ps2 recomp">
+            <h3>PS2 recomps &amp; adaptations</h3>
+            <div class="badges"><span class="badge">Recompilation / adaptation</span><span class="badge status-released">Released · beta</span></div>
+            <ul>
+              <li><strong>Jak and Daxter Trilogy</strong> — Jak Project Switch / OpenGOAL adaptation (fildicio, Oct 2026): <strong>all three games bootable</strong>, native .nro, 540p/720p internal; beta NROs + extraction tools [AR]. (A native Jak port was long considered blocked because OpenGOAL targeted x86, not ARM — this is a separate adaptation, not upstream OpenGOAL.)</li>
+              <li>Sly Cooper and the Thievius Raccoonus (ProjectCane v0.5.0 / SafeHouse v0.1.44, two projects), Dragon Ball Z: Budokai Tenkaichi 3 (v1.7.2), Rampage: Total Destruction (RampageRE)</li>
+              <li><strong>Scooby-Doo! Night of 100 Frights</strong> (matthewperiut, recomp, v1.0, 16 Oct 2026) — early. GitHub scrub find. <a href="https://github.com/matthewperiut/night100">github.com/matthewperiut/night100</a></li>
+              <li><strong>Ben 10: Protector of Earth</strong> (LaLemniscata, v1.1.4, 5 Nov 2026) and <strong>The King of Fighters 2002 Unlimited Match</strong> (tbittech, v0.1.1, 7 Nov 2026) — SwitchPorts catch-ups [SP]</li>
+              <li><strong>Biko 3</strong> (ruje0504-2, native port, NRO v1.0.79) — early/playable. GitHub scrub find. <a href="https://github.com/ruje0504-2/biko3-switch-runtime">github.com/ruje0504-2/biko3-switch-runtime</a></li>
+            </ul>
+            <div class="src"><span>Sources</span><a href="https://gbatemp.net/threads/opengoal-port-on-nintendo-switch.684945/">GBAtemp — OpenGOAL port on Switch</a><span>[SP] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="recomp" data-search="sonic adventure crazy taxi dreamcast daytona virtua fighter killer instinct outrunners sega rally scud race sonic fighters tmnt simpsons cheviman simpsons-port guwange ketsui chanseyisthebest cave arcade pt ps4 recomp">
+            <h3>Dreamcast &amp; arcade recomps</h3>
+            <div class="badges"><span class="badge">Static recompilation</span><span class="badge status-released">Released</span></div>
+            <p><strong>Dreamcast:</strong> Sonic Adventure (SA-nx v0.6.0), Crazy Taxi 1/2 (CTDC-nx v0.5.0 each; a separate Android Crazy Taxi loader is also listed). <strong>Arcade:</strong> Daytona USA (v1.1.0), Virtua Fighter 2, Cyber Troopers Virtual-On, Killer Instinct 1/2, OutRunners (v1.2.2), Sega Rally (port0r v0.5.3), Scud Race, Sonic the Fighters, TMNT (arcade, cheviman v1.0.6). <strong>The Simpsons</strong> (arcade, Konami, 1991) — port source fondé sur la décompilation, par cheviman (simpsons-port) : v1.0.0 publiée le 14 novembre 2026 (dernière 1.0.1) ; paquet Switch avec deux fichiers .nro (Arcade Game et Mr. Plow Edition) et option NSP ; nécessite votre propre ROM MAME « simpsons » 4 joueurs World set 1. <a href="https://github.com/cheviman/simpsons-port">github.com/cheviman/simpsons-port</a> <strong>Guwange</strong> (ChanseyIsTheBest, v1.0.1, 28 Oct 2026) and <strong>Ketsui</strong> (ChanseyIsTheBest, v1.0.0, 28 Oct 2026) — Cave arcade shooters, SwitchPorts catch-ups [SP]. <strong>P.T.</strong> (PS4, 2014) is listed under PS4 as pt-nx v1.0.0.</p>
+            <div class="src"><span>Sources</span><span>[SP]</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ 6. N64 / GC / MORE ============ -->
+      <section data-section>
+        <h2><span class="n">06</span> N64 / GameCube / Wii / handheld recomps &amp; 2026 PC wave</h2>
+        <p class="section-note">The rest of the 2026 flood, all [SP] unless noted. Ship/2Ship/Ghostship/Starship/SpaghettiKart and Perfect Dark are in §02.</p>
+        <div class="ports">
+          <div class="port-row" data-cat="recomp" data-search="banjo-kazooie docklight n64 recomp"><span class="pname">N64 — Banjo-Kazooie</span><span class="pup">Docklight v1.1.0</span><span class="pauthor">[SP]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="bomberman 64 bm64switch n64recomp"><span class="pname">N64 — Bomberman 64</span><span class="pup">BM64Switch v1.0.0, N64Recomp</span><span class="pauthor">[SP][AR]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="castlevania legacy darkness conker bad fur day rc1 n64"><span class="pname">N64 — Castlevania: Legacy of Darkness / Conker's Bad Fur Day</span><span class="pup">Both at RC1</span><span class="pauthor">[SP]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="diddy kong racing golden balloon nx source port"><span class="pname">N64 — Diddy Kong Racing</span><span class="pup">Golden Balloon NX v1.2.1, source port</span><span class="pauthor">[SP][AR]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="donkey kong 64 dk64recomp-nx"><span class="pname">N64 — Donkey Kong 64</span><span class="pup">DK64Recomp-NX v1.1.2</span><span class="pauthor">[SP]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="mega man 64 paper mario paperboat snowboard kids starcraft 64 rogue squadron smash bros battleship wave race n64"><span class="pname">N64 — Mega Man 64, Paper Mario, Snowboard Kids 2, StarCraft 64, Rogue Squadron, Smash Bros., Wave Race 64</span><span class="pup">Mega Man 64 (0.9.1); Paper Mario — PaperBoat-NX v1.0.2 (Harbour Masters PaperBoat adaptation); Snowboard Kids 2; StarCraft 64 (v1.5.0); Star Wars: Rogue Squadron (v1.0); Super Smash Bros. — BattleShipNX v1.6.0; Wave Race 64 — RaceWave46 RC7</span><span class="pauthor">[SP]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="wind waker switchwaker twilight princess dusklight luigis mansion double dash metroid prime echoes sonic riders mario strikers melee animal crossing gamecube recomp decomp"><span class="pname">GameCube — Wind Waker, Twilight Princess, Luigi's Mansion, Double Dash!!, Prime 2, Strikers, Melee, Animal Crossing</span><span class="pup">Wind Waker — SwitchWaker v1.0.2, decompiled code, native rendering [AR]; Twilight Princess — dusklight v1.4.3 + forks; Luigi's Mansion — lm-nx v1.0.1; Mario Kart: Double Dash!! — mkdd-nx v1.9.1, static recomp [AR]; Metroid Prime 2: Echoes — MP2-nx v0.5.0; Sonic Riders (0.7.4); Super Mario Strikers — new-coke/strikers v2.0.0, decomp port with rollback LAN/online (Switch↔PC desync noted [AR]); Super Smash Bros. Melee — Melee-NX 0.2.5 beta; Animal Crossing — ACGC v1.0.1</span><span class="pauthor">[SP][AR]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="wind waker hd switchwakerhd wii u static recomp gyro touch deko3d"><span class="pname">Wii U — Wind Waker HD</span><span class="pup">SwitchWakerHD v1.2.2, static recomp, deko3d, gyro/touch</span><span class="pauthor">[SP][AR]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="mario kart wii kartpadnx beta"><span class="pname">Wii — Mario Kart Wii</span><span class="pup">KartPadNX 0.4.0-beta</span><span class="pauthor">[SP]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="new super mario bros wii nsmbw-switch schuler-ph witherblitz recompilation wii smne01"><span class="pname">Wii — New Super Mario Bros. Wii</span><span class="pup">Recompilation statique à construire soi-même (nsmbw-switch, par schuler-ph ; fork de la recompilation multijoueur NSMB Wii de WitherBlitz) — aucun NRO précompilé distribué ; nécessite votre propre disque USA SMNE01 révision 1. Coop locale jusqu'à 4 joueurs (2 mesurés), 59–60 images/s en mode docké à 1785 MHz CPU, environ 43 images/s aux fréquences d'origine. Vérifié par AllRecomps le 14 novembre 2026</span><span class="pauthor">schuler-ph · <a href="https://github.com/schuler-ph/nsmbw-switch">github.com/schuler-ph/nsmbw-switch</a> [AR]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="ocarina time 3d triaevum metroid samus returns 3ds msr-nx"><span class="pname">3DS — Ocarina of Time 3D / Metroid: Samus Returns</span><span class="pup">OoT 3D — TriAevum-Switch v0.2.2; Samus Returns — MSR-nx v0.6.0</span><span class="pauthor">[SP]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="metroid prime hunters mph-nx ds"><span class="pname">DS — Metroid Prime Hunters</span><span class="pup">MPH-nx v0.5.0</span><span class="pauthor">[SP]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="donkey kong country mega man x illusion gaia mario all-stars snes recomp early"><span class="pname">SNES — Donkey Kong Country 1/2/3, Mega Man X, Illusion of Gaia, Super Mario All-Stars</span><span class="pup">DKC Recomp-NX (v0.1–1.0, early); Mega Man X (v1.2.0); Illusion of Gaia; Super Mario All-Stars (pre-release 2)</span><span class="pauthor">[SP]</span></div>
+          <div class="port-row" data-cat="recomp" data-search="pokemon gen 1 gen 2 metroid zero mission sonic advance kingdom hearts chain memories gb gba recomp"><span class="pname">GB/GBC/GBA — Pokémon, Zero Mission, Sonic Advance 2, Chain of Memories</span><span class="pup">Pokémon Gen 1 (0.4.2) / Gen 2 (0.8.57) recomps; Metroid: Zero Mission (v1.3); Sonic Advance 2 (0.3); Kingdom Hearts: Chain of Memories (ReKHCoM, native reconstruction, beta [AR])</span><span class="pauthor">[SP][AR]</span></div>
+          <div class="port-row" data-cat="pc" data-search="age empires black white driver silent hill simpsons hit run minecraft java project zomboid terraria touhou warcraft medal honor nazi zombies 0 ad pc 2026 wave released"><span class="pname">PC 2026 wave — released</span><span class="pup">Age of Empires II (openaok 0.7.0 prerelease), Black &amp; White (openblack 0.4.0), Driver 2 (REDRIVER2 0.1.0), Silent Hill (decomp-nx v1.2.0) / Silent Hill 2 (sh2-nx v1.03, PC exe recomp [AR]) / Silent Hill 3 (PC exe recomp) / Silent Hill 4 (0.1), The Simpsons: Hit &amp; Run (0.7.0), Minecraft: Java 1.12.2 (catalogue “released” — a Java/PoJav-style port, treat with caution), Project Zomboid (0.5, Rust-engine recreation), Terraria + mod loader (terrabuilder-nx, “released”), Touhou 6/7/7.5/8/9/10/11/12/15 (saekaze series), Warcraft I/II (War1gus/Wargus Modern), Medal of Honor: Allied Assault (OpenMoHAA_nx 0.83), Nazi Zombies: Portable v2.0.0, 0 A.D. (R28-NX1). Fallout: New Vegas is unreleased — §07</span><span class="pauthor">[SP][AR]</span></div>
+        </div>
+      </section>
+
+      <!-- ============ 7. WIP ============ -->
+      <section data-section>
+        <h2><span class="n">07</span> In development / announced</h2>
+        <p class="section-note">No playable public release yet, or WIP-only. Bully (§01) also belongs here in spirit: a public v0.0.2 exists, but its author calls it explicitly unfinished.</p>
+        <div class="grid">
+          <article class="card wide" data-cat="wip" data-search="gta iv grand theft auto liberty recomp theft4-nx gta4nx kabba536 gabryboy12 ozordi rexglue not playable fps">
+            <h3>GTA IV</h3>
+            <div class="badges"><span class="badge">Static recompilation · ReXGlue (Xbox 360)</span><span class="badge status-planned">WIP · conflicting reports — do not call playable</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PS3/Xbox 360, 2008</dd>
+              <dt>Projects</dt><dd>LibertyRecomp (OZORDI) → Switch ports kabba536 (GTA4NX, v35, 23 Oct 2026 [SP]) and Theft4-NX (gabryboy12-ai)</dd>
+            </dl>
+            <p><strong>Conflicting maturity reports.</strong> The Theft4-NX README (Oct 2026) says: “The game is not playable on Switch yet… reaches gameplay… at about 0.4 FPS.” A packaged GTA4NX build also circulates (360p + FSR, max OC advised, “first version, may be buggy” per distribution sites) and videos show driving gameplay from Oct 2026 — but no source rates it completable or stable.</p>
+            <div class="src"><span>Sources</span><a href="https://github.com/gabryboy12-ai/theft4-nx/blob/HEAD/README-SWITCH.md">github.com/gabryboy12-ai/theft4-nx — README-SWITCH</a><span>[SP]</span></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-search="the warriors gorillatranslate xbox recompilation wip no release gbatemp">
+            <h3>The Warriors</h3>
+            <div class="badges"><span class="badge">Original-Xbox recompilation</span><span class="badge status-planned">WIP · no public download</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PS2/Xbox, 2005</dd>
+              <dt>Author</dt><dd>GorillaTranslate</dd>
+            </dl>
+            <p>GBAtemp WIP thread, 31 Oct 2026: video of a build running on Switch; “early work-in-progress preview. There is no release date or public download yet.”</p>
+            <div class="src"><span>Source</span><a href="https://gbatemp.net/threads/wip-the-warriors-for-nintendo-switch-original-xbox-recompilation-port.686073/#post-10939040">GBAtemp — The Warriors WIP thread</a></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-search="fallout new vegas nv-rs-nx rust derildx unreleased engine recreation">
+            <h3>Fallout: New Vegas</h3>
+            <div class="badges"><span class="badge">Engine recreation · Rust</span><span class="badge status-planned">Unreleased</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PC, 2010</dd>
+              <dt>Author</dt><dd>DerilDX (nv-rs-nx)</dd>
+            </dl>
+            <p>SwitchPorts lists it as “*unreleased*”, 28 Oct 2026.</p>
+            <div class="src"><span>Source</span><span>[SP]</span></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-search="transformers revenge of the fallen rotf mzy1996 rexglue black screen audio only github scrub">
+            <h3>Transformers: Revenge of the Fallen</h3>
+            <div class="badges"><span class="badge">Static recompilation · ReXGlue</span><span class="badge status-planned">WIP · not playable</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>Xbox 360, 2009</dd>
+              <dt>Author</dt><dd>mzy1996 (Transformers2ROTF-NX)</dd>
+              <dt>Switch</dt><dd>v9.0-VIVO — boots, audio only, black screen</dd>
+            </dl>
+            <p>Found by the 15 Nov 2026 GitHub scrub — in none of SwitchPorts, GameBrew or AllRecomps.</p>
+            <div class="src"><span>Source</span><a href="https://github.com/mzy1996/Transformers2ROTF-NX">github.com/mzy1996/Transformers2ROTF-NX</a></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-search="transformers dark of the moon dotm mzy1996 rexglue fix42 crashes github scrub">
+            <h3>Transformers: Dark of the Moon</h3>
+            <div class="badges"><span class="badge">Static recompilation · ReXGlue</span><span class="badge status-planned">WIP · no playable build yet</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>Xbox 360, 2011</dd>
+              <dt>Author</dt><dd>mzy1996 (Transformers3DOTM-NX)</dd>
+              <dt>Switch</dt><dd>fix42 stage — crashes on device, no playable build yet</dd>
+            </dl>
+            <p>Found by the 15 Nov 2026 GitHub scrub — in none of SwitchPorts, GameBrew or AllRecomps.</p>
+            <div class="src"><span>Source</span><a href="https://github.com/mzy1996/Transformers3DOTM-NX">github.com/mzy1996/Transformers3DOTM-NX</a></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-search="binding isaac repentance antoniotorres02 unreleased isaacrecomp flash different project">
+            <h3>The Binding of Isaac: Repentance+</h3>
+            <div class="badges"><span class="badge">Native port attempt</span><span class="badge status-planned">Unreleased</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PC, 2021</dd>
+              <dt>Author</dt><dd>antoniotorres02</dd>
+            </dl>
+            <p>SwitchPorts lists it as “*unreleased*”, 1 Nov 2026. A separate Flash-Isaac recomp, IsaacRecomp, IS released [AR] — a different project.</p>
+            <div class="src"><span>Sources</span><span>[SP] [AR]</span></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-search="half-life 2 switch 2 jailbreak ns2jb izlauncher izmysh video tethered exploit">
+            <h3>Half-Life 2 (Switch 2)</h3>
+            <div class="badges"><span class="badge">Homebrew via Switch 2 jailbreak</span><span class="badge status-planned">Video only · no public release</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>PC, 2004</dd>
+              <dt>Author</dt><dd>Izmysh (ns2jb / IZlauncher)</dd>
+            </dl>
+            <p>Video, 24 Oct 2026: 30fps/720p handheld on a jailbroken Switch 2; launcher source/release “still coming”, tethered exploit — not a Switch 1 release. The Switch 1 hl2_nx port is released (§03).</p>
+            <div class="src"><span>Source</span><span>OneJailbreak, 25 Oct 2026 (via research search)</span></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-search="mass effect 2 singularity hard corps uprising pre-release rexglue xbox 360">
+            <h3>Mass Effect 2 · Singularity · Hard Corps: Uprising</h3>
+            <div class="badges"><span class="badge">ReXGlue recomps · Xbox 360</span><span class="badge status-planned">Pre-release</span></div>
+            <p>Listed “pre-release” in SwitchPorts, Nov 2026.</p>
+            <div class="src"><span>Source</span><span>[SP]</span></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-search="super metroid return castle wolfenstein nxblood blood wip pre-release gamebrew no completable">
+            <h3>Super Metroid · Return to Castle Wolfenstein · Blood (NXBlood)</h3>
+            <div class="badges"><span class="badge">Decomp / source ports</span><span class="badge status-planned">WIP / pre-release</span></div>
+            <p>Listed WIP/pre-release/WIP in GameBrew (see §02/§03) — no completable build verified.</p>
+            <div class="src"><span>Source</span><span>[GB]</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ 8. CANCELLED / NONE ============ -->
+      <section>
+        <h2><span class="n">08</span> Cancelled / rumoured / no port exists</h2>
+        <p class="section-note">The headline case is GTA V itself — the port this page is named after was cancelled, and there is no legitimate public download.</p>
+        <div class="grid">
+          <article class="card wide" data-cat="cancelled" data-search="gta v gta5nx paralympics productions mojso m0jso cancelled take-two leaked source native port fps shut down">
+            <h3>GTA V — GTA5NX <span class="sub">(Paralympics Productions, lead Mojso / M0jso)</span></h3>
+            <div class="badges"><span class="badge">Native homebrew port · leak-based (alleged)</span><span class="badge status-cancelled">Cancelled before wider release</span></div>
+            <dl class="facts">
+              <dt>What it was</dt><dd>A native port (not streaming/emulation/Linux/Android), reportedly based on GTA V Legacy v1.0.2699 (PC/PS4/XOne branch) and — per GamesRadar reporting — allegedly using leaked GTA V source code (an allegation, not confirmed by any published legal filing)</dd>
+              <dt>Performance</dt><dd>Revealed Aug 2026; Tom's Hardware, 2 Sep 2026, reported ~30fps with modifications; other testing: 10–25fps on an unmodified Switch, overclocking needed, aggressive asset compression for 4GB RAM, no GTA Online</dd>
+              <dt>Timeline</dt><dd>Rockstar mod guidelines of 10 Sep 2026 banned ports to platforms where games were not officially released; Discord server removed 23 Sep 2026 (copyright); Mojso announced 28 Sep 2026 that Take-Two lawyers had contacted the team; Paralympics Productions shut down 3 Oct 2026, cancelling the Switch build, its planned performance update and a parallel Android port</dd>
+            </dl>
+            <p>The team said it would <strong>not publish or transfer source code/assets</strong>. <strong>No legitimate download channel exists</strong> — any “GTA5NX download” site is not the developers. Paralympics Productions is verified only for GTA5NX plus that parallel (also cancelled) Android GTA V port — no other game by that team was found in any source. No other leak-source-based Switch port was verified either: the Android loaders (§04) load retail APK binaries at runtime, and the recomps (§05) are built from retail console discs.</p>
+            <div class="src"><span>Sources</span>
+              <a href="https://vgkami.com/take-two-shuts-down-unofficial-gta-5-switch-port-by-modders-2026/">VGKami — shutdown</a>
+              <a href="https://thedigginator.com/gta-5-nintendo-switch-native-port/">TheDigginator — native port</a>
+              <a href="https://tech-insider.org/gta-5-switch-port-canceled-take-two-2026/">Tech Insider — cancellation</a>
+            </div>
+          </article>
+        </div>
+        <div class="missing-grid" style="margin-top:12px;">
+          <div class="missing" data-cat="cancelled" data-search="red dead redemption unofficial no port official double eleven fpslocker reversenx overclock mod"><b>Red Dead Redemption (unofficial)</b><span>No unofficial Switch port exists. RDR got an official Switch port (Double Eleven, Aug 2023). The “60fps on hacked Switch” videos are FPSLocker/ReverseNX overclock mods of the official release, not a port. RecompHub lists RDR as “No port yet”.</span></div>
+          <div class="missing" data-cat="cancelled" data-search="red dead redemption 2 rdr2 no port found any catalogue"><b>Red Dead Redemption 2</b><span>No official or unofficial Switch port found in any catalogue or search. Not ported.</span></div>
+          <div class="missing" data-cat="cancelled" data-search="manhunt manhunt 2 no switch port catalogues search emulation out scope"><b>Manhunt / Manhunt 2</b><span>No Switch port found — not in SwitchPorts, GameBrew, AllRecomps or web search. (PSP/Vita emulation on Switch is emulation, out of scope.)</span></div>
+          <div class="missing" data-cat="cancelled" data-search="gta vice city stories vcs vcsnx fsalamancar standalone port found github scrub corrected"><b>GTA: Vice City Stories — corrected</b><span>A standalone port WAS found by the 15 Nov 2026 GitHub scrub: fsalamancar's VCSNX static recomp (v0.4.0, 18 Oct 2026) — see §01. Earlier versions of this page listed VCS as unported (PPSSPP emulation only); that no longer holds.</span></div>
+          <div class="missing" data-cat="cancelled" data-search="portal standalone unofficial no port official companion collection"><b>Portal (standalone unofficial)</b><span>No standalone unofficial port; official Companion Collection only (see §03).</span></div>
+          <div class="missing" data-cat="cancelled" data-search="command conquer openra switch no build vanilla conquer only"><b>Command &amp; Conquer via OpenRA</b><span>No Switch OpenRA build found; only Vanilla Conquer (§03).</span></div>
+        </div>
+        <div class="callout"><strong>Warning from the SwitchPorts maintainer (Oct 2026 notice):</strong> many listed projects are “ripped off and re-compiled without attribution or bundled with commercial assets and distributed illegally, often for a fee… if you have been charged to access a title listed on this page, you have been ripped off.” Every legitimate port in this report was released <strong>free</strong>, with files supplied by the user. Treat paid/Telegram “Switch port” bundles and fake box-art posts (e.g. viral posts claiming GTA IV/V, Halo, Prototype, FC27 etc.) as unverified/piratical repacks, not new ports.</div>
+      </section>
+
+      <!-- ============ 9. CAVEATS ============ -->
+      <section>
+        <h2><span class="n">09</span> What the research could not verify</h2>
+        <p class="section-note">Open questions, stated plainly — the report marks these as unverified rather than filling them in.</p>
+        <div class="grid">
+          <article class="card wide">
+            <ul>
+              <li><strong>Playability/completability of most Nov 2026 (0.x) recomps and Android loaders</strong> — the catalogues list a build and a date, not a completion test. Only a handful have hard performance data: Dead Space 1 (540p30 stock / 720p30 OC), Tekken 3 (locked 60fps stock), SVR 2011 (~51fps OC), GTA V (10–25fps stock), GTA IV Theft4 build (0.4fps, conflicting with packaged GTA4NX videos).</li>
+              <li><strong>Exact first-release dates for many classic ports</strong> — the GameBrew dates used here are its “last updated” for the Switch build, which may postdate first release (e.g. CorsixTH, SRB2).</li>
+              <li><strong>Super Metroid (snesrev) and several snesrev-line ports</strong> — listed explicitly as WIP; no completable Switch build verified.</li>
+              <li><strong>Switch 2 homebrew ports</strong> (HL2/Doom via ns2jb, Oct 2026) — video-verified only, no public release at the time of research; HL2 Switch 2 is in §07, not §01.</li>
+              <li><strong>Dead projects:</strong> the SwitchPorts DEAD.md archive was not enumerated — cancelled pre-2026 projects beyond GTA5NX and the re3 litigation may exist there.</li>
+              <li><strong>Minecraft Java 1.12.2 / Project Zomboid / Slay the Spire 2</strong> — whether these catalogue entries are native ports vs. compatibility-layer recreations could not be confirmed from the catalogue alone; they appear in §04/§06 with that flag.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <p><strong>How to read this page:</strong> “Confirmed” means the game appears in one of the three master catalogues researched on 15 November 2026, or was verified directly in the GitHub scrub of the same date (repo live, real Switch build present) — <a href="https://github.com/robzilla10001/switchports/blob/HEAD/README.md">SwitchPorts</a> (453 entries, verified live), <a href="https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games&amp;">GameBrew's list of Switch homebrew games</a> (author/version/date for classic-era ports), and <a href="https://allrecomps.com/switch-ports/">AllRecomps</a> (66 curated projects, checked Nov 2026) — which link each project's own GitHub/GBAtemp thread. Status wording is each source's own: where a catalogue says WIP, pre-release or unrated, this page says so too.</p>
+        <p>Scope: unofficial ports only. Every port here needs a modded Switch and your own legally-owned game files/ROM/APK — no game data is distributed with any of them. The previous version of this page catalogued only the mods and tools made for GTA5NX itself; this version covers all games ported to Switch, as requested.</p>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var q = document.getElementById('q');
+        var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+        var items = Array.prototype.slice.call(document.querySelectorAll('[data-cat]'));
+        var sections = Array.prototype.slice.call(document.querySelectorAll('section'));
+        var countEl = document.getElementById('resultCount');
+        var noResults = document.getElementById('noResults');
+        var activeFilter = 'all';
+
+        function apply() {
+          var term = q.value.trim().toLowerCase();
+          var visible = 0;
+          items.forEach(function (el) {
+            var cat = el.getAttribute('data-cat');
+            var hay = ((el.getAttribute('data-search') || '') + ' ' + el.textContent).toLowerCase();
+            var ok = (activeFilter === 'all' || cat === activeFilter) && (!term || hay.indexOf(term) !== -1);
+            el.classList.toggle('hidden-card', !ok);
+            if (ok) visible++;
+          });
+          sections.forEach(function (s) {
+            var any = s.querySelector('[data-cat]:not(.hidden-card)');
+            // Sections without filterable items (caveats) stay visible only on "all" with no term.
+            if (!s.hasAttribute('data-section')) {
+              var showStatic = activeFilter === 'all' && !term;
+              s.style.display = (any || showStatic) ? '' : 'none';
+              return;
+            }
+            s.classList.toggle('all-hidden', !any);
+          });
+          countEl.innerHTML = 'Showing <b>' + visible + '</b> of ' + items.length + ' catalogue entries' +
+            (activeFilter !== 'all' || term ? ' for this filter' : '') +
+            '. The full SwitchPorts master list holds 453 entries — this page details the confirmed headline ports and groups the long tail by wave.';
+          noResults.classList.toggle('show', visible === 0);
+        }
+
+        chips.forEach(function (chip) {
+          chip.addEventListener('click', function () {
+            chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+            chip.setAttribute('aria-pressed', 'true');
+            activeFilter = chip.getAttribute('data-filter');
+            apply();
+          });
+        });
+        q.addEventListener('input', apply);
+        apply();
+      })();
+    </script>
+  </body>
+</html>
