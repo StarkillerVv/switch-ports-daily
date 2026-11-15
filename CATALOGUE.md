@@ -15,128 +15,130 @@ Every unofficial game port for Nintendo Switch we have verified so far. Plain-la
 
 **You need a modded Switch** (Atmosphère / custom firmware). These are homebrew, not eShop games.
 
+**Links:** every row has a link. `source` goes to the port's own project (GitHub repo / release thread) when we have one; `catalogue` goes to the master list where the port is listed (SwitchPorts, GameBrew or AllRecomps) when no direct project link was in our sources.
+
 ## Find a game — A to Z
 
 One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump to a title, then look it up in the grouped sections below for the full note. (A few 2026 Android-loader / recomp titles are only listed as bullet groups in sections 1D–1F below — Ctrl+F finds them there too.)
 
 **114 games listed.**
 
-| Game | Original | Port type | Author / team | Latest |
-|---|---|---|---|---|
-| "GTA V / GTA IV / Halo / Dark Souls II etc. on Switch" social-media / Telegram / paid NSP bundles | SwitchPorts maintainer explicitly warns (Oct 2026 notice): many listed projects are "ripped off and re-compiled without attribution or bundled with commercial assets and distributed illegally, often for a fee… if you have been charged to access a title listed on this page, you have been ripped off." Every legitimate port in this report was released **free**, files-supplied-by-user. Treat paid/Telegram "Switch port" bundles and fake box-art posts (e.g. viral posts claiming GTA IV/V, Halo, Prototype, FC27 etc.) as unverified/piratical repacks, not new ports | [SP] disclaimer (verified live) |  |  |
-| **GTA V — GTA5NX, Paralympics Productions (lead: Mojso / M0jso)** | **CANCELLED before wider release.** Native homebrew port (not streaming/emulation/Linux/Android), reportedly based on GTA V Legacy v1.0.2699 (PC/PS4/XOne branch) and, per GamesRadar reporting, allegedly using leaked GTA V source code (allegation, not confirmed by any published legal filing). Revealed Aug 2026; Tom's Hardware 2 Sep 2026 reported ~30fps with modifications; other testing: **10–25fps on an unmodified Switch**, overclocking needed, aggressive asset compression for 4GB RAM, no GTA Online. Timeline: Rockstar mod guidelines 10 Sep 2026 banned ports to platforms where games were not officially released; Discord server removed 23 Sep 2026 (copyright); Mojso announced 28 Sep 2026 that Take-Two lawyers contacted the team; **Paralympics Productions shut down 3 Oct 2026**, cancelling the Switch build, its planned performance update and a parallel Android port; team said it would **not publish or transfer source code/assets**. No legitimate download channel exists — any "GTA5NX download" site is not the developers. | https://vgkami.com/take-two-shuts-down-unofficial-gta-5-switch-port-by-modders-2026/ ; https://thedigginator.com/gta-5-nintendo-switch-native-port/ ; https://tech-insider.org/gta-5-switch-port-canceled-take-two-2026/ (all via search, Nov 2026) |  |  |
-| Abuse | PC, 1996 | Abuse-SDL, capsterx | capsterx | 0.8r3, 14 Nov 2020 |
-| Alien vs Predator Gold | PC, 2000 | AvP Gold Switch Edition, m4xw; Thorhax Modern Sep 2026 [SP] | m4xw | v0.0.3, 4 Mar 2019 |
-| Another World / Heart of the Alien / Flashback / Fade to Black | Amiga/PC, 1991–95 | Engine reimplementations (RAW, HOTA, REminiscence, f2b), mainly usineur/Cpasjuste | usineur et al. | 2018–2021 |
-| Aquaria | PC, 2007 | Aquaria open-source, dimag0g | dimag0g | v0.3.0, 27 Dec 2020 |
-| Arx Fatalis | PC, 2002 | Arx Libertatis, fgsfdsfgs | fgsfdsfgs | v1.2-nx1, 21 Jul 2021 |
-| Bermuda Syndrome, Heart of Darkness (HODE) | PC, 1996/98 | Engine rewrites, usineur | usineur | 2018 / 2020 |
-| The Binding of Isaac: Repentance+ | PC, 2021 | Native port attempt, antoniotorres02 | SwitchPorts lists "*unreleased*", 1 Nov 2026 (a separate Flash-Isaac recomp, IsaacRecomp, IS released [AR] — different project) | [SP][AR] |
-| Blood | PC, 1997 | NXBlood (NBlood), Jan200101 | Jan200101 | WIP, 5 Jun 2019 |
-| Bully: Anniversary Edition | PS2, 2006 — Android 64-bit v1.4.311 used | Android compatibility layer | givethesourceplox (bully_nx) | v0.0.2, 3–6 Apr 2026 |
-| Caesar III | PC, 1998 | Julius (reimplementation, bvschaik, v1.8.0 Aug 2025) + Augustus mod (Keriew, v4.0.0 Dec 2023) | multiple | 2023–2025 |
-| Call of Duty: Black Ops | PC, 2010 | Source reconstruction | HDErick, NaGaa95 | Beta, 13 Nov 2026 |
-| Captain Claw | PC, 1997 | OpenClaw / ClawSwitch, djmuted | djmuted | beta4, 12 Oct 2021 |
-| Carmageddon | PC, 1997 | Dethrace, alexart878 (v1.1, 1 May 2025); jackazz86 fw21 build Oct 2026 [SP] | multiple | 2025–2026 |
-| Cave Story | PC (freeware), 2004 | NXEngine-evo (reimplementation, v2.6.5, 8 Apr 2022); Cave Story Engine 2 / CSE2 decomp (heyjoeway, 13 Dec 2019); doukutsu-rs also lists Switch | nxengine / heyjoeway | 2019–2024 |
-| Command & Conquer via OpenRA on Switch | No Switch OpenRA build found; only Vanilla Conquer (§1C) | Searches + [GB] |  |  |
-| Command & Conquer: Tiberian Dawn / Red Alert | PC, 1995/96 | Vanilla Conquer (C&C Remastered Collection cross-platform build), capsterx | capsterx | 0-r6, 2 Jan 2021. **No Switch OpenRA port found** — OpenRA itself is PC/Mac/Linux only in sources checked |
-| Commander Keen (Galaxy etc.) | PC, 1991 | Commander Keen Switch (CloneKeen/Omnispeak line), EliasOenal | Elias Oenal | v3.3.0, 22 May 2023; v3.6.0 Feb 2026 [SP] |
-| Counter-Strike: Source | PC, 2004 — Android Source build used | Android loader css_nx, NaGaa95 (nillerusr engine) | NaGaa95 / naga | v1.0.1–1.0.2, Aug–Nov 2026; offline bots + IP servers [AR] |
-| Descent / Descent II | PC, 1995/96 | DXX Switch (aagallag, 2018) / DXX-Rebirth (dimag0g, 2020); Thorhax Modern builds Sep 2026 [SP] | multiple | 2018–2026 |
-| Diablo + Hellfire | PC, 1996 | DevilutionX (diasurgical), from Devilution reverse-engineering | diasurgical; first Switch build lantus devilution-nx 2019 | DevilutionX v1.5.5, 31 Oct 2025 (Switch build in HB App Store v1.5.4 Mar 2025) |
-| Doom / Doom II (+ Heretic/Hexen etc. via GZDoom) | PC, 1993/94 | Chocolate Doom NX (lantus/MVG, 27 Jul 2018); kgDoom (2018); GZDoom (fgsfdsfgs, nx4.11pre, 10 Jul 2023; Thorhax GZDoom-NX-2026 v4.10.0 Aug 2026 [SP]) | multiple | 2018–2026 |
-| Doom 3 | PC, 2004 | dhewm3, fgsfdsfgs | fgsfdsfgs | v0.1.0_nx, 22 Oct 2018 |
-| Doom 64 (Doom64EX) | N64, 1997 | Doom64EX reverse-engineering port, fgsfdsfgs | fgsfdsfgs | v0.2.0-nx, 24 Oct 2019 |
-| Duke Nukem 3D | PC, 1996 | EDuke32, Cpasjuste | Cpasjuste | v1.5, 13 Jul 2021 (earlier DukeNukem3D ports 2018 [GBATemp wiki]) |
-| Dune II | PC, 1992 | Dune Legacy (enhanced reimplementation), carstene1ns | carstene1ns | 2025 build, 7 Nov 2025 |
-| The Elder Scrolls II: Daggerfall (Unity) | PC, 1996 | Daggerfall Unity loader, ChanseyIsTheBest | ChanseyIsTheBest | v1.1.1.9s1.0.2, 8 Sep 2026 [SP] |
-| The Elder Scrolls III: Morrowind | PC/Xbox, 2002 | OpenMW, fgsfdsfgs | fgsfdsfgs | v0.46.0-nx2, 28 Oct 2019; new openmw-nx v1.0.0 Oct 2026 (seamusduncmcgrath) [SP] |
-| Eldritch | PC, 2013 | Eldritch Reanimated, usineur/rohit-n | usineur | 2019–2020 |
-| F-Zero (SNES) | SNES, 1990 | Recompilation port | Thorhax (F-Zero-NX-Modern) | v0.3.0, 19 Sep 2026 |
-| F-Zero X — NX-Diffuser / G-Diffuser | N64, 1998 | Recompilation / decomp port | PalindromicBreadLoaf | v1.0.1, 14 Aug 2026 |
-| F.E.A.R. | Xbox 360, 2005 | Static recompilation (ReXGlue) | infriker | v0.2.1, 6 Nov 2026 |
-| Fallout | PC, 1997 | Fallout CE (Community Edition), ryandeering | ryandeering | v1.0.0/v1.1.0, 12 Dec 2024 / 21 May 2026 |
-| Fallout 2 | PC, 1998 | Fallout 2 CE, ryandeering | ryandeering | v1.1.0, 11 Aug 2024 / May 2026 |
-| Fallout: New Vegas | PC, 2010 | Engine recreation (nv-rs-nx, Rust), DerilDX | SwitchPorts lists "*unreleased*", 28 Oct 2026 | [SP] |
-| FreeSpace 2 | PC, 1999 | FreeSpace 2 Open (freespace2_nx), NaGaa95 | NaGaa95 | v1.0.1, 28 Jun 2026 [SP] |
-| Grand Theft Auto III | PS2/PC, 2001 | Decompilation / reverse-engineered source port (re3) | GTAmodding (re3); Switch port Graber (AGraber) | Sep 23–24, 2020 (re3-nx v1.0); Android-loader alternative v1.0.4, 16 Oct 2026 (mariob0y/gta3-nx) |
-| Grand Theft Auto: San Andreas | PS2, 2004 — Android v2.11.311 used | Android-.so loader / compatibility wrapper | NaGaa95 (gtasa_nx) | Aug 2026; v1.0.3 15 Aug 2026, v1.0.5 3 Nov 2026 |
-| Grand Theft Auto: Vice City | PS2/PC, 2002 | Decompilation (reVC, re3 "Miami" branch) | Flex1911, based on Graber's re3-nx | Early build Oct 14, 2020; full Switch release Jul 2021 |
-| GTA III / Vice City — re3/reVC legal status | Project was DMCA'd (Feb 2021), counter-claimed and restored (Jun 2021), then **sued by Take-Two** (filed Sep 2021, California) for, among other things, making the games playable on Switch/Vita/Wii U. Switch builds continued to circulate/update afterwards (newer builds for newer firmware noted Aug 2026 in the SA thread). Not "cancelled" as a playable artefact, but legally embattled — list as released with that caveat | Kotaku 3 Sep 2021 via search; GBAtemp SA thread |  |  |
-| GTA IV | PS3/X360, 2008 | Static recompilation: LibertyRecomp (OZORDI, ReXGlue, Xbox 360) → Switch ports kabba536 (GTA4NX, v35, 23 Oct 2026 [SP]) and Theft4-NX (gabryboy12-ai) | **Conflicting maturity reports — do not call playable.** Theft4-NX README (Oct 2026): "The game is not playable on Switch yet… reaches gameplay… at about 0.4 FPS." A packaged GTA4NX build circulates (360p + FSR, max OC advised, "first version, may be buggy" per distribution sites) and videos show driving gameplay Oct 2026, but no source rates it completable/stable | [SP]; GitHub https://github.com/gabryboy12-ai/theft4-nx/blob/HEAD/README-SWITCH.md ; GTABoom 7 Aug 2026 on LibertyRecomp |
-| GTA: Chinatown Wars | Nintendo DS, 2009 — Android version used | Android loader | NaGaa95 (gtactw_nx) | v1.0.2, 3–4 Nov 2026 |
-| GTA: Liberty City Stories | PSP, 2005 — Android version used | Android loader | NaGaa95 (gtalcs_nx) | v1.0.4, 3–4 Nov 2026 |
-| GTA: Vice City Stories | No standalone Switch port found (playable only via PPSSPP emulation, out of scope). Note re3 thread (2020) explicitly: "There's no active decompilation project for SA, LCS, VCS or Bully at the moment" — LCS later arrived via Android loader (§1A), VCS did not | GBAtemp re3 thread |  |  |
-| Half-Life (+ Blue Shift / Opposing Force / mods; Counter-Strike 1.6 via client libs) | PC, 1998 | Xash3D — xash3d-switch Datamats (15 Sep 2019), clamintus update (26 Jan 2022), xash3d-fwgs continuous (fgsfdsfgs/FWGS, Jan 2026) | FWGS team | 2019–2026; GBAtemp thread notes HL/BS/OpFor libraries merged upstream, automatic builds; CS 1.6 .so exists in distributions but was flaky in thread reports — see note in §5 |
-| Half-Life 2 | PC, 2004 — Android/Source (nillerusr) binaries used | Android Source-engine wrapper hl2_nx, NaGaa95 | NaGaa95 | v1.0.5, 3 Nov 2026 [SP]; separate Switch 2 jailbreak demo Oct 2026 (see §2) |
-| Half-Life 2 (Switch 2) | PC, 2004 | Homebrew build via Switch 2 jailbreak (ns2jb / IZlauncher), Izmysh | Video 24 Oct 2026: 30fps/720p handheld on jailbroken Switch 2; launcher source/release "still coming", tethered exploit, not a Switch 1 release. Switch 1 hl2_nx is released (§1C) | OneJailbreak 25 Oct 2026 via search |
-| Heroes of Might and Magic II | PC, 1996 | fheroes2 (engine recreation) | fheroes2 team | v1.1.13, 21 Dec 2025; v1.1.18 Nov 2026 [SP] |
-| Heroes of Might and Magic III | PC, 1999 | VCMI (vcmi_nx), NaGaa95 | NaGaa95 | v1.8.0 R2, 6 Jul 2026 [SP] |
-| Jazz Jackrabbit / Jazz Jackrabbit 2 | PC, 1994/98 | OpenJazzNX (2019); Jazz2 Reborn deathkiller v3.9.0 Oct 2026 [SP] | multiple | 2019–2026 |
-| Lugaru HD | PC, 2005 | Lugaru port, usineur | usineur | 1.3-nx1, 5 Jan 2019 |
-| Madagascar | Xbox, 2005 | Static recompilation | gerisson1996 | v0.1.8, 12 Nov 2026 |
-| Manhunt / Manhunt 2 | **No Switch port found** — not in SwitchPorts, GameBrew, AllRecomps, or web search. Do not list as ported (PSP/Vita emulation on Switch is emulation, out of scope) | Searches + catalogues |  |  |
-| Mario Kart 64 — SpaghettiKart | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v0.9.9.1 22 Jun 2025; v1.0.0 24 Feb 2026 |
-| Mass Effect 2, Singularity, Hard Corps: Uprising | X360 | ReXGlue recomps | Listed "pre-release" Nov 2026 | [SP] |
-| Max Payne (Max Payne Mobile) | PC, 2001 — Android version used | Android-.so loader (Vita port adapted) | fgsfdsfgs (max_nx), r1 24 Feb 2021; NaGaa95 update for APK v2.1.131 (max_nx v1.0.2, Nov 2026) | 2021; updated 2026 |
-| Max Payne 3 | PS3/X360, 2012 — Xbox 360 version | Static recompilation (ReXGlue) | VasilkovND (mp3-nx) | "Released" 6 Nov 2026 |
-| Midnight Club 3: DUB Edition / Remix | Xbox, 2005 | Static recompilation | laureladastra (mcdub3-nx) | v1.1.0, 5 Nov 2026 |
-| New Super Mario Bros. Wii | Wii, 2009 | Static recompilation | schuler-ph | Reviewed 14 Nov 2026 |
-| OpenArena | PC, 2005 (Q3-derived) | OpenArenaNX, faithvoid | faithvoid | v0.7.8.1, 28 Jun 2023 |
-| OpenGOAL / Jak (pre-2026 discussion) | PS2 | — | For history: a native Jak Switch port was long considered blocked because OpenGOAL targeted x86, not ARM (GBAtemp discussion Dec 2024) — superseded by the Oct 2026 Jak Project Switch (§1E), which is a separate adaptation, not upstream OpenGOAL | GBAtemp OpenGOAL thread via search |
-| OutRun (Cannonball engine) | Arcade, 1986 | Cannonball, lantus (2018) / rsn8887 (v1.08, May 2021) / Thorhax Modern Sep 2026 | multiple | 2018–2026 |
-| Perfect Dark | N64, 2000 | Decompilation port (n64decomp/perfect_dark) | fgsfdsfgs / perfect-dark-pc-port | CI dev build 14 May 2024; builds still listed Aug–Nov 2026 |
-| Portal | PC, 2007 | **No standalone unofficial Switch port found.** Portal is official on Switch (Companion Collection). Half-Life 2 was run *inside* official Portal 1 by OatmealDome (Jun 2022, mod, frequent crashes) — not a port release | — | — |
-| Portal (standalone unofficial) | No standalone unofficial port; official Companion Collection only (see §1C) | Searches |  |  |
-| Postal | PC, 1997 | Postal Switch, lantus/MVG | lantus | v1.0, 25 May 2018 |
-| Prince of Persia | Apple II/PC, 1989 | SDLPoP (open-source port), usineur | usineur | v1.3, 13 Oct 2019 |
-| Quake | PC, 1996 | NXQuake (TyrQuake, 2018); QuakespasmNX (fgsfdsfgs, v0.92.3-nx, 21 Apr 2021; Thorhax Modern v0.93.3 Sep 2026 [SP]) | fgsfdsfgs | 2018–2026 |
-| Quake II | PC, 1997 | NXQuake2 (Yamagi Quake II), fgsfdsfgs | fgsfdsfgs | build 060, 20 Dec 2022 |
-| Quake III Arena | PC, 1999 | ioquake3-nx, fgsfdsfgs (2019) / danifunker update (2021) | fgsfdsfgs | v0.3.0-nx, 18 Sep 2019 |
-| Red Dead Redemption (unofficial) | **No unofficial Switch port exists.** RDR got an **official** Switch port (Double Eleven, Aug 2023) — out of scope. The famous "60fps on hacked Switch" videos are FPSLocker/ReverseNX overclock mods *of the official release*, not a port. RecompHub lists RDR as "No port yet" | Kotaku 21 Aug 2023; https://recomphub.com/ via search |  |  |
-| Red Dead Redemption 2 | No official or unofficial Switch port found in any catalogue/search. Do not list | Absence in [SP][GB][AR] + searches |  |  |
-| Return to Castle Wolfenstein | PC, 2001 | iortcw port, capsterx | capsterx | Pre-release, 21 Nov 2020 — listed pre-release, treat as early |
-| RollerCoaster Tycoon 2 | PC, 2002 | OpenRCT2, rsn8887; new build Wander-Eule Sep 2026 [SP] | rsn8887 | v1.06, 24 Apr 2021 |
-| Serious Sam: First & Second Encounter | PC, 2001/02 | Serious-Engine-TSE, fgsfdsfgs | fgsfdsfgs | nx1, 29 Dec 2019 |
-| Shadow Warrior | PC, 1997 | JFSW Switch, alexart878 | alexart878 | v1.1-NX, 5 Dec 2024 |
-| The Simpsons (arcade) | Arcade, 1991 | Decomp-based source port | cheviman | v1.0.1, 14 Nov 2026 |
-| SiN | PC, 1998 | SiN Switch, rohit-n | rohit-n | v1.2, 4 Feb 2025 |
-| Sonic 3 A.I.R. (Angel Island Revisited) | Genesis, 1994 fan remaster | Fan remaster port | Eukaryot (A.I.R.); Switch ultra-azu / heyjoeway | 10 Sep 2022 (22.09.10) |
-| Sonic CD (2011) | Mobile/RSDK, 2011 (orig. Sega CD 1993) | Decompilation | heyjoeway | v1.3, 27 Nov 2021 |
-| Sonic Mania | PC/consoles, 2017 | Decompilation (RSDKv5) | Rubberduckycooly/RSDKModding; Switch build supported in repo | Decomp released 2022; Switch build instructions in repo |
-| Sonic Robo Blast 2 + SRB2 Kart / Dr. Robotnik's Ring Racers | PC fangame (Doom Legacy) | Source port | SRB2 team; Switch carstene1ns/heyjoeway/Craftyawesome | SRB2 v2.2.15 r2, 16 Nov 2025; Kart v1.6 r8 same date |
-| Sonic the Hedgehog 1 & 2 (2013) | Mobile/Retro Engine, 2013 (orig. Genesis 1991/92) | Decompilation (RSDKv4, Rubberduckycooly) | Switch fork heyjoeway | v1.3.0 Rev1, 7 Dec 2021 |
-| Space Cadet Pinball (3D Pinball) | Windows, 1995 | Decompilation port | averne (SpaceCadetPinball-NX) | v1.1.1-NX2 15 Oct 2021; NX3 Oct 2026 |
-| Star Fox (SNES) — Starfox Enhanced | SNES, 1993 | Source port/enhancement | kandowontu2 | v0.0.8.8.3, 1 Nov 2026 |
-| Star Fox 64 — Starship | N64, 1997 | Decompilation port (libultraship) | Harbour Masters | v2.0.0, 25 May 2025 |
-| Star Trek Voyager: Elite Force Holomatch | PC, 2000 | VoyagerNX (lilium-voyager/ioquake3 fork), faithvoid | faithvoid | v0.8.5.1, 28 Jun 2023 |
-| Super Mario 64 (Ghostship) | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v3.0.0, 7 Sep 2026 |
-| Super Mario 64 (sm64ex) | N64, 1996 | Decompilation port | fgsfdsfgs (sm64ex) | 19 May 2020 |
-| Super Mario 64 Co-op (sm64coopdx-switch) | N64, 1996 | Decompilation port, online co-op/Lua | Coop Deluxe; Switch fork antoinebou12 | Sep 2026 (repo/blog) |
-| Super Mario World | SNES, 1990 | Decompilation port (snesrev) | Lywx/snesrev; wide-snes-NX | WIP v0.1, 17 Aug 2023; v1.0.1 Nov 2026 |
-| Super Metroid | SNES, 1994 | Decompilation port (snesrev sm) | snesrev, Lywx | "wip", 21 Mar 2023 |
-| Super Metroid, Return to Castle Wolfenstein, NXBlood (Blood) | — | Decomp/source ports | Listed WIP/pre-release/WIP in GameBrew (see §1) — no completable build verified | [GB] |
-| System Shock | PC, 1994 | Shockolate source port, capsterx | capsterx | v0.8.2-r5, 23 Dec 2020 |
-| Team Fortress 2 (ReClassic / Source) | PC, 2007 | Android/Source loader tf2_nx, NaGaa95 | NaGaa95 | v1.0.2, 3 Nov 2026 [SP] |
-| Theme Hospital | PC, 1997 | CorsixTH, Exvat | Exvat | 2019 (GBAtemp thread 537686, via WikiTemp list) |
-| Tomb Raider (OpenLara) | PS1/Saturn/PC, 1996 | Engine reimplementation (OpenLara) | XProger | 8.01.21, 8 Jan 2019 |
-| Transport Tycoon Deluxe | PC, 1995 | OpenTTD, rsn8887 | rsn8887 | v1.07, 8 May 2021 |
-| Tyrian | PC, 1995 | OpenTyrian / OpenTyrian2000 | felixrg et al.; andyvand | 2021; v3.0.0, 27 Feb 2025 |
-| Ultima VII | PC, 1992 | Exult engine, capsterx | capsterx | r1.5, 24 Nov 2020 |
-| Unreal / Unreal Gold | PC, 1998 | UnrealNX loader, fgsfdsfgs | fgsfdsfgs | r2, 27 Oct 2022 |
-| The Ur-Quan Masters (Star Control II) | PC, 1992 | UQM MegaMod, YokaiShogun | YokaiShogun | v0.8.0.85, 6 Feb 2021 |
-| VVVVVV | PC, 2010 | NX-VVVVVV, NicholeMattera (v2.3.3, Sep 2021); recomp build auggeythecat May 2026 [SP] | multiple | 2021–2026 |
-| The Warriors | PS2/Xbox, 2005 | Original-Xbox recompilation, GorillaTranslate | GBAtemp WIP thread 31 Oct 2026: video of build running on Switch; "early work-in-progress preview. There is no release date or public download yet." | https://gbatemp.net/threads/wip-the-warriors-for-nintendo-switch-original-xbox-recompilation-port.686073/#post-10939040 |
-| Wolfenstein 3D | PC, 1992 | Wolf4SDL-Switch, keeganatorr | keeganatorr | 1.0-beta, 19 Aug 2018 |
-| Woody Woodpecker: Escape from Buzz Buzzard Park | PC, 2001 | Engine reimplementation | jjmhalew | v1.0.12 |
-| X-COM: UFO Defense | PC, 1994 | OpenXcom, alexart878 | alexart878 | v1.0-NX, 21 Nov 2024 |
-| Zelda: A Link to the Past | SNES, 1991 | Decompilation port (snesrev / zelda3) | snesrev; Alek's Ultimate NX fork Alexgg1014 | v0.3, 17 Aug 2023; NX fork v1.3.0 Oct 2026 (16:9, save states, RetroAchievements) |
-| Zelda: Link's Awakening DX (HD) | GBC, 1998 | Recompilation/reimplementation | delsonazevedo; Alexgg1014 NX fork | v1.7.3 Apr 2026 / v1.2.0 Oct 2026 |
-| Zelda: Majora's Mask — 2 Ship 2 Harkinian | N64, 2000 | Decompilation port | 2ship2harkinian; Switch YoshiCrystal9 / reflex909 | v3.0.2-NX 13 Jan 2026; v5.0.1 Sep 2026 |
-| Zelda: Ocarina of Time — Ship of Harkinian | N64, 1998 | Decompilation port (libultraship) | Harbour Masters; Switch builds YoshiCrystal9/timschneeb (Shipwright-Switch) | Switch support 13 Aug 2024 (v8.0.6); v9.3.1-nx2 28 Oct 2026 |
-| Zelda: Oracle of Ages / Seasons | GBC, 2001 | Decompilation (oracles-decomp, native C) | toniisound (oracles-nx) | v1.0.0, 10 Oct 2026 |
-| Zelda: The Minish Cap | GBA, 2004 | Decompilation port | HayatoG (tmc); Alexgg1014 NX fork | v0.25 Jun 2026 / v2.0.1 Oct 2026 |
+| Game | Original | Port type | Author / team | Latest | Link |
+|---|---|---|---|---|---|
+| "GTA V / GTA IV / Halo / Dark Souls II etc. on Switch" social-media / Telegram / paid NSP bundles | SwitchPorts maintainer explicitly warns (Oct 2026 notice): many listed projects are "ripped off and re-compiled without attribution or bundled with commercial assets and distributed illegally, often for a fee… if you have been charged to access a title listed on this page, you have been ripped off." Every legitimate port in this report was released **free**, files-supplied-by-user. Treat paid/Telegram "Switch port" bundles and fake box-art posts (e.g. viral posts claiming GTA IV/V, Halo, Prototype, FC27 etc.) as unverified/piratical repacks, not new ports | [SP] disclaimer (verified live) | [catalogue](https://github.com/robzilla10001/switchports) |
+| **GTA V — GTA5NX, Paralympics Productions (lead: Mojso / M0jso)** | **CANCELLED before wider release.** Native homebrew port (not streaming/emulation/Linux/Android), reportedly based on GTA V Legacy v1.0.2699 (PC/PS4/XOne branch) and, per GamesRadar reporting, allegedly using leaked GTA V source code (allegation, not confirmed by any published legal filing). Revealed Aug 2026; Tom's Hardware 2 Sep 2026 reported ~30fps with modifications; other testing: **10–25fps on an unmodified Switch**, overclocking needed, aggressive asset compression for 4GB RAM, no GTA Online. Timeline: Rockstar mod guidelines 10 Sep 2026 banned ports to platforms where games were not officially released; Discord server removed 23 Sep 2026 (copyright); Mojso announced 28 Sep 2026 that Take-Two lawyers contacted the team; **Paralympics Productions shut down 3 Oct 2026**, cancelling the Switch build, its planned performance update and a parallel Android port; team said it would **not publish or transfer source code/assets**. No legitimate download channel exists — any "GTA5NX download" site is not the developers. | https://vgkami.com/take-two-shuts-down-unofficial-gta-5-switch-port-by-modders-2026/ ; https://thedigginator.com/gta-5-nintendo-switch-native-port/ ; https://tech-insider.org/gta-5-switch-port-canceled-take-two-2026/ (all via search, Nov 2026) | [catalogue](https://github.com/robzilla10001/switchports) |
+| Abuse | PC, 1996 | Abuse-SDL, capsterx | capsterx | 0.8r3, 14 Nov 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Alien vs Predator Gold | PC, 2000 | AvP Gold Switch Edition, m4xw; Thorhax Modern Sep 2026 [SP] | m4xw | v0.0.3, 4 Mar 2019 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Another World / Heart of the Alien / Flashback / Fade to Black | Amiga/PC, 1991–95 | Engine reimplementations (RAW, HOTA, REminiscence, f2b), mainly usineur/Cpasjuste | usineur et al. | 2018–2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Aquaria | PC, 2007 | Aquaria open-source, dimag0g | dimag0g | v0.3.0, 27 Dec 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Arx Fatalis | PC, 2002 | Arx Libertatis, fgsfdsfgs | fgsfdsfgs | v1.2-nx1, 21 Jul 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Bermuda Syndrome, Heart of Darkness (HODE) | PC, 1996/98 | Engine rewrites, usineur | usineur | 2018 / 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| The Binding of Isaac: Repentance+ | PC, 2021 | Native port attempt, antoniotorres02 | SwitchPorts lists "*unreleased*", 1 Nov 2026 (a separate Flash-Isaac recomp, IsaacRecomp, IS released [AR] — different project) | [SP][AR] | [catalogue](https://allrecomps.com/switch-ports/) |
+| Blood | PC, 1997 | NXBlood (NBlood), Jan200101 | Jan200101 | WIP, 5 Jun 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Bully: Anniversary Edition | PS2, 2006 — Android 64-bit v1.4.311 used | Android compatibility layer | givethesourceplox (bully_nx) | v0.0.2, 3–6 Apr 2026 | [source](https://gbatemp.net/threads/bully-switch-port-wip.680904/) |
+| Caesar III | PC, 1998 | Julius (reimplementation, bvschaik, v1.8.0 Aug 2025) + Augustus mod (Keriew, v4.0.0 Dec 2023) | multiple | 2023–2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Call of Duty: Black Ops | PC, 2010 | Source reconstruction | HDErick, NaGaa95 | Beta, 13 Nov 2026 | [source](https://github.com/HDErick/OpenBLOPS-NX) |
+| Captain Claw | PC, 1997 | OpenClaw / ClawSwitch, djmuted | djmuted | beta4, 12 Oct 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Carmageddon | PC, 1997 | Dethrace, alexart878 (v1.1, 1 May 2025); jackazz86 fw21 build Oct 2026 [SP] | multiple | 2025–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Cave Story | PC (freeware), 2004 | NXEngine-evo (reimplementation, v2.6.5, 8 Apr 2022); Cave Story Engine 2 / CSE2 decomp (heyjoeway, 13 Dec 2019); doukutsu-rs also lists Switch | nxengine / heyjoeway | 2019–2024 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Command & Conquer via OpenRA on Switch | No Switch OpenRA build found; only Vanilla Conquer (§1C) | Searches + [GB] | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Command & Conquer: Tiberian Dawn / Red Alert | PC, 1995/96 | Vanilla Conquer (C&C Remastered Collection cross-platform build), capsterx | capsterx | 0-r6, 2 Jan 2021. **No Switch OpenRA port found** — OpenRA itself is PC/Mac/Linux only in sources checked | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Commander Keen (Galaxy etc.) | PC, 1991 | Commander Keen Switch (CloneKeen/Omnispeak line), EliasOenal | Elias Oenal | v3.3.0, 22 May 2023; v3.6.0 Feb 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Counter-Strike: Source | PC, 2004 — Android Source build used | Android loader css_nx, NaGaa95 (nillerusr engine) | NaGaa95 / naga | v1.0.1–1.0.2, Aug–Nov 2026; offline bots + IP servers [AR] | [catalogue](https://allrecomps.com/switch-ports/) |
+| Descent / Descent II | PC, 1995/96 | DXX Switch (aagallag, 2018) / DXX-Rebirth (dimag0g, 2020); Thorhax Modern builds Sep 2026 [SP] | multiple | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Diablo + Hellfire | PC, 1996 | DevilutionX (diasurgical), from Devilution reverse-engineering | diasurgical; first Switch build lantus devilution-nx 2019 | DevilutionX v1.5.5, 31 Oct 2025 (Switch build in HB App Store v1.5.4 Mar 2025) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Doom / Doom II (+ Heretic/Hexen etc. via GZDoom) | PC, 1993/94 | Chocolate Doom NX (lantus/MVG, 27 Jul 2018); kgDoom (2018); GZDoom (fgsfdsfgs, nx4.11pre, 10 Jul 2023; Thorhax GZDoom-NX-2026 v4.10.0 Aug 2026 [SP]) | multiple | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Doom 3 | PC, 2004 | dhewm3, fgsfdsfgs | fgsfdsfgs | v0.1.0_nx, 22 Oct 2018 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Doom 64 (Doom64EX) | N64, 1997 | Doom64EX reverse-engineering port, fgsfdsfgs | fgsfdsfgs | v0.2.0-nx, 24 Oct 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Duke Nukem 3D | PC, 1996 | EDuke32, Cpasjuste | Cpasjuste | v1.5, 13 Jul 2021 (earlier DukeNukem3D ports 2018 [GBATemp wiki]) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Dune II | PC, 1992 | Dune Legacy (enhanced reimplementation), carstene1ns | carstene1ns | 2025 build, 7 Nov 2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| The Elder Scrolls II: Daggerfall (Unity) | PC, 1996 | Daggerfall Unity loader, ChanseyIsTheBest | ChanseyIsTheBest | v1.1.1.9s1.0.2, 8 Sep 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| The Elder Scrolls III: Morrowind | PC/Xbox, 2002 | OpenMW, fgsfdsfgs | fgsfdsfgs | v0.46.0-nx2, 28 Oct 2019; new openmw-nx v1.0.0 Oct 2026 (seamusduncmcgrath) [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Eldritch | PC, 2013 | Eldritch Reanimated, usineur/rohit-n | usineur | 2019–2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| F-Zero (SNES) | SNES, 1990 | Recompilation port | Thorhax (F-Zero-NX-Modern) | v0.3.0, 19 Sep 2026 | [source](https://github.com/robzilla10001/switchports) |
+| F-Zero X — NX-Diffuser / G-Diffuser | N64, 1998 | Recompilation / decomp port | PalindromicBreadLoaf | v1.0.1, 14 Aug 2026 | [source](https://github.com/robzilla10001/switchports) |
+| F.E.A.R. | Xbox 360, 2005 | Static recompilation (ReXGlue) | infriker | v0.2.1, 6 Nov 2026 | [source](https://github.com/infriker/fear-nx) |
+| Fallout | PC, 1997 | Fallout CE (Community Edition), ryandeering | ryandeering | v1.0.0/v1.1.0, 12 Dec 2024 / 21 May 2026 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Fallout 2 | PC, 1998 | Fallout 2 CE, ryandeering | ryandeering | v1.1.0, 11 Aug 2024 / May 2026 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Fallout: New Vegas | PC, 2010 | Engine recreation (nv-rs-nx, Rust), DerilDX | SwitchPorts lists "*unreleased*", 28 Oct 2026 | [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| FreeSpace 2 | PC, 1999 | FreeSpace 2 Open (freespace2_nx), NaGaa95 | NaGaa95 | v1.0.1, 28 Jun 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Grand Theft Auto III | PS2/PC, 2001 | Decompilation / reverse-engineered source port (re3) | GTAmodding (re3); Switch port Graber (AGraber) | Sep 23–24, 2020 (re3-nx v1.0); Android-loader alternative v1.0.4, 16 Oct 2026 (mariob0y/gta3-nx) | [source](https://gbatemp.net/threads/re3-nx-reverse-engineered-gta-3-for-nintendo-switch.574308/page-20) |
+| Grand Theft Auto: San Andreas | PS2, 2004 — Android v2.11.311 used | Android-.so loader / compatibility wrapper | NaGaa95 (gtasa_nx) | Aug 2026; v1.0.3 15 Aug 2026, v1.0.5 3 Nov 2026 | [source](https://gbatemp.net/threads/gta-san-andreas-switch-port.683068/) |
+| Grand Theft Auto: Vice City | PS2/PC, 2002 | Decompilation (reVC, re3 "Miami" branch) | Flex1911, based on Graber's re3-nx | Early build Oct 14, 2020; full Switch release Jul 2021 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| GTA III / Vice City — re3/reVC legal status | Project was DMCA'd (Feb 2021), counter-claimed and restored (Jun 2021), then **sued by Take-Two** (filed Sep 2021, California) for, among other things, making the games playable on Switch/Vita/Wii U. Switch builds continued to circulate/update afterwards (newer builds for newer firmware noted Aug 2026 in the SA thread). Not "cancelled" as a playable artefact, but legally embattled — list as released with that caveat | Kotaku 3 Sep 2021 via search; GBAtemp SA thread | [catalogue](https://github.com/robzilla10001/switchports) |
+| GTA IV | PS3/X360, 2008 | Static recompilation: LibertyRecomp (OZORDI, ReXGlue, Xbox 360) → Switch ports kabba536 (GTA4NX, v35, 23 Oct 2026 [SP]) and Theft4-NX (gabryboy12-ai) | **Conflicting maturity reports — do not call playable.** Theft4-NX README (Oct 2026): "The game is not playable on Switch yet… reaches gameplay… at about 0.4 FPS." A packaged GTA4NX build circulates (360p + FSR, max OC advised, "first version, may be buggy" per distribution sites) and videos show driving gameplay Oct 2026, but no source rates it completable/stable | [SP]; GitHub https://github.com/gabryboy12-ai/theft4-nx/blob/HEAD/README-SWITCH.md ; GTABoom 7 Aug 2026 on LibertyRecomp | [catalogue](https://github.com/robzilla10001/switchports) |
+| GTA: Chinatown Wars | Nintendo DS, 2009 — Android version used | Android loader | NaGaa95 (gtactw_nx) | v1.0.2, 3–4 Nov 2026 | [source](https://github.com/robzilla10001/switchports) |
+| GTA: Liberty City Stories | PSP, 2005 — Android version used | Android loader | NaGaa95 (gtalcs_nx) | v1.0.4, 3–4 Nov 2026 | [source](https://github.com/robzilla10001/switchports) |
+| GTA: Vice City Stories | No standalone Switch port found (playable only via PPSSPP emulation, out of scope). Note re3 thread (2020) explicitly: "There's no active decompilation project for SA, LCS, VCS or Bully at the moment" — LCS later arrived via Android loader (§1A), VCS did not | GBAtemp re3 thread | [catalogue](https://github.com/robzilla10001/switchports) |
+| Half-Life (+ Blue Shift / Opposing Force / mods; Counter-Strike 1.6 via client libs) | PC, 1998 | Xash3D — xash3d-switch Datamats (15 Sep 2019), clamintus update (26 Jan 2022), xash3d-fwgs continuous (fgsfdsfgs/FWGS, Jan 2026) | FWGS team | 2019–2026; GBAtemp thread notes HL/BS/OpFor libraries merged upstream, automatic builds; CS 1.6 .so exists in distributions but was flaky in thread reports — see note in §5 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Half-Life 2 | PC, 2004 — Android/Source (nillerusr) binaries used | Android Source-engine wrapper hl2_nx, NaGaa95 | NaGaa95 | v1.0.5, 3 Nov 2026 [SP]; separate Switch 2 jailbreak demo Oct 2026 (see §2) | [catalogue](https://github.com/robzilla10001/switchports) |
+| Half-Life 2 (Switch 2) | PC, 2004 | Homebrew build via Switch 2 jailbreak (ns2jb / IZlauncher), Izmysh | Video 24 Oct 2026: 30fps/720p handheld on jailbroken Switch 2; launcher source/release "still coming", tethered exploit, not a Switch 1 release. Switch 1 hl2_nx is released (§1C) | OneJailbreak 25 Oct 2026 via search | [catalogue](https://github.com/robzilla10001/switchports) |
+| Heroes of Might and Magic II | PC, 1996 | fheroes2 (engine recreation) | fheroes2 team | v1.1.13, 21 Dec 2025; v1.1.18 Nov 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Heroes of Might and Magic III | PC, 1999 | VCMI (vcmi_nx), NaGaa95 | NaGaa95 | v1.8.0 R2, 6 Jul 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Jazz Jackrabbit / Jazz Jackrabbit 2 | PC, 1994/98 | OpenJazzNX (2019); Jazz2 Reborn deathkiller v3.9.0 Oct 2026 [SP] | multiple | 2019–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Lugaru HD | PC, 2005 | Lugaru port, usineur | usineur | 1.3-nx1, 5 Jan 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Madagascar | Xbox, 2005 | Static recompilation | gerisson1996 | v0.1.8, 12 Nov 2026 | [source](https://gbatemp.net/threads/release-madagascar-xbox-for-nintendo-switch-native-static-recompilation-port-v0-1-8.686468/) |
+| Manhunt / Manhunt 2 | **No Switch port found** — not in SwitchPorts, GameBrew, AllRecomps, or web search. Do not list as ported (PSP/Vita emulation on Switch is emulation, out of scope) | Searches + catalogues | [catalogue](https://github.com/robzilla10001/switchports) |
+| Mario Kart 64 — SpaghettiKart | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v0.9.9.1 22 Jun 2025; v1.0.0 24 Feb 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Mass Effect 2, Singularity, Hard Corps: Uprising | X360 | ReXGlue recomps | Listed "pre-release" Nov 2026 | [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Max Payne (Max Payne Mobile) | PC, 2001 — Android version used | Android-.so loader (Vita port adapted) | fgsfdsfgs (max_nx), r1 24 Feb 2021; NaGaa95 update for APK v2.1.131 (max_nx v1.0.2, Nov 2026) | 2021; updated 2026 | [source](https://github.com/NaGaa95/max_nx_v2.1.131) |
+| Max Payne 3 | PS3/X360, 2012 — Xbox 360 version | Static recompilation (ReXGlue) | VasilkovND (mp3-nx) | "Released" 6 Nov 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Midnight Club 3: DUB Edition / Remix | Xbox, 2005 | Static recompilation | laureladastra (mcdub3-nx) | v1.1.0, 5 Nov 2026 | [source](https://github.com/robzilla10001/switchports) |
+| New Super Mario Bros. Wii | Wii, 2009 | Static recompilation | schuler-ph | Reviewed 14 Nov 2026 | [source](https://github.com/schuler-ph/nsmbw-switch) |
+| OpenArena | PC, 2005 (Q3-derived) | OpenArenaNX, faithvoid | faithvoid | v0.7.8.1, 28 Jun 2023 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| OpenGOAL / Jak (pre-2026 discussion) | PS2 | — | For history: a native Jak Switch port was long considered blocked because OpenGOAL targeted x86, not ARM (GBAtemp discussion Dec 2024) — superseded by the Oct 2026 Jak Project Switch (§1E), which is a separate adaptation, not upstream OpenGOAL | GBAtemp OpenGOAL thread via search | [catalogue](https://github.com/robzilla10001/switchports) |
+| OutRun (Cannonball engine) | Arcade, 1986 | Cannonball, lantus (2018) / rsn8887 (v1.08, May 2021) / Thorhax Modern Sep 2026 | multiple | 2018–2026 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Perfect Dark | N64, 2000 | Decompilation port (n64decomp/perfect_dark) | fgsfdsfgs / perfect-dark-pc-port | CI dev build 14 May 2024; builds still listed Aug–Nov 2026 | [source](https://allrecomps.com/switch-ports/) |
+| Portal | PC, 2007 | **No standalone unofficial Switch port found.** Portal is official on Switch (Companion Collection). Half-Life 2 was run *inside* official Portal 1 by OatmealDome (Jun 2022, mod, frequent crashes) — not a port release | — | — | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Portal (standalone unofficial) | No standalone unofficial port; official Companion Collection only (see §1C) | Searches | [catalogue](https://github.com/robzilla10001/switchports) |
+| Postal | PC, 1997 | Postal Switch, lantus/MVG | lantus | v1.0, 25 May 2018 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Prince of Persia | Apple II/PC, 1989 | SDLPoP (open-source port), usineur | usineur | v1.3, 13 Oct 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Quake | PC, 1996 | NXQuake (TyrQuake, 2018); QuakespasmNX (fgsfdsfgs, v0.92.3-nx, 21 Apr 2021; Thorhax Modern v0.93.3 Sep 2026 [SP]) | fgsfdsfgs | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Quake II | PC, 1997 | NXQuake2 (Yamagi Quake II), fgsfdsfgs | fgsfdsfgs | build 060, 20 Dec 2022 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Quake III Arena | PC, 1999 | ioquake3-nx, fgsfdsfgs (2019) / danifunker update (2021) | fgsfdsfgs | v0.3.0-nx, 18 Sep 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Red Dead Redemption (unofficial) | **No unofficial Switch port exists.** RDR got an **official** Switch port (Double Eleven, Aug 2023) — out of scope. The famous "60fps on hacked Switch" videos are FPSLocker/ReverseNX overclock mods *of the official release*, not a port. RecompHub lists RDR as "No port yet" | Kotaku 21 Aug 2023; https://recomphub.com/ via search | [catalogue](https://github.com/robzilla10001/switchports) |
+| Red Dead Redemption 2 | No official or unofficial Switch port found in any catalogue/search. Do not list | Absence in [SP][GB][AR] + searches | [catalogue](https://allrecomps.com/switch-ports/) |
+| Return to Castle Wolfenstein | PC, 2001 | iortcw port, capsterx | capsterx | Pre-release, 21 Nov 2020 — listed pre-release, treat as early | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| RollerCoaster Tycoon 2 | PC, 2002 | OpenRCT2, rsn8887; new build Wander-Eule Sep 2026 [SP] | rsn8887 | v1.06, 24 Apr 2021 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Serious Sam: First & Second Encounter | PC, 2001/02 | Serious-Engine-TSE, fgsfdsfgs | fgsfdsfgs | nx1, 29 Dec 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Shadow Warrior | PC, 1997 | JFSW Switch, alexart878 | alexart878 | v1.1-NX, 5 Dec 2024 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| The Simpsons (arcade) | Arcade, 1991 | Decomp-based source port | cheviman | v1.0.1, 14 Nov 2026 | [source](https://github.com/cheviman/simpsons-port) |
+| SiN | PC, 1998 | SiN Switch, rohit-n | rohit-n | v1.2, 4 Feb 2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic 3 A.I.R. (Angel Island Revisited) | Genesis, 1994 fan remaster | Fan remaster port | Eukaryot (A.I.R.); Switch ultra-azu / heyjoeway | 10 Sep 2022 (22.09.10) | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic CD (2011) | Mobile/RSDK, 2011 (orig. Sega CD 1993) | Decompilation | heyjoeway | v1.3, 27 Nov 2021 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic Mania | PC/consoles, 2017 | Decompilation (RSDKv5) | Rubberduckycooly/RSDKModding; Switch build supported in repo | Decomp released 2022; Switch build instructions in repo | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic Robo Blast 2 + SRB2 Kart / Dr. Robotnik's Ring Racers | PC fangame (Doom Legacy) | Source port | SRB2 team; Switch carstene1ns/heyjoeway/Craftyawesome | SRB2 v2.2.15 r2, 16 Nov 2025; Kart v1.6 r8 same date | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic the Hedgehog 1 & 2 (2013) | Mobile/Retro Engine, 2013 (orig. Genesis 1991/92) | Decompilation (RSDKv4, Rubberduckycooly) | Switch fork heyjoeway | v1.3.0 Rev1, 7 Dec 2021 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Space Cadet Pinball (3D Pinball) | Windows, 1995 | Decompilation port | averne (SpaceCadetPinball-NX) | v1.1.1-NX2 15 Oct 2021; NX3 Oct 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Star Fox (SNES) — Starfox Enhanced | SNES, 1993 | Source port/enhancement | kandowontu2 | v0.0.8.8.3, 1 Nov 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Star Fox 64 — Starship | N64, 1997 | Decompilation port (libultraship) | Harbour Masters | v2.0.0, 25 May 2025 | [source](https://github.com/robzilla10001/switchports) |
+| Star Trek Voyager: Elite Force Holomatch | PC, 2000 | VoyagerNX (lilium-voyager/ioquake3 fork), faithvoid | faithvoid | v0.8.5.1, 28 Jun 2023 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Super Mario 64 (Ghostship) | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v3.0.0, 7 Sep 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Super Mario 64 (sm64ex) | N64, 1996 | Decompilation port | fgsfdsfgs (sm64ex) | 19 May 2020 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Super Mario 64 Co-op (sm64coopdx-switch) | N64, 1996 | Decompilation port, online co-op/Lua | Coop Deluxe; Switch fork antoinebou12 | Sep 2026 (repo/blog) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Super Mario World | SNES, 1990 | Decompilation port (snesrev) | Lywx/snesrev; wide-snes-NX | WIP v0.1, 17 Aug 2023; v1.0.1 Nov 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Super Metroid | SNES, 1994 | Decompilation port (snesrev sm) | snesrev, Lywx | "wip", 21 Mar 2023 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Super Metroid, Return to Castle Wolfenstein, NXBlood (Blood) | — | Decomp/source ports | Listed WIP/pre-release/WIP in GameBrew (see §1) — no completable build verified | [GB] | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| System Shock | PC, 1994 | Shockolate source port, capsterx | capsterx | v0.8.2-r5, 23 Dec 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Team Fortress 2 (ReClassic / Source) | PC, 2007 | Android/Source loader tf2_nx, NaGaa95 | NaGaa95 | v1.0.2, 3 Nov 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Theme Hospital | PC, 1997 | CorsixTH, Exvat | Exvat | 2019 (GBAtemp thread 537686, via WikiTemp list) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Tomb Raider (OpenLara) | PS1/Saturn/PC, 1996 | Engine reimplementation (OpenLara) | XProger | 8.01.21, 8 Jan 2019 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Transport Tycoon Deluxe | PC, 1995 | OpenTTD, rsn8887 | rsn8887 | v1.07, 8 May 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Tyrian | PC, 1995 | OpenTyrian / OpenTyrian2000 | felixrg et al.; andyvand | 2021; v3.0.0, 27 Feb 2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Ultima VII | PC, 1992 | Exult engine, capsterx | capsterx | r1.5, 24 Nov 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Unreal / Unreal Gold | PC, 1998 | UnrealNX loader, fgsfdsfgs | fgsfdsfgs | r2, 27 Oct 2022 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| The Ur-Quan Masters (Star Control II) | PC, 1992 | UQM MegaMod, YokaiShogun | YokaiShogun | v0.8.0.85, 6 Feb 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| VVVVVV | PC, 2010 | NX-VVVVVV, NicholeMattera (v2.3.3, Sep 2021); recomp build auggeythecat May 2026 [SP] | multiple | 2021–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| The Warriors | PS2/Xbox, 2005 | Original-Xbox recompilation, GorillaTranslate | GBAtemp WIP thread 31 Oct 2026: video of build running on Switch; "early work-in-progress preview. There is no release date or public download yet." | https://gbatemp.net/threads/wip-the-warriors-for-nintendo-switch-original-xbox-recompilation-port.686073/#post-10939040 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Wolfenstein 3D | PC, 1992 | Wolf4SDL-Switch, keeganatorr | keeganatorr | 1.0-beta, 19 Aug 2018 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Woody Woodpecker: Escape from Buzz Buzzard Park | PC, 2001 | Engine reimplementation | jjmhalew | v1.0.12 | [source](https://github.com/jjmhalew/WoodyRE) |
+| X-COM: UFO Defense | PC, 1994 | OpenXcom, alexart878 | alexart878 | v1.0-NX, 21 Nov 2024 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Zelda: A Link to the Past | SNES, 1991 | Decompilation port (snesrev / zelda3) | snesrev; Alek's Ultimate NX fork Alexgg1014 | v0.3, 17 Aug 2023; NX fork v1.3.0 Oct 2026 (16:9, save states, RetroAchievements) | [source](https://github.com/robzilla10001/switchports) |
+| Zelda: Link's Awakening DX (HD) | GBC, 1998 | Recompilation/reimplementation | delsonazevedo; Alexgg1014 NX fork | v1.7.3 Apr 2026 / v1.2.0 Oct 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Zelda: Majora's Mask — 2 Ship 2 Harkinian | N64, 2000 | Decompilation port | 2ship2harkinian; Switch YoshiCrystal9 / reflex909 | v3.0.2-NX 13 Jan 2026; v5.0.1 Sep 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Zelda: Ocarina of Time — Ship of Harkinian | N64, 1998 | Decompilation port (libultraship) | Harbour Masters; Switch builds YoshiCrystal9/timschneeb (Shipwright-Switch) | Switch support 13 Aug 2024 (v8.0.6); v9.3.1-nx2 28 Oct 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Zelda: Oracle of Ages / Seasons | GBC, 2001 | Decompilation (oracles-decomp, native C) | toniisound (oracles-nx) | v1.0.0, 10 Oct 2026 | [source](https://github.com/toniisound/oracles-nx) |
+| Zelda: The Minish Cap | GBA, 2004 | Decompilation port | HayatoG (tmc); Alexgg1014 NX fork | v0.25 Jun 2026 / v2.0.1 Oct 2026 | [source](https://github.com/robzilla10001/switchports) |
 
    - **Android-loader flood** (mainly NaGaa95, ChanseyIsTheBest, aks796, Thorhax, etc.): a generic minimal-Android compatibility layer loads the original Android ARM/ARM64 `libGame.so` — dozens of Android games ported in Aug–Nov 2026 alone.
    - **Static recompilation flood** (ReXGlue for Xbox 360, XenonRecomp/N64Recomp, deko3d/NVK renderers, frequently AI-assisted per the list maintainer's own disclaimer): Xbox, Xbox 360, N64, GameCube, PS1/PS2 games recompiled to native Switch ARM64. The master list **SwitchPorts (robzilla10001)** stood at **453 total entries on 13 Nov 2026** (138 updated in the preceding week alone).
@@ -149,109 +151,109 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 
 #### 1A. Rockstar / open-world — released
 
-| Game | Original | Port type | Author/team | Switch release / latest | Performance / note |
-|---|---|---|---|---|---|
-| Grand Theft Auto III | PS2/PC, 2001 | Decompilation / reverse-engineered source port (re3) | GTAmodding (re3); Switch port Graber (AGraber) | Sep 23–24, 2020 (re3-nx v1.0); Android-loader alternative v1.0.4, 16 Oct 2026 (mariob0y/gta3-nx) | Playable; needs PC game files. Subject of Take-Two DMCA (2021, counter-claimed) then lawsuit |
-| Grand Theft Auto: Vice City | PS2/PC, 2002 | Decompilation (reVC, re3 "Miami" branch) | Flex1911, based on Graber's re3-nx | Early build Oct 14, 2020; full Switch release Jul 2021 | "Mostly functional, a bit buggy / not 100% stable" at first; later builds improved. Needs PC files |
-| Grand Theft Auto: San Andreas | PS2, 2004 — Android v2.11.311 used | Android-.so loader / compatibility wrapper | NaGaa95 (gtasa_nx) | Aug 2026; v1.0.3 15 Aug 2026, v1.0.5 3 Nov 2026 | Wrapper loads/patches original Android binary in a minimal Android environment; upstream Mesa/GLThread update said to improve performance "quite a lot" |
-| GTA: Liberty City Stories | PSP, 2005 — Android version used | Android loader | NaGaa95 (gtalcs_nx) | v1.0.4, 3–4 Nov 2026 | Needs Android libGame.so + data |
-| GTA: Chinatown Wars | Nintendo DS, 2009 — Android version used | Android loader | NaGaa95 (gtactw_nx) | v1.0.2, 3–4 Nov 2026 | Needs Android data |
-| Max Payne (Max Payne Mobile) | PC, 2001 — Android version used | Android-.so loader (Vita port adapted) | fgsfdsfgs (max_nx), r1 24 Feb 2021; NaGaa95 update for APK v2.1.131 (max_nx v1.0.2, Nov 2026) | 2021; updated 2026 | 720p/1080p; author called original "probably not entirely stable / proof of concept of an AArch64 .so loader" |
-| Max Payne 3 | PS3/X360, 2012 — Xbox 360 version | Static recompilation (ReXGlue) | VasilkovND (mp3-nx) | "Released" 6 Nov 2026 | Early recomp; no performance figure in catalogue |
-| Bully: Anniversary Edition | PS2, 2006 — Android 64-bit v1.4.311 used | Android compatibility layer | givethesourceplox (bully_nx) | v0.0.2, 3–6 Apr 2026 | **Borderline released/WIP:** "boots and runs, but it is not finished yet and still contains temporary workarounds" — do not call stable/completable |
-| Midnight Club 3: DUB Edition / Remix | Xbox, 2005 | Static recompilation | laureladastra (mcdub3-nx) | v1.1.0, 5 Nov 2026 | Recomp to native Switch/Linux/Mac/Windows |
+| Game | Original | Port type | Author/team | Switch release / latest | Performance / note | Link |
+|---|---|---|---|---|---|---|
+| Grand Theft Auto III | PS2/PC, 2001 | Decompilation / reverse-engineered source port (re3) | GTAmodding (re3); Switch port Graber (AGraber) | Sep 23–24, 2020 (re3-nx v1.0); Android-loader alternative v1.0.4, 16 Oct 2026 (mariob0y/gta3-nx) | Playable; needs PC game files. Subject of Take-Two DMCA (2021, counter-claimed) then lawsuit | [source](https://gbatemp.net/threads/re3-nx-reverse-engineered-gta-3-for-nintendo-switch.574308/page-20) |
+| Grand Theft Auto: Vice City | PS2/PC, 2002 | Decompilation (reVC, re3 "Miami" branch) | Flex1911, based on Graber's re3-nx | Early build Oct 14, 2020; full Switch release Jul 2021 | "Mostly functional, a bit buggy / not 100% stable" at first; later builds improved. Needs PC files | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Grand Theft Auto: San Andreas | PS2, 2004 — Android v2.11.311 used | Android-.so loader / compatibility wrapper | NaGaa95 (gtasa_nx) | Aug 2026; v1.0.3 15 Aug 2026, v1.0.5 3 Nov 2026 | Wrapper loads/patches original Android binary in a minimal Android environment; upstream Mesa/GLThread update said to improve performance "quite a lot" | [source](https://gbatemp.net/threads/gta-san-andreas-switch-port.683068/) |
+| GTA: Liberty City Stories | PSP, 2005 — Android version used | Android loader | NaGaa95 (gtalcs_nx) | v1.0.4, 3–4 Nov 2026 | Needs Android libGame.so + data | [source](https://github.com/robzilla10001/switchports) |
+| GTA: Chinatown Wars | Nintendo DS, 2009 — Android version used | Android loader | NaGaa95 (gtactw_nx) | v1.0.2, 3–4 Nov 2026 | Needs Android data | [source](https://github.com/robzilla10001/switchports) |
+| Max Payne (Max Payne Mobile) | PC, 2001 — Android version used | Android-.so loader (Vita port adapted) | fgsfdsfgs (max_nx), r1 24 Feb 2021; NaGaa95 update for APK v2.1.131 (max_nx v1.0.2, Nov 2026) | 2021; updated 2026 | 720p/1080p; author called original "probably not entirely stable / proof of concept of an AArch64 .so loader" | [source](https://github.com/NaGaa95/max_nx_v2.1.131) |
+| Max Payne 3 | PS3/X360, 2012 — Xbox 360 version | Static recompilation (ReXGlue) | VasilkovND (mp3-nx) | "Released" 6 Nov 2026 | Early recomp; no performance figure in catalogue | [source](https://github.com/robzilla10001/switchports) |
+| Bully: Anniversary Edition | PS2, 2006 — Android 64-bit v1.4.311 used | Android compatibility layer | givethesourceplox (bully_nx) | v0.0.2, 3–6 Apr 2026 | **Borderline released/WIP:** "boots and runs, but it is not finished yet and still contains temporary workarounds" — do not call stable/completable | [source](https://gbatemp.net/threads/bully-switch-port-wip.680904/) |
+| Midnight Club 3: DUB Edition / Remix | Xbox, 2005 | Static recompilation | laureladastra (mcdub3-nx) | v1.1.0, 5 Nov 2026 | Recomp to native Switch/Linux/Mac/Windows | [source](https://github.com/robzilla10001/switchports) |
 
 #### 1B. Decompilation / recompilation / source ports — Nintendo & console classics (classic era, mature)
 
-| Game | Original | Port type | Author/team | Switch date/latest | Note |
-|---|---|---|---|---|---|
-| Super Mario 64 (sm64ex) | N64, 1996 | Decompilation port | fgsfdsfgs (sm64ex) | 19 May 2020 | Requires own ROM assets |
-| Super Mario 64 (Ghostship) | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v3.0.0, 7 Sep 2026 | US/JP ROMs; also Android/iOS/PC |
-| Super Mario 64 Co-op (sm64coopdx-switch) | N64, 1996 | Decompilation port, online co-op/Lua | Coop Deluxe; Switch fork antoinebou12 | Sep 2026 (repo/blog) | Own NA ROM required |
-| Zelda: Ocarina of Time — Ship of Harkinian | N64, 1998 | Decompilation port (libultraship) | Harbour Masters; Switch builds YoshiCrystal9/timschneeb (Shipwright-Switch) | Switch support 13 Aug 2024 (v8.0.6); v9.3.1-nx2 28 Oct 2026 | Cross-platform Win/Mac/Linux/Switch/Wii U; own ROM |
-| Zelda: Majora's Mask — 2 Ship 2 Harkinian | N64, 2000 | Decompilation port | 2ship2harkinian; Switch YoshiCrystal9 / reflex909 | v3.0.2-NX 13 Jan 2026; v5.0.1 Sep 2026 | Own US ROM |
-| Zelda: A Link to the Past | SNES, 1991 | Decompilation port (snesrev / zelda3) | snesrev; Alek's Ultimate NX fork Alexgg1014 | v0.3, 17 Aug 2023; NX fork v1.3.0 Oct 2026 (16:9, save states, RetroAchievements) | Own ROM |
-| Zelda: Link's Awakening DX (HD) | GBC, 1998 | Recompilation/reimplementation | delsonazevedo; Alexgg1014 NX fork | v1.7.3 Apr 2026 / v1.2.0 Oct 2026 | — |
-| Zelda: Oracle of Ages / Seasons | GBC, 2001 | Decompilation (oracles-decomp, native C) | toniisound (oracles-nx) | v1.0.0, 10 Oct 2026 | "Native code: no CPU emulator and no ROM code"; own USA ROMs; 60fps-class native port |
-| Zelda: The Minish Cap | GBA, 2004 | Decompilation port | HayatoG (tmc); Alexgg1014 NX fork | v0.25 Jun 2026 / v2.0.1 Oct 2026 | WIP-leaning |
-| Super Mario World | SNES, 1990 | Decompilation port (snesrev) | Lywx/snesrev; wide-snes-NX | WIP v0.1, 17 Aug 2023; v1.0.1 Nov 2026 | Earlier build explicitly WIP |
-| Super Metroid | SNES, 1994 | Decompilation port (snesrev sm) | snesrev, Lywx | "wip", 21 Mar 2023 | Listed as WIP — completeness unverified |
-| Perfect Dark | N64, 2000 | Decompilation port (n64decomp/perfect_dark) | fgsfdsfgs / perfect-dark-pc-port | CI dev build 14 May 2024; builds still listed Aug–Nov 2026 | "Mostly functional, singleplayer and split-screen multiplayer fully working"; minor gfx/crashes remain; own ROM (ntsc-final etc.), Switch build ships 3 regions |
-| Star Fox 64 — Starship | N64, 1997 | Decompilation port (libultraship) | Harbour Masters | v2.0.0, 25 May 2025 | Own US 1.0/1.1 ROM; generate sf64.o2r on PC first for Switch |
-| Mario Kart 64 — SpaghettiKart | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v0.9.9.1 22 Jun 2025; v1.0.0 24 Feb 2026 | US ROM only; track editor, widescreen/high-fps on PC |
-| F-Zero X — NX-Diffuser / G-Diffuser | N64, 1998 | Recompilation / decomp port | PalindromicBreadLoaf | v1.0.1, 14 Aug 2026 | Optional 64DD Expansion Kit support |
-| Star Fox (SNES) — Starfox Enhanced | SNES, 1993 | Source port/enhancement | kandowontu2 | v0.0.8.8.3, 1 Nov 2026 | Early version number |
-| F-Zero (SNES) | SNES, 1990 | Recompilation port | Thorhax (F-Zero-NX-Modern) | v0.3.0, 19 Sep 2026 | Early |
-| Sonic the Hedgehog 1 & 2 (2013) | Mobile/Retro Engine, 2013 (orig. Genesis 1991/92) | Decompilation (RSDKv4, Rubberduckycooly) | Switch fork heyjoeway | v1.3.0 Rev1, 7 Dec 2021 | "Playable, almost perfectly" (2021 coverage); own Data.rsdk |
-| Sonic CD (2011) | Mobile/RSDK, 2011 (orig. Sega CD 1993) | Decompilation | heyjoeway | v1.3, 27 Nov 2021 | Full decomp port |
-| Sonic Mania | PC/consoles, 2017 | Decompilation (RSDKv5) | Rubberduckycooly/RSDKModding; Switch build supported in repo | Decomp released 2022; Switch build instructions in repo | **Note:** Sonic Mania ALSO has an official Switch eShop release — this is the unofficial decomp build (mods etc.) |
-| Sonic 3 A.I.R. (Angel Island Revisited) | Genesis, 1994 fan remaster | Fan remaster port | Eukaryot (A.I.R.); Switch ultra-azu / heyjoeway | 10 Sep 2022 (22.09.10) | Widescreen remaster, not a decomp of the original binary alone |
-| Sonic Robo Blast 2 + SRB2 Kart / Dr. Robotnik's Ring Racers | PC fangame (Doom Legacy) | Source port | SRB2 team; Switch carstene1ns/heyjoeway/Craftyawesome | SRB2 v2.2.15 r2, 16 Nov 2025; Kart v1.6 r8 same date | Fangame, included because mission asked Sonic ports |
-| Space Cadet Pinball (3D Pinball) | Windows, 1995 | Decompilation port | averne (SpaceCadetPinball-NX) | v1.1.1-NX2 15 Oct 2021; NX3 Oct 2026 | — |
-| Tomb Raider (OpenLara) | PS1/Saturn/PC, 1996 | Engine reimplementation (OpenLara) | XProger | 8.01.21, 8 Jan 2019 | Classic Tomb Raider engine; own files |
+| Game | Original | Port type | Author/team | Switch date/latest | Note | Link |
+|---|---|---|---|---|---|---|
+| Super Mario 64 (sm64ex) | N64, 1996 | Decompilation port | fgsfdsfgs (sm64ex) | 19 May 2020 | Requires own ROM assets | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Super Mario 64 (Ghostship) | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v3.0.0, 7 Sep 2026 | US/JP ROMs; also Android/iOS/PC | [source](https://github.com/robzilla10001/switchports) |
+| Super Mario 64 Co-op (sm64coopdx-switch) | N64, 1996 | Decompilation port, online co-op/Lua | Coop Deluxe; Switch fork antoinebou12 | Sep 2026 (repo/blog) | Own NA ROM required | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Zelda: Ocarina of Time — Ship of Harkinian | N64, 1998 | Decompilation port (libultraship) | Harbour Masters; Switch builds YoshiCrystal9/timschneeb (Shipwright-Switch) | Switch support 13 Aug 2024 (v8.0.6); v9.3.1-nx2 28 Oct 2026 | Cross-platform Win/Mac/Linux/Switch/Wii U; own ROM | [source](https://github.com/robzilla10001/switchports) |
+| Zelda: Majora's Mask — 2 Ship 2 Harkinian | N64, 2000 | Decompilation port | 2ship2harkinian; Switch YoshiCrystal9 / reflex909 | v3.0.2-NX 13 Jan 2026; v5.0.1 Sep 2026 | Own US ROM | [source](https://github.com/robzilla10001/switchports) |
+| Zelda: A Link to the Past | SNES, 1991 | Decompilation port (snesrev / zelda3) | snesrev; Alek's Ultimate NX fork Alexgg1014 | v0.3, 17 Aug 2023; NX fork v1.3.0 Oct 2026 (16:9, save states, RetroAchievements) | Own ROM | [source](https://github.com/robzilla10001/switchports) |
+| Zelda: Link's Awakening DX (HD) | GBC, 1998 | Recompilation/reimplementation | delsonazevedo; Alexgg1014 NX fork | v1.7.3 Apr 2026 / v1.2.0 Oct 2026 | — | [source](https://github.com/robzilla10001/switchports) |
+| Zelda: Oracle of Ages / Seasons | GBC, 2001 | Decompilation (oracles-decomp, native C) | toniisound (oracles-nx) | v1.0.0, 10 Oct 2026 | "Native code: no CPU emulator and no ROM code"; own USA ROMs; 60fps-class native port | [source](https://github.com/toniisound/oracles-nx) |
+| Zelda: The Minish Cap | GBA, 2004 | Decompilation port | HayatoG (tmc); Alexgg1014 NX fork | v0.25 Jun 2026 / v2.0.1 Oct 2026 | WIP-leaning | [source](https://github.com/robzilla10001/switchports) |
+| Super Mario World | SNES, 1990 | Decompilation port (snesrev) | Lywx/snesrev; wide-snes-NX | WIP v0.1, 17 Aug 2023; v1.0.1 Nov 2026 | Earlier build explicitly WIP | [source](https://github.com/robzilla10001/switchports) |
+| Super Metroid | SNES, 1994 | Decompilation port (snesrev sm) | snesrev, Lywx | "wip", 21 Mar 2023 | Listed as WIP — completeness unverified | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Perfect Dark | N64, 2000 | Decompilation port (n64decomp/perfect_dark) | fgsfdsfgs / perfect-dark-pc-port | CI dev build 14 May 2024; builds still listed Aug–Nov 2026 | "Mostly functional, singleplayer and split-screen multiplayer fully working"; minor gfx/crashes remain; own ROM (ntsc-final etc.), Switch build ships 3 regions | [source](https://allrecomps.com/switch-ports/) |
+| Star Fox 64 — Starship | N64, 1997 | Decompilation port (libultraship) | Harbour Masters | v2.0.0, 25 May 2025 | Own US 1.0/1.1 ROM; generate sf64.o2r on PC first for Switch | [source](https://github.com/robzilla10001/switchports) |
+| Mario Kart 64 — SpaghettiKart | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v0.9.9.1 22 Jun 2025; v1.0.0 24 Feb 2026 | US ROM only; track editor, widescreen/high-fps on PC | [source](https://github.com/robzilla10001/switchports) |
+| F-Zero X — NX-Diffuser / G-Diffuser | N64, 1998 | Recompilation / decomp port | PalindromicBreadLoaf | v1.0.1, 14 Aug 2026 | Optional 64DD Expansion Kit support | [source](https://github.com/robzilla10001/switchports) |
+| Star Fox (SNES) — Starfox Enhanced | SNES, 1993 | Source port/enhancement | kandowontu2 | v0.0.8.8.3, 1 Nov 2026 | Early version number | [source](https://github.com/robzilla10001/switchports) |
+| F-Zero (SNES) | SNES, 1990 | Recompilation port | Thorhax (F-Zero-NX-Modern) | v0.3.0, 19 Sep 2026 | Early | [source](https://github.com/robzilla10001/switchports) |
+| Sonic the Hedgehog 1 & 2 (2013) | Mobile/Retro Engine, 2013 (orig. Genesis 1991/92) | Decompilation (RSDKv4, Rubberduckycooly) | Switch fork heyjoeway | v1.3.0 Rev1, 7 Dec 2021 | "Playable, almost perfectly" (2021 coverage); own Data.rsdk | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic CD (2011) | Mobile/RSDK, 2011 (orig. Sega CD 1993) | Decompilation | heyjoeway | v1.3, 27 Nov 2021 | Full decomp port | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic Mania | PC/consoles, 2017 | Decompilation (RSDKv5) | Rubberduckycooly/RSDKModding; Switch build supported in repo | Decomp released 2022; Switch build instructions in repo | **Note:** Sonic Mania ALSO has an official Switch eShop release — this is the unofficial decomp build (mods etc.) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic 3 A.I.R. (Angel Island Revisited) | Genesis, 1994 fan remaster | Fan remaster port | Eukaryot (A.I.R.); Switch ultra-azu / heyjoeway | 10 Sep 2022 (22.09.10) | Widescreen remaster, not a decomp of the original binary alone | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Sonic Robo Blast 2 + SRB2 Kart / Dr. Robotnik's Ring Racers | PC fangame (Doom Legacy) | Source port | SRB2 team; Switch carstene1ns/heyjoeway/Craftyawesome | SRB2 v2.2.15 r2, 16 Nov 2025; Kart v1.6 r8 same date | Fangame, included because mission asked Sonic ports | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Space Cadet Pinball (3D Pinball) | Windows, 1995 | Decompilation port | averne (SpaceCadetPinball-NX) | v1.1.1-NX2 15 Oct 2021; NX3 Oct 2026 | — | [source](https://github.com/robzilla10001/switchports) |
+| Tomb Raider (OpenLara) | PS1/Saturn/PC, 1996 | Engine reimplementation (OpenLara) | XProger | 8.01.21, 8 Jan 2019 | Classic Tomb Raider engine; own files | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 
 #### 1C. PC game source ports — classic era (the "nx-*" scene)
 
-| Game(s) | Original | Engine/port | Author | Switch date |  |
-|---|---|---|---|---|---|
-| Doom / Doom II (+ Heretic/Hexen etc. via GZDoom) | PC, 1993/94 | Chocolate Doom NX (lantus/MVG, 27 Jul 2018); kgDoom (2018); GZDoom (fgsfdsfgs, nx4.11pre, 10 Jul 2023; Thorhax GZDoom-NX-2026 v4.10.0 Aug 2026 [SP]) | multiple | 2018–2026 |  |
-| Doom 64 (Doom64EX) | N64, 1997 | Doom64EX reverse-engineering port, fgsfdsfgs | fgsfdsfgs | v0.2.0-nx, 24 Oct 2019 |  |
-| Doom 3 | PC, 2004 | dhewm3, fgsfdsfgs | fgsfdsfgs | v0.1.0_nx, 22 Oct 2018 |  |
-| Quake | PC, 1996 | NXQuake (TyrQuake, 2018); QuakespasmNX (fgsfdsfgs, v0.92.3-nx, 21 Apr 2021; Thorhax Modern v0.93.3 Sep 2026 [SP]) | fgsfdsfgs | 2018–2026 |  |
-| Quake II | PC, 1997 | NXQuake2 (Yamagi Quake II), fgsfdsfgs | fgsfdsfgs | build 060, 20 Dec 2022 |  |
-| Quake III Arena | PC, 1999 | ioquake3-nx, fgsfdsfgs (2019) / danifunker update (2021) | fgsfdsfgs | v0.3.0-nx, 18 Sep 2019 |  |
-| Duke Nukem 3D | PC, 1996 | EDuke32, Cpasjuste | Cpasjuste | v1.5, 13 Jul 2021 (earlier DukeNukem3D ports 2018 [GBATemp wiki]) |  |
-| Wolfenstein 3D | PC, 1992 | Wolf4SDL-Switch, keeganatorr | keeganatorr | 1.0-beta, 19 Aug 2018 |  |
-| Return to Castle Wolfenstein | PC, 2001 | iortcw port, capsterx | capsterx | Pre-release, 21 Nov 2020 — listed pre-release, treat as early |  |
-| Blood | PC, 1997 | NXBlood (NBlood), Jan200101 | Jan200101 | WIP, 5 Jun 2019 |  |
-| Shadow Warrior | PC, 1997 | JFSW Switch, alexart878 | alexart878 | v1.1-NX, 5 Dec 2024 |  |
-| Half-Life (+ Blue Shift / Opposing Force / mods; Counter-Strike 1.6 via client libs) | PC, 1998 | Xash3D — xash3d-switch Datamats (15 Sep 2019), clamintus update (26 Jan 2022), xash3d-fwgs continuous (fgsfdsfgs/FWGS, Jan 2026) | FWGS team | 2019–2026; GBAtemp thread notes HL/BS/OpFor libraries merged upstream, automatic builds; CS 1.6 .so exists in distributions but was flaky in thread reports — see note in §5 |  |
-| Half-Life 2 | PC, 2004 — Android/Source (nillerusr) binaries used | Android Source-engine wrapper hl2_nx, NaGaa95 | NaGaa95 | v1.0.5, 3 Nov 2026 [SP]; separate Switch 2 jailbreak demo Oct 2026 (see §2) |  |
-| Counter-Strike: Source | PC, 2004 — Android Source build used | Android loader css_nx, NaGaa95 (nillerusr engine) | NaGaa95 / naga | v1.0.1–1.0.2, Aug–Nov 2026; offline bots + IP servers [AR] |  |
-| Team Fortress 2 (ReClassic / Source) | PC, 2007 | Android/Source loader tf2_nx, NaGaa95 | NaGaa95 | v1.0.2, 3 Nov 2026 [SP] |  |
-| Portal | PC, 2007 | **No standalone unofficial Switch port found.** Portal is official on Switch (Companion Collection). Half-Life 2 was run *inside* official Portal 1 by OatmealDome (Jun 2022, mod, frequent crashes) — not a port release | — | — |  |
-| The Elder Scrolls III: Morrowind | PC/Xbox, 2002 | OpenMW, fgsfdsfgs | fgsfdsfgs | v0.46.0-nx2, 28 Oct 2019; new openmw-nx v1.0.0 Oct 2026 (seamusduncmcgrath) [SP] |  |
-| The Elder Scrolls II: Daggerfall (Unity) | PC, 1996 | Daggerfall Unity loader, ChanseyIsTheBest | ChanseyIsTheBest | v1.1.1.9s1.0.2, 8 Sep 2026 [SP] |  |
-| Diablo + Hellfire | PC, 1996 | DevilutionX (diasurgical), from Devilution reverse-engineering | diasurgical; first Switch build lantus devilution-nx 2019 | DevilutionX v1.5.5, 31 Oct 2025 (Switch build in HB App Store v1.5.4 Mar 2025) |  |
-| Fallout | PC, 1997 | Fallout CE (Community Edition), ryandeering | ryandeering | v1.0.0/v1.1.0, 12 Dec 2024 / 21 May 2026 |  |
-| Fallout 2 | PC, 1998 | Fallout 2 CE, ryandeering | ryandeering | v1.1.0, 11 Aug 2024 / May 2026 |  |
-| Arx Fatalis | PC, 2002 | Arx Libertatis, fgsfdsfgs | fgsfdsfgs | v1.2-nx1, 21 Jul 2021 |  |
-| Ultima VII | PC, 1992 | Exult engine, capsterx | capsterx | r1.5, 24 Nov 2020 |  |
-| Heroes of Might and Magic II | PC, 1996 | fheroes2 (engine recreation) | fheroes2 team | v1.1.13, 21 Dec 2025; v1.1.18 Nov 2026 [SP] |  |
-| Heroes of Might and Magic III | PC, 1999 | VCMI (vcmi_nx), NaGaa95 | NaGaa95 | v1.8.0 R2, 6 Jul 2026 [SP] |  |
-| Command & Conquer: Tiberian Dawn / Red Alert | PC, 1995/96 | Vanilla Conquer (C&C Remastered Collection cross-platform build), capsterx | capsterx | 0-r6, 2 Jan 2021. **No Switch OpenRA port found** — OpenRA itself is PC/Mac/Linux only in sources checked |  |
-| Transport Tycoon Deluxe | PC, 1995 | OpenTTD, rsn8887 | rsn8887 | v1.07, 8 May 2021 |  |
-| RollerCoaster Tycoon 2 | PC, 2002 | OpenRCT2, rsn8887; new build Wander-Eule Sep 2026 [SP] | rsn8887 | v1.06, 24 Apr 2021 |  |
-| Caesar III | PC, 1998 | Julius (reimplementation, bvschaik, v1.8.0 Aug 2025) + Augustus mod (Keriew, v4.0.0 Dec 2023) | multiple | 2023–2025 |  |
-| Theme Hospital | PC, 1997 | CorsixTH, Exvat | Exvat | 2019 (GBAtemp thread 537686, via WikiTemp list) |  |
-| X-COM: UFO Defense | PC, 1994 | OpenXcom, alexart878 | alexart878 | v1.0-NX, 21 Nov 2024 |  |
-| Dune II | PC, 1992 | Dune Legacy (enhanced reimplementation), carstene1ns | carstene1ns | 2025 build, 7 Nov 2025 |  |
-| Cave Story | PC (freeware), 2004 | NXEngine-evo (reimplementation, v2.6.5, 8 Apr 2022); Cave Story Engine 2 / CSE2 decomp (heyjoeway, 13 Dec 2019); doukutsu-rs also lists Switch | nxengine / heyjoeway | 2019–2024 |  |
-| Prince of Persia | Apple II/PC, 1989 | SDLPoP (open-source port), usineur | usineur | v1.3, 13 Oct 2019 |  |
-| Another World / Heart of the Alien / Flashback / Fade to Black | Amiga/PC, 1991–95 | Engine reimplementations (RAW, HOTA, REminiscence, f2b), mainly usineur/Cpasjuste | usineur et al. | 2018–2021 |  |
-| Descent / Descent II | PC, 1995/96 | DXX Switch (aagallag, 2018) / DXX-Rebirth (dimag0g, 2020); Thorhax Modern builds Sep 2026 [SP] | multiple | 2018–2026 |  |
-| Serious Sam: First & Second Encounter | PC, 2001/02 | Serious-Engine-TSE, fgsfdsfgs | fgsfdsfgs | nx1, 29 Dec 2019 |  |
-| System Shock | PC, 1994 | Shockolate source port, capsterx | capsterx | v0.8.2-r5, 23 Dec 2020 |  |
-| Unreal / Unreal Gold | PC, 1998 | UnrealNX loader, fgsfdsfgs | fgsfdsfgs | r2, 27 Oct 2022 |  |
-| Alien vs Predator Gold | PC, 2000 | AvP Gold Switch Edition, m4xw; Thorhax Modern Sep 2026 [SP] | m4xw | v0.0.3, 4 Mar 2019 |  |
-| Star Trek Voyager: Elite Force Holomatch | PC, 2000 | VoyagerNX (lilium-voyager/ioquake3 fork), faithvoid | faithvoid | v0.8.5.1, 28 Jun 2023 |  |
-| OpenArena | PC, 2005 (Q3-derived) | OpenArenaNX, faithvoid | faithvoid | v0.7.8.1, 28 Jun 2023 |  |
-| Tyrian | PC, 1995 | OpenTyrian / OpenTyrian2000 | felixrg et al.; andyvand | 2021; v3.0.0, 27 Feb 2025 |  |
-| Commander Keen (Galaxy etc.) | PC, 1991 | Commander Keen Switch (CloneKeen/Omnispeak line), EliasOenal | Elias Oenal | v3.3.0, 22 May 2023; v3.6.0 Feb 2026 [SP] |  |
-| Carmageddon | PC, 1997 | Dethrace, alexart878 (v1.1, 1 May 2025); jackazz86 fw21 build Oct 2026 [SP] | multiple | 2025–2026 |  |
-| VVVVVV | PC, 2010 | NX-VVVVVV, NicholeMattera (v2.3.3, Sep 2021); recomp build auggeythecat May 2026 [SP] | multiple | 2021–2026 |  |
-| Postal | PC, 1997 | Postal Switch, lantus/MVG | lantus | v1.0, 25 May 2018 |  |
-| Abuse | PC, 1996 | Abuse-SDL, capsterx | capsterx | 0.8r3, 14 Nov 2020 |  |
-| Jazz Jackrabbit / Jazz Jackrabbit 2 | PC, 1994/98 | OpenJazzNX (2019); Jazz2 Reborn deathkiller v3.9.0 Oct 2026 [SP] | multiple | 2019–2026 |  |
-| Captain Claw | PC, 1997 | OpenClaw / ClawSwitch, djmuted | djmuted | beta4, 12 Oct 2021 |  |
-| SiN | PC, 1998 | SiN Switch, rohit-n | rohit-n | v1.2, 4 Feb 2025 |  |
-| Eldritch | PC, 2013 | Eldritch Reanimated, usineur/rohit-n | usineur | 2019–2020 |  |
-| Lugaru HD | PC, 2005 | Lugaru port, usineur | usineur | 1.3-nx1, 5 Jan 2019 |  |
-| Aquaria | PC, 2007 | Aquaria open-source, dimag0g | dimag0g | v0.3.0, 27 Dec 2020 |  |
-| The Ur-Quan Masters (Star Control II) | PC, 1992 | UQM MegaMod, YokaiShogun | YokaiShogun | v0.8.0.85, 6 Feb 2021 |  |
-| FreeSpace 2 | PC, 1999 | FreeSpace 2 Open (freespace2_nx), NaGaa95 | NaGaa95 | v1.0.1, 28 Jun 2026 [SP] |  |
-| OutRun (Cannonball engine) | Arcade, 1986 | Cannonball, lantus (2018) / rsn8887 (v1.08, May 2021) / Thorhax Modern Sep 2026 | multiple | 2018–2026 |  |
-| Bermuda Syndrome, Heart of Darkness (HODE) | PC, 1996/98 | Engine rewrites, usineur | usineur | 2018 / 2020 |  |
+| Game(s) | Original | Engine/port | Author | Switch date |  | Link |
+|---|---|---|---|---|---|---|
+| Doom / Doom II (+ Heretic/Hexen etc. via GZDoom) | PC, 1993/94 | Chocolate Doom NX (lantus/MVG, 27 Jul 2018); kgDoom (2018); GZDoom (fgsfdsfgs, nx4.11pre, 10 Jul 2023; Thorhax GZDoom-NX-2026 v4.10.0 Aug 2026 [SP]) | multiple | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Doom 64 (Doom64EX) | N64, 1997 | Doom64EX reverse-engineering port, fgsfdsfgs | fgsfdsfgs | v0.2.0-nx, 24 Oct 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Doom 3 | PC, 2004 | dhewm3, fgsfdsfgs | fgsfdsfgs | v0.1.0_nx, 22 Oct 2018 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Quake | PC, 1996 | NXQuake (TyrQuake, 2018); QuakespasmNX (fgsfdsfgs, v0.92.3-nx, 21 Apr 2021; Thorhax Modern v0.93.3 Sep 2026 [SP]) | fgsfdsfgs | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Quake II | PC, 1997 | NXQuake2 (Yamagi Quake II), fgsfdsfgs | fgsfdsfgs | build 060, 20 Dec 2022 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Quake III Arena | PC, 1999 | ioquake3-nx, fgsfdsfgs (2019) / danifunker update (2021) | fgsfdsfgs | v0.3.0-nx, 18 Sep 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Duke Nukem 3D | PC, 1996 | EDuke32, Cpasjuste | Cpasjuste | v1.5, 13 Jul 2021 (earlier DukeNukem3D ports 2018 [GBATemp wiki]) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Wolfenstein 3D | PC, 1992 | Wolf4SDL-Switch, keeganatorr | keeganatorr | 1.0-beta, 19 Aug 2018 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Return to Castle Wolfenstein | PC, 2001 | iortcw port, capsterx | capsterx | Pre-release, 21 Nov 2020 — listed pre-release, treat as early | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Blood | PC, 1997 | NXBlood (NBlood), Jan200101 | Jan200101 | WIP, 5 Jun 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Shadow Warrior | PC, 1997 | JFSW Switch, alexart878 | alexart878 | v1.1-NX, 5 Dec 2024 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Half-Life (+ Blue Shift / Opposing Force / mods; Counter-Strike 1.6 via client libs) | PC, 1998 | Xash3D — xash3d-switch Datamats (15 Sep 2019), clamintus update (26 Jan 2022), xash3d-fwgs continuous (fgsfdsfgs/FWGS, Jan 2026) | FWGS team | 2019–2026; GBAtemp thread notes HL/BS/OpFor libraries merged upstream, automatic builds; CS 1.6 .so exists in distributions but was flaky in thread reports — see note in §5 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Half-Life 2 | PC, 2004 — Android/Source (nillerusr) binaries used | Android Source-engine wrapper hl2_nx, NaGaa95 | NaGaa95 | v1.0.5, 3 Nov 2026 [SP]; separate Switch 2 jailbreak demo Oct 2026 (see §2) | [catalogue](https://github.com/robzilla10001/switchports) |
+| Counter-Strike: Source | PC, 2004 — Android Source build used | Android loader css_nx, NaGaa95 (nillerusr engine) | NaGaa95 / naga | v1.0.1–1.0.2, Aug–Nov 2026; offline bots + IP servers [AR] | [catalogue](https://allrecomps.com/switch-ports/) |
+| Team Fortress 2 (ReClassic / Source) | PC, 2007 | Android/Source loader tf2_nx, NaGaa95 | NaGaa95 | v1.0.2, 3 Nov 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Portal | PC, 2007 | **No standalone unofficial Switch port found.** Portal is official on Switch (Companion Collection). Half-Life 2 was run *inside* official Portal 1 by OatmealDome (Jun 2022, mod, frequent crashes) — not a port release | — | — | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| The Elder Scrolls III: Morrowind | PC/Xbox, 2002 | OpenMW, fgsfdsfgs | fgsfdsfgs | v0.46.0-nx2, 28 Oct 2019; new openmw-nx v1.0.0 Oct 2026 (seamusduncmcgrath) [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| The Elder Scrolls II: Daggerfall (Unity) | PC, 1996 | Daggerfall Unity loader, ChanseyIsTheBest | ChanseyIsTheBest | v1.1.1.9s1.0.2, 8 Sep 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Diablo + Hellfire | PC, 1996 | DevilutionX (diasurgical), from Devilution reverse-engineering | diasurgical; first Switch build lantus devilution-nx 2019 | DevilutionX v1.5.5, 31 Oct 2025 (Switch build in HB App Store v1.5.4 Mar 2025) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Fallout | PC, 1997 | Fallout CE (Community Edition), ryandeering | ryandeering | v1.0.0/v1.1.0, 12 Dec 2024 / 21 May 2026 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Fallout 2 | PC, 1998 | Fallout 2 CE, ryandeering | ryandeering | v1.1.0, 11 Aug 2024 / May 2026 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Arx Fatalis | PC, 2002 | Arx Libertatis, fgsfdsfgs | fgsfdsfgs | v1.2-nx1, 21 Jul 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Ultima VII | PC, 1992 | Exult engine, capsterx | capsterx | r1.5, 24 Nov 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Heroes of Might and Magic II | PC, 1996 | fheroes2 (engine recreation) | fheroes2 team | v1.1.13, 21 Dec 2025; v1.1.18 Nov 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Heroes of Might and Magic III | PC, 1999 | VCMI (vcmi_nx), NaGaa95 | NaGaa95 | v1.8.0 R2, 6 Jul 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Command & Conquer: Tiberian Dawn / Red Alert | PC, 1995/96 | Vanilla Conquer (C&C Remastered Collection cross-platform build), capsterx | capsterx | 0-r6, 2 Jan 2021. **No Switch OpenRA port found** — OpenRA itself is PC/Mac/Linux only in sources checked | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Transport Tycoon Deluxe | PC, 1995 | OpenTTD, rsn8887 | rsn8887 | v1.07, 8 May 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| RollerCoaster Tycoon 2 | PC, 2002 | OpenRCT2, rsn8887; new build Wander-Eule Sep 2026 [SP] | rsn8887 | v1.06, 24 Apr 2021 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Caesar III | PC, 1998 | Julius (reimplementation, bvschaik, v1.8.0 Aug 2025) + Augustus mod (Keriew, v4.0.0 Dec 2023) | multiple | 2023–2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Theme Hospital | PC, 1997 | CorsixTH, Exvat | Exvat | 2019 (GBAtemp thread 537686, via WikiTemp list) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| X-COM: UFO Defense | PC, 1994 | OpenXcom, alexart878 | alexart878 | v1.0-NX, 21 Nov 2024 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Dune II | PC, 1992 | Dune Legacy (enhanced reimplementation), carstene1ns | carstene1ns | 2025 build, 7 Nov 2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Cave Story | PC (freeware), 2004 | NXEngine-evo (reimplementation, v2.6.5, 8 Apr 2022); Cave Story Engine 2 / CSE2 decomp (heyjoeway, 13 Dec 2019); doukutsu-rs also lists Switch | nxengine / heyjoeway | 2019–2024 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Prince of Persia | Apple II/PC, 1989 | SDLPoP (open-source port), usineur | usineur | v1.3, 13 Oct 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Another World / Heart of the Alien / Flashback / Fade to Black | Amiga/PC, 1991–95 | Engine reimplementations (RAW, HOTA, REminiscence, f2b), mainly usineur/Cpasjuste | usineur et al. | 2018–2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Descent / Descent II | PC, 1995/96 | DXX Switch (aagallag, 2018) / DXX-Rebirth (dimag0g, 2020); Thorhax Modern builds Sep 2026 [SP] | multiple | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Serious Sam: First & Second Encounter | PC, 2001/02 | Serious-Engine-TSE, fgsfdsfgs | fgsfdsfgs | nx1, 29 Dec 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| System Shock | PC, 1994 | Shockolate source port, capsterx | capsterx | v0.8.2-r5, 23 Dec 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Unreal / Unreal Gold | PC, 1998 | UnrealNX loader, fgsfdsfgs | fgsfdsfgs | r2, 27 Oct 2022 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Alien vs Predator Gold | PC, 2000 | AvP Gold Switch Edition, m4xw; Thorhax Modern Sep 2026 [SP] | m4xw | v0.0.3, 4 Mar 2019 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Star Trek Voyager: Elite Force Holomatch | PC, 2000 | VoyagerNX (lilium-voyager/ioquake3 fork), faithvoid | faithvoid | v0.8.5.1, 28 Jun 2023 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| OpenArena | PC, 2005 (Q3-derived) | OpenArenaNX, faithvoid | faithvoid | v0.7.8.1, 28 Jun 2023 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Tyrian | PC, 1995 | OpenTyrian / OpenTyrian2000 | felixrg et al.; andyvand | 2021; v3.0.0, 27 Feb 2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Commander Keen (Galaxy etc.) | PC, 1991 | Commander Keen Switch (CloneKeen/Omnispeak line), EliasOenal | Elias Oenal | v3.3.0, 22 May 2023; v3.6.0 Feb 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Carmageddon | PC, 1997 | Dethrace, alexart878 (v1.1, 1 May 2025); jackazz86 fw21 build Oct 2026 [SP] | multiple | 2025–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| VVVVVV | PC, 2010 | NX-VVVVVV, NicholeMattera (v2.3.3, Sep 2021); recomp build auggeythecat May 2026 [SP] | multiple | 2021–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Postal | PC, 1997 | Postal Switch, lantus/MVG | lantus | v1.0, 25 May 2018 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Abuse | PC, 1996 | Abuse-SDL, capsterx | capsterx | 0.8r3, 14 Nov 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Jazz Jackrabbit / Jazz Jackrabbit 2 | PC, 1994/98 | OpenJazzNX (2019); Jazz2 Reborn deathkiller v3.9.0 Oct 2026 [SP] | multiple | 2019–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Captain Claw | PC, 1997 | OpenClaw / ClawSwitch, djmuted | djmuted | beta4, 12 Oct 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| SiN | PC, 1998 | SiN Switch, rohit-n | rohit-n | v1.2, 4 Feb 2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Eldritch | PC, 2013 | Eldritch Reanimated, usineur/rohit-n | usineur | 2019–2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Lugaru HD | PC, 2005 | Lugaru port, usineur | usineur | 1.3-nx1, 5 Jan 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Aquaria | PC, 2007 | Aquaria open-source, dimag0g | dimag0g | v0.3.0, 27 Dec 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| The Ur-Quan Masters (Star Control II) | PC, 1992 | UQM MegaMod, YokaiShogun | YokaiShogun | v0.8.0.85, 6 Feb 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| FreeSpace 2 | PC, 1999 | FreeSpace 2 Open (freespace2_nx), NaGaa95 | NaGaa95 | v1.0.1, 28 Jun 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| OutRun (Cannonball engine) | Arcade, 1986 | Cannonball, lantus (2018) / rsn8887 (v1.08, May 2021) / Thorhax Modern Sep 2026 | multiple | 2018–2026 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Bermuda Syndrome, Heart of Darkness (HODE) | PC, 1996/98 | Engine rewrites, usineur | usineur | 2018 / 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 
 #### 1D. The 2026 explosion — Android-loader ports (released Aug–Nov 2026, [SP] unless noted)
 
@@ -284,31 +286,31 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 
 ### 2. In Development / Announced (no playable public release yet, or WIP-only)
 
-| Game | Original | Type / author | Status detail | Source |  |
-|---|---|---|---|---|---|
-| Bully: Anniversary Edition | PS2 2006 / Android | Android layer, givethesourceplox | Listed in both §1 and here in spirit: v0.0.2 public, boots/runs, explicitly unfinished/WIP (Apr 2026) | GBAtemp bully thread (above) |  |
-| GTA IV | PS3/X360, 2008 | Static recompilation: LibertyRecomp (OZORDI, ReXGlue, Xbox 360) → Switch ports kabba536 (GTA4NX, v35, 23 Oct 2026 [SP]) and Theft4-NX (gabryboy12-ai) | **Conflicting maturity reports — do not call playable.** Theft4-NX README (Oct 2026): "The game is not playable on Switch yet… reaches gameplay… at about 0.4 FPS." A packaged GTA4NX build circulates (360p + FSR, max OC advised, "first version, may be buggy" per distribution sites) and videos show driving gameplay Oct 2026, but no source rates it completable/stable | [SP]; GitHub https://github.com/gabryboy12-ai/theft4-nx/blob/HEAD/README-SWITCH.md ; GTABoom 7 Aug 2026 on LibertyRecomp |  |
-| The Warriors | PS2/Xbox, 2005 | Original-Xbox recompilation, GorillaTranslate | GBAtemp WIP thread 31 Oct 2026: video of build running on Switch; "early work-in-progress preview. There is no release date or public download yet." | https://gbatemp.net/threads/wip-the-warriors-for-nintendo-switch-original-xbox-recompilation-port.686073/#post-10939040 |  |
-| Fallout: New Vegas | PC, 2010 | Engine recreation (nv-rs-nx, Rust), DerilDX | SwitchPorts lists "*unreleased*", 28 Oct 2026 | [SP] |  |
-| The Binding of Isaac: Repentance+ | PC, 2021 | Native port attempt, antoniotorres02 | SwitchPorts lists "*unreleased*", 1 Nov 2026 (a separate Flash-Isaac recomp, IsaacRecomp, IS released [AR] — different project) | [SP][AR] |  |
-| Half-Life 2 (Switch 2) | PC, 2004 | Homebrew build via Switch 2 jailbreak (ns2jb / IZlauncher), Izmysh | Video 24 Oct 2026: 30fps/720p handheld on jailbroken Switch 2; launcher source/release "still coming", tethered exploit, not a Switch 1 release. Switch 1 hl2_nx is released (§1C) | OneJailbreak 25 Oct 2026 via search |  |
-| Mass Effect 2, Singularity, Hard Corps: Uprising | X360 | ReXGlue recomps | Listed "pre-release" Nov 2026 | [SP] |  |
-| Super Metroid, Return to Castle Wolfenstein, NXBlood (Blood) | — | Decomp/source ports | Listed WIP/pre-release/WIP in GameBrew (see §1) — no completable build verified | [GB] |  |
-| OpenGOAL / Jak (pre-2026 discussion) | PS2 | — | For history: a native Jak Switch port was long considered blocked because OpenGOAL targeted x86, not ARM (GBAtemp discussion Dec 2024) — superseded by the Oct 2026 Jak Project Switch (§1E), which is a separate adaptation, not upstream OpenGOAL | GBAtemp OpenGOAL thread via search |  |
+| Game | Original | Type / author | Status detail | Source |  | Link |
+|---|---|---|---|---|---|---|
+| Bully: Anniversary Edition | PS2 2006 / Android | Android layer, givethesourceplox | Listed in both §1 and here in spirit: v0.0.2 public, boots/runs, explicitly unfinished/WIP (Apr 2026) | GBAtemp bully thread (above) | [source](https://gbatemp.net/threads/bully-switch-port-wip.680904/) |
+| GTA IV | PS3/X360, 2008 | Static recompilation: LibertyRecomp (OZORDI, ReXGlue, Xbox 360) → Switch ports kabba536 (GTA4NX, v35, 23 Oct 2026 [SP]) and Theft4-NX (gabryboy12-ai) | **Conflicting maturity reports — do not call playable.** Theft4-NX README (Oct 2026): "The game is not playable on Switch yet… reaches gameplay… at about 0.4 FPS." A packaged GTA4NX build circulates (360p + FSR, max OC advised, "first version, may be buggy" per distribution sites) and videos show driving gameplay Oct 2026, but no source rates it completable/stable | [SP]; GitHub https://github.com/gabryboy12-ai/theft4-nx/blob/HEAD/README-SWITCH.md ; GTABoom 7 Aug 2026 on LibertyRecomp | [catalogue](https://github.com/robzilla10001/switchports) |
+| The Warriors | PS2/Xbox, 2005 | Original-Xbox recompilation, GorillaTranslate | GBAtemp WIP thread 31 Oct 2026: video of build running on Switch; "early work-in-progress preview. There is no release date or public download yet." | https://gbatemp.net/threads/wip-the-warriors-for-nintendo-switch-original-xbox-recompilation-port.686073/#post-10939040 | [catalogue](https://github.com/robzilla10001/switchports) |
+| Fallout: New Vegas | PC, 2010 | Engine recreation (nv-rs-nx, Rust), DerilDX | SwitchPorts lists "*unreleased*", 28 Oct 2026 | [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| The Binding of Isaac: Repentance+ | PC, 2021 | Native port attempt, antoniotorres02 | SwitchPorts lists "*unreleased*", 1 Nov 2026 (a separate Flash-Isaac recomp, IsaacRecomp, IS released [AR] — different project) | [SP][AR] | [catalogue](https://allrecomps.com/switch-ports/) |
+| Half-Life 2 (Switch 2) | PC, 2004 | Homebrew build via Switch 2 jailbreak (ns2jb / IZlauncher), Izmysh | Video 24 Oct 2026: 30fps/720p handheld on jailbroken Switch 2; launcher source/release "still coming", tethered exploit, not a Switch 1 release. Switch 1 hl2_nx is released (§1C) | OneJailbreak 25 Oct 2026 via search | [catalogue](https://github.com/robzilla10001/switchports) |
+| Mass Effect 2, Singularity, Hard Corps: Uprising | X360 | ReXGlue recomps | Listed "pre-release" Nov 2026 | [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Super Metroid, Return to Castle Wolfenstein, NXBlood (Blood) | — | Decomp/source ports | Listed WIP/pre-release/WIP in GameBrew (see §1) — no completable build verified | [GB] | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| OpenGOAL / Jak (pre-2026 discussion) | PS2 | — | For history: a native Jak Switch port was long considered blocked because OpenGOAL targeted x86, not ARM (GBAtemp discussion Dec 2024) — superseded by the Oct 2026 Jak Project Switch (§1E), which is a separate adaptation, not upstream OpenGOAL | GBAtemp OpenGOAL thread via search | [catalogue](https://github.com/robzilla10001/switchports) |
 
 ### 3. Cancelled / Rumoured / Unverified / No Port Exists
 
-| Game / claim | Verdict | Evidence |  |  |  |
-|---|---|---|---|---|---|
-| **GTA V — GTA5NX, Paralympics Productions (lead: Mojso / M0jso)** | **CANCELLED before wider release.** Native homebrew port (not streaming/emulation/Linux/Android), reportedly based on GTA V Legacy v1.0.2699 (PC/PS4/XOne branch) and, per GamesRadar reporting, allegedly using leaked GTA V source code (allegation, not confirmed by any published legal filing). Revealed Aug 2026; Tom's Hardware 2 Sep 2026 reported ~30fps with modifications; other testing: **10–25fps on an unmodified Switch**, overclocking needed, aggressive asset compression for 4GB RAM, no GTA Online. Timeline: Rockstar mod guidelines 10 Sep 2026 banned ports to platforms where games were not officially released; Discord server removed 23 Sep 2026 (copyright); Mojso announced 28 Sep 2026 that Take-Two lawyers contacted the team; **Paralympics Productions shut down 3 Oct 2026**, cancelling the Switch build, its planned performance update and a parallel Android port; team said it would **not publish or transfer source code/assets**. No legitimate download channel exists — any "GTA5NX download" site is not the developers. | https://vgkami.com/take-two-shuts-down-unofficial-gta-5-switch-port-by-modders-2026/ ; https://thedigginator.com/gta-5-nintendo-switch-native-port/ ; https://tech-insider.org/gta-5-switch-port-canceled-take-two-2026/ (all via search, Nov 2026) |  |  |  |
-| GTA III / Vice City — re3/reVC legal status | Project was DMCA'd (Feb 2021), counter-claimed and restored (Jun 2021), then **sued by Take-Two** (filed Sep 2021, California) for, among other things, making the games playable on Switch/Vita/Wii U. Switch builds continued to circulate/update afterwards (newer builds for newer firmware noted Aug 2026 in the SA thread). Not "cancelled" as a playable artefact, but legally embattled — list as released with that caveat | Kotaku 3 Sep 2021 via search; GBAtemp SA thread |  |  |  |
-| Red Dead Redemption (unofficial) | **No unofficial Switch port exists.** RDR got an **official** Switch port (Double Eleven, Aug 2023) — out of scope. The famous "60fps on hacked Switch" videos are FPSLocker/ReverseNX overclock mods *of the official release*, not a port. RecompHub lists RDR as "No port yet" | Kotaku 21 Aug 2023; https://recomphub.com/ via search |  |  |  |
-| Red Dead Redemption 2 | No official or unofficial Switch port found in any catalogue/search. Do not list | Absence in [SP][GB][AR] + searches |  |  |  |
-| Manhunt / Manhunt 2 | **No Switch port found** — not in SwitchPorts, GameBrew, AllRecomps, or web search. Do not list as ported (PSP/Vita emulation on Switch is emulation, out of scope) | Searches + catalogues |  |  |  |
-| GTA: Vice City Stories | No standalone Switch port found (playable only via PPSSPP emulation, out of scope). Note re3 thread (2020) explicitly: "There's no active decompilation project for SA, LCS, VCS or Bully at the moment" — LCS later arrived via Android loader (§1A), VCS did not | GBAtemp re3 thread |  |  |  |
-| Portal (standalone unofficial) | No standalone unofficial port; official Companion Collection only (see §1C) | Searches |  |  |  |
-| Command & Conquer via OpenRA on Switch | No Switch OpenRA build found; only Vanilla Conquer (§1C) | Searches + [GB] |  |  |  |
-| "GTA V / GTA IV / Halo / Dark Souls II etc. on Switch" social-media / Telegram / paid NSP bundles | SwitchPorts maintainer explicitly warns (Oct 2026 notice): many listed projects are "ripped off and re-compiled without attribution or bundled with commercial assets and distributed illegally, often for a fee… if you have been charged to access a title listed on this page, you have been ripped off." Every legitimate port in this report was released **free**, files-supplied-by-user. Treat paid/Telegram "Switch port" bundles and fake box-art posts (e.g. viral posts claiming GTA IV/V, Halo, Prototype, FC27 etc.) as unverified/piratical repacks, not new ports | [SP] disclaimer (verified live) |  |  |  |
+| Game / claim | Verdict | Evidence |  |  |  | Link |
+|---|---|---|---|---|---|---|
+| **GTA V — GTA5NX, Paralympics Productions (lead: Mojso / M0jso)** | **CANCELLED before wider release.** Native homebrew port (not streaming/emulation/Linux/Android), reportedly based on GTA V Legacy v1.0.2699 (PC/PS4/XOne branch) and, per GamesRadar reporting, allegedly using leaked GTA V source code (allegation, not confirmed by any published legal filing). Revealed Aug 2026; Tom's Hardware 2 Sep 2026 reported ~30fps with modifications; other testing: **10–25fps on an unmodified Switch**, overclocking needed, aggressive asset compression for 4GB RAM, no GTA Online. Timeline: Rockstar mod guidelines 10 Sep 2026 banned ports to platforms where games were not officially released; Discord server removed 23 Sep 2026 (copyright); Mojso announced 28 Sep 2026 that Take-Two lawyers contacted the team; **Paralympics Productions shut down 3 Oct 2026**, cancelling the Switch build, its planned performance update and a parallel Android port; team said it would **not publish or transfer source code/assets**. No legitimate download channel exists — any "GTA5NX download" site is not the developers. | https://vgkami.com/take-two-shuts-down-unofficial-gta-5-switch-port-by-modders-2026/ ; https://thedigginator.com/gta-5-nintendo-switch-native-port/ ; https://tech-insider.org/gta-5-switch-port-canceled-take-two-2026/ (all via search, Nov 2026) | [catalogue](https://github.com/robzilla10001/switchports) |
+| GTA III / Vice City — re3/reVC legal status | Project was DMCA'd (Feb 2021), counter-claimed and restored (Jun 2021), then **sued by Take-Two** (filed Sep 2021, California) for, among other things, making the games playable on Switch/Vita/Wii U. Switch builds continued to circulate/update afterwards (newer builds for newer firmware noted Aug 2026 in the SA thread). Not "cancelled" as a playable artefact, but legally embattled — list as released with that caveat | Kotaku 3 Sep 2021 via search; GBAtemp SA thread | [catalogue](https://github.com/robzilla10001/switchports) |
+| Red Dead Redemption (unofficial) | **No unofficial Switch port exists.** RDR got an **official** Switch port (Double Eleven, Aug 2023) — out of scope. The famous "60fps on hacked Switch" videos are FPSLocker/ReverseNX overclock mods *of the official release*, not a port. RecompHub lists RDR as "No port yet" | Kotaku 21 Aug 2023; https://recomphub.com/ via search | [catalogue](https://github.com/robzilla10001/switchports) |
+| Red Dead Redemption 2 | No official or unofficial Switch port found in any catalogue/search. Do not list | Absence in [SP][GB][AR] + searches | [catalogue](https://allrecomps.com/switch-ports/) |
+| Manhunt / Manhunt 2 | **No Switch port found** — not in SwitchPorts, GameBrew, AllRecomps, or web search. Do not list as ported (PSP/Vita emulation on Switch is emulation, out of scope) | Searches + catalogues | [catalogue](https://github.com/robzilla10001/switchports) |
+| GTA: Vice City Stories | No standalone Switch port found (playable only via PPSSPP emulation, out of scope). Note re3 thread (2020) explicitly: "There's no active decompilation project for SA, LCS, VCS or Bully at the moment" — LCS later arrived via Android loader (§1A), VCS did not | GBAtemp re3 thread | [catalogue](https://github.com/robzilla10001/switchports) |
+| Portal (standalone unofficial) | No standalone unofficial port; official Companion Collection only (see §1C) | Searches | [catalogue](https://github.com/robzilla10001/switchports) |
+| Command & Conquer via OpenRA on Switch | No Switch OpenRA build found; only Vanilla Conquer (§1C) | Searches + [GB] | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| "GTA V / GTA IV / Halo / Dark Souls II etc. on Switch" social-media / Telegram / paid NSP bundles | SwitchPorts maintainer explicitly warns (Oct 2026 notice): many listed projects are "ripped off and re-compiled without attribution or bundled with commercial assets and distributed illegally, often for a fee… if you have been charged to access a title listed on this page, you have been ripped off." Every legitimate port in this report was released **free**, files-supplied-by-user. Treat paid/Telegram "Switch port" bundles and fake box-art posts (e.g. viral posts claiming GTA IV/V, Halo, Prototype, FC27 etc.) as unverified/piratical repacks, not new ports | [SP] disclaimer (verified live) | [catalogue](https://github.com/robzilla10001/switchports) |
 - **Playability/completability of most Nov 2026 (0.x) recomps and Android loaders** — catalogues list a build and date, not a completion test. Only a handful have hard performance data: Dead Space 1 (540p30 stock/720p30 OC), Tekken 3 (locked 60fps stock), SVR 2011 (~51fps OC), GTA V (10–25fps stock), GTA IV Theft4 build (0.4fps, conflicting with packaged GTA4NX videos).
 - **Exact first-release dates for many classic ports** — GameBrew dates above are its "last updated" for the Switch build, which may postdate first release (e.g. CorsixTH, SRB2).
 - **Super Metroid (snesrev) and several snesrev-line ports** — listed explicitly as WIP; no completable Switch build verified.
@@ -318,14 +320,14 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 
 ## New since the baseline (2026-11-14 / 2026-11-15)
 
-| Game | Original | Port type | Author | Latest | Note |
-|---|---|---|---|---|---|
-| Call of Duty: Black Ops | PC, 2010 | Source reconstruction | HDErick, NaGaa95 | Beta, 13 Nov 2026 | Early — campaign, online multiplayer and Zombies playable; split-screen experimental |
-| F.E.A.R. | Xbox 360, 2005 | Static recompilation (ReXGlue) | infriker | v0.2.1, 6 Nov 2026 | Early — campaign playable, ~30 FPS stock, gyro aiming |
-| New Super Mario Bros. Wii | Wii, 2009 | Static recompilation | schuler-ph | Reviewed 14 Nov 2026 | Early — build it yourself, no prebuilt NRO; co-op up to 4, 59–60 FPS docked overclocked |
-| The Simpsons (arcade) | Arcade, 1991 | Decomp-based source port | cheviman | v1.0.1, 14 Nov 2026 | Two .nro files + NSP option; needs own MAME ROM |
-| Madagascar | Xbox, 2005 | Static recompilation | gerisson1996 | v0.1.8, 12 Nov 2026 | Early — playable menu to gameplay, full audio, no overclock needed |
-| Woody Woodpecker: Escape from Buzz Buzzard Park | PC, 2001 | Engine reimplementation | jjmhalew | v1.0.12 | Experimental Switch build; needs own CD |
+| Game | Original | Port type | Author | Latest | Note | Link |
+|---|---|---|---|---|---|---|
+| Call of Duty: Black Ops | PC, 2010 | Source reconstruction | HDErick, NaGaa95 | Beta, 13 Nov 2026 | Early — campaign, online multiplayer and Zombies playable; split-screen experimental | [source](https://github.com/HDErick/OpenBLOPS-NX) |
+| F.E.A.R. | Xbox 360, 2005 | Static recompilation (ReXGlue) | infriker | v0.2.1, 6 Nov 2026 | Early — campaign playable, ~30 FPS stock, gyro aiming | [source](https://github.com/infriker/fear-nx) |
+| New Super Mario Bros. Wii | Wii, 2009 | Static recompilation | schuler-ph | Reviewed 14 Nov 2026 | Early — build it yourself, no prebuilt NRO; co-op up to 4, 59–60 FPS docked overclocked | [source](https://github.com/schuler-ph/nsmbw-switch) |
+| The Simpsons (arcade) | Arcade, 1991 | Decomp-based source port | cheviman | v1.0.1, 14 Nov 2026 | Two .nro files + NSP option; needs own MAME ROM | [source](https://github.com/cheviman/simpsons-port) |
+| Madagascar | Xbox, 2005 | Static recompilation | gerisson1996 | v0.1.8, 12 Nov 2026 | Early — playable menu to gameplay, full audio, no overclock needed | [source](https://gbatemp.net/threads/release-madagascar-xbox-for-nintendo-switch-native-static-recompilation-port-v0-1-8.686468/) |
+| Woody Woodpecker: Escape from Buzz Buzzard Park | PC, 2001 | Engine reimplementation | jjmhalew | v1.0.12 | Experimental Switch build; needs own CD | [source](https://github.com/jjmhalew/WoodyRE) |
 
 ## In development / cancelled — the short version
 
