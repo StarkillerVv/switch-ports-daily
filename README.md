@@ -36,3 +36,4 @@ Two to know right away: **GTA IV is WIP** (conflicting reports, 0.4 FPS in one b
 - GameBrew — List of Switch homebrew games
 - AllRecomps — https://allrecomps.com/switch-ports/ (66 curated projects, 2026-11-15)
 - GBAtemp / GitHub for major new ports
+- GitHub scrub — a direct search of GitHub for Switch game ports not in SwitchPorts, GameBrew or AllRecomps (first run 2026-11-15: 17 ports found, each verified against its own repo)

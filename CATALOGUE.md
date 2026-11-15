@@ -406,4 +406,5 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - SwitchPorts — https://github.com/robzilla10001/switchports
 - GameBrew — List of Switch homebrew games
 - AllRecomps — https://allrecomps.com/switch-ports/
+- GitHub scrub — a direct search of GitHub for Switch game ports not in any of the three lists above (first run 2026-11-15: 17 ports found). Every candidate is verified against its own repo for a real Switch build before it is listed.
 - Daily findings in this repo: [`findings/`](findings/)
