@@ -4,14 +4,6 @@ Fan-made, homebrew ports of games to a modded Nintendo Switch. Not official eSho
 
 **Start here: [CATALOGUE.md](CATALOGUE.md)** — the full list, in one file.
 
-## How to find a game
-
-1. Open **[CATALOGUE.md](CATALOGUE.md)**.
-2. Use **Ctrl+F** (or Cmd+F on Mac) and type the game's name.
-3. The top of the file has an **A–Z table** — one line per game. Below it, the same games are grouped by type (Rockstar, Nintendo decomps, PC source ports, Android loaders, recomps), with the full notes.
-
-No need to dig through daily files to find a game — the catalogue is always the current, complete list.
-
 ## What's new
 
 New ports are added to the catalogue as soon as they are verified, and also logged by day in [`findings/`](findings/) — one file per day, newest first:
