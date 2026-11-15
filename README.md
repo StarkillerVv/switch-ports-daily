@@ -37,3 +37,13 @@ Two to know right away: **GTA IV is WIP** (conflicting reports, 0.4 FPS in one b
 - AllRecomps — https://allrecomps.com/switch-ports/ (66 curated projects, 2026-11-15)
 - GBAtemp / GitHub for major new ports
 - GitHub scrub — a direct search of GitHub for Switch game ports not in SwitchPorts, GameBrew or AllRecomps (first run 2026-11-15: 17 ports found, each verified against its own repo)
+
+## Stats
+
+[![Stars](https://img.shields.io/github/stars/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/stargazers)
+[![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
+[![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
+[![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
+[![Catalogue size](https://img.shields.io/badge/games-143-blue)](CATALOGUE.md)
+
+Views and clones are not shown by badges — GitHub only reports them to the repo owner under **Insights → Traffic** (last 14 days). As of 2026-11-15: 0 views, 0 clones (repo is one day old).
