@@ -197,22 +197,34 @@
       .result-count { font-size: 13.5px; color: var(--ink-3); margin: 8px 2px 0; }
       .result-count b { color: var(--ink); }
 
-      /* Compact search-only bar: appears at the top only while scrolling up,
-         once the in-flow filter bar (chips + count included) has scrolled away. */
+      /* Scroll-up search: a single slim field floating at the top — nothing
+         else. No bar background, border strip, shadow or padding around it;
+         the field itself is the whole element (~40px tall). It appears only
+         while scrolling up, once the in-flow filter section has scrolled away. */
       .sticky-search {
         position: fixed;
-        top: 0; left: 0; right: 0;
+        top: 6px; left: 0; right: 0;
         z-index: 45;
-        background: var(--bg);
-        border-bottom: 1px solid var(--line);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, .10);
-        padding: 8px 0;
-        transform: translateY(-110%);
-        transition: transform .2s ease;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+        transform: translateY(-200%);
+        transition: transform .18s ease;
+        pointer-events: none;
       }
       .sticky-search.ss-visible { transform: translateY(0); }
       .sticky-search-inner { max-width: 1120px; margin: 0 auto; padding: 0 18px; }
-      .sticky-search .search { flex: none; width: 100%; }
+      .sticky-search .search {
+        flex: none; width: 100%;
+        height: 40px; min-height: 40px;
+        padding: 0 12px;
+        border-radius: 999px;
+        box-shadow: none;
+        pointer-events: auto;
+      }
+      .sticky-search .search svg { width: 15px; height: 15px; }
+      .sticky-search .search input { min-height: 0; height: 38px; font-size: 16px; }
       @media (prefers-reduced-motion: reduce) {
         .sticky-search { transition: none; }
       }
@@ -319,7 +331,7 @@
 
         /* Filters scroll away with the page — compact on phones */
         .filterbar { padding: 12px 0 10px; }
-        .sticky-search { padding: 6px 0; }
+        .sticky-search { top: 6px; padding: 0; }
         .sticky-search-inner { padding: 0 14px; }
         .filter-row { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 10px; }
         .search {
@@ -1070,9 +1082,10 @@
           });
         }
 
-        // Search-only bar at the top: shows only while scrolling UP and only
-        // after the in-flow filter bar has scrolled out of view; scrolling
-        // down (or reaching the filter bar again) hides it.
+        // Standalone search field at the top: shows ONLY while scrolling UP
+        // and only after the in-flow filter section has scrolled out of view.
+        // ANY scroll down hides it immediately — no threshold, no delay, no
+        // hysteresis — so scrolling down leaves the list the full screen.
         if (stickyBar && filterbar) {
           var stickyShown = false;
           var lastY = window.pageYOffset || 0;
@@ -1087,12 +1100,10 @@
             var y = window.pageYOffset || 0;
             var dy = y - lastY;
             var pastFilters = filterbar.getBoundingClientRect().bottom <= 0;
-            if (!pastFilters) {
+            if (!pastFilters || dy > 0) {
               setSticky(false);
-            } else if (dy <= -4) {
+            } else if (dy < 0) {
               setSticky(true);
-            } else if (dy >= 4) {
-              setSticky(false);
             }
             lastY = y;
           };
