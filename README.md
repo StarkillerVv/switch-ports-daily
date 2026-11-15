@@ -2,7 +2,7 @@
 
 Fan-made, homebrew ports of games to a modded Nintendo Switch. Not official eShop releases.
 
-**Start here: [CATALOGUE.md](CATALOGUE.md)** — the full list, in one file.
+**Start here: [CATALOGUE.md](CATALOGUE.md)** — the full list, in one file. The same catalogue as a browsable web page is [`catalogue.html`](catalogue.html) (a self-contained copy of the Space, re-exported with every daily update).
 
 ## What's new
 
