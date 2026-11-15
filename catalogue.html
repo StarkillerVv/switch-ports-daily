@@ -197,6 +197,26 @@
       .result-count { font-size: 13.5px; color: var(--ink-3); margin: 8px 2px 0; }
       .result-count b { color: var(--ink); }
 
+      /* Compact search-only bar: appears at the top only while scrolling up,
+         once the in-flow filter bar (chips + count included) has scrolled away. */
+      .sticky-search {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 45;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .10);
+        padding: 8px 0;
+        transform: translateY(-110%);
+        transition: transform .2s ease;
+      }
+      .sticky-search.ss-visible { transform: translateY(0); }
+      .sticky-search-inner { max-width: 1120px; margin: 0 auto; padding: 0 18px; }
+      .sticky-search .search { flex: none; width: 100%; }
+      @media (prefers-reduced-motion: reduce) {
+        .sticky-search { transition: none; }
+      }
+
       section { margin-top: 34px; }
       section > h2 {
         font-family: "Barlow Condensed", sans-serif;
@@ -299,21 +319,20 @@
 
         /* Filters scroll away with the page — compact on phones */
         .filterbar { padding: 12px 0 10px; }
+        .sticky-search { padding: 6px 0; }
+        .sticky-search-inner { padding: 0 14px; }
         .filter-row { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 10px; }
         .search {
           flex: 0 0 auto; width: 100%; min-height: 52px; padding: 0 14px; border-radius: 8px;
         }
         .search input { font-size: 16px; min-height: 50px; }
         .chips {
-          display: flex; flex-wrap: nowrap; gap: 8px; align-items: center;
-          overflow-x: auto; overflow-y: hidden;
-          -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
-          scrollbar-width: none; padding: 2px 2px 6px; margin: 0 -2px;
+          display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+          padding: 2px 2px 4px; margin: 0 -2px;
           max-width: 100%;
         }
-        .chips::-webkit-scrollbar { display: none; }
         .chip {
-          flex: 0 0 auto; white-space: nowrap;
+          flex: 0 1 auto; white-space: nowrap;
           min-height: 44px; min-width: 44px; padding: 10px 16px; font-size: 14.5px;
         }
         .result-count { font-size: 14px; line-height: 1.55; margin-top: 4px; }
@@ -937,6 +956,15 @@
       </footer>
     </div>
 
+    <div class="sticky-search" id="stickySearch" aria-hidden="true">
+      <div class="sticky-search-inner">
+        <label class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+          <input id="q2" type="search" placeholder="Search by game, author or original system…" aria-label="Search by game, author or original system" tabindex="-1" />
+        </label>
+      </div>
+    </div>
+
     <button type="button" id="filtersFab" class="filters-fab fab-hidden" aria-label="Back to search and filters">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v5l-4 2v-7L3 5z"/></svg>
       <span>Filters</span>
@@ -946,6 +974,8 @@
     <script>
       (function () {
         var q = document.getElementById('q');
+        var stickyBar = document.getElementById('stickySearch');
+        var stickyQ = document.getElementById('q2');
         var filterbar = document.getElementById('filters');
         var fab = document.getElementById('filtersFab');
         var fabBadge = document.getElementById('fabBadge');
@@ -1029,7 +1059,46 @@
             apply();
           });
         });
-        q.addEventListener('input', apply);
+        q.addEventListener('input', function () {
+          if (stickyQ && stickyQ.value !== q.value) stickyQ.value = q.value;
+          apply();
+        });
+        if (stickyQ) {
+          stickyQ.addEventListener('input', function () {
+            if (q.value !== stickyQ.value) q.value = stickyQ.value;
+            apply();
+          });
+        }
+
+        // Search-only bar at the top: shows only while scrolling UP and only
+        // after the in-flow filter bar has scrolled out of view; scrolling
+        // down (or reaching the filter bar again) hides it.
+        if (stickyBar && filterbar) {
+          var stickyShown = false;
+          var lastY = window.pageYOffset || 0;
+          var setSticky = function (show) {
+            if (show === stickyShown) return;
+            stickyShown = show;
+            stickyBar.classList.toggle('ss-visible', show);
+            stickyBar.setAttribute('aria-hidden', show ? 'false' : 'true');
+            if (stickyQ) stickyQ.tabIndex = show ? 0 : -1;
+          };
+          var onScrollSticky = function () {
+            var y = window.pageYOffset || 0;
+            var dy = y - lastY;
+            var pastFilters = filterbar.getBoundingClientRect().bottom <= 0;
+            if (!pastFilters) {
+              setSticky(false);
+            } else if (dy <= -4) {
+              setSticky(true);
+            } else if (dy >= 4) {
+              setSticky(false);
+            }
+            lastY = y;
+          };
+          window.addEventListener('scroll', onScrollSticky, { passive: true });
+          onScrollSticky();
+        }
         apply();
       })();
     </script>
