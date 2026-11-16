@@ -31,6 +31,10 @@ The daily log is just the changelog. The catalogue is the thing to browse.
 
 Two to know right away: **GTA IV is WIP** (conflicting reports, 0.4 FPS in one build, 14–17 FPS in another — not finished), and **GTA V (GTA5NX) is cancelled** (Take-Two shut it down in Oct 2026, nothing was ever released — any "GTA5NX download" is fake).
 
+## Requests
+
+Missing a port, or an entry is wrong? [Open an issue](https://github.com/StarkillerVv/switch-ports-daily/issues/new/choose) — there is one form to **add a port to the list** and one for a **modification / correction**. Please include a link to the port itself (repo or release page) so it can be verified.
+
 ## Sources checked daily (6am ET)
 
 - SwitchPorts — https://github.com/robzilla10001/switchports (453 entries, 2026-11-13)
