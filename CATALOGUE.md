@@ -2,7 +2,7 @@
 
 Every unofficial game port for Nintendo Switch we have verified so far. Plain-language version of the full catalogue — the same list that lives on the [Switch Ports since GTA5NX](https://github.com/StarkillerVv/switch-ports-daily) page.
 
-**Last updated:** 2026-11-16 — SwitchPorts: 453 entries (HEAD c3d93eff unchanged, last commit 2026-11-12), GameBrew: nothing after 2026-11-10, AllRecomps: 66 curated projects (unchanged). GitHub scrub 2026-11-16: 1 new verified port (Super Paper Mario — spm-nx v0.5.0) and one version bump (JSRF Unleashed v0.5.5).
+**Last updated:** 2026-11-16 (second run) — SwitchPorts: 458 entries (HEAD 2f472859; five rows merged 2026-11-16 — Mario Kart: Super Circuit, Death Rally, Quake 4, Ultimate Spider-Man, The SpongeBob SquarePants Movie — plus KOF 2002 UM and NFS Carbon version bumps; the list's own footer total still reads 453), GameBrew: nothing after 2026-11-10, AllRecomps: 66 curated projects (unchanged). First check of Wololo.net (no new game port; latest Switch item is an original homebrew game, 2026-10-20), the SwitchBrew wiki (recent changes are system-service/firmware documentation only — no port releases) and the HB App Store (2 ports new to this catalogue: FNF: V-Slice, IWBTGR Tribute Edition). Second run 2026-11-16: 6 new verified ports and 3 version/status updates. Earlier that day: GitHub scrub added Super Paper Mario (spm-nx v0.5.0) and JSRF Unleashed v0.5.5.
 
 ## How to read this list
 
@@ -21,7 +21,7 @@ Every unofficial game port for Nintendo Switch we have verified so far. Plain-la
 
 One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump to a title, then look it up in the grouped sections below for the full note. (A few 2026 Android-loader / recomp titles are only listed as bullet groups in sections 1D–1F below — Ctrl+F finds them there too.)
 
-**148 games listed.**
+**154 games listed.**
 
 
    - **Android-loader flood** (mainly NaGaa95, ChanseyIsTheBest, aks796, Thorhax, etc.): a generic minimal-Android compatibility layer loads the original Android ARM/ARM64 `libGame.so` — dozens of Android games ported in Aug–Nov 2026 alone.
@@ -56,6 +56,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Counter-Strike: Source | PC, 2004 — Android Source build used | Android loader css_nx, NaGaa95 (nillerusr engine) | NaGaa95 / naga | v1.0.1–1.0.2, Aug–Nov 2026; offline bots + IP servers [AR] | [catalogue](https://allrecomps.com/switch-ports/) |
 | Crash Twinsanity | PS2, 2004 | Decompilation port (twinsanity-reversed + NativeEE), source-build only | dampestwriter | Repo 15 Nov 2026; build.sh produces reNsanity.nro | [source](https://github.com/dampestwriter/reNsanity) |
 | Dark Souls II: Scholar of the First Sin | Xbox 360, 2015 | Recompilation | XDASCATX | v121, 6 Nov 2026 | [source](https://github.com/XDASCATX/DS2_switch) |
+| Death Rally | PC, 1996 | Source port (dRally engine) | VLPLAY-Games | v1.1.0, 12 Nov 2026 | [source](https://github.com/VLPLAY-Games/dRally_S) |
 | Descent / Descent II | PC, 1995/96 | DXX Switch (aagallag, 2018) / DXX-Rebirth (dimag0g, 2020); Thorhax Modern builds Sep 2026 [SP] | multiple | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
 | Diablo + Hellfire | PC, 1996 | DevilutionX (diasurgical), from Devilution reverse-engineering | diasurgical; first Switch build lantus devilution-nx 2019 | DevilutionX v1.5.5, 31 Oct 2025 (Switch build in HB App Store v1.5.4 Mar 2025) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Doom / Doom II (+ Heretic/Hexen etc. via GZDoom) | PC, 1993/94 | Chocolate Doom NX (lantus/MVG, 27 Jul 2018); kgDoom (2018); GZDoom (fgsfdsfgs, nx4.11pre, 10 Jul 2023; Thorhax GZDoom-NX-2026 v4.10.0 Aug 2026 [SP]) | multiple | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
@@ -73,6 +74,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Fallout 2 | PC, 1998 | Fallout 2 CE, ryandeering | ryandeering | v1.1.0, 11 Aug 2024 / May 2026 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Fallout: New Vegas | PC, 2010 | Engine recreation (nv-rs-nx, Rust), DerilDX | SwitchPorts lists "*unreleased*", 28 Oct 2026 | [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
 | FreeSpace 2 | PC, 1999 | FreeSpace 2 Open (freespace2_nx), NaGaa95 | NaGaa95 | v1.0.1, 28 Jun 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
+| Friday Night Funkin' — FNF: V-Slice | PC (open-source), 2020 | Source port (unofficial) | leleletus | v0.8.7-nx-release-1, 13 Nov 2026 (HB App Store) | [source](https://hb-app.store/switch/FNFVSliceNX) |
 | Grand Theft Auto III | PS2/PC, 2001 | Decompilation / reverse-engineered source port (re3) | GTAmodding (re3); Switch port Graber (AGraber) | Sep 23–24, 2020 (re3-nx v1.0); Android-loader alternative v1.0.4, 16 Oct 2026 (mariob0y/gta3-nx) | [source](https://gbatemp.net/threads/re3-nx-reverse-engineered-gta-3-for-nintendo-switch.574308/page-20) |
 | Grand Theft Auto: San Andreas | PS2, 2004 — Android v2.11.311 used | Android-.so loader / compatibility wrapper | NaGaa95 (gtasa_nx) | Aug 2026; v1.0.3 15 Aug 2026, v1.0.5 3 Nov 2026 | [source](https://gbatemp.net/threads/gta-san-andreas-switch-port.683068/) |
 | Grand Theft Auto: Vice City | PS2/PC, 2002 | Decompilation (reVC, re3 "Miami" branch) | Flex1911, based on Graber's re3-nx | Early build Oct 14, 2020; full Switch release Jul 2021 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
@@ -91,16 +93,18 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Heroes of Might and Magic III | PC, 1999 | VCMI (vcmi_nx), NaGaa95 | NaGaa95 | v1.8.0 R2, 6 Jul 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
 | Hexic 2 | Xbox 360 | Recompilation | ChanseyIsTheBest | v1.0.1, 5 Nov 2026 | [source](https://github.com/ChanseyIsTheBest/hexic2-nx) |
 | Hexic HD | Xbox 360 | Recompilation | ChanseyIsTheBest | v1.0.0, 4 Nov 2026 | [source](https://github.com/ChanseyIsTheBest/hexichd-nx) |
+| I Wanna Be the Guy Remastered — IWBTGR Tribute Edition | PC fangame | Fan-edition port | shaman | v1.6.6.6, 2 Nov 2026 — first Switch release (HB App Store) | [source](https://hb-app.store/switch/iwbtgrt) |
 | Jazz Jackrabbit / Jazz Jackrabbit 2 | PC, 1994/98 | OpenJazzNX (2019); Jazz2 Reborn deathkiller v3.9.0 Oct 2026 [SP] | multiple | 2019–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
 | Jet Set Radio Future | Xbox, 2002 | Static recompilation | skeammer | v0.1.0, 1 Nov 2026 | [source](https://github.com/skeammer/jsrf-nx) |
 | Jet Set Radio Future Unleashed | Xbox, 2002 (fan project) | Static recompilation | Eladerino | v0.5.5-switch, 16 Nov 2026 | [source](https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX) |
 | Kameo: Elements of Power | Xbox 360, 2005 | Recompilation | ChanseyIsTheBest | v1.0.1, 4 Nov 2026 | [source](https://github.com/ChanseyIsTheBest/kameo-nx) |
 | Ketsui: Kizuna Jigoku Tachi Extra | Arcade, 2003 | Recompilation | ChanseyIsTheBest | v1.0.0, 28 Oct 2026 | [source](https://github.com/ChanseyIsTheBest/ketsui-nx) |
-| The King of Fighters 2002 Unlimited Match | Arcade/PS2, 2009 | Recompilation | tbittech | v0.1.1, 7 Nov 2026 | [source](https://github.com/tbittech/kof2002um-nx) |
+| The King of Fighters 2002 Unlimited Match | Arcade/PS2, 2009 | Recompilation | tbittech | v0.1.2, 12 Nov 2026 | [source](https://github.com/tbittech/kof2002um-nx) |
 | Lugaru HD | PC, 2005 | Lugaru port, usineur | usineur | 1.3-nx1, 5 Jan 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Madagascar | Xbox, 2005 | Static recompilation | gerisson1996 | v0.1.8, 12 Nov 2026 | [source](https://gbatemp.net/threads/release-madagascar-xbox-for-nintendo-switch-native-static-recompilation-port-v0-1-8.686468/) |
 | Manhunt / Manhunt 2 | **No Switch port found** — not in SwitchPorts, GameBrew, AllRecomps, or web search. Do not list as ported (PSP/Vita emulation on Switch is emulation, out of scope) | Searches + catalogues | [catalogue](https://github.com/robzilla10001/switchports) |
 | Mario Kart 64 — SpaghettiKart | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v0.9.9.1 22 Jun 2025; v1.0.0 24 Feb 2026 | [source](https://github.com/robzilla10001/switchports) |
+| Mario Kart: Super Circuit | GBA, 2001 | Static recompilation | Niecks90 | v0.2.1, 14 Nov 2026 | [source](https://github.com/Niecks90/mksc-nx) |
 | Mass Effect 2, Singularity, Hard Corps: Uprising | X360 | ReXGlue recomps | Listed "pre-release" Nov 2026 | [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
 | Max Payne (Max Payne Mobile) | PC, 2001 — Android version used | Android-.so loader (Vita port adapted) | fgsfdsfgs (max_nx), r1 24 Feb 2021; NaGaa95 update for APK v2.1.131 (max_nx v1.0.2, Nov 2026) | 2021; updated 2026 | [source](https://github.com/NaGaa95/max_nx_v2.1.131) |
 | Max Payne 3 | PS3/X360, 2012 — Xbox 360 version | Static recompilation (ReXGlue) | VasilkovND (mp3-nx) | "Released" 6 Nov 2026 | [source](https://github.com/robzilla10001/switchports) |
@@ -118,6 +122,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Quake | PC, 1996 | NXQuake (TyrQuake, 2018); QuakespasmNX (fgsfdsfgs, v0.92.3-nx, 21 Apr 2021; Thorhax Modern v0.93.3 Sep 2026 [SP]) | fgsfdsfgs | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
 | Quake II | PC, 1997 | NXQuake2 (Yamagi Quake II), fgsfdsfgs | fgsfdsfgs | build 060, 20 Dec 2022 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Quake III Arena | PC, 1999 | ioquake3-nx, fgsfdsfgs (2019) / danifunker update (2021) | fgsfdsfgs | v0.3.0-nx, 18 Sep 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Quake 4 | PC, 2005 | Source port (openQ4 engine) | VLPLAY-Games | v1.2.0, 15 Nov 2026 | [source](https://github.com/VLPLAY-Games/openQ4_S) |
 | Resident Evil Code: Veronica X | PS2, 2001 | Native decompilation port (recvx-decomp / Project Veronica) | gerisson1996 (RECOMP-GUTO) | v1.0-nx, 13 Nov 2026 | [source](https://github.com/gerisson1996/RESIDENT-CODE-VERONICA-NX-PORT) |
 | Red Dead Redemption (unofficial) | **No unofficial Switch port exists.** RDR got an **official** Switch port (Double Eleven, Aug 2023) — out of scope. The famous "60fps on hacked Switch" videos are FPSLocker/ReverseNX overclock mods *of the official release*, not a port. RecompHub lists RDR as "No port yet" | Kotaku 21 Aug 2023; https://recomphub.com/ via search | [catalogue](https://github.com/robzilla10001/switchports) |
 | Red Dead Redemption 2 | No official or unofficial Switch port found in any catalogue/search. Do not list | Absence in [SP][GB][AR] + searches | [catalogue](https://allrecomps.com/switch-ports/) |
@@ -137,7 +142,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Sonic Mania | PC/consoles, 2017 | Decompilation (RSDKv5) | Rubberduckycooly/RSDKModding; Switch build supported in repo | Decomp released 2022; Switch build instructions in repo | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Sonic Robo Blast 2 + SRB2 Kart / Dr. Robotnik's Ring Racers | PC fangame (Doom Legacy) | Source port | SRB2 team; Switch carstene1ns/heyjoeway/Craftyawesome | SRB2 v2.2.15 r2, 16 Nov 2025; Kart v1.6 r8 same date | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Sonic the Hedgehog 1 & 2 (2013) | Mobile/Retro Engine, 2013 (orig. Genesis 1991/92) | Decompilation (RSDKv4, Rubberduckycooly) | Switch fork heyjoeway | v1.3.0 Rev1, 7 Dec 2021 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
-| Soulcalibur II | Xbox, 2003 | Static recompilation | toniisound | v0.4.0, 14 Nov 2026 | [source](https://github.com/toniisound/sc2-nx) |
+| Soulcalibur II | Xbox, 2003 | Static recompilation | toniisound; second build markaurel13 | v0.4.0, 14 Nov 2026 (toniisound); second build release 0.4.0, 16 Nov 2026 (markaurel13 — all three console guest fighters, GBAtemp release thread) | [source](https://github.com/toniisound/sc2-nx) |
 | Space Cadet Pinball (3D Pinball) | Windows, 1995 | Decompilation port | averne (SpaceCadetPinball-NX) | v1.1.1-NX2 15 Oct 2021; NX3 Oct 2026 | [source](https://github.com/robzilla10001/switchports) |
 | Star Fox (SNES) — Starfox Enhanced | SNES, 1993 | Source port/enhancement | kandowontu2 | v0.0.8.8.3, 1 Nov 2026 | [source](https://github.com/robzilla10001/switchports) |
 | Star Fox 64 — Starship | N64, 1997 | Decompilation port (libultraship) | Harbour Masters | v2.0.0, 25 May 2025 | [source](https://github.com/robzilla10001/switchports) |
@@ -162,6 +167,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Transport Tycoon Deluxe | PC, 1995 | OpenTTD, rsn8887 | rsn8887 | v1.07, 8 May 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Tyrian | PC, 1995 | OpenTyrian / OpenTyrian2000 | felixrg et al.; andyvand | 2021; v3.0.0, 27 Feb 2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Ultima VII | PC, 1992 | Exult engine, capsterx | capsterx | r1.5, 24 Nov 2020 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Ultimate Spider-Man | PC, 2005 | Static recompilation | the-deshpande | v1.1.0, 15 Nov 2026 | [source](https://github.com/the-deshpande/usm_switch) |
 | Unreal / Unreal Gold | PC, 1998 | UnrealNX loader, fgsfdsfgs | fgsfdsfgs | r2, 27 Oct 2022 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | The Ur-Quan Masters (Star Control II) | PC, 1992 | UQM MegaMod, YokaiShogun | YokaiShogun | v0.8.0.85, 6 Feb 2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | VVVVVV | PC, 2010 | NX-VVVVVV, NicholeMattera (v2.3.3, Sep 2021); recomp build auggeythecat May 2026 [SP] | multiple | 2021–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
@@ -313,7 +319,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - **Arcade:** Daytona USA (v1.1.0), Virtua Fighter 2, Cyber Troopers Virtual-On, Killer Instinct 1/2, OutRunners (v1.2.2), Sega Rally (port0r v0.5.3), Scud Race, Sonic the Fighters, TMNT (arcade, cheviman v1.0.6), P.T. (PS4, 2014 — pt-nx v1.0.0, listed under PS4)
 
 **GitHub scrub finds, 2026-11-15** (not in SwitchPorts / GameBrew / AllRecomps at scrub time):
-- **Soulcalibur II** (Xbox, 2003) — static recomp, toniisound, v0.4.0, 14 Nov 2026, early/playable, 720p 16:9 — [source](https://github.com/toniisound/sc2-nx)
+- **Soulcalibur II** (Xbox, 2003) — static recomp, toniisound, v0.4.0, 14 Nov 2026, early/playable, 720p 16:9 — [source](https://github.com/toniisound/sc2-nx). **Second build added 2026-11-16:** markaurel13/soulcalibur2-nx, release 0.4.0, 16 Nov 2026 (soulcalibur2.nro), announced on GBAtemp the same day — all three console guest fighters (Spawn, Link, Heihachi) in one roster, thread reports it 100% functional at 60 FPS stock clocks — [source](https://github.com/markaurel13/soulcalibur2-nx)
 - **StarCraft: Ghost** (Xbox, 2004, never commercially released) — static recomp, Thorhax, v0.4.0, 15 Nov 2026, early — [source](https://github.com/Thorhax/ScGhost-NX)
 - **Jet Set Radio Future** (Xbox, 2002) — static recomp, skeammer, v0.1.0, 1 Nov 2026, playable, ~60 fps handheld stock — [source](https://github.com/skeammer/jsrf-nx)
 - **Jet Set Radio Future Unleashed** (Xbox, 2002 fan project) — static recomp, Eladerino, v0.5.5-switch, 16 Nov 2026 (v0.5.2 → v0.5.4 on 15 Nov, → v0.5.5 on 16 Nov), early/playable — a second, separate JSRF port — [source](https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX)
@@ -337,14 +343,27 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - **Shank / Shank 2** — zhtipu, v1.0.1/v1.0.0, 31 Oct / 4 Nov 2026 (SwitchPorts catch-up) — [source](https://github.com/zhtipu/shank1-nx)
 - **Dark Souls II: Scholar of the First Sin** — XDASCATX, v121, 6 Nov 2026 (SwitchPorts catch-up) — [source](https://github.com/XDASCATX/DS2_switch)
 - **Need for Speed: Most Wanted (2005)** — StevensND, v1.0.0, 27 Sep 2026 (SwitchPorts catch-up; the catalogue previously had only the 2012 Android version) — [source](https://github.com/StevensND/nfsmw-nx)
-- **The King of Fighters 2002 Unlimited Match** — tbittech, v0.1.1, 7 Nov 2026 (SwitchPorts catch-up) — [source](https://github.com/tbittech/kof2002um-nx)
+- **The King of Fighters 2002 Unlimited Match** — tbittech, v0.1.2, 12 Nov 2026 (SwitchPorts catch-up; bumped from v0.1.1 on 2026-11-16) — [source](https://github.com/tbittech/kof2002um-nx)
 - **Super Mario War** — brendongl, v1.0.0, 22 Oct 2026 (SwitchPorts catch-up) — [source](https://github.com/brendongl/supermariowar-nx)
 - **The Godfather** — version bump to v1.0.2, 13 Nov 2026 (was v1.0.1 in the catalogue) — [source](https://github.com/CYBERPUNK20/godfather-nx)
-- **Need for Speed: Carbon** — second port: zofo007 v1.1.0, 29 Oct 2026, alongside Kaays v0.5.0, 12 Nov 2026 (catalogue had only the Xbox version at v0.2.4)
+- **Need for Speed: Carbon** — second port: zofo007 v1.1.0, 29 Oct 2026, alongside Kaays v0.7.0, 14 Nov 2026 (bumped from v0.5.0 on 2026-11-16; catalogue had only the Xbox version at v0.2.4)
 
 **GitHub scrub finds, 2026-11-16** (not in SwitchPorts / GameBrew / AllRecomps at scrub time):
 - **Super Paper Mario** (Wii, 2007) — static recomp (New Super Paper Bros, JosiahG), Switch port spm-nx by Eladerino, v0.5.0, 16 Nov 2026, early — release zip ships spm-nx.nro, boots and plays on real hardware per its README (deko3d); own USA disc files (R8PE01 rev 0) extracted to /switch/spm-nx/game; heavy areas have known performance problems — [source](https://github.com/Eladerino/spm-nx)
 - **Jet Set Radio Future Unleashed** — version bump v0.5.4-switch → v0.5.5-switch, 16 Nov 2026 — [source](https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX)
+
+**SwitchPorts catch-up, 2026-11-16 (second run)** — SwitchPorts merged five queued rows on 2026-11-16 (HEAD c3d93eff → 2f472859, 453 → 458 entries); each verified against its own repo, using the repo's latest release where it is newer than the SwitchPorts row:
+- **Mario Kart: Super Circuit** (GBA, 2001) — static recomp, Niecks90 (mksc-nx), v0.2.1, 14 Nov 2026 (SwitchPorts row says v0.2.0, 12 Nov) — 60 FPS, adaptive widescreen; own GBA ROM + BIOS required; release ships mksc_nx.nro — [source](https://github.com/Niecks90/mksc-nx)
+- **Death Rally** (PC, 1996) — source port of the open-source dRally engine (devkitA64 / libnx / SDL2), VLPLAY-Games, v1.1.0, 12 Nov 2026 — playable from menus to races per its README; own DOS v1.1 game files required (the 2012 remake does not work); release ships dRally.nro — [source](https://github.com/VLPLAY-Games/dRally_S)
+- **Quake 4** (PC, 2005) — source port of the openQ4 engine, VLPLAY-Games, v1.2.0, 15 Nov 2026 (SwitchPorts row says v1.1.1, 12 Nov) — single-player campaign playable per its README, multiplayer with bots; own Steam/GOG game data required; release ships openQ4.nro — [source](https://github.com/VLPLAY-Games/openQ4_S)
+- **Ultimate Spider-Man** (PC, 2005) — static recompilation of the PC binary, the-deshpande (usm_switch), v1.1.0, 15 Nov 2026 (SwitchPorts row says v1.0.0, 13 Nov) — 720p handheld locked 30 FPS at stock clocks per its README, 1080p docked needs overclocking; AI-assisted port per its own README note; release ships usm_switch.nro — [source](https://github.com/the-deshpande/usm_switch)
+- **The King of Fighters 2002 Unlimited Match** — version bump v0.1.1 → v0.1.2, 12 Nov 2026 — [source](https://github.com/tbittech/kof2002um-nx)
+- **Need for Speed: Carbon** (Kaays port) — version bump v0.5.0 → v0.7.0, 14 Nov 2026 — [source](https://github.com/Kaays/nfscarbon-nx)
+
+**HB App Store finds, 2026-11-16 (second run — first check of this source)** — ports published straight to the store (hb-app.store), absent from the catalogue until today; the store shows an UPDATED date per app, not an added date:
+- **Friday Night Funkin' — FNF: V-Slice** (PC open-source, 2020) — unofficial source port, leleletus, v0.8.7-nx-release-1, store updated 13 Nov 2026 — [source](https://hb-app.store/switch/FNFVSliceNX)
+- **I Wanna Be the Guy Remastered — IWBTGR Tribute Edition** (PC fangame) — fan-edition port, shaman, v1.6.6.6, store updated 2 Nov 2026; its changelog says "First Switch release" — [source](https://hb-app.store/switch/iwbtgrt)
+- Checked and already current in the catalogue: fheroes2 v1.1.18 (store updated 12 Nov 2026), Halo: Combat Evolved halo-ce-universal build-141 (12 Nov 2026), OpenAoK (store v0.6.6, 2 Nov 2026 — the catalogue's v0.7.0 prerelease note stands).
 
 #### 1F. The 2026 explosion — N64 / GameCube / Wii / DS / SNES / GB recomps & decomp ports ([SP])
 
@@ -355,7 +374,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - **3DS:** Ocarina of Time 3D (TriAevum-Switch v0.2.2), Metroid: Samus Returns (MSR-nx v0.6.0)
 - **DS:** Metroid Prime Hunters (MPH-nx v0.5.0)
 - **SNES:** Donkey Kong Country 1/2/3 (DKC Recomp-NX, v0.1–1.0, early), Mega Man X (v1.2.0), Illusion of Gaia, Super Mario All-Stars (pre-release 2)
-- **GB/GBC/GBA:** Pokémon Gen 1 (0.4.2) / Gen 2 (0.8.57) recomps, Metroid: Zero Mission (v1.3), Sonic Advance 2 (0.3), Kingdom Hearts: Chain of Memories (ReKHCoM, native reconstruction, beta [AR])
+- **GB/GBC/GBA:** Pokémon Gen 1 (0.4.2) / Gen 2 (0.8.57) recomps, Metroid: Zero Mission (v1.3), Sonic Advance 2 (0.3), Kingdom Hearts: Chain of Memories (ReKHCoM, native reconstruction, beta [AR]), Mario Kart: Super Circuit (mksc-nx v0.2.1, static recomp, Niecks90 — SwitchPorts catch-up 2026-11-16, see §1E)
 - **PC (2026 wave, in addition to §1C):** Fallout: New Vegas is *unreleased* (see §2); released — Age of Empires II (openaok 0.7.0 prerelease), Black & White (openblack 0.4.0), Driver 2 (REDRIVER2 0.1.0), Silent Hill (decomp-nx v1.2.0) / Silent Hill 2 (sh2-nx v1.03, PC exe recomp [AR]) / Silent Hill 3 (sh3-nx, PC exe recomp) / Silent Hill 4 (0.1), The Simpsons: Hit & Run (0.7.0), RollerCoaster Tycoon 2 (OpenRCT2-Switch, new build), Minecraft: Java 1.12.2 (catalogue "released" — a Java/PoJav-style port, treat with caution), Project Zomboid (0.5, Rust-engine recreation), Terraria + mod loader (terrabuilder-nx, "released"), Touhou 6/7/7.5/8/9/10/11/12/15 (saekaze th*-switch series), Warcraft I/II (War1gus/Wargus Modern), Wolfenstein 3D Modern, Jazz Jackrabbit 2 (above), Medal of Honor: Allied Assault (OpenMoHAA_nx 0.83), Nazi Zombies: Portable v2.0.0, 0 A.D. (R28-NX1)
 
 ### 2. In Development / Announced (no playable public release yet, or WIP-only)
@@ -390,7 +409,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - **Super Metroid (snesrev) and several snesrev-line ports** — listed explicitly as WIP; no completable Switch build verified.
 - **Switch 2 homebrew ports** (HL2/Doom via ns2jb, Oct 2026) — video-verified only, no public release at time of research; listed in §2, not §1.
 - **GTA V on Switch 2 (PLK, Nov 2026) — UNVERIFIED.** X posts on 15 Nov 2026 claim a GTA V recomp for Switch 2 (kaiHEN) already boots, with build instructions promised soon. No repo, no release, no instructions yet — rumour/WIP only, and Switch 2 only. The Switch 1 GTA V / GTA5NX entry above stays **cancelled, no legitimate release**.
-- **The SpongeBob SquarePants Movie (GameCube) — UNVERIFIED.** csskillbad/Spongebob_movie-switch is a source repo with a build script but no release and no verified hardware run (15 Nov 2026).
+- **The SpongeBob SquarePants Movie (GameCube) — UNVERIFIED.** csskillbad/Spongebob_movie-switch is a source repo with a build script but no release and no verified hardware run (15 Nov 2026). SwitchPorts merged it as a 🟢 v1.0.0 row on 2026-11-16, but the repo still has no GitHub release or tags (rechecked 16 Nov 2026) — it stays unverified here until a build or an independent hardware report appears.
 - **Angry Birds Trilogy / Angry Birds Space (rehatched-nx) — UNVERIFIED.** slicey64/rehatched-nx was an empty repo on 15 Nov 2026; on 16 Nov 2026 the repo gained code (a Renut renderer base tree) but still has **no release and no Switch build** — still unverified.
 - **Star Fox 64 — iQue Chinese version — UNVERIFIED / ABANDONED.** liuhui20090211-bot/StarFox64-iQue-Switch_Port (15 Nov 2026): the author's own README labels it ABANDONED / up for adoption — intro and menus run on hardware, but Level 1 (Corneria) crashes instantly and training mode is unplayable. Source-only release (.rar); not a playable port. The regular Star Fox 64 port (Starship, §1B) is unaffected.
 - **Blood Omen 2 — still UNVERIFIED for Switch.** felipesuarez-dev/BloodOmen2NX's own README states the Switch backend has not started yet; development runs on Linux (checked 15 Nov 2026).
@@ -404,6 +423,8 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 **Second run, evening 2026-11-15** — SwitchPorts HEAD unchanged, GameBrew nothing after 2026-11-10, AllRecomps still 66. GitHub scrub #2 added 4 verified ports: **The Sims 3** (Zumoly, v0.1.0), **Resident Evil Code: Veronica X** (gerisson1996, v1.0-nx, via GBAtemp), **Crash Twinsanity** (dampestwriter, source-build) and **Super Smash Bros. — Smash Remix** (lucasliet, v2.0.1-port.12); version bump: **JSRF Unleashed v0.5.2 → v0.5.4**. Unverified (labelled, not counted): GTA V on Switch 2 (PLK, X posts only), SpongeBob Movie (no release), rehatched-nx (empty repo), Blood Omen 2 (Switch backend not started, per its own README).
 
 **2026-11-16** — SwitchPorts HEAD unchanged (c3d93eff, 453 entries), GameBrew nothing after 2026-11-10, AllRecomps still 66. GitHub scrub added 1 verified port: **Super Paper Mario** (spm-nx, Eladerino, v0.5.0); version bump: **JSRF Unleashed v0.5.4 → v0.5.5**. Unverified (labelled, not counted): Star Fox 64 iQue (abandoned, main game crashes, per its own README), rehatched-nx (code added, still no release). Catalogue: 147 → **148 games**. Full detail in [`findings/2026-11-16.md`](findings/2026-11-16.md).
+
+**Second run, 2026-11-16** — SwitchPorts HEAD moved (c3d93eff → 2f472859): five queued rows merged (453 → 458 entries). Verified new ports: **Mario Kart: Super Circuit** (Niecks90, v0.2.1), **Death Rally** (VLPLAY-Games, v1.1.0), **Quake 4** (VLPLAY-Games, v1.2.0), **Ultimate Spider-Man** (the-deshpande, v1.1.0). Version bumps: **KOF 2002 UM v0.1.1 → v0.1.2**, **Need for Speed: Carbon (Kaays) v0.5.0 → v0.7.0**. **Soulcalibur II** gained a second build (markaurel13, release 0.4.0, GBAtemp thread 2026-11-16). First check of the three new sources: Wololo.net — no new game port; SwitchBrew wiki — technical changes only, no port releases; HB App Store — 2 ports new to the catalogue (**FNF: V-Slice** v0.8.7-nx-release-1, **IWBTGR Tribute Edition** v1.6.6.6), fheroes2 / Halo CE / OpenAoK already current. SpongeBob Movie stays unverified (SwitchPorts now lists it 🟢, but its repo still has no release). Catalogue: 148 → **154 games**. Full detail in [`findings/2026-11-16.md`](findings/2026-11-16.md).
 
 
 | Game | Original | Port type | Author | Latest | Note | Link |
