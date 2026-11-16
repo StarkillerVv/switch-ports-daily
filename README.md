@@ -8,6 +8,7 @@ Fan-made, homebrew ports of games to a modded Nintendo Switch. Not official eSho
 
 New ports are added to the catalogue as soon as they are verified, and also logged by day in [`findings/`](findings/) — one file per day, newest first:
 
+- [2026-11-16](findings/2026-11-16.md) — GitHub scrub: Super Paper Mario (spm-nx v0.5.0) added; JSRF Unleashed v0.5.5
 - [2026-11-15](findings/2026-11-15.md) — F.E.A.R., New Super Mario Bros. Wii, The Simpsons (arcade), Madagascar, Woody Woodpecker — plus a GitHub scrub: 17 more ports found outside all three master lists (Soulcalibur II, StarCraft: Ghost, Jet Set Radio Future ×2, Guitar Hero III, Modern Warfare 2, Silent Hill: Downpour, Buffy, GTA: Vice City Stories, Scooby-Doo, Stupid Zombies, Yume Nikki, Amsterdoom, Biko 3, Warthog, Transformers ×2) — evening second run: The Sims 3, Resident Evil Code: Veronica X, Crash Twinsanity, Smash Remix, and JSRF Unleashed v0.5.4
 - [2026-11-14](findings/2026-11-14.md) — Call of Duty: Black Ops (OpenBLOPS-NX)
 - [2026-11-13](findings/2026-11-13.md) — baseline catalogue: 453 SwitchPorts entries
@@ -44,7 +45,7 @@ Two to know right away: **GTA IV is WIP** (conflicting reports, 0.4 FPS in one b
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-147-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-148-blue)](CATALOGUE.md)
 
 0 views, 0 clones as of 2026-11-15.
 
