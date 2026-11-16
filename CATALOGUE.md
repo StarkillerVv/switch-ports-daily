@@ -2,7 +2,7 @@
 
 Every unofficial game port for Nintendo Switch we have verified so far. Plain-language version of the full catalogue — the same list that lives on the [Switch Ports since GTA5NX](https://github.com/StarkillerVv/switch-ports-daily) page.
 
-**Last updated:** 2026-11-15 — SwitchPorts: 453 entries, AllRecomps: 66 curated projects. GitHub scrub 2026-11-15: 17 ports found outside all three master lists, plus 10 SwitchPorts catch-ups.
+**Last updated:** 2026-11-15 (second run) — SwitchPorts: 453 entries (HEAD unchanged), GameBrew: nothing after 2026-11-10, AllRecomps: 66 curated projects (unchanged). GitHub scrub 2026-11-15: 17 ports found outside all three master lists, plus 10 SwitchPorts catch-ups; second scrub the same evening added 4 more verified ports (The Sims 3, Resident Evil Code: Veronica X, Crash Twinsanity, Smash Remix) and one version bump (JSRF Unleashed v0.5.4).
 
 ## How to read this list
 
@@ -21,7 +21,7 @@ Every unofficial game port for Nintendo Switch we have verified so far. Plain-la
 
 One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump to a title, then look it up in the grouped sections below for the full note. (A few 2026 Android-loader / recomp titles are only listed as bullet groups in sections 1D–1F below — Ctrl+F finds them there too.)
 
-**143 games listed.**
+**147 games listed.**
 
 
    - **Android-loader flood** (mainly NaGaa95, ChanseyIsTheBest, aks796, Thorhax, etc.): a generic minimal-Android compatibility layer loads the original Android ARM/ARM64 `libGame.so` — dozens of Android games ported in Aug–Nov 2026 alone.
@@ -54,6 +54,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Command & Conquer: Tiberian Dawn / Red Alert | PC, 1995/96 | Vanilla Conquer (C&C Remastered Collection cross-platform build), capsterx | capsterx | 0-r6, 2 Jan 2021. **No Switch OpenRA port found** — OpenRA itself is PC/Mac/Linux only in sources checked | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Commander Keen (Galaxy etc.) | PC, 1991 | Commander Keen Switch (CloneKeen/Omnispeak line), EliasOenal | Elias Oenal | v3.3.0, 22 May 2023; v3.6.0 Feb 2026 [SP] | [catalogue](https://github.com/robzilla10001/switchports) |
 | Counter-Strike: Source | PC, 2004 — Android Source build used | Android loader css_nx, NaGaa95 (nillerusr engine) | NaGaa95 / naga | v1.0.1–1.0.2, Aug–Nov 2026; offline bots + IP servers [AR] | [catalogue](https://allrecomps.com/switch-ports/) |
+| Crash Twinsanity | PS2, 2004 | Decompilation port (twinsanity-reversed + NativeEE), source-build only | dampestwriter | Repo 15 Nov 2026; build.sh produces reNsanity.nro | [source](https://github.com/dampestwriter/reNsanity) |
 | Dark Souls II: Scholar of the First Sin | Xbox 360, 2015 | Recompilation | XDASCATX | v121, 6 Nov 2026 | [source](https://github.com/XDASCATX/DS2_switch) |
 | Descent / Descent II | PC, 1995/96 | DXX Switch (aagallag, 2018) / DXX-Rebirth (dimag0g, 2020); Thorhax Modern builds Sep 2026 [SP] | multiple | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
 | Diablo + Hellfire | PC, 1996 | DevilutionX (diasurgical), from Devilution reverse-engineering | diasurgical; first Switch build lantus devilution-nx 2019 | DevilutionX v1.5.5, 31 Oct 2025 (Switch build in HB App Store v1.5.4 Mar 2025) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
@@ -92,7 +93,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Hexic HD | Xbox 360 | Recompilation | ChanseyIsTheBest | v1.0.0, 4 Nov 2026 | [source](https://github.com/ChanseyIsTheBest/hexichd-nx) |
 | Jazz Jackrabbit / Jazz Jackrabbit 2 | PC, 1994/98 | OpenJazzNX (2019); Jazz2 Reborn deathkiller v3.9.0 Oct 2026 [SP] | multiple | 2019–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
 | Jet Set Radio Future | Xbox, 2002 | Static recompilation | skeammer | v0.1.0, 1 Nov 2026 | [source](https://github.com/skeammer/jsrf-nx) |
-| Jet Set Radio Future Unleashed | Xbox, 2002 (fan project) | Static recompilation | Eladerino | v0.5.2-switch, 15 Nov 2026 | [source](https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX) |
+| Jet Set Radio Future Unleashed | Xbox, 2002 (fan project) | Static recompilation | Eladerino | v0.5.4-switch, 15 Nov 2026 | [source](https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX) |
 | Kameo: Elements of Power | Xbox 360, 2005 | Recompilation | ChanseyIsTheBest | v1.0.1, 4 Nov 2026 | [source](https://github.com/ChanseyIsTheBest/kameo-nx) |
 | Ketsui: Kizuna Jigoku Tachi Extra | Arcade, 2003 | Recompilation | ChanseyIsTheBest | v1.0.0, 28 Oct 2026 | [source](https://github.com/ChanseyIsTheBest/ketsui-nx) |
 | The King of Fighters 2002 Unlimited Match | Arcade/PS2, 2009 | Recompilation | tbittech | v0.1.1, 7 Nov 2026 | [source](https://github.com/tbittech/kof2002um-nx) |
@@ -117,6 +118,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Quake | PC, 1996 | NXQuake (TyrQuake, 2018); QuakespasmNX (fgsfdsfgs, v0.92.3-nx, 21 Apr 2021; Thorhax Modern v0.93.3 Sep 2026 [SP]) | fgsfdsfgs | 2018–2026 | [catalogue](https://github.com/robzilla10001/switchports) |
 | Quake II | PC, 1997 | NXQuake2 (Yamagi Quake II), fgsfdsfgs | fgsfdsfgs | build 060, 20 Dec 2022 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Quake III Arena | PC, 1999 | ioquake3-nx, fgsfdsfgs (2019) / danifunker update (2021) | fgsfdsfgs | v0.3.0-nx, 18 Sep 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Resident Evil Code: Veronica X | PS2, 2001 | Native decompilation port (recvx-decomp / Project Veronica) | gerisson1996 (RECOMP-GUTO) | v1.0-nx, 13 Nov 2026 | [source](https://github.com/gerisson1996/RESIDENT-CODE-VERONICA-NX-PORT) |
 | Red Dead Redemption (unofficial) | **No unofficial Switch port exists.** RDR got an **official** Switch port (Double Eleven, Aug 2023) — out of scope. The famous "60fps on hacked Switch" videos are FPSLocker/ReverseNX overclock mods *of the official release*, not a port. RecompHub lists RDR as "No port yet" | Kotaku 21 Aug 2023; https://recomphub.com/ via search | [catalogue](https://github.com/robzilla10001/switchports) |
 | Red Dead Redemption 2 | No official or unofficial Switch port found in any catalogue/search. Do not list | Absence in [SP][GB][AR] + searches | [catalogue](https://allrecomps.com/switch-ports/) |
 | Return to Castle Wolfenstein | PC, 2001 | iortcw port, capsterx | capsterx | Pre-release, 21 Nov 2020 — listed pre-release, treat as early | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
@@ -128,6 +130,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Shank 2 | Xbox 360, 2012 | Recompilation | zhtipu | v1.0.0, 4 Nov 2026 | [source](https://github.com/zhtipu/shank2-nx) |
 | Silent Hill: Downpour | Xbox 360, 2012 | Static recompilation | fungalspores | v0.3.0, 26 Oct 2026 | [source](https://github.com/fungalspores/silent-hill-downpour-switch) |
 | The Simpsons (arcade) | Arcade, 1991 | Decomp-based source port | cheviman | v1.0.1, 14 Nov 2026 | [source](https://github.com/cheviman/simpsons-port) |
+| The Sims 3 | Xbox 360, 2007 | Static recompilation (ReXGlue) | Zumoly | v0.1.0, 15 Nov 2026 | [source](https://github.com/Zumoly/sims3-nx) |
 | SiN | PC, 1998 | SiN Switch, rohit-n | rohit-n | v1.2, 4 Feb 2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Sonic 3 A.I.R. (Angel Island Revisited) | Genesis, 1994 fan remaster | Fan remaster port | Eukaryot (A.I.R.); Switch ultra-azu / heyjoeway | 10 Sep 2022 (22.09.10) | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Sonic CD (2011) | Mobile/RSDK, 2011 (orig. Sega CD 1993) | Decompilation | heyjoeway | v1.3, 27 Nov 2021 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
@@ -141,6 +144,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Star Trek Voyager: Elite Force Holomatch | PC, 2000 | VoyagerNX (lilium-voyager/ioquake3 fork), faithvoid | faithvoid | v0.8.5.1, 28 Jun 2023 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | StarCraft: Ghost | Xbox, 2004 (never released) | Static recompilation | Thorhax | v0.4.0, 15 Nov 2026 | [source](https://github.com/Thorhax/ScGhost-NX) |
 | Stupid Zombies | Android | Android loader | Terremotixx | v1.0.2, 11 Nov 2026 | [source](https://github.com/Terremotixx/Stupid-Zombies-NX) |
+| Super Smash Bros. — Smash Remix | N64, fan expansion (Smash Remix 2.0.1) | Decompilation port (BattleShip-Remix, built on BattleShip) | lucasliet | v2.0.1-port.12, 13 Nov 2026 | [source](https://github.com/lucasliet/BattleShip-remix) |
 | Super Mario 64 (Ghostship) | N64, 1996 | Decompilation port (libultraship) | Harbour Masters | v3.0.0, 7 Sep 2026 | [source](https://github.com/robzilla10001/switchports) |
 | Super Mario 64 (sm64ex) | N64, 1996 | Decompilation port | fgsfdsfgs (sm64ex) | 19 May 2020 | [source](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Super Mario 64 Co-op (sm64coopdx-switch) | N64, 1996 | Decompilation port, online co-op/Lua | Coop Deluxe; Switch fork antoinebou12 | Sep 2026 (repo/blog) | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
@@ -311,7 +315,11 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - **Soulcalibur II** (Xbox, 2003) — static recomp, toniisound, v0.4.0, 14 Nov 2026, early/playable, 720p 16:9 — [source](https://github.com/toniisound/sc2-nx)
 - **StarCraft: Ghost** (Xbox, 2004, never commercially released) — static recomp, Thorhax, v0.4.0, 15 Nov 2026, early — [source](https://github.com/Thorhax/ScGhost-NX)
 - **Jet Set Radio Future** (Xbox, 2002) — static recomp, skeammer, v0.1.0, 1 Nov 2026, playable, ~60 fps handheld stock — [source](https://github.com/skeammer/jsrf-nx)
-- **Jet Set Radio Future Unleashed** (Xbox, 2002 fan project) — static recomp, Eladerino, v0.5.2-switch, 15 Nov 2026, early/playable — a second, separate JSRF port — [source](https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX)
+- **Jet Set Radio Future Unleashed** (Xbox, 2002 fan project) — static recomp, Eladerino, v0.5.4-switch, 15 Nov 2026 (v0.5.2 → v0.5.4 the same day), early/playable — a second, separate JSRF port — [source](https://github.com/Eladerino/JetSetRadioFuture-Unleashed-NX)
+- **The Sims 3** (Xbox 360, 2007) — ReXGlue static recomp, Zumoly, v0.1.0, 15 Nov 2026, early — release zip with sims3.nro; own USA/Europe disc (media ID 21CDDF46) + Title Update 1; overclock strongly recommended — [source](https://github.com/Zumoly/sims3-nx)
+- **Resident Evil Code: Veronica X** (PS2, 2001) — native decomp port (recvx-decomp / Project Veronica), gerisson1996 (RECOMP-GUTO), v1.0-nx, 13 Nov 2026, early — release ships recvx.nro, OpenGL 3.3, gyro aiming; own PS2 NTSC-U ISO (SLUS-20184) — [source](https://github.com/gerisson1996/RESIDENT-CODE-VERONICA-NX-PORT) · [GBAtemp](https://gbatemp.net/threads/resident-evil-code-veronica-x-nx-port-ps2.686504/)
+- **Crash Twinsanity** (PS2, 2004) — decomp port (twinsanity-reversed + NativeEE), dampestwriter, repo 15 Nov 2026, early, source-build only (build.sh → reNsanity.nro); own PAL disc image (SLES-52568) — [source](https://github.com/dampestwriter/reNsanity)
+- **Super Smash Bros. — Smash Remix** (N64 fan expansion, Smash Remix 2.0.1) — decomp port (BattleShip-Remix, built on BattleShip), lucasliet, v2.0.1-port.12, 13 Nov 2026 — release includes a Switch .nro; own US Smash 64 ROM + Remix patch; separate from BattleShipNX (original game) in §1F — [source](https://github.com/lucasliet/BattleShip-remix)
 - **Guitar Hero III: Legends of Rock** (Xbox 360, 2007) — ReXGlue recomp, guillermedev75, source-build only, plays full songs ~34–45 fps — [source](https://github.com/guillermedev75/gh3-nx)
 - **Call of Duty: Modern Warfare 2** (Xbox 360, 2009) — ReXGlue recomp, GreenieSparkles, v325, 3 Nov 2026, early/WIP, 20–60 fps — [source](https://github.com/GreenieSparkles/COD6-NX)
 - **Silent Hill: Downpour** (Xbox 360, 2012) — static recomp, fungalspores, v0.3.0, 26 Oct 2026, early, 30 fps — [source](https://github.com/fungalspores/silent-hill-downpour-switch)
@@ -376,12 +384,18 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - **Exact first-release dates for many classic ports** — GameBrew dates above are its "last updated" for the Switch build, which may postdate first release (e.g. CorsixTH, SRB2).
 - **Super Metroid (snesrev) and several snesrev-line ports** — listed explicitly as WIP; no completable Switch build verified.
 - **Switch 2 homebrew ports** (HL2/Doom via ns2jb, Oct 2026) — video-verified only, no public release at time of research; listed in §2, not §1.
+- **GTA V on Switch 2 (PLK, Nov 2026) — UNVERIFIED.** X posts on 15 Nov 2026 claim a GTA V recomp for Switch 2 (kaiHEN) already boots, with build instructions promised soon. No repo, no release, no instructions yet — rumour/WIP only, and Switch 2 only. The Switch 1 GTA V / GTA5NX entry above stays **cancelled, no legitimate release**.
+- **The SpongeBob SquarePants Movie (GameCube) — UNVERIFIED.** csskillbad/Spongebob_movie-switch is a source repo with a build script but no release and no verified hardware run (15 Nov 2026).
+- **Angry Birds Trilogy / Angry Birds Space (rehatched-nx) — UNVERIFIED.** slicey64/rehatched-nx was an empty repo on 15 Nov 2026.
+- **Blood Omen 2 — still UNVERIFIED for Switch.** felipesuarez-dev/BloodOmen2NX's own README states the Switch backend has not started yet; development runs on Linux (checked 15 Nov 2026).
 - **Dead projects archive (SwitchPorts DEAD.md)** was not enumerated — cancelled pre-2026 projects beyond GTA5NX/re3 litigation may exist there.
 - Whether the 2026 "Minecraft Java 1.12.2 / Project Zomboid / Slay the Spire 2" catalogue entries are native ports vs. compatibility-layer recreations could not be confirmed from the catalogue alone — included with that flag in §1D/1F.
 
 ## New since the baseline (2026-11-14 / 2026-11-15)
 
 **GitHub scrub, 2026-11-15** — 17 ports found outside SwitchPorts, GameBrew and AllRecomps (all verified against their own repos, each with a real Switch build): Soulcalibur II, StarCraft: Ghost, Jet Set Radio Future, Jet Set Radio Future Unleashed, Guitar Hero III, Call of Duty: Modern Warfare 2, Silent Hill: Downpour, Buffy the Vampire Slayer, GTA: Vice City Stories (overturns the baseline 'no standalone port found'), Scooby-Doo! Night of 100 Frights, Stupid Zombies, Yume Nikki, Amsterdoom, Biko 3, Warthog (Halo CE decomp), Transformers: Revenge of the Fallen (WIP), Transformers: Dark of the Moon (WIP). Plus 10 SwitchPorts catch-ups (Hexic HD/2, Kameo, Ben 10, Guwange, Ketsui, Shank 1/2, Dark Souls II, Need for Speed: Most Wanted 2005, King of Fighters 2002 UM, Super Mario War) and version bumps (The Godfather v1.0.2, Need for Speed: Carbon second port). Full detail in [`findings/2026-11-15.md`](findings/2026-11-15.md).
+
+**Second run, evening 2026-11-15** — SwitchPorts HEAD unchanged, GameBrew nothing after 2026-11-10, AllRecomps still 66. GitHub scrub #2 added 4 verified ports: **The Sims 3** (Zumoly, v0.1.0), **Resident Evil Code: Veronica X** (gerisson1996, v1.0-nx, via GBAtemp), **Crash Twinsanity** (dampestwriter, source-build) and **Super Smash Bros. — Smash Remix** (lucasliet, v2.0.1-port.12); version bump: **JSRF Unleashed v0.5.2 → v0.5.4**. Unverified (labelled, not counted): GTA V on Switch 2 (PLK, X posts only), SpongeBob Movie (no release), rehatched-nx (empty repo), Blood Omen 2 (Switch backend not started, per its own README).
 
 
 | Game | Original | Port type | Author | Latest | Note | Link |
