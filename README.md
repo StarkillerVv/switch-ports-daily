@@ -41,6 +41,9 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 - GameBrew — List of Switch homebrew games
 - AllRecomps — https://allrecomps.com/switch-ports/ (66 curated projects, 2026-11-15)
 - GBAtemp / GitHub for major new ports
+- Wololo.net — homebrew news, new Switch ports covered as they appear
+- SwitchBrew wiki — homebrew release log
+- HB App Store (SwitchBru) — ports published straight to the store
 - GitHub scrub — a direct search of GitHub for Switch game ports not in SwitchPorts, GameBrew or AllRecomps (first run 2026-11-15: 17 ports found, each verified against its own repo)
 
 ## Stats
