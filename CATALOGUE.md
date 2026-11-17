@@ -2,7 +2,7 @@
 
 Every unofficial game port for Nintendo Switch we have verified so far. Plain-language version of the full catalogue — the same list that lives on the [Switch Ports since GTA5NX](https://github.com/StarkillerVv/switch-ports-daily) page.
 
-**Last updated:** 2026-11-17 (second run) — SwitchPorts: 492 entries (HEAD d49de3d7, up from 468 at the morning run), GameBrew: new Switch pages on 2026-11-17 are tools/apps only (Thetvux Player, Noled; RoomCircuit and ACNH Power Pockets from the morning check — none is a game port), AllRecomps: 66 curated projects (unchanged). Wololo.net: no new game port. SwitchBrew wiki: only service/firmware documentation edits on 2026-11-17, no port releases. HB App Store: nothing new dated 2026-11-16/17. Second run 2026-11-17: 15 new verified ports (12 via the SwitchPorts catch-up, 3 via the GitHub scrub: Magical Quest Trilogy, Road Rash, Dark Riddle), 3 status updates (Death Rally v1.2.0, Dishonored v0.50 + second port Dunwall, Super Mario All-Stars v1.0.1) — catalogue now **176 games** (Switch 1 only).
+**Last updated:** 2026-11-17 (evening run) — SwitchPorts: 492 entries (HEAD d49de3d7, up from 468 at the morning run), GameBrew: new Switch pages on 2026-11-17 are tools/apps only (Thetvux Player, Noled; RoomCircuit and ACNH Power Pockets from the morning check — none is a game port), AllRecomps: 66 curated projects (unchanged). Wololo.net: no new game port. SwitchBrew wiki: only service/firmware documentation edits on 2026-11-17, no port releases. HB App Store: nothing new dated 2026-11-16/17. Second run 2026-11-17: 15 new verified ports (12 via the SwitchPorts catch-up, 3 via the GitHub scrub: Magical Quest Trilogy, Road Rash, Dark Riddle), 3 status updates (Death Rally v1.2.0, Dishonored v0.50 + second port Dunwall, Super Mario All-Stars v1.0.1) — catalogue now **176 games** (Switch 1 only). Evening run 2026-11-17: 1 more verified port via the GitHub scrub — **Ristar** (simplePsyduck, beta-v1) — catalogue now **177 games**.
 
 ## How to read this list
 
@@ -21,7 +21,7 @@ Every unofficial game port for Nintendo Switch we have verified so far. Plain-la
 
 One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump to a title, then look it up in the grouped sections below for the full note. (A few 2026 Android-loader / recomp titles are only listed as bullet groups in sections 1D–1F below — Ctrl+F finds them there too.)
 
-**176 games listed.**
+**177 games listed.**
 
 
    - **Android-loader flood** (mainly NaGaa95, ChanseyIsTheBest, aks796, Thorhax, etc.): a generic minimal-Android compatibility layer loads the original Android ARM/ARM64 `libGame.so` — dozens of Android games ported in Aug–Nov 2026 alone.
@@ -144,6 +144,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Red Dead Redemption (unofficial) | **No unofficial Switch port exists.** RDR got an **official** Switch port (Double Eleven, Aug 2023) — out of scope. The famous "60fps on hacked Switch" videos are FPSLocker/ReverseNX overclock mods *of the official release*, not a port. RecompHub lists RDR as "No port yet" | Kotaku 21 Aug 2023; https://recomphub.com/ via search | [catalogue](https://github.com/robzilla10001/switchports) |
 | Red Dead Redemption 2 | No official or unofficial Switch port found in any catalogue/search. Do not list | Absence in [SP][GB][AR] + searches | [catalogue](https://allrecomps.com/switch-ports/) |
 | Return to Castle Wolfenstein | PC, 2001 | iortcw port, capsterx | capsterx | Pre-release, 21 Nov 2020 — listed pre-release, treat as early | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
+| Ristar | Genesis / Mega Drive, 1995 | Native port | simplePsyduck (Ristar_nx) | beta-v1, 17 Nov 2026 — true 16:9 widescreen, save states and filters per its README; release ships Ristar_nx.nro; own ROM required | [source](https://github.com/simplePsyduck/Ristar_nx) |
 | Road Rash | PC, 1996 | Port via web NRO builder | DevCrashDay (road-rash-nx) | Builder in repo, Nov 2026 — roadrash_base.nro in repo; the builder generates roadrash_switch.nro from your own CD image; 4-player local multiplayer | [source](https://github.com/DevCrashDay/road-rash-nx) |
 | RollerCoaster Tycoon 2 | PC, 2002 | OpenRCT2, rsn8887; new build Wander-Eule Sep 2026 [SP] | rsn8887 | v1.06, 24 Apr 2021 | [catalogue](https://github.com/robzilla10001/switchports) |
 | Scooby-Doo! Night of 100 Frights | PS2, 2002 | Recompilation | matthewperiut | v1.0, 16 Oct 2026 | [source](https://github.com/matthewperiut/night100) |
@@ -433,6 +434,9 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - **Dark Riddle** (Android, Unity) — native C++ reimplementation, DevZer0D4Y (darkriddle-native-port), 17 Nov 2026 — source-build only: build_switch.sh produces darkriddle.nro from data converted from your own APK; all 7 levels per its README — [source](https://github.com/DevZer0D4Y/darkriddle-native-port)
 - Checked and NOT listed: **Survive — Wilderness Survival** (SwitchPorts lists cznn999/survive-nx v0.10, but that repo returns 404 — not verifiable, left out); **Finding Nemo** (NostalRem/nemo-nx — no README, no release, left out).
 
+**GitHub scrub find, 2026-11-17 (evening run)** (not in SwitchPorts / GameBrew / AllRecomps at scrub time):
+- **Ristar** (Genesis / Mega Drive, 1995) — native port, simplePsyduck (Ristar_nx), **beta-v1, 17 Nov 2026** — release ships Ristar_nx.nro; true 16:9 widescreen, save states and filters per its README; own ROM required — [source](https://github.com/simplePsyduck/Ristar_nx)
+
 #### 1F. The 2026 explosion — N64 / GameCube / Wii / DS / SNES / GB recomps & decomp ports ([SP])
 
 - **N64:** Banjo-Kazooie (Docklight v1.1.0), Bomberman 64 (BM64Switch v1.0.0, N64Recomp [AR]), Castlevania: Legacy of Darkness (RC1), Conker's Bad Fur Day (RC1), Diddy Kong Racing (Golden Balloon NX v1.2.1, source port [AR]), Donkey Kong 64 (DK64Recomp-NX v1.1.2), GoldenEye 007 (Project Dam v0.2.0, christphe — Switch port of jkdansereau/goldeneye-pc-port, early), Mega Man 64 (0.9.1), Paper Mario (PaperBoat-NX v1.0.2, Harbour Masters PaperBoat adaptation), Snowboard Kids 2, StarCraft 64 (v1.5.0), Star Wars: Rogue Squadron (v1.0), Super Smash Bros. (BattleShipNX v1.6.0), Wave Race 64 (RaceWave46 RC7 — also listed in recomp trackers Oct 2026), plus Ship/2Ship/Ghostship/Starship/SpaghettiKart/Perfect Dark in §1B
@@ -500,6 +504,8 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 **2026-11-17 (morning run)** — SwitchPorts HEAD unchanged (d942b7ad, 468 entries), no open pull requests, GameBrew new pages are tools/apps only, AllRecomps still 66, Wololo.net / SwitchBrew wiki / HB App Store: nothing new. GitHub scrub: 1 new verified port — **Minecraft: Java Edition 26.3 — Horizon NX** (Lciarallo, v0.1.0, release ships horizon.nro); 1 version update — **New Super Mario Bros. Wii v0.1.0** (first tagged release, still source-only). Catalogue: 162 → **161 games** (Minecraft added; the two Switch 2 entries — GTA V and Half-Life 2 — were removed the same day: this catalogue is Switch 1 only). Full detail in [`findings/2026-11-17.md`](findings/2026-11-17.md).
 
 **2026-11-17 (second run)** — SwitchPorts jumped 468 → 492 entries (HEAD d942b7ad → d49de3d7). Verified new ports: **Final Fantasy XIII** (recomp-nx, v1.0.0), **Final Fantasy XIII-2** (BlackDes1, v1.1, source-build), **Crazy Taxi 3: High Roller** (CT3-nx, v0.5.0), **Sonic Heroes** (sheroes-nx, v0.5.0), **Sonic the Hedgehog 4: Episode I** (S4ep1-nx, v0.5.0), **Operation Darkness** (liartes, v1.0.0), **Ice Age 2: The Meltdown** (Meluxz, v0.3.2), **Your Turn to Die** (yttd-nx, v1.0.5), **SegaSonic the Hedgehog** (Thorhax, v1.0.0), **Granny: Chapter Two** (granny2_nx, v1.0.0), **Granny 3** (granny3_nx, v1.0) and **Mickey & Donald Collection** (simplePsyduck, v1.1.2 — was pre-release). GitHub scrub added **Magical Quest Trilogy** (simplePsyduck, beta-v1), **Road Rash** (DevCrashDay, web NRO builder) and **Dark Riddle** (DevZer0D4Y, source-build). Status updates: **Death Rally v1.1.0 → v1.2.0**, **Dishonored v0.20 → v0.50** (plus a second port, Dunwall, source-build WIP), **Super Mario All-Stars pre-release → v1.0.1**. Not listed: Survive — Wilderness Survival (its SwitchPorts repo returns 404) and Finding Nemo (no README/release). GameBrew / AllRecomps / Wololo / SwitchBrew / HB App Store: nothing new. Catalogue: 161 → **176 games**. Full detail in [`findings/2026-11-17.md`](findings/2026-11-17.md).
+
+**2026-11-17 (evening run)** — 1 new verified port via the GitHub scrub: **Ristar** (Genesis / Mega Drive, 1995) — native port, simplePsyduck (Ristar_nx), **beta-v1, 17 Nov 2026** — release ships Ristar_nx.nro; true 16:9 widescreen, save states and filters per its README; own ROM required. Catalogue: 176 → **177 games**. Full detail in [`findings/2026-11-17.md`](findings/2026-11-17.md).
 
 
 | Game | Original | Port type | Author | Latest | Note | Link |
