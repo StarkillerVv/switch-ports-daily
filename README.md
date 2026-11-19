@@ -101,5 +101,5 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
 [![Catalogue size](https://img.shields.io/badge/games-197-blue)](CATALOGUE.md)
 
-0 views, 0 clones as of 2026-11-15.
+187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
 
