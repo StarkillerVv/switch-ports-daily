@@ -361,6 +361,38 @@
       .src { margin-top: auto; padding-top: 6px; border-top: 1px dashed var(--line); font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
       .src span { color: var(--ink-3); font-family: "IBM Plex Mono", monospace; font-size: 11.5px; text-transform: uppercase; letter-spacing: .03em; padding-top: 2px; }
       .src a { word-break: break-all; }
+
+      /* Collapsible card details: notes live in .card-details, hidden until
+         the card's Show more button opens them. Instant toggle, no motion. */
+      .card-details { display: flex; flex-direction: column; gap: 8px; }
+      .card-details[hidden] { display: none; }
+      .show-more {
+        align-self: flex-start;
+        font: inherit; font-size: 14px; font-weight: 700;
+        color: var(--accent-ink);
+        background: var(--bg-raised);
+        border: 1px solid var(--line); border-radius: 6px;
+        padding: 9px 14px; min-height: 44px; cursor: pointer;
+      }
+      .show-more:hover { border-color: var(--ink-3); }
+      .show-more::after { content: "\25BE"; margin-left: 7px; font-size: 11px; }
+      .show-more[aria-expanded="true"]::after { content: "\25B4"; }
+      .count-row { display: flex; align-items: center; gap: 2px 16px; flex-wrap: wrap; }
+      .expand-all {
+        font: inherit; font-size: 13.5px; font-weight: 700;
+        color: var(--accent-ink); background: none; border: 0;
+        padding: 6px 4px; min-height: 44px; cursor: pointer;
+        text-decoration: underline; text-underline-offset: 3px;
+      }
+
+      /* Status key: one line per status, led by its card badge colours */
+      .status-key .key-list {
+        list-style: none; margin: 10px 0 8px; padding: 0;
+        display: flex; flex-direction: column; gap: 7px;
+      }
+      .status-key .key-list li { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
+      .status-key .key-list .badge { flex: none; }
+      .status-key p { margin: 0; }
       code { font-family: "IBM Plex Mono", monospace; font-size: .88em; background: var(--bg-sunken); padding: 1px 5px; border-radius: 3px; }
       .hidden-card { display: none !important; }
       section.all-hidden { display: none; }
@@ -494,7 +526,15 @@
           <div class="stat"><b>66</b><span>curated ports on AllRecomps</span></div>
           <div class="stat"><b>2 eras</b><span>classics 2018–2025 · the 2026 flood</span></div>
         </div>
-        <div class="callout"><strong>How to read the statuses.</strong> <strong>Playable:</strong> public build, played by people. <strong>Early:</strong> public build, unfinished (v0.1–0.5), playable in part, rarely completable. <strong>WIP:</strong> in development, no playable public build yet. <strong>Cancelled / none:</strong> cancelled, or no port exists. “Released” means a public build existed — most 2026 builds are early and unrated, so playable-in-part, not completable.</div>
+        <div class="callout status-key"><strong>How to read the statuses.</strong>
+          <ul class="key-list">
+            <li><span class="badge status-released">Playable</span><span>public build, played by people.</span></li>
+            <li><span class="badge status-testing">Early</span><span>public build, unfinished (v0.1–0.5), playable in part, rarely completable.</span></li>
+            <li><span class="badge status-planned">WIP</span><span>in development, no playable public build yet.</span></li>
+            <li><span class="badge status-cancelled">Cancelled / none</span><span>cancelled, or no port exists.</span></li>
+          </ul>
+          <p>“Released” means a public build existed — most 2026 builds are early and unrated, so playable-in-part, not completable.</p>
+        </div>
       </header>
 
       <section class="recent-section" aria-labelledby="recentHeading">
@@ -595,7 +635,10 @@
           <button class="chip chip-status" data-status-filter="cancelled" aria-pressed="false">Cancelled</button>
           </div>
         </div>
-        <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
+        <div class="count-row">
+          <p class="result-count" id="resultCount" aria-live="polite" aria-atomic="true"></p>
+          <button type="button" class="expand-all" id="expandAll" aria-expanded="false">Expand all</button>
+        </div>
       </div>
 
       <div class="no-results" id="noResults">No port matches that search. Try a shorter name — or check Cancelled / none.</div>
@@ -1689,6 +1732,7 @@
             if (!target) return;
             ev.preventDefault();
             if (target.classList.contains('hidden-card')) clearFilters();
+            expandCard(target);
             var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
             target.classList.remove('is-highlighted');
@@ -1744,6 +1788,69 @@
           window.addEventListener('scroll', onScrollSticky, { passive: true });
           onScrollSticky();
         }
+        // Collapsible game cards: each card's note paragraphs/lists move into
+        // a hidden details region; title, badges, facts and sources stay in
+        // the compact summary. Nothing is removed — search text is unchanged
+        // because the nodes stay inside the card.
+        var expandAllBtn = document.getElementById('expandAll');
+        var collapsible = [];
+        function setCardOpen(entry, open) {
+          entry.region.hidden = !open;
+          entry.btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          entry.btn.textContent = open ? 'Show less' : 'Show more';
+        }
+        function syncExpandAll() {
+          if (!expandAllBtn || !collapsible.length) return;
+          var allOpen = collapsible.every(function (e) { return !e.region.hidden; });
+          expandAllBtn.textContent = allOpen ? 'Collapse all' : 'Expand all';
+          expandAllBtn.setAttribute('aria-expanded', allOpen ? 'true' : 'false');
+        }
+        function expandCard(card) {
+          for (var i = 0; i < collapsible.length; i++) {
+            if (collapsible[i].card === card) {
+              setCardOpen(collapsible[i], true);
+              syncExpandAll();
+              return;
+            }
+          }
+        }
+        document.querySelectorAll('.card[data-cat]').forEach(function (card) {
+          var notes = Array.prototype.filter.call(card.children, function (el) {
+            return (el.tagName === 'P' || el.tagName === 'UL' || el.tagName === 'OL') && !el.classList.contains('src');
+          });
+          if (!notes.length) return;
+          var region = document.createElement('div');
+          region.className = 'card-details';
+          region.id = 'details-' + card.id;
+          region.hidden = true;
+          var src = null;
+          Array.prototype.forEach.call(card.children, function (el) {
+            if (el.classList.contains('src')) src = el;
+          });
+          if (src) card.insertBefore(region, src); else card.appendChild(region);
+          notes.forEach(function (el) { region.appendChild(el); });
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'show-more';
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-controls', region.id);
+          btn.textContent = 'Show more';
+          card.appendChild(btn);
+          var entry = { card: card, region: region, btn: btn };
+          collapsible.push(entry);
+          btn.addEventListener('click', function () {
+            setCardOpen(entry, region.hidden);
+            syncExpandAll();
+          });
+        });
+        if (expandAllBtn) {
+          expandAllBtn.addEventListener('click', function () {
+            var anyClosed = collapsible.some(function (e) { return e.region.hidden; });
+            collapsible.forEach(function (e) { setCardOpen(e, anyClosed); });
+            syncExpandAll();
+          });
+        }
+
         markNew();
         apply();
       })();
