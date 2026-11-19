@@ -21,8 +21,6 @@ The essentials only — one line per game: name, original console, version. Full
 - **Manhunt** (Xbox) — v0.2.0, early
 - Updates: Plants vs. Zombies: DLC Edition → Beta 2.5 · Mega Man X → v1.3.0 · Torchlight → v1.0.6 · Minecraft: Horizon NX — new fork build v1.0.0 · Dragon Ball Z: Budokai 3 HD — second port added
 
-Older days, one line each:
-
 - [2026-11-18](findings/2026-11-18.md) — 11 new ports; catalogue 188 games
 - [2026-11-17](findings/2026-11-17.md) — 15 new ports; catalogue 177 games
 - [2026-11-16](findings/2026-11-16.md) — 15 new ports; catalogue 162 games
