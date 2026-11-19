@@ -371,8 +371,9 @@
       .src span { color: var(--ink-3); font-family: "IBM Plex Mono", monospace; font-size: 11.5px; text-transform: uppercase; letter-spacing: .03em; padding-top: 2px; }
       .src a { word-break: break-all; }
 
-      /* Collapsible card details: notes live in .card-details, hidden until
-         the card's Show more button opens them. Instant toggle, no motion. */
+      /* Collapsible card details: notes and the Author/Switch fact lines
+         live in .card-details, hidden until the card's Show more button
+         opens them. Instant toggle, no motion. */
       .card-details { display: flex; flex-direction: column; gap: 8px; }
       .card-details[hidden] { display: none; }
       .show-more {
@@ -2690,12 +2691,34 @@
           onScrollSticky();
         }
         // Collapsible game cards: each card's note paragraphs/lists move into
-        // a hidden details region; title, badges, facts and sources stay in
-        // the compact summary. Nothing is removed — search text is unchanged
-        // because the nodes stay inside the card.
+        // a hidden details region, and so do the Author/Authors and Switch
+        // fact lines. Title, badges, the Original fact line and sources stay
+        // in the compact summary. Nothing is removed — search text is
+        // unchanged because the nodes stay inside the card. Expanding moves
+        // the fact lines back into the card's facts list at their original
+        // position, so the expanded card reads exactly as authored.
         var expandAllBtn = document.getElementById('expandAll');
         var collapsible = [];
         function setCardOpen(entry, open) {
+          if (entry.factPairs && entry.factPairs.length && entry.factsDl && entry.hiddenFacts) {
+            if (open) {
+              entry.factPairs.forEach(function (p) {
+                if (p.dt.parentNode === entry.factsDl) return;
+                var ref = entry.factsDl.children[p.index * 2] || null;
+                entry.factsDl.insertBefore(p.dt, ref);
+                if (p.dd) entry.factsDl.insertBefore(p.dd, ref);
+              });
+              entry.hiddenFacts.style.display = 'none';
+            } else {
+              entry.factPairs.forEach(function (p) {
+                if (p.dt.parentNode === entry.hiddenFacts) return;
+                entry.hiddenFacts.appendChild(p.dt);
+                if (p.dd) entry.hiddenFacts.appendChild(p.dd);
+              });
+              entry.hiddenFacts.style.display = '';
+            }
+            entry.factsDl.style.display = (!open && entry.factsDl.children.length === 0) ? 'none' : '';
+          }
           entry.region.hidden = !open;
           entry.btn.setAttribute('aria-expanded', open ? 'true' : 'false');
           entry.btn.textContent = open ? (window.__tr ? window.__tr('showLess') : 'Show less') : (window.__tr ? window.__tr('showMore') : 'Show more');
@@ -2719,7 +2742,29 @@
           var notes = Array.prototype.filter.call(card.children, function (el) {
             return (el.tagName === 'P' || el.tagName === 'UL' || el.tagName === 'OL') && !el.classList.contains('src');
           });
-          if (!notes.length) return;
+          // The Author/Authors and Switch fact pairs also belong in the
+          // hidden region; every other fact line (Original, Projects, …)
+          // stays visible in the compact summary.
+          var factsDl = null;
+          Array.prototype.forEach.call(card.children, function (el) {
+            if (el.tagName === 'DL' && el.classList.contains('facts')) factsDl = el;
+          });
+          var factPairs = [];
+          if (factsDl) {
+            var factKids = Array.prototype.slice.call(factsDl.children);
+            var pairIndex = 0;
+            for (var fi = 0; fi < factKids.length; fi++) {
+              var dtEl = factKids[fi];
+              if (dtEl.tagName !== 'DT') continue;
+              var ddEl = (factKids[fi + 1] && factKids[fi + 1].tagName === 'DD') ? factKids[fi + 1] : null;
+              var label = (dtEl.getAttribute('data-en-text') || dtEl.textContent || '').trim();
+              if (label === 'Author' || label === 'Authors' || label === 'Switch') {
+                factPairs.push({ dt: dtEl, dd: ddEl, index: pairIndex });
+              }
+              pairIndex++;
+            }
+          }
+          if (!notes.length && !factPairs.length) return;
           var region = document.createElement('div');
           region.className = 'card-details';
           region.id = 'details-' + card.id;
@@ -2729,6 +2774,17 @@
             if (el.classList.contains('src')) src = el;
           });
           if (src) card.insertBefore(region, src); else card.appendChild(region);
+          var hiddenFacts = null;
+          if (factPairs.length) {
+            hiddenFacts = document.createElement('dl');
+            hiddenFacts.className = 'facts facts-more';
+            factPairs.forEach(function (p) {
+              hiddenFacts.appendChild(p.dt);
+              if (p.dd) hiddenFacts.appendChild(p.dd);
+            });
+            region.appendChild(hiddenFacts);
+            if (factsDl && factsDl.children.length === 0) factsDl.style.display = 'none';
+          }
           notes.forEach(function (el) { region.appendChild(el); });
           var btn = document.createElement('button');
           btn.type = 'button';
@@ -2737,7 +2793,7 @@
           btn.setAttribute('aria-controls', region.id);
           btn.textContent = window.__tr ? window.__tr('showMore') : 'Show more';
           card.appendChild(btn);
-          var entry = { card: card, region: region, btn: btn };
+          var entry = { card: card, region: region, btn: btn, factsDl: factsDl, hiddenFacts: hiddenFacts, factPairs: factPairs };
           collapsible.push(entry);
           btn.addEventListener('click', function () {
             setCardOpen(entry, region.hidden);
