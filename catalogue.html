@@ -86,6 +86,15 @@
         letter-spacing: .04em;
         color: var(--ink-3);
       }
+      .lang-switch { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 16px; }
+      .lang-pill {
+        font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-weight: 600;
+        letter-spacing: .05em; line-height: 1;
+        background: var(--chip-bg); color: var(--ink-2);
+        border: 1px solid var(--line); border-radius: 999px;
+        padding: 8px 13px; min-height: 2.25rem; min-width: 44px; cursor: pointer;
+      }
+      .lang-pill[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
       h1 {
         font-family: "Barlow Condensed", sans-serif;
         font-weight: 700;
@@ -388,9 +397,12 @@
       /* Status key: one line per status, led by its card badge colours */
       .status-key .key-list {
         list-style: none; margin: 10px 0 8px; padding: 0;
-        display: flex; flex-direction: column; gap: 7px;
+        display: flex; flex-direction: column; gap: 0;
       }
-      .status-key .key-list li { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
+      .status-key .key-list li { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; padding: 8px 0; }
+      .status-key .key-list li:first-child { padding-top: 2px; }
+      .status-key .key-list li:last-child { padding-bottom: 2px; }
+      .status-key .key-list li + li { border-top: 1px solid var(--line); }
       .status-key .key-list .badge { flex: none; }
       .status-key p { margin: 0; }
       code { font-family: "IBM Plex Mono", monospace; font-size: .88em; background: var(--bg-sunken); padding: 1px 5px; border-radius: 3px; }
@@ -514,35 +526,52 @@
     </style>
   </head>
   <body>
-    <a class="skip-link" href="#catalogue-results">Skip to results</a>
+    <a class="skip-link" href="#catalogue-results" data-i18n="skip">Skip to results</a>
     <div class="wrap">
       <header class="top">
-        <div class="tid">UNOFFICIAL / HOMEBREW PORTS ONLY · MODDED SWITCH (ATMOSPHÈRE) REQUIRED · BRING YOUR OWN GAME FILES · EVERY LEGITIMATE PORT IS FREE</div>
-        <h1>All games ported to <span class="nx">Switch</span></h1>
-        <div class="stats">
-          <div class="stat"><b>197</b><span>games in this catalogue</span></div>
-          <div class="stat"><b>468</b><span>entries in the SwitchPorts master list</span></div>
-          <div class="stat"><b>138</b><span>SwitchPorts updates in a single week</span></div>
-          <div class="stat"><b>66</b><span>curated ports on AllRecomps</span></div>
-          <div class="stat"><b>2 eras</b><span>classics 2018–2025 · the 2026 flood</span></div>
+        <div class="tid" data-i18n="tid">UNOFFICIAL / HOMEBREW PORTS ONLY · MODDED SWITCH (ATMOSPHÈRE) REQUIRED · BRING YOUR OWN GAME FILES · EVERY LEGITIMATE PORT IS FREE</div>
+        <h1 data-i18n-html="title">All games ported to <span class="nx">Switch</span></h1>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-pill" data-lang="en" aria-pressed="true">ENG</button>
+          <button type="button" class="lang-pill" data-lang="fr" aria-pressed="false">FRA</button>
+          <button type="button" class="lang-pill" data-lang="es" aria-pressed="false">ESP</button>
+          <button type="button" class="lang-pill" data-lang="de" aria-pressed="false">DEU</button>
+          <button type="button" class="lang-pill" data-lang="it" aria-pressed="false">ITA</button>
+          <button type="button" class="lang-pill" data-lang="pt" aria-pressed="false">POR</button>
+          <button type="button" class="lang-pill" data-lang="ja" aria-pressed="false">JPN</button>
+          <button type="button" class="lang-pill" data-lang="ru" aria-pressed="false">RUS</button>
+          <button type="button" class="lang-pill" data-lang="uk" aria-pressed="false">UKR</button>
+          <button type="button" class="lang-pill" data-lang="pl" aria-pressed="false">POL</button>
+          <button type="button" class="lang-pill" data-lang="nl" aria-pressed="false">NED</button>
+          <button type="button" class="lang-pill" data-lang="tr" aria-pressed="false">TUR</button>
+          <button type="button" class="lang-pill" data-lang="ko" aria-pressed="false">KOR</button>
+          <button type="button" class="lang-pill" data-lang="zh" aria-pressed="false">CHS</button>
+          <button type="button" class="lang-pill" data-lang="ar" aria-pressed="false">ARA</button>
         </div>
-        <div class="callout status-key"><strong>How to read the statuses.</strong>
+        <div class="stats">
+          <div class="stat"><b>197</b><span data-i18n="statGames">games in this catalogue</span></div>
+          <div class="stat"><b>468</b><span data-i18n="statMaster">entries in the SwitchPorts master list</span></div>
+          <div class="stat"><b>138</b><span data-i18n="statWeek">SwitchPorts updates in a single week</span></div>
+          <div class="stat"><b>66</b><span data-i18n="statRecomps">curated ports on AllRecomps</span></div>
+          <div class="stat"><b data-i18n="statErasB">2 eras</b><span data-i18n="statEras">classics 2018–2025 · the 2026 flood</span></div>
+        </div>
+        <div class="callout status-key"><strong data-i18n="keyHeading">How to read the statuses.</strong>
           <ul class="key-list">
-            <li><span class="badge status-released">Playable</span><span>public build, played by people.</span></li>
-            <li><span class="badge status-testing">Early</span><span>public build, unfinished (v0.1–0.5), playable in part, rarely completable.</span></li>
-            <li><span class="badge status-planned">WIP</span><span>in development, no playable public build yet.</span></li>
-            <li><span class="badge status-cancelled">Cancelled / none</span><span>cancelled, or no port exists.</span></li>
+            <li><span class="badge status-released">Playable</span><span data-i18n="keyPlayable">public build, played by people.</span></li>
+            <li><span class="badge status-testing">Early</span><span data-i18n="keyEarly">public build, unfinished (v0.1–0.5), playable in part, rarely completable.</span></li>
+            <li><span class="badge status-planned">WIP</span><span data-i18n="keyWip">in development, no playable public build yet.</span></li>
+            <li><span class="badge status-cancelled">Cancelled / none</span><span data-i18n="keyCancelled">cancelled, or no port exists.</span></li>
           </ul>
-          <p>“Released” means a public build existed — most 2026 builds are early and unrated, so playable-in-part, not completable.</p>
+          <p data-i18n="keyNote">“Released” means a public build existed — most 2026 builds are early and unrated, so playable-in-part, not completable.</p>
         </div>
       </header>
 
       <section class="recent-section" aria-labelledby="recentHeading">
-        <h2 id="recentHeading">Recently added</h2>
-        <p class="section-note">Ports added by the two most recent daily checks — 19 and 18 November 2026. Select a title to jump straight to its entry. Entries added in the last 7 days also carry a NEW badge in the catalogue below.</p>
+        <h2 id="recentHeading" data-i18n="recentHeading">Recently added</h2>
+        <p class="section-note" data-i18n="recentNote">Ports added by the two most recent daily checks — 19 and 18 November 2026. Select a title to jump straight to its entry. Entries added in the last 7 days also carry a NEW badge in the catalogue below.</p>
         <div class="recent-groups">
           <div class="recent-group">
-            <h3>19 November 2026 <span class="recent-date-note">— 9 additions</span></h3>
+            <h3 data-i18n="recentDate1">19 November 2026 <span class="recent-date-note" data-i18n="recentAdd1">— 9 additions</span></h3>
             <ul class="recent-list">
               <li><a class="recent-chip" href="#port-pewdiepie-legend-of-brofist" data-recent-target="port-pewdiepie-legend-of-brofist">PewDiePie: Legend of Brofist <span class="recent-new">NEW</span></a></li>
               <li><a class="recent-chip" href="#port-spider-man-2" data-recent-target="port-spider-man-2">Spider-Man 2 <span class="recent-new">NEW</span></a></li>
@@ -556,7 +585,7 @@
             </ul>
           </div>
           <div class="recent-group">
-            <h3>18 November 2026 <span class="recent-date-note">— 11 additions</span></h3>
+            <h3 data-i18n="recentDate2">18 November 2026 <span class="recent-date-note" data-i18n="recentAdd2">— 11 additions</span></h3>
             <ul class="recent-list">
               <li><a class="recent-chip" href="#port-blur" data-recent-target="port-blur">Blur <span class="recent-new">NEW</span></a></li>
               <li><a class="recent-chip" href="#port-need-for-speed-hot-pursuit-2" data-recent-target="port-need-for-speed-hot-pursuit-2">Need for Speed: Hot Pursuit 2 <span class="recent-new">NEW</span></a></li>
@@ -576,7 +605,7 @@
 
       <div class="filterbar" id="filters">
         <div class="filter-row" role="group" aria-label="Search and filter by category">
-          <label class="visually-hidden" for="q">Search by game, author or original system</label>
+          <label class="visually-hidden" for="q" data-i18n="searchLabel">Search by game, author or original system</label>
           <div class="search">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
             <input id="q" type="search" placeholder="Search by game, author or original system…" aria-label="Search by game, author or original system" />
@@ -593,7 +622,7 @@
           </div>
         </div>
         <div class="filter-row console-row" role="group" aria-labelledby="consoleFilterLabel">
-          <span class="filter-label" id="consoleFilterLabel">Original system</span>
+          <span class="filter-label" id="consoleFilterLabel" data-i18n="consoleLabel">Original system</span>
           <div class="chips" id="consoleChips">
           <button class="chip chip-console" data-console-filter="all" aria-pressed="true">All consoles</button>
           <button class="chip chip-console" data-console-filter="pc" aria-pressed="false">PC</button>
@@ -627,7 +656,7 @@
           </div>
         </div>
         <div class="filter-row status-row" role="group" aria-labelledby="statusFilterLabel">
-          <span class="filter-label" id="statusFilterLabel">Status</span>
+          <span class="filter-label" id="statusFilterLabel" data-i18n="statusLabel">Status</span>
           <div class="chips" id="statusChips">
           <button class="chip chip-status" data-status-filter="all" aria-pressed="true">All statuses</button>
           <button class="chip chip-status" data-status-filter="released" aria-pressed="false">Released</button>
@@ -641,12 +670,12 @@
         </div>
       </div>
 
-      <div class="no-results" id="noResults">No port matches that search. Try a shorter name — or check Cancelled / none.</div>
+      <div class="no-results" id="noResults" data-i18n="noResults">No port matches that search. Try a shorter name — or check Cancelled / none.</div>
 
       <!-- ============ 1. ROCKSTAR ============ -->
       <section data-section id="catalogue-results" tabindex="-1">
-        <h2><span class="n">01</span> Rockstar &amp; open-world — released</h2>
-        <p class="section-note">Rockstar ports — from the GTA III decomp to the 2026 loaders and recomps.</p>
+        <h2 data-i18n="sec01h"><span class="n">01</span> Rockstar &amp; open-world — released</h2>
+        <p class="section-note" data-i18n="sec01n">Rockstar ports — from the GTA III decomp to the 2026 loaders and recomps.</p>
         <div class="grid">
           <article class="card" data-cat="rockstar" data-console="ps2 pc" data-search="grand theft auto iii gta 3 re3 decompilation graber agraber 2020" id="port-grand-theft-auto-iii" data-status="released">
             <h3>Grand Theft Auto III</h3>
@@ -791,13 +820,13 @@
             <div class="src"><span>Source</span><a href="https://github.com/baezahuertaelias/manhunt1_nx">github.com/baezahuertaelias/manhunt1_nx</a></div>
           </article>
         </div>
-        <div class="callout"><strong>No released port found for:</strong> GTA IV (WIP — conflicting reports, not finished; §07), GTA V (cancelled; §08), Red Dead Redemption (official only; §08).</div>
+        <div class="callout" data-i18n-html="callout01"><strong>No released port found for:</strong> GTA IV (WIP — conflicting reports, not finished; §07), GTA V (cancelled; §08), Red Dead Redemption (official only; §08).</div>
       </section>
 
       <!-- ============ 2. DECOMP CLASSICS ============ -->
       <section data-section>
-        <h2><span class="n">02</span> Decompilations &amp; console classics</h2>
-        <p class="section-note">Mature decompilations of console classics — bring your own ROM.</p>
+        <h2 data-i18n="sec02h"><span class="n">02</span> Decompilations &amp; console classics</h2>
+        <p class="section-note" data-i18n="sec02n">Mature decompilations of console classics — bring your own ROM.</p>
         <div class="ports">
           <div class="port-row" data-cat="decomp" data-console="n64" data-search="super mario 64 sm64ex fgsfdsfgs n64 decompilation 2020" id="port-super-mario-64-sm64ex"><span class="pname">Super Mario 64 (sm64ex)</span><span class="pup">N64, 1996 · decompilation port · requires own ROM assets</span><span class="pauthor">fgsfdsfgs · 19 May 2020</span></div>
           <div class="port-row" data-cat="decomp" data-console="n64" data-search="super mario 64 ghostship harbour masters libultraship 2026" id="port-super-mario-64-ghostship"><span class="pname">Super Mario 64 (Ghostship)</span><span class="pup">N64, 1996 · decompilation (libultraship) · US/JP ROMs; also Android/iOS/PC</span><span class="pauthor">Harbour Masters · v3.0.0, 7 Sep 2026 [SP][AR]</span></div>
@@ -833,8 +862,8 @@
 
       <!-- ============ 3. PC SOURCE PORTS ============ -->
       <section data-section>
-        <h2><span class="n">03</span> PC game source ports — classic era</h2>
-        <p class="section-note">Classic PC source ports, mostly from a small group of authors.</p>
+        <h2 data-i18n="sec03h"><span class="n">03</span> PC game source ports — classic era</h2>
+        <p class="section-note" data-i18n="sec03n">Classic PC source ports, mostly from a small group of authors.</p>
         <div class="ports">
           <div class="port-row" data-cat="pc" data-console="pc" data-search="doom doom ii heretic hexen gzdoom chocolate doom nx lantus modern vintage gamer kgdoom thorhax" id="port-doom-doom-ii-heretic-hexen-via-gzdoom"><span class="pname">Doom / Doom II (+ Heretic/Hexen via GZDoom)</span><span class="pup">PC, 1993/94 · Chocolate Doom NX; kgDoom; GZDoom</span><span class="pauthor">lantus/MVG 2018 · fgsfdsfgs GZDoom 2023 · Thorhax 2026 [SP]</span></div>
           <div class="port-row" data-cat="pc" data-console="n64" data-search="doom 64 doom64ex fgsfdsfgs n64" id="port-doom-64-doom64ex"><span class="pname">Doom 64 (Doom64EX)</span><span class="pup">N64, 1997 · reverse-engineering port</span><span class="pauthor">fgsfdsfgs · v0.2.0-nx, 24 Oct 2019</span></div>
@@ -912,8 +941,8 @@
 
       <!-- ============ 4. ANDROID LOADERS 2026 ============ -->
       <section data-section>
-        <h2><span class="n">04</span> The 2026 explosion — Android-loader ports</h2>
-        <p class="section-note">Android games run through a compatibility layer — bring the APK files.</p>
+        <h2 data-i18n="sec04h"><span class="n">04</span> The 2026 explosion — Android-loader ports</h2>
+        <p class="section-note" data-i18n="sec04n">Android games run through a compatibility layer — bring the APK files.</p>
         <div class="grid">
           <article class="card" data-cat="android" data-console="android" data-search="final fantasy chrono trigger chaos rings valkyrie profile mana castlevania symphony square enix rpg naga95" id="port-rpg-square-enix-wave" data-status="released">
             <h3>RPG / Square Enix wave</h3>
@@ -1060,8 +1089,8 @@
 
       <!-- ============ 5. RECOMPS 2026 ============ -->
       <section data-section>
-        <h2><span class="n">05</span> The 2026 explosion — static recompilations</h2>
-        <p class="section-note">Static recomps built from your own disc or ISO — early (0.x) unless noted.</p>
+        <h2 data-i18n="sec05h"><span class="n">05</span> The 2026 explosion — static recompilations</h2>
+        <p class="section-note" data-i18n="sec05n">Static recomps built from your own disc or ISO — early (0.x) unless noted.</p>
         <div class="grid">
           <article class="card" data-cat="recomp" data-console="xbox" data-search="halo combat evolved opence black burnout conker dead alive def jam fifa street flatout godfather mortal kombat shaolin monks need speed underground carbon most wanted 2005 stevensnd splinter cell chaos theory double agent ssx tricky bloody roar castlevania curse darkness cold fear madagascar gerisson1996 madagascar-nx-port soulcalibur 2 toniisound starcraft ghost thorhax jet set radio future skeammer eladerino unleashed buffy vampire slayer fotlabs xbox original recomp crazy taxi 3 high roller ct3-nx furrylilmanchild sonic heroes sheroes-nx ice age 2 meltdown meluxz iceage2-sw" id="port-xbox-original-recomps" data-status="released" data-added="2026-11-17">
             <h3>Xbox (original) recomps</h3>
@@ -1324,8 +1353,8 @@
 
       <!-- ============ 6. N64 / GC / MORE ============ -->
       <section data-section>
-        <h2><span class="n">06</span> N64 / GameCube / Wii / handheld recomps &amp; 2026 PC wave</h2>
-        <p class="section-note">The rest of the 2026 wave — Ship-family ports are in §02.</p>
+        <h2 data-i18n="sec06h"><span class="n">06</span> N64 / GameCube / Wii / handheld recomps &amp; 2026 PC wave</h2>
+        <p class="section-note" data-i18n="sec06n">The rest of the 2026 wave — Ship-family ports are in §02.</p>
         <div class="ports">
           <div class="port-row" data-cat="recomp" data-console="n64" data-search="banjo-kazooie docklight n64 recomp" id="port-n64-banjo-kazooie"><span class="pname">N64 — Banjo-Kazooie</span><span class="pup">Docklight v1.1.0</span><span class="pauthor">[SP]</span></div>
           <div class="port-row" data-cat="recomp" data-console="n64" data-search="bomberman 64 bm64switch n64recomp" id="port-n64-bomberman-64"><span class="pname">N64 — Bomberman 64</span><span class="pup">BM64Switch v1.0.0, N64Recomp</span><span class="pauthor">[SP][AR]</span></div>
@@ -1357,8 +1386,8 @@
 
       <!-- ============ 7. WIP ============ -->
       <section data-section>
-        <h2><span class="n">07</span> In development / announced</h2>
-        <p class="section-note">No playable public build yet.</p>
+        <h2 data-i18n="sec07h"><span class="n">07</span> In development / announced</h2>
+        <p class="section-note" data-i18n="sec07n">No playable public build yet.</p>
         <div class="grid">
           <article class="card wide" data-cat="wip" data-console="ps3 xbox360" data-search="gta iv grand theft auto liberty recomp theft4-nx gta4nx kabba536 gabryboy12 ozordi rexglue not playable fps" id="port-gta-iv" data-status="wip">
             <h3>GTA IV</h3>
@@ -1458,8 +1487,8 @@
 
       <!-- ============ 8. CANCELLED / NONE ============ -->
       <section>
-        <h2><span class="n">08</span> Cancelled / rumoured / no port exists</h2>
-        <p class="section-note">GTA V / GTA5NX is cancelled — shut down Oct 2026, never released, any download is fake.</p>
+        <h2 data-i18n="sec08h"><span class="n">08</span> Cancelled / rumoured / no port exists</h2>
+        <p class="section-note" data-i18n="sec08n">GTA V / GTA5NX is cancelled — shut down Oct 2026, never released, any download is fake.</p>
         <div class="grid">
           <article class="card wide" data-cat="cancelled" data-console="" data-search="gta v gta5nx paralympics productions mojso m0jso cancelled take-two leaked source native port fps shut down" id="port-gta-v-gta5nx-paralympics-productions-lead-mojso-m0jso" data-status="cancelled">
             <h3>GTA V — GTA5NX <span class="sub">(Paralympics Productions, lead Mojso / M0jso)</span></h3>
@@ -1485,13 +1514,13 @@
           <div class="missing" data-cat="cancelled" data-console="" data-search="portal standalone unofficial no port official companion collection" id="port-portal-standalone-unofficial" data-status="cancelled"><b>Portal (standalone unofficial)</b><span>No standalone unofficial port; official Companion Collection only (see §03).</span></div>
           <div class="missing" data-cat="cancelled" data-console="" data-search="command conquer openra switch no build vanilla conquer only" id="port-command-conquer-via-openra" data-status="cancelled"><b>Command &amp; Conquer via OpenRA</b><span>No Switch OpenRA build found; only Vanilla Conquer (§03).</span></div>
         </div>
-        <div class="callout"><strong>Every legitimate port is free</strong>, with your own game files — paid “Switch port” bundles are scams.</div>
+        <div class="callout" data-i18n-html="callout08"><strong>Every legitimate port is free</strong>, with your own game files — paid “Switch port” bundles are scams.</div>
       </section>
 
       <!-- ============ 9. CAVEATS ============ -->
       <section>
-        <h2><span class="n">09</span> What the research could not verify</h2>
-        <p class="section-note">Things the research could not confirm.</p>
+        <h2 data-i18n="sec09h"><span class="n">09</span> What the research could not verify</h2>
+        <p class="section-note" data-i18n="sec09n">Things the research could not confirm.</p>
         <div class="grid">
           <article class="card wide">
             <ul>
@@ -1511,14 +1540,14 @@
       </section>
 
       <footer>
-        <p>Unofficial ports only — modded Switch (Atmosphère) required · bring your own game files, no port includes the game · every legitimate port is free, paid ones are scams · most 2026 builds are early.</p>
-        <p>Sources: <a href="https://github.com/robzilla10001/switchports/blob/HEAD/README.md">SwitchPorts</a> — master port list · <a href="https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games&amp;">GameBrew</a> — classic-era ports · <a href="https://allrecomps.com/switch-ports/">AllRecomps</a> — curated recomps · Wololo.net — scene news · SwitchBrew wiki — release log · HB App Store (SwitchBru) — homebrew store · GBAtemp / GitHub scrub — threads and repos checked directly.</p>
+        <p data-i18n="footer1">Unofficial ports only — modded Switch (Atmosphère) required · bring your own game files, no port includes the game · every legitimate port is free, paid ones are scams · most 2026 builds are early.</p>
+        <p data-i18n-frag="footer2">Sources: <a href="https://github.com/robzilla10001/switchports/blob/HEAD/README.md">SwitchPorts</a> — master port list · <a href="https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games&amp;">GameBrew</a> — classic-era ports · <a href="https://allrecomps.com/switch-ports/">AllRecomps</a> — curated recomps · Wololo.net — scene news · SwitchBrew wiki — release log · HB App Store (SwitchBru) — homebrew store · GBAtemp / GitHub scrub — threads and repos checked directly.</p>
       </footer>
     </div>
 
     <div class="sticky-search" id="stickySearch" aria-hidden="true">
       <div class="sticky-search-inner">
-        <label class="visually-hidden" for="q2">Search by game, author or original system</label>
+        <label class="visually-hidden" for="q2" data-i18n="searchLabel">Search by game, author or original system</label>
         <div class="search">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
           <input id="q2" type="search" placeholder="Search by game, author or original system…" aria-label="Search by game, author or original system" tabindex="-1" />
@@ -1528,9 +1557,883 @@
 
     <button type="button" id="filtersFab" class="filters-fab fab-hidden" aria-label="Back to search and filters">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v5l-4 2v-7L3 5z"/></svg>
-      <span>Filters</span>
+      <span data-i18n="fabFilters">Filters</span>
       <span class="fab-badge" id="fabBadge" hidden></span>
     </button>
+
+    <script>
+      /* Language dictionaries — interface strings only. Catalogue entry data
+         (game titles, authors, versions, notes) is never translated. Add a
+         language by adding one entry here plus one pill button. */
+      window.I18N = {
+        en: {
+          skip: "Skip to results",
+          tid: "UNOFFICIAL / HOMEBREW PORTS ONLY · MODDED SWITCH (ATMOSPHÈRE) REQUIRED · BRING YOUR OWN GAME FILES · EVERY LEGITIMATE PORT IS FREE",
+          title: "All games ported to <span class=\"nx\">Switch</span>",
+          docTitle: "Switch Ports since GTA5NX — All Unofficial Games Ported to Switch",
+          statGames: "games in this catalogue", statMaster: "entries in the SwitchPorts master list",
+          statWeek: "SwitchPorts updates in a single week", statRecomps: "curated ports on AllRecomps",
+          statErasB: "2 eras", statEras: "classics 2018–2025 · the 2026 flood",
+          keyHeading: "How to read the statuses.",
+          keyPlayable: "public build, played by people.",
+          keyEarly: "public build, unfinished (v0.1–0.5), playable in part, rarely completable.",
+          keyWip: "in development, no playable public build yet.",
+          keyCancelled: "cancelled, or no port exists.",
+          keyNote: "“Released” means a public build existed — most 2026 builds are early and unrated, so playable-in-part, not completable.",
+          recentHeading: "Recently added",
+          recentNote: "Ports added by the two most recent daily checks — 19 and 18 November 2026. Select a title to jump straight to its entry. Entries added in the last 7 days also carry a NEW badge in the catalogue below.",
+          recentDate1: "19 November 2026", recentAdd1: "— 9 additions",
+          recentDate2: "18 November 2026", recentAdd2: "— 11 additions",
+          searchLabel: "Search by game, author or original system",
+          searchPlaceholder: "Search by game, author or original system…",
+          catGroup: "Search and filter by category",
+          chipAll: "All", chipDecomp: "Decomp & classics", chipPc: "PC source ports",
+          chipAndroid: "Android loaders ’26", chipRecomp: "Recomps ’26",
+          chipWip: "In development", chipCancelled: "Cancelled / none",
+          consoleLabel: "Original system", chipAllConsoles: "All consoles",
+          statusLabel: "Status", chipAllStatuses: "All statuses",
+          chipReleased: "Released", chipWipStatus: "WIP", chipCancelledStatus: "Cancelled",
+          expandAll: "Expand all", collapseAll: "Collapse all",
+          showMore: "Show more", showLess: "Show less",
+          noResults: "No port matches that search. Try a shorter name — or check Cancelled / none.",
+          fabFilters: "Filters", fabAria: "Back to search and filters",
+          countTpl: "Showing {v} of {t} catalogue entries", countFilter: " for this filter",
+          foundTpl: "{n} found",
+          sec01h: "Rockstar & open-world — released",
+          sec01n: "Rockstar ports — from the GTA III decomp to the 2026 loaders and recomps.",
+          callout01: "<strong>No released port found for:</strong> GTA IV (WIP — conflicting reports, not finished; §07), GTA V (cancelled; §08), Red Dead Redemption (official only; §08).",
+          sec02h: "Decompilations & console classics",
+          sec02n: "Mature decompilations of console classics — bring your own ROM.",
+          sec03h: "PC game source ports — classic era",
+          sec03n: "Classic PC source ports, mostly from a small group of authors.",
+          sec04h: "The 2026 explosion — Android-loader ports",
+          sec04n: "Android games run through a compatibility layer — bring the APK files.",
+          sec05h: "The 2026 explosion — static recompilations",
+          sec05n: "Static recomps built from your own disc or ISO — early (0.x) unless noted.",
+          sec06h: "N64 / GameCube / Wii / handheld recomps & 2026 PC wave",
+          sec06n: "The rest of the 2026 wave — Ship-family ports are in §02.",
+          sec07h: "In development / announced", sec07n: "No playable public build yet.",
+          sec08h: "Cancelled / rumoured / no port exists",
+          sec08n: "GTA V / GTA5NX is cancelled — shut down Oct 2026, never released, any download is fake.",
+          callout08: "<strong>Every legitimate port is free</strong>, with your own game files — paid “Switch port” bundles are scams.",
+          sec09h: "What the research could not verify", sec09n: "Things the research could not confirm.",
+          footer1: "Unofficial ports only — modded Switch (Atmosphère) required · bring your own game files, no port includes the game · every legitimate port is free, paid ones are scams · most 2026 builds are early.",
+          footFrag: { "Sources:": "Sources:", "master port list": "master port list", "classic-era ports": "classic-era ports", "curated recomps": "curated recomps", "scene news": "scene news", "release log": "release log", "homebrew store": "homebrew store", "threads and repos checked directly": "threads and repos checked directly" },
+          dt: { "Original": "Original", "Author": "Author", "Authors": "Authors", "Performance": "Performance", "Projects": "Projects", "Timeline": "Timeline", "What it was": "What it was" },
+          src: { "Source": "Source", "Sources": "Sources" },
+          seg: { "Released": "Released", "early": "early", "playable": "playable", "source-build": "source-build", "source-build only": "source-build only", "early/playable": "early/playable", "experimental": "experimental", "updated": "updated", "Playable": "Playable", "Early": "Early", "Pre-release": "Pre-release", "Unreleased": "Unreleased", "WIP / pre-release": "WIP / pre-release", "not playable": "not playable", "no public download": "no public download", "no playable build yet": "no playable build yet", "hardware untested": "hardware untested", "conflicting reports — do not call playable": "conflicting reports — do not call playable", "Borderline released / WIP": "Borderline released / WIP", "Cancelled / none": "Cancelled / none", "Cancelled before wider release": "Cancelled before wider release" }
+        },
+        fr: {
+          skip: "Aller aux résultats",
+          tid: "PORTAGES NON OFFICIELS / HOMEBREW UNIQUEMENT · SWITCH MODIFIÉE (ATMOSPHÈRE) REQUISE · APPORTEZ VOS PROPRES FICHIERS DE JEU · TOUT PORTAGE LÉGITIME EST GRATUIT",
+          title: "Tous les jeux portés sur <span class=\"nx\">Switch</span>",
+          docTitle: "Portages Switch depuis GTA5NX — Tous les jeux non officiels portés sur Switch",
+          statGames: "jeux dans ce catalogue", statMaster: "entrées dans la liste principale SwitchPorts",
+          statWeek: "mises à jour SwitchPorts en une semaine", statRecomps: "portages sélectionnés sur AllRecomps",
+          statErasB: "2 époques", statEras: "classiques 2018–2025 · le déluge de 2026",
+          keyHeading: "Comment lire les statuts.",
+          keyPlayable: "version publique, testée par des joueurs.",
+          keyEarly: "version publique, inachevée (v0.1–0.5), jouable en partie, rarement terminable.",
+          keyWip: "en développement, aucune version publique jouable pour l'instant.",
+          keyCancelled: "annulé, ou aucun portage n'existe.",
+          keyNote: "« Sorti » signifie qu'une version publique existait — la plupart des versions 2026 sont précoces et non notées : jouables en partie, pas terminables.",
+          recentHeading: "Récemment ajoutés",
+          recentNote: "Portages ajoutés lors des deux dernières vérifications quotidiennes — 19 et 18 novembre 2026. Choisissez un titre pour aller directement à sa fiche. Les entrées ajoutées dans les 7 derniers jours portent aussi un badge NEW dans le catalogue ci-dessous.",
+          recentDate1: "19 novembre 2026", recentAdd1: "— 9 ajouts",
+          recentDate2: "18 novembre 2026", recentAdd2: "— 11 ajouts",
+          searchLabel: "Rechercher par jeu, auteur ou système d'origine",
+          searchPlaceholder: "Rechercher un jeu…",
+          catGroup: "Recherche et filtre par catégorie",
+          chipAll: "Tous", chipDecomp: "Décomp. & classiques", chipPc: "Portages source PC",
+          chipAndroid: "Chargeurs Android ’26", chipRecomp: "Recomps ’26",
+          chipWip: "En développement", chipCancelled: "Annulé / aucun",
+          consoleLabel: "Système d'origine", chipAllConsoles: "Toutes les consoles",
+          statusLabel: "Statut", chipAllStatuses: "Tous les statuts",
+          chipReleased: "Sorti", chipWipStatus: "WIP", chipCancelledStatus: "Annulé",
+          expandAll: "Tout déplier", collapseAll: "Tout replier",
+          showMore: "Afficher plus", showLess: "Afficher moins",
+          noResults: "Aucun portage ne correspond à cette recherche. Essayez un nom plus court — ou regardez dans Annulé / aucun.",
+          fabFilters: "Filtres", fabAria: "Retour à la recherche et aux filtres",
+          countTpl: "Affichage de {v} entrées sur {t} du catalogue", countFilter: " pour ce filtre",
+          foundTpl: "{n} trouvés",
+          sec01h: "Rockstar & monde ouvert — sortis",
+          sec01n: "Portages Rockstar — de la décompilation de GTA III aux chargeurs et recomps de 2026.",
+          callout01: "<strong>Aucun portage sorti trouvé pour :</strong> GTA IV (WIP — rapports contradictoires, pas terminé ; §07), GTA V (annulé ; §08), Red Dead Redemption (officiel uniquement ; §08).",
+          sec02h: "Décompilations & classiques console",
+          sec02n: "Décompilations abouties de classiques console — apportez votre propre ROM.",
+          sec03h: "Portages source de jeux PC — ère classique",
+          sec03n: "Portages source PC classiques, pour la plupart d'un petit groupe d'auteurs.",
+          sec04h: "L'explosion 2026 — portages via chargeur Android",
+          sec04n: "Des jeux Android exécutés via une couche de compatibilité — apportez les fichiers APK.",
+          sec05h: "L'explosion 2026 — recompilations statiques",
+          sec05n: "Recomps statiques construites depuis votre propre disque ou ISO — précoces (0.x) sauf mention contraire.",
+          sec06h: "Recomps N64 / GameCube / Wii / portables & vague PC 2026",
+          sec06n: "Le reste de la vague 2026 — les portages de la famille Ship sont au §02.",
+          sec07h: "En développement / annoncés", sec07n: "Aucune version publique jouable pour l'instant.",
+          sec08h: "Annulés / rumeurs / aucun portage",
+          sec08n: "GTA V / GTA5NX est annulé — fermé en oct. 2026, jamais sorti, tout téléchargement est faux.",
+          callout08: "<strong>Tout portage légitime est gratuit</strong>, avec vos propres fichiers de jeu — les packs payants de « portages Switch » sont des arnaques.",
+          sec09h: "Ce que la recherche n'a pas pu vérifier", sec09n: "Choses que la recherche n'a pas pu confirmer.",
+          footer1: "Portages non officiels uniquement — Switch modifiée (Atmosphère) requise · apportez vos propres fichiers de jeu, aucun portage n'inclut le jeu · tout portage légitime est gratuit, les payants sont des arnaques · la plupart des versions 2026 sont précoces.",
+          footFrag: { "Sources:": "Sources :", "master port list": "liste principale de portages", "classic-era ports": "portages de l'ère classique", "curated recomps": "recomps sélectionnées", "scene news": "actualités de la scène", "release log": "journal des sorties", "homebrew store": "boutique homebrew", "threads and repos checked directly": "fils et dépôts vérifiés directement" },
+          dt: { "Original": "Original", "Author": "Auteur", "Authors": "Auteurs", "Performance": "Performances", "Projects": "Projets", "Timeline": "Chronologie", "What it was": "Ce que c'était" },
+          src: { "Source": "Source", "Sources": "Sources" },
+          seg: { "Released": "Sorti", "early": "précoce", "playable": "jouable", "source-build": "compilation source", "source-build only": "compilation source uniquement", "early/playable": "précoce/jouable", "experimental": "expérimental", "updated": "mis à jour", "Playable": "Jouable", "Early": "Précoce", "Pre-release": "Préversion", "Unreleased": "Non sorti", "WIP / pre-release": "WIP / préversion", "not playable": "non jouable", "no public download": "aucun téléchargement public", "no playable build yet": "aucune version jouable pour l'instant", "hardware untested": "non testé sur console", "conflicting reports — do not call playable": "rapports contradictoires — ne pas dire jouable", "Borderline released / WIP": "Limite sorti / WIP", "Cancelled / none": "Annulé / aucun", "Cancelled before wider release": "Annulé avant une sortie plus large" }
+        },
+        es: {
+          skip: "Saltar a los resultados",
+          tid: "SOLO PORTS NO OFICIALES / HOMEBREW · SE REQUIERE SWITCH MODIFICADA (ATMOSPHÈRE) · TRAE TUS PROPIOS ARCHIVOS DEL JUEGO · TODO PORT LEGÍTIMO ES GRATIS",
+          title: "Todos los juegos portados a <span class=\"nx\">Switch</span>",
+          docTitle: "Ports de Switch desde GTA5NX — Todos los juegos no oficiales portados a Switch",
+          statGames: "juegos en este catálogo", statMaster: "entradas en la lista principal de SwitchPorts",
+          statWeek: "actualizaciones de SwitchPorts en una semana", statRecomps: "ports seleccionados en AllRecomps",
+          statErasB: "2 eras", statEras: "clásicos 2018–2025 · la avalancha de 2026",
+          keyHeading: "Cómo leer los estados.",
+          keyPlayable: "versión pública, jugada por la gente.",
+          keyEarly: "versión pública, sin terminar (v0.1–0.5), jugable en parte, rara vez completable.",
+          keyWip: "en desarrollo, aún sin versión pública jugable.",
+          keyCancelled: "cancelado, o no existe ningún port.",
+          keyNote: "«Publicado» significa que existía una versión pública — la mayoría de las versiones de 2026 son tempranas y sin calificar: jugables en parte, no completables.",
+          recentHeading: "Añadidos recientemente",
+          recentNote: "Ports añadidos en las dos últimas comprobaciones diarias — 19 y 18 de noviembre de 2026. Elige un título para ir directamente a su ficha. Las entradas añadidas en los últimos 7 días también llevan una insignia NEW en el catálogo de abajo.",
+          recentDate1: "19 de noviembre de 2026", recentAdd1: "— 9 novedades",
+          recentDate2: "18 de noviembre de 2026", recentAdd2: "— 11 novedades",
+          searchLabel: "Buscar por juego, autor o sistema original",
+          searchPlaceholder: "Buscar un juego…",
+          catGroup: "Buscar y filtrar por categoría",
+          chipAll: "Todos", chipDecomp: "Decomp. y clásicos", chipPc: "Ports de código PC",
+          chipAndroid: "Cargadores Android ’26", chipRecomp: "Recomps ’26",
+          chipWip: "En desarrollo", chipCancelled: "Cancelado / ninguno",
+          consoleLabel: "Sistema original", chipAllConsoles: "Todas las consolas",
+          statusLabel: "Estado", chipAllStatuses: "Todos los estados",
+          chipReleased: "Publicado", chipWipStatus: "WIP", chipCancelledStatus: "Cancelado",
+          expandAll: "Expandir todo", collapseAll: "Contraer todo",
+          showMore: "Mostrar más", showLess: "Mostrar menos",
+          noResults: "Ningún port coincide con esa búsqueda. Prueba un nombre más corto — o mira en Cancelado / ninguno.",
+          fabFilters: "Filtros", fabAria: "Volver a la búsqueda y los filtros",
+          countTpl: "Mostrando {v} de {t} entradas del catálogo", countFilter: " para este filtro",
+          foundTpl: "{n} encontrados",
+          sec01h: "Rockstar y mundo abierto — publicados",
+          sec01n: "Ports de Rockstar — de la decompilación de GTA III a los cargadores y recomps de 2026.",
+          callout01: "<strong>Sin port publicado para:</strong> GTA IV (WIP — informes contradictorios, sin terminar; §07), GTA V (cancelado; §08), Red Dead Redemption (solo oficial; §08).",
+          sec02h: "Decompilaciones y clásicos de consola",
+          sec02n: "Decompilaciones maduras de clásicos de consola — trae tu propia ROM.",
+          sec03h: "Ports de código de juegos PC — era clásica",
+          sec03n: "Ports de código PC clásicos, en su mayoría de un pequeño grupo de autores.",
+          sec04h: "La explosión de 2026 — ports con cargador Android",
+          sec04n: "Juegos de Android ejecutados mediante una capa de compatibilidad — trae los archivos APK.",
+          sec05h: "La explosión de 2026 — recompilaciones estáticas",
+          sec05n: "Recomps estáticas creadas desde tu propio disco o ISO — tempranas (0.x) salvo que se indique lo contrario.",
+          sec06h: "Recomps de N64 / GameCube / Wii / portátiles y oleada PC de 2026",
+          sec06n: "El resto de la oleada de 2026 — los ports de la familia Ship están en el §02.",
+          sec07h: "En desarrollo / anunciados", sec07n: "Aún no hay versión pública jugable.",
+          sec08h: "Cancelados / rumores / no existe port",
+          sec08n: "GTA V / GTA5NX está cancelado — cerrado en oct. de 2026, nunca publicado, cualquier descarga es falsa.",
+          callout08: "<strong>Todo port legítimo es gratis</strong>, con tus propios archivos del juego — los paquetes de pago de «ports de Switch» son estafas.",
+          sec09h: "Lo que la investigación no pudo verificar", sec09n: "Cosas que la investigación no pudo confirmar.",
+          footer1: "Solo ports no oficiales — se requiere Switch modificada (Atmosphère) · trae tus propios archivos del juego, ningún port incluye el juego · todo port legítimo es gratis, los de pago son estafas · la mayoría de las versiones de 2026 son tempranas.",
+          footFrag: { "Sources:": "Fuentes:", "master port list": "lista principal de ports", "classic-era ports": "ports de la era clásica", "curated recomps": "recomps seleccionadas", "scene news": "noticias de la escena", "release log": "registro de lanzamientos", "homebrew store": "tienda homebrew", "threads and repos checked directly": "hilos y repositorios comprobados directamente" },
+          dt: { "Original": "Original", "Author": "Autor", "Authors": "Autores", "Performance": "Rendimiento", "Projects": "Proyectos", "Timeline": "Cronología", "What it was": "Qué era" },
+          src: { "Source": "Fuente", "Sources": "Fuentes" },
+          seg: { "Released": "Publicado", "early": "temprano", "playable": "jugable", "source-build": "compilación desde código", "source-build only": "solo compilación desde código", "early/playable": "temprano/jugable", "experimental": "experimental", "updated": "actualizado", "Playable": "Jugable", "Early": "Temprano", "Pre-release": "Prelanzamiento", "Unreleased": "Sin publicar", "WIP / pre-release": "WIP / pre-lanzamiento", "not playable": "no jugable", "no public download": "sin descarga pública", "no playable build yet": "aún sin versión jugable", "hardware untested": "sin probar en hardware", "conflicting reports — do not call playable": "informes contradictorios — no llamarlo jugable", "Borderline released / WIP": "Casi publicado / WIP", "Cancelled / none": "Cancelado / ninguno", "Cancelled before wider release": "Cancelado antes de un lanzamiento más amplio" }
+        },
+        de: {
+          skip: "Zu den Ergebnissen springen",
+          tid: "NUR INOFFIZIELLE / HOMEBREW-PORTS · MODIFIZIERTE SWITCH (ATMOSPHÈRE) ERFORDERLICH · EIGENE SPIELDATEIEN MITBRINGEN · JEDER LEGITIME PORT IST KOSTENLOS",
+          title: "Alle Spiele, portiert auf die <span class=\"nx\">Switch</span>",
+          docTitle: "Switch-Ports seit GTA5NX — Alle inoffiziellen Spiele, portiert auf die Switch",
+          statGames: "Spiele in diesem Katalog", statMaster: "Einträge in der SwitchPorts-Hauptliste",
+          statWeek: "SwitchPorts-Updates in einer einzigen Woche", statRecomps: "kuratierte Ports auf AllRecomps",
+          statErasB: "2 Epochen", statEras: "Klassiker 2018–2025 · die Flut von 2026",
+          keyHeading: "So liest man die Statusangaben.",
+          keyPlayable: "öffentlicher Build, von Leuten gespielt.",
+          keyEarly: "öffentlicher Build, unfertig (v0.1–0.5), teilweise spielbar, selten abschließbar.",
+          keyWip: "in Entwicklung, noch kein spielbarer öffentlicher Build.",
+          keyCancelled: "abgebrochen, oder es existiert kein Port.",
+          keyNote: "„Veröffentlicht“ heißt: Es gab einen öffentlichen Build — die meisten Builds von 2026 sind früh und unbewertet, also teilweise spielbar, nicht abschließbar.",
+          recentHeading: "Zuletzt hinzugefügt",
+          recentNote: "Ports aus den beiden letzten täglichen Prüfungen — 19. und 18. November 2026. Wähle einen Titel, um direkt zu seinem Eintrag zu springen. Einträge der letzten 7 Tage tragen im Katalog unten außerdem ein NEW-Badge.",
+          recentDate1: "19. November 2026", recentAdd1: "— 9 Neuzugänge",
+          recentDate2: "18. November 2026", recentAdd2: "— 11 Neuzugänge",
+          searchLabel: "Nach Spiel, Autor oder Originalsystem suchen",
+          searchPlaceholder: "Ein Spiel suchen…",
+          catGroup: "Suchen und nach Kategorie filtern",
+          chipAll: "Alle", chipDecomp: "Decomp. & Klassiker", chipPc: "PC-Quellports",
+          chipAndroid: "Android-Loader ’26", chipRecomp: "Recomps ’26",
+          chipWip: "In Entwicklung", chipCancelled: "Abgebrochen / keine",
+          consoleLabel: "Originalsystem", chipAllConsoles: "Alle Konsolen",
+          statusLabel: "Status", chipAllStatuses: "Alle Status",
+          chipReleased: "Veröffentlicht", chipWipStatus: "WIP", chipCancelledStatus: "Abgebrochen",
+          expandAll: "Alle aufklappen", collapseAll: "Alle zuklappen",
+          showMore: "Mehr anzeigen", showLess: "Weniger anzeigen",
+          noResults: "Kein Port entspricht dieser Suche. Versuche einen kürzeren Namen — oder sieh unter Abgebrochen / keine nach.",
+          fabFilters: "Filter", fabAria: "Zurück zu Suche und Filtern",
+          countTpl: "{v} von {t} Katalogeinträgen angezeigt", countFilter: " für diesen Filter",
+          foundTpl: "{n} gefunden",
+          sec01h: "Rockstar & Open World — veröffentlicht",
+          sec01n: "Rockstar-Ports — von der GTA-III-Dekompilierung bis zu den Loadern und Recomps von 2026.",
+          callout01: "<strong>Kein veröffentlichter Port gefunden für:</strong> GTA IV (WIP — widersprüchliche Berichte, nicht fertig; §07), GTA V (abgebrochen; §08), Red Dead Redemption (nur offiziell; §08).",
+          sec02h: "Dekompilierungen & Konsolenklassiker",
+          sec02n: "Ausgereifte Dekompilierungen von Konsolenklassikern — eigenes ROM mitbringen.",
+          sec03h: "PC-Spiel-Quellports — klassische Ära",
+          sec03n: "Klassische PC-Quellports, meist von einer kleinen Gruppe von Autoren.",
+          sec04h: "Die Explosion 2026 — Android-Loader-Ports",
+          sec04n: "Android-Spiele über eine Kompatibilitätsschicht — APK-Dateien mitbringen.",
+          sec05h: "Die Explosion 2026 — statische Rekompilierungen",
+          sec05n: "Statische Recomps aus der eigenen Disc oder ISO — früh (0.x), sofern nicht anders vermerkt.",
+          sec06h: "N64- / GameCube- / Wii- / Handheld-Recomps & PC-Welle 2026",
+          sec06n: "Der Rest der Welle von 2026 — Ports der Ship-Familie stehen in §02.",
+          sec07h: "In Entwicklung / angekündigt", sec07n: "Noch kein spielbarer öffentlicher Build.",
+          sec08h: "Abgebrochen / Gerüchte / kein Port vorhanden",
+          sec08n: "GTA V / GTA5NX ist abgebrochen — im Okt. 2026 eingestellt, nie veröffentlicht, jeder Download ist gefälscht.",
+          callout08: "<strong>Jeder legitime Port ist kostenlos</strong>, mit deinen eigenen Spieldateien — bezahlte „Switch-Port“-Pakete sind Betrug.",
+          sec09h: "Was die Recherche nicht verifizieren konnte", sec09n: "Dinge, die die Recherche nicht bestätigen konnte.",
+          footer1: "Nur inoffizielle Ports — modifizierte Switch (Atmosphère) erforderlich · eigene Spieldateien mitbringen, kein Port enthält das Spiel · jeder legitime Port ist kostenlos, bezahlte sind Betrug · die meisten Builds von 2026 sind früh.",
+          footFrag: { "Sources:": "Quellen:", "master port list": "Haupt-Portliste", "classic-era ports": "Ports der klassischen Ära", "curated recomps": "kuratierte Recomps", "scene news": "Szene-News", "release log": "Veröffentlichungsprotokoll", "homebrew store": "Homebrew-Store", "threads and repos checked directly": "Threads und Repos direkt geprüft" },
+          dt: { "Original": "Original", "Author": "Autor", "Authors": "Autoren", "Performance": "Leistung", "Projects": "Projekte", "Timeline": "Zeitverlauf", "What it was": "Was es war" },
+          src: { "Source": "Quelle", "Sources": "Quellen" },
+          seg: { "Released": "Veröffentlicht", "early": "früh", "playable": "spielbar", "source-build": "Quell-Build", "source-build only": "nur Quell-Build", "early/playable": "früh/spielbar", "experimental": "experimentell", "updated": "aktualisiert", "Playable": "Spielbar", "Early": "Früh", "Pre-release": "Vorabversion", "Unreleased": "Unveröffentlicht", "WIP / pre-release": "WIP / Vorabversion", "not playable": "nicht spielbar", "no public download": "kein öffentlicher Download", "no playable build yet": "noch kein spielbarer Build", "hardware untested": "auf Hardware ungetestet", "conflicting reports — do not call playable": "widersprüchliche Berichte — nicht spielbar nennen", "Borderline released / WIP": "Grenzwertig veröffentlicht / WIP", "Cancelled / none": "Abgebrochen / keine", "Cancelled before wider release": "Vor breiterer Veröffentlichung abgebrochen" }
+        },
+        it: {
+          skip: "Vai ai risultati",
+          tid: "SOLO PORT NON UFFICIALI / HOMEBREW · SWITCH MODIFICATA (ATMOSPHÈRE) RICHIESTA · PORTA I TUOI FILE DI GIOCO · OGNI PORT LEGITTIMO È GRATUITO",
+          title: "Tutti i giochi portati su <span class=\"nx\">Switch</span>",
+          docTitle: "Port Switch da GTA5NX — Tutti i giochi non ufficiali portati su Switch",
+          statGames: "giochi in questo catalogo", statMaster: "voci nella lista principale di SwitchPorts",
+          statWeek: "aggiornamenti SwitchPorts in una sola settimana", statRecomps: "port selezionati su AllRecomps",
+          statErasB: "2 ere", statEras: "classici 2018–2025 · l'ondata del 2026",
+          keyHeading: "Come leggere gli stati.",
+          keyPlayable: "build pubblica, giocata dalle persone.",
+          keyEarly: "build pubblica, incompleta (v0.1–0.5), giocabile in parte, raramente completabile.",
+          keyWip: "in sviluppo, ancora nessuna build pubblica giocabile.",
+          keyCancelled: "annullato, oppure non esiste alcun port.",
+          keyNote: "«Pubblicato» significa che esisteva una build pubblica — la maggior parte delle build 2026 è precoce e senza voto: giocabile in parte, non completabile.",
+          recentHeading: "Aggiunti di recente",
+          recentNote: "Port aggiunti negli ultimi due controlli giornalieri — 19 e 18 novembre 2026. Scegli un titolo per andare direttamente alla sua scheda. Le voci aggiunte negli ultimi 7 giorni hanno anche un badge NEW nel catalogo qui sotto.",
+          recentDate1: "19 novembre 2026", recentAdd1: "— 9 aggiunte",
+          recentDate2: "18 novembre 2026", recentAdd2: "— 11 aggiunte",
+          searchLabel: "Cerca per gioco, autore o sistema originale",
+          searchPlaceholder: "Cerca un gioco…",
+          catGroup: "Cerca e filtra per categoria",
+          chipAll: "Tutti", chipDecomp: "Decomp. e classici", chipPc: "Port sorgente PC",
+          chipAndroid: "Loader Android ’26", chipRecomp: "Recomp ’26",
+          chipWip: "In sviluppo", chipCancelled: "Annullato / nessuno",
+          consoleLabel: "Sistema originale", chipAllConsoles: "Tutte le console",
+          statusLabel: "Stato", chipAllStatuses: "Tutti gli stati",
+          chipReleased: "Pubblicato", chipWipStatus: "WIP", chipCancelledStatus: "Annullato",
+          expandAll: "Espandi tutto", collapseAll: "Comprimi tutto",
+          showMore: "Mostra di più", showLess: "Mostra meno",
+          noResults: "Nessun port corrisponde a questa ricerca. Prova un nome più corto — oppure controlla Annullato / nessuno.",
+          fabFilters: "Filtri", fabAria: "Torna a ricerca e filtri",
+          countTpl: "Visualizzate {v} di {t} voci del catalogo", countFilter: " per questo filtro",
+          foundTpl: "{n} trovati",
+          sec01h: "Rockstar e open-world — pubblicati",
+          sec01n: "Port Rockstar — dalla decompilazione di GTA III ai loader e recomp del 2026.",
+          callout01: "<strong>Nessun port pubblicato trovato per:</strong> GTA IV (WIP — segnalazioni contrastanti, non finito; §07), GTA V (annullato; §08), Red Dead Redemption (solo ufficiale; §08).",
+          sec02h: "Decompilazioni e classici console",
+          sec02n: "Decompilazioni mature di classici console — porta la tua ROM.",
+          sec03h: "Port sorgente di giochi PC — era classica",
+          sec03n: "Port sorgente PC classici, per lo più di un piccolo gruppo di autori.",
+          sec04h: "L'esplosione 2026 — port con loader Android",
+          sec04n: "Giochi Android eseguiti tramite un livello di compatibilità — porta i file APK.",
+          sec05h: "L'esplosione 2026 — ricompilazioni statiche",
+          sec05n: "Recomp statiche create dal tuo disco o ISO — precoci (0.x) salvo diversa indicazione.",
+          sec06h: "Recomp N64 / GameCube / Wii / portatili e ondata PC 2026",
+          sec06n: "Il resto dell'ondata 2026 — i port della famiglia Ship sono nel §02.",
+          sec07h: "In sviluppo / annunciati", sec07n: "Ancora nessuna build pubblica giocabile.",
+          sec08h: "Annullati / voci / nessun port esistente",
+          sec08n: "GTA V / GTA5NX è annullato — chiuso a ott. 2026, mai pubblicato, ogni download è falso.",
+          callout08: "<strong>Ogni port legittimo è gratuito</strong>, con i tuoi file di gioco — i pacchetti a pagamento di «port Switch» sono truffe.",
+          sec09h: "Cosa la ricerca non ha potuto verificare", sec09n: "Cose che la ricerca non ha potuto confermare.",
+          footer1: "Solo port non ufficiali — Switch modificata (Atmosphère) richiesta · porta i tuoi file di gioco, nessun port include il gioco · ogni port legittimo è gratuito, quelli a pagamento sono truffe · la maggior parte delle build 2026 è precoce.",
+          footFrag: { "Sources:": "Fonti:", "master port list": "lista principale dei port", "classic-era ports": "port dell'era classica", "curated recomps": "recomp selezionate", "scene news": "notizie della scena", "release log": "registro delle uscite", "homebrew store": "store homebrew", "threads and repos checked directly": "thread e repo verificati direttamente" },
+          dt: { "Original": "Originale", "Author": "Autore", "Authors": "Autori", "Performance": "Prestazioni", "Projects": "Progetti", "Timeline": "Cronologia", "What it was": "Cos'era" },
+          src: { "Source": "Fonte", "Sources": "Fonti" },
+          seg: { "Released": "Pubblicato", "early": "precoce", "playable": "giocabile", "source-build": "build da sorgente", "source-build only": "solo build da sorgente", "early/playable": "precoce/giocabile", "experimental": "sperimentale", "updated": "aggiornato", "Playable": "Giocabile", "Early": "Precoce", "Pre-release": "Pre-release", "Unreleased": "Non pubblicato", "WIP / pre-release": "WIP / pre-release", "not playable": "non giocabile", "no public download": "nessun download pubblico", "no playable build yet": "ancora nessuna build giocabile", "hardware untested": "non testato su hardware", "conflicting reports — do not call playable": "segnalazioni contrastanti — non definirlo giocabile", "Borderline released / WIP": "Quasi pubblicato / WIP", "Cancelled / none": "Annullato / nessuno", "Cancelled before wider release": "Annullato prima di un'uscita più ampia" }
+        },
+        pt: {
+          skip: "Saltar para os resultados",
+          tid: "APENAS PORTS NÃO OFICIAIS / HOMEBREW · SWITCH MODIFICADO (ATMOSPHÈRE) NECESSÁRIO · TRAGA OS SEUS PRÓPRIOS FICHEIROS DO JOGO · TODO O PORT LEGÍTIMO É GRÁTIS",
+          title: "Todos os jogos portados para a <span class=\"nx\">Switch</span>",
+          docTitle: "Ports da Switch desde GTA5NX — Todos os jogos não oficiais portados para a Switch",
+          statGames: "jogos neste catálogo", statMaster: "entradas na lista principal da SwitchPorts",
+          statWeek: "atualizações da SwitchPorts numa só semana", statRecomps: "ports selecionados na AllRecomps",
+          statErasB: "2 eras", statEras: "clássicos 2018–2025 · a enxurrada de 2026",
+          keyHeading: "Como ler os estados.",
+          keyPlayable: "build pública, jogada por pessoas.",
+          keyEarly: "build pública, inacabada (v0.1–0.5), jogável em parte, raramente completável.",
+          keyWip: "em desenvolvimento, ainda sem build pública jogável.",
+          keyCancelled: "cancelado, ou não existe nenhum port.",
+          keyNote: "«Lançado» significa que existia uma build pública — a maioria das builds de 2026 é precoce e sem classificação: jogável em parte, não completável.",
+          recentHeading: "Adicionados recentemente",
+          recentNote: "Ports adicionados nas duas verificações diárias mais recentes — 19 e 18 de novembro de 2026. Escolha um título para ir diretamente à sua ficha. As entradas adicionadas nos últimos 7 dias também têm um emblema NEW no catálogo abaixo.",
+          recentDate1: "19 de novembro de 2026", recentAdd1: "— 9 adições",
+          recentDate2: "18 de novembro de 2026", recentAdd2: "— 11 adições",
+          searchLabel: "Pesquisar por jogo, autor ou sistema original",
+          searchPlaceholder: "Pesquisar um jogo…",
+          catGroup: "Pesquisar e filtrar por categoria",
+          chipAll: "Todos", chipDecomp: "Decomp. e clássicos", chipPc: "Ports de código PC",
+          chipAndroid: "Carregadores Android ’26", chipRecomp: "Recomps ’26",
+          chipWip: "Em desenvolvimento", chipCancelled: "Cancelado / nenhum",
+          consoleLabel: "Sistema de origem", chipAllConsoles: "Todas as consolas",
+          statusLabel: "Estado", chipAllStatuses: "Todos os estados",
+          chipReleased: "Lançado", chipWipStatus: "WIP", chipCancelledStatus: "Cancelado",
+          expandAll: "Expandir tudo", collapseAll: "Recolher tudo",
+          showMore: "Mostrar mais", showLess: "Mostrar menos",
+          noResults: "Nenhum port corresponde a esta pesquisa. Tente um nome mais curto — ou veja Cancelado / nenhum.",
+          fabFilters: "Filtros", fabAria: "Voltar à pesquisa e aos filtros",
+          countTpl: "A mostrar {v} de {t} entradas do catálogo", countFilter: " para este filtro",
+          foundTpl: "{n} encontrados",
+          sec01h: "Rockstar e mundo aberto — lançados",
+          sec01n: "Ports da Rockstar — da descompilação de GTA III aos carregadores e recomps de 2026.",
+          callout01: "<strong>Nenhum port lançado encontrado para:</strong> GTA IV (WIP — relatos contraditórios, não terminado; §07), GTA V (cancelado; §08), Red Dead Redemption (apenas oficial; §08).",
+          sec02h: "Descompilações e clássicos de consola",
+          sec02n: "Descompilações maduras de clássicos de consola — traga a sua própria ROM.",
+          sec03h: "Ports de código de jogos PC — era clássica",
+          sec03n: "Ports de código PC clássicos, na maioria de um pequeno grupo de autores.",
+          sec04h: "A explosão de 2026 — ports com carregador Android",
+          sec04n: "Jogos Android executados através de uma camada de compatibilidade — traga os ficheiros APK.",
+          sec05h: "A explosão de 2026 — recompilações estáticas",
+          sec05n: "Recomps estáticas construídas a partir do seu próprio disco ou ISO — precoces (0.x), salvo indicação em contrário.",
+          sec06h: "Recomps de N64 / GameCube / Wii / portáteis e vaga PC de 2026",
+          sec06n: "O resto da vaga de 2026 — os ports da família Ship estão no §02.",
+          sec07h: "Em desenvolvimento / anunciados", sec07n: "Ainda sem build pública jogável.",
+          sec08h: "Cancelados / rumores / nenhum port existe",
+          sec08n: "GTA V / GTA5NX está cancelado — encerrado em out. de 2026, nunca lançado, qualquer transferência é falsa.",
+          callout08: "<strong>Todo o port legítimo é grátis</strong>, com os seus próprios ficheiros do jogo — pacotes pagos de «ports Switch» são burlas.",
+          sec09h: "O que a investigação não conseguiu verificar", sec09n: "Coisas que a investigação não conseguiu confirmar.",
+          footer1: "Apenas ports não oficiais — Switch modificado (Atmosphère) necessário · traga os seus próprios ficheiros do jogo, nenhum port inclui o jogo · todo o port legítimo é grátis, os pagos são burlas · a maioria das builds de 2026 é precoce.",
+          footFrag: { "Sources:": "Fontes:", "master port list": "lista principal de ports", "classic-era ports": "ports da era clássica", "curated recomps": "recomps selecionadas", "scene news": "notícias da cena", "release log": "registo de lançamentos", "homebrew store": "loja homebrew", "threads and repos checked directly": "tópicos e repositórios verificados diretamente" },
+          dt: { "Original": "Original", "Author": "Autor", "Authors": "Autores", "Performance": "Desempenho", "Projects": "Projetos", "Timeline": "Cronologia", "What it was": "O que era" },
+          src: { "Source": "Fonte", "Sources": "Fontes" },
+          seg: { "Released": "Lançado", "early": "precoce", "playable": "jogável", "source-build": "build de código", "source-build only": "apenas build de código", "early/playable": "precoce/jogável", "experimental": "experimental", "updated": "atualizado", "Playable": "Jogável", "Early": "Precoce", "Pre-release": "Pré-lançamento", "Unreleased": "Não lançado", "WIP / pre-release": "WIP / pré-lançamento", "not playable": "não jogável", "no public download": "sem transferência pública", "no playable build yet": "ainda sem build jogável", "hardware untested": "não testado em hardware", "conflicting reports — do not call playable": "relatos contraditórios — não chamar jogável", "Borderline released / WIP": "Quase lançado / WIP", "Cancelled / none": "Cancelado / nenhum", "Cancelled before wider release": "Cancelado antes de um lançamento mais amplo" }
+        },
+        ja: {
+          skip: "結果へスキップ",
+          tid: "非公式 / 自作ポートのみ · 改造済み Switch（ATMOSPHÈRE）が必要 · ゲームファイルは自分で用意 · 正規のポートはすべて無料",
+          title: "Switch に移植された全ゲーム",
+          docTitle: "GTA5NX 以降の Switch ポート — Switch に移植された非公式ゲーム全集",
+          statGames: "本カタログのゲーム数", statMaster: "SwitchPorts マスターリストの項目数",
+          statWeek: "1 週間での SwitchPorts 更新数", statRecomps: "AllRecomps の厳選ポート数",
+          statErasB: "2 つの時代", statEras: "古典期 2018–2025 · 2026 年の大増殖",
+          keyHeading: "ステータスの読み方。",
+          keyPlayable: "公開ビルドあり、実際に遊ばれている。",
+          keyEarly: "公開ビルドあり、未完成（v0.1–0.5）、一部プレイ可能、クリア可能なことはまれ。",
+          keyWip: "開発中、プレイ可能な公開ビルドはまだない。",
+          keyCancelled: "中止された、またはポートが存在しない。",
+          keyNote: "「公開済み」は公開ビルドが存在したという意味 — 2026 年のビルドの大半は初期段階で未評価のため、一部プレイ可能でもクリア可能とは限りません。",
+          recentHeading: "最近追加されたもの",
+          recentNote: "直近 2 回の日次チェック（2026 年 11 月 19 日と 18 日）で追加されたポート。タイトルを選ぶとその項目へ直接ジャンプします。過去 7 日以内に追加された項目には、下のカタログで NEW バッジも付きます。",
+          recentDate1: "2026 年 11 月 19 日", recentAdd1: "— 9 件追加",
+          recentDate2: "2026 年 11 月 18 日", recentAdd2: "— 11 件追加",
+          searchLabel: "ゲーム、作者、元のシステムで検索",
+          searchPlaceholder: "ゲームを検索…",
+          catGroup: "カテゴリで検索・絞り込み",
+          chipAll: "すべて", chipDecomp: "逆コンパイル＆古典", chipPc: "PC ソースポート",
+          chipAndroid: "Android ローダー ’26", chipRecomp: "リコンパイル ’26",
+          chipWip: "開発中", chipCancelled: "中止 / なし",
+          consoleLabel: "元のシステム", chipAllConsoles: "すべての機種",
+          statusLabel: "ステータス", chipAllStatuses: "すべてのステータス",
+          chipReleased: "公開済み", chipWipStatus: "WIP", chipCancelledStatus: "中止",
+          expandAll: "すべて展開", collapseAll: "すべて折りたたむ",
+          showMore: "もっと見る", showLess: "閉じる",
+          noResults: "その検索に一致するポートはありません。短い名前で試すか、「中止 / なし」を確認してください。",
+          fabFilters: "フィルター", fabAria: "検索とフィルターに戻る",
+          countTpl: "カタログ {t} 件中 {v} 件を表示", countFilter: "（このフィルター）",
+          foundTpl: "{n} 件",
+          sec01h: "Rockstar＆オープンワールド — 公開済み",
+          sec01n: "Rockstar のポート — GTA III の逆コンパイルから 2026 年のローダーやリコンパイルまで。",
+          callout01: "<strong>公開済みポートが見つからないもの：</strong>GTA IV（WIP — 報告が食い違い、未完成；§07）、GTA V（中止；§08）、Red Dead Redemption（公式のみ；§08）。",
+          sec02h: "逆コンパイル＆コンソールの古典",
+          sec02n: "コンソール古典の成熟した逆コンパイル — ROM は自分で用意。",
+          sec03h: "PC ゲームのソースポート — 古典期",
+          sec03n: "古典期の PC ソースポート。多くは少数の作者によるもの。",
+          sec04h: "2026 年の大増殖 — Android ローダーのポート",
+          sec04n: "互換レイヤー経由で動く Android ゲーム — APK ファイルを用意。",
+          sec05h: "2026 年の大増殖 — 静的リコンパイル",
+          sec05n: "自分のディスクや ISO から作る静的リコンパイル — 特記なき限り初期段階（0.x）。",
+          sec06h: "N64 / GameCube / Wii / 携帯機リコンパイル＆2026 年 PC の波",
+          sec06n: "2026 年の波の残り — Ship 系のポートは §02 にあります。",
+          sec07h: "開発中 / 発表済み", sec07n: "プレイ可能な公開ビルドはまだありません。",
+          sec08h: "中止 / 噂 / ポートなし",
+          sec08n: "GTA V / GTA5NX は中止 — 2026 年 10 月に終了、未公開、ダウンロードはすべて偽物です。",
+          callout08: "<strong>正規のポートはすべて無料</strong>で、ゲームファイルは自分で用意します — 有料の「Switch ポート」セットは詐欺です。",
+          sec09h: "調査で確認できなかったこと", sec09n: "調査で裏付けが取れなかった事柄。",
+          footer1: "非公式ポートのみ — 改造済み Switch（Atmosphère）が必要 · ゲームファイルは自分で用意し、ポートにゲームは含まれません · 正規のポートはすべて無料で、有料のものは詐欺です · 2026 年のビルドの大半は初期段階です。",
+          footFrag: { "Sources:": "情報源：", "master port list": "ポートのマスターリスト", "classic-era ports": "古典期のポート", "curated recomps": "厳選リコンパイル", "scene news": "シーンのニュース", "release log": "リリース記録", "homebrew store": "自作ソフトストア", "threads and repos checked directly": "スレッドとリポジトリを直接確認" },
+          dt: { "Original": "原作", "Author": "作者", "Authors": "作者", "Performance": "性能", "Projects": "プロジェクト", "Timeline": "経緯", "What it was": "概要" },
+          src: { "Source": "情報源", "Sources": "情報源" },
+          seg: { "Released": "公開済み", "early": "初期", "playable": "プレイ可能", "source-build": "ソースビルド", "source-build only": "ソースビルドのみ", "early/playable": "初期/プレイ可能", "experimental": "実験的", "updated": "更新", "Playable": "プレイ可能", "Early": "初期", "Pre-release": "プレリリース", "Unreleased": "未公開", "WIP / pre-release": "WIP / プレリリース", "not playable": "プレイ不可", "no public download": "公開ダウンロードなし", "no playable build yet": "プレイ可能なビルドはまだない", "hardware untested": "実機未検証", "conflicting reports — do not call playable": "報告が食い違う — プレイ可能と呼ぶべきでない", "Borderline released / WIP": "公開間近 / WIP", "Cancelled / none": "中止 / なし", "Cancelled before wider release": "広範な公開前に中止" }
+        },
+        ru: {
+          skip: "Перейти к результатам",
+          tid: "ТОЛЬКО НЕОФИЦИАЛЬНЫЕ / HOMEBREW-ПОРТЫ · НУЖНА МОДИФИЦИРОВАННАЯ SWITCH (ATMOSPHÈRE) · ФАЙЛЫ ИГРЫ — СВОИ · КАЖДЫЙ ЛЕГАЛЬНЫЙ ПОРТ БЕСПЛАТЕН",
+          title: "Все игры, портированные на <span class=\"nx\">Switch</span>",
+          docTitle: "Порты Switch со времён GTA5NX — все неофициальные игры, портированные на Switch",
+          statGames: "игр в этом каталоге", statMaster: "записей в главном списке SwitchPorts",
+          statWeek: "обновлений SwitchPorts за одну неделю", statRecomps: "отобранных портов на AllRecomps",
+          statErasB: "2 эпохи", statEras: "классика 2018–2025 · поток 2026 года",
+          keyHeading: "Как читать статусы.",
+          keyPlayable: "публичная сборка, в неё играют.",
+          keyEarly: "публичная сборка, не готова (v0.1–0.5), играбельна частично, редко проходима.",
+          keyWip: "в разработке, играбельной публичной сборки пока нет.",
+          keyCancelled: "отменён, или порта не существует.",
+          keyNote: "«Выпущено» означает, что публичная сборка существовала — большинство сборок 2026 года ранние и без оценок: играбельны частично, а не проходимы.",
+          recentHeading: "Недавно добавленные",
+          recentNote: "Порты, добавленные по итогам двух последних ежедневных проверок — 19 и 18 ноября 2026 года. Выберите название, чтобы перейти прямо к его записи. Записи, добавленные за последние 7 дней, также имеют значок NEW в каталоге ниже.",
+          recentDate1: "19 ноября 2026 г.", recentAdd1: "— 9 добавлений",
+          recentDate2: "18 ноября 2026 г.", recentAdd2: "— 11 добавлений",
+          searchLabel: "Поиск по игре, автору или исходной системе",
+          searchPlaceholder: "Найти игру…",
+          catGroup: "Поиск и фильтр по категориям",
+          chipAll: "Все", chipDecomp: "Декомпиляции и классика", chipPc: "Порты с исходников PC",
+          chipAndroid: "Загрузчики Android ’26", chipRecomp: "Рекомпы ’26",
+          chipWip: "В разработке", chipCancelled: "Отменено / нет",
+          consoleLabel: "Исходная система", chipAllConsoles: "Все консоли",
+          statusLabel: "Статус", chipAllStatuses: "Все статусы",
+          chipReleased: "Выпущено", chipWipStatus: "WIP", chipCancelledStatus: "Отменено",
+          expandAll: "Развернуть всё", collapseAll: "Свернуть всё",
+          showMore: "Показать ещё", showLess: "Скрыть",
+          noResults: "Ни один порт не соответствует этому поиску. Попробуйте более короткое название — или посмотрите «Отменено / нет».",
+          fabFilters: "Фильтры", fabAria: "Назад к поиску и фильтрам",
+          countTpl: "Показано {v} из {t} записей каталога", countFilter: " по этому фильтру",
+          foundTpl: "Найдено: {n}",
+          sec01h: "Rockstar и открытый мир — выпущено",
+          sec01n: "Порты Rockstar — от декомпиляции GTA III до загрузчиков и рекомпов 2026 года.",
+          callout01: "<strong>Выпущенного порта не найдено для:</strong> GTA IV (WIP — противоречивые отчёты, не готов; §07), GTA V (отменён; §08), Red Dead Redemption (только официальный; §08).",
+          sec02h: "Декомпиляции и консольная классика",
+          sec02n: "Зрелые декомпиляции консольной классики — ROM приносите свой.",
+          sec03h: "Порты PC-игр с исходников — классическая эра",
+          sec03n: "Классические порты PC-игр с исходников, в основном от небольшой группы авторов.",
+          sec04h: "Взрыв 2026 года — порты через загрузчик Android",
+          sec04n: "Игры Android, запускаемые через слой совместимости — приносите файлы APK.",
+          sec05h: "Взрыв 2026 года — статические рекомпиляции",
+          sec05n: "Статические рекомпы, собранные из вашего диска или ISO — ранние (0.x), если не указано иное.",
+          sec06h: "Рекомпы N64 / GameCube / Wii / портативных консолей и PC-волна 2026 года",
+          sec06n: "Остальная часть волны 2026 года — порты семейства Ship находятся в §02.",
+          sec07h: "В разработке / анонсировано", sec07n: "Играбельной публичной сборки пока нет.",
+          sec08h: "Отменено / слухи / порта не существует",
+          sec08n: "GTA V / GTA5NX отменён — закрыт в окт. 2026 года, никогда не выходил, любая загрузка — подделка.",
+          callout08: "<strong>Каждый легальный порт бесплатен</strong>, с вашими собственными файлами игры — платные наборы «портов Switch» являются мошенничеством.",
+          sec09h: "Что исследование не смогло подтвердить", sec09n: "То, что исследование не смогло подтвердить.",
+          footer1: "Только неофициальные порты — нужна модифицированная Switch (Atmosphère) · файлы игры приносите свои, порт не включает игру · каждый легальный порт бесплатен, платные — мошенничество · большинство сборок 2026 года ранние.",
+          footFrag: { "Sources:": "Источники:", "master port list": "главный список портов", "classic-era ports": "порты классической эры", "curated recomps": "отобранные рекомпы", "scene news": "новости сцены", "release log": "журнал релизов", "homebrew store": "магазин homebrew", "threads and repos checked directly": "темы и репозитории проверены напрямую" },
+          dt: { "Original": "Оригинал", "Author": "Автор", "Authors": "Авторы", "Performance": "Производительность", "Projects": "Проекты", "Timeline": "Хронология", "What it was": "Что это было" },
+          src: { "Source": "Источник", "Sources": "Источники" },
+          seg: { "Released": "Выпущено", "early": "ранний", "playable": "играбельно", "source-build": "сборка из исходников", "source-build only": "только сборка из исходников", "early/playable": "ранний/играбельно", "experimental": "экспериментальный", "updated": "обновлено", "Playable": "Играбельно", "Early": "Ранний", "Pre-release": "Пре-релиз", "Unreleased": "Не выпущено", "WIP / pre-release": "WIP / пре-релиз", "not playable": "не играбельно", "no public download": "нет публичной загрузки", "no playable build yet": "играбельной сборки пока нет", "hardware untested": "не проверено на железе", "conflicting reports — do not call playable": "противоречивые отчёты — не называть играбельным", "Borderline released / WIP": "На грани выпуска / WIP", "Cancelled / none": "Отменено / нет", "Cancelled before wider release": "Отменён до широкого релиза" }
+        },
+        uk: {
+          skip: "Перейти до результатів",
+          tid: "ЛИШЕ НЕОФІЦІЙНІ / HOMEBREW-ПОРТИ · ПОТРІБНА МОДИФІКОВАНА SWITCH (ATMOSPHÈRE) · ФАЙЛИ ГРИ — ВЛАСНІ · КОЖЕН ЛЕГАЛЬНИЙ ПОРТ БЕЗКОШТОВНИЙ",
+          title: "Усі ігри, портовані на <span class=\"nx\">Switch</span>",
+          docTitle: "Порти Switch з часів GTA5NX — усі неофіційні ігри, портовані на Switch",
+          statGames: "ігор у цьому каталозі", statMaster: "записів у головному списку SwitchPorts",
+          statWeek: "оновлень SwitchPorts за один тиждень", statRecomps: "дібраних портів на AllRecomps",
+          statErasB: "2 епохи", statEras: "класика 2018–2025 · потік 2026 року",
+          keyHeading: "Як читати статуси.",
+          keyPlayable: "публічна збірка, у неї грають.",
+          keyEarly: "публічна збірка, не готова (v0.1–0.5), грабельна частково, рідко прохідна.",
+          keyWip: "у розробці, грабельної публічної збірки ще немає.",
+          keyCancelled: "скасовано, або порту не існує.",
+          keyNote: "«Випущено» означає, що публічна збірка існувала — більшість збірок 2026 року ранні й без оцінок: грабельні частково, а не прохідні.",
+          recentHeading: "Нещодавно додані",
+          recentNote: "Порти, додані за підсумками двох останніх щоденних перевірок — 19 і 18 листопада 2026 року. Виберіть назву, щоб перейти просто до її запису. Записи, додані за останні 7 днів, також мають значок NEW у каталозі нижче.",
+          recentDate1: "19 листопада 2026 р.", recentAdd1: "— 9 додавань",
+          recentDate2: "18 листопада 2026 р.", recentAdd2: "— 11 додавань",
+          searchLabel: "Пошук за грою, автором або вихідною системою",
+          searchPlaceholder: "Знайти гру…",
+          catGroup: "Пошук і фільтр за категоріями",
+          chipAll: "Усі", chipDecomp: "Декомпіляції та класика", chipPc: "Порти з вихідників PC",
+          chipAndroid: "Завантажувачі Android ’26", chipRecomp: "Рекомпи ’26",
+          chipWip: "У розробці", chipCancelled: "Скасовано / немає",
+          consoleLabel: "Вихідна система", chipAllConsoles: "Усі консолі",
+          statusLabel: "Статус", chipAllStatuses: "Усі статуси",
+          chipReleased: "Випущено", chipWipStatus: "WIP", chipCancelledStatus: "Скасовано",
+          expandAll: "Розгорнути все", collapseAll: "Згорнути все",
+          showMore: "Показати ще", showLess: "Приховати",
+          noResults: "Жоден порт не відповідає цьому пошуку. Спробуйте коротшу назву — або подивіться «Скасовано / немає».",
+          fabFilters: "Фільтри", fabAria: "Назад до пошуку та фільтрів",
+          countTpl: "Показано {v} з {t} записів каталогу", countFilter: " за цим фільтром",
+          foundTpl: "Знайдено: {n}",
+          sec01h: "Rockstar і відкритий світ — випущено",
+          sec01n: "Порти Rockstar — від декомпіляції GTA III до завантажувачів і рекомпів 2026 року.",
+          callout01: "<strong>Випущеного порту не знайдено для:</strong> GTA IV (WIP — суперечливі звіти, не готовий; §07), GTA V (скасовано; §08), Red Dead Redemption (лише офіційний; §08).",
+          sec02h: "Декомпіляції та консольна класика",
+          sec02n: "Зрілі декомпіляції консольної класики — ROM приносьте власний.",
+          sec03h: "Порти PC-ігор з вихідників — класична ера",
+          sec03n: "Класичні порти PC-ігор з вихідників, здебільшого від невеликої групи авторів.",
+          sec04h: "Вибух 2026 року — порти через завантажувач Android",
+          sec04n: "Ігри Android, що запускаються через шар сумісності — приносьте файли APK.",
+          sec05h: "Вибух 2026 року — статичні рекомпіляції",
+          sec05n: "Статичні рекомпи, зібрані з вашого диска чи ISO — ранні (0.x), якщо не зазначено інше.",
+          sec06h: "Рекомпи N64 / GameCube / Wii / портативних консолей і PC-хвиля 2026 року",
+          sec06n: "Решта хвилі 2026 року — порти родини Ship містяться в §02.",
+          sec07h: "У розробці / анонсовано", sec07n: "Грабельної публічної збірки ще немає.",
+          sec08h: "Скасовано / чутки / порту не існує",
+          sec08n: "GTA V / GTA5NX скасовано — закрито в жовт. 2026 року, ніколи не виходив, будь-яке завантаження — підробка.",
+          callout08: "<strong>Кожен легальний порт безкоштовний</strong>, з вашими власними файлами гри — платні набори «портів Switch» є шахрайством.",
+          sec09h: "Що дослідження не змогло підтвердити", sec09n: "Те, що дослідження не змогло підтвердити.",
+          footer1: "Лише неофіційні порти — потрібна модифікована Switch (Atmosphère) · файли гри приносьте власні, порт не містить гри · кожен легальний порт безкоштовний, платні — шахрайство · більшість збірок 2026 року ранні.",
+          footFrag: { "Sources:": "Джерела:", "master port list": "головний список портів", "classic-era ports": "порти класичної ери", "curated recomps": "дібрані рекомпи", "scene news": "новини сцени", "release log": "журнал релізів", "homebrew store": "магазин homebrew", "threads and repos checked directly": "теми й репозиторії перевірено напряму" },
+          dt: { "Original": "Оригінал", "Author": "Автор", "Authors": "Автори", "Performance": "Продуктивність", "Projects": "Проєкти", "Timeline": "Хронологія", "What it was": "Що це було" },
+          src: { "Source": "Джерело", "Sources": "Джерела" },
+          seg: { "Released": "Випущено", "early": "ранній", "playable": "грабельно", "source-build": "збірка з вихідників", "source-build only": "лише збірка з вихідників", "early/playable": "ранній/грабельно", "experimental": "експериментальний", "updated": "оновлено", "Playable": "Грабельно", "Early": "Ранній", "Pre-release": "Пре-реліз", "Unreleased": "Не випущено", "WIP / pre-release": "WIP / пре-реліз", "not playable": "не грабельно", "no public download": "немає публічного завантаження", "no playable build yet": "грабельної збірки ще немає", "hardware untested": "не перевірено на залізі", "conflicting reports — do not call playable": "суперечливі звіти — не називати грабельним", "Borderline released / WIP": "На межі випуску / WIP", "Cancelled / none": "Скасовано / немає", "Cancelled before wider release": "Скасовано до широкого релізу" }
+        },
+        pl: {
+          skip: "Przejdź do wyników",
+          tid: "TYLKO PORTY NIEOFICJALNE / HOMEBREW · WYMAGANY ZMODYFIKOWANY SWITCH (ATMOSPHÈRE) · PRZYNIEŚ WŁASNE PLIKI GRY · KAŻDY LEGALNY PORT JEST DARMOWY",
+          title: "Wszystkie gry przeniesione na <span class=\"nx\">Switch</span>",
+          docTitle: "Porty na Switch od GTA5NX — wszystkie nieoficjalne gry przeniesione na Switch",
+          statGames: "gier w tym katalogu", statMaster: "wpisów na głównej liście SwitchPorts",
+          statWeek: "aktualizacji SwitchPorts w jednym tygodniu", statRecomps: "wyselekcjonowanych portów na AllRecomps",
+          statErasB: "2 ery", statEras: "klasyki 2018–2025 · zalew z 2026 roku",
+          keyHeading: "Jak czytać statusy.",
+          keyPlayable: "publiczna kompilacja, grana przez ludzi.",
+          keyEarly: "publiczna kompilacja, niedokończona (v0.1–0.5), grywalna częściowo, rzadko do ukończenia.",
+          keyWip: "w produkcji, brak jeszcze grywalnej publicznej kompilacji.",
+          keyCancelled: "anulowany, albo port nie istnieje.",
+          keyNote: "„Wydany” oznacza, że istniała publiczna kompilacja — większość kompilacji z 2026 roku jest wczesna i bez ocen: grywalna częściowo, nie do ukończenia.",
+          recentHeading: "Ostatnio dodane",
+          recentNote: "Porty dodane w dwóch ostatnich codziennych sprawdzeniach — 19 i 18 listopada 2026 r. Wybierz tytuł, aby przejść prosto do jego wpisu. Wpisy dodane w ostatnich 7 dniach mają też odznakę NEW w katalogu poniżej.",
+          recentDate1: "19 listopada 2026 r.", recentAdd1: "— 9 dodatków",
+          recentDate2: "18 listopada 2026 r.", recentAdd2: "— 11 dodatków",
+          searchLabel: "Szukaj po grze, autorze lub systemie oryginalnym",
+          searchPlaceholder: "Szukaj gry…",
+          catGroup: "Szukaj i filtruj po kategorii",
+          chipAll: "Wszystkie", chipDecomp: "Dekompilacje i klasyki", chipPc: "Porty źródłowe PC",
+          chipAndroid: "Loadery Android ’26", chipRecomp: "Rekompy ’26",
+          chipWip: "W produkcji", chipCancelled: "Anulowane / brak",
+          consoleLabel: "System oryginalny", chipAllConsoles: "Wszystkie konsole",
+          statusLabel: "Status", chipAllStatuses: "Wszystkie statusy",
+          chipReleased: "Wydany", chipWipStatus: "WIP", chipCancelledStatus: "Anulowany",
+          expandAll: "Rozwiń wszystko", collapseAll: "Zwiń wszystko",
+          showMore: "Pokaż więcej", showLess: "Pokaż mniej",
+          noResults: "Żaden port nie pasuje do tego wyszukiwania. Spróbuj krótszej nazwy — albo sprawdź Anulowane / brak.",
+          fabFilters: "Filtry", fabAria: "Wróć do wyszukiwania i filtrów",
+          countTpl: "Wyświetlono {v} z {t} wpisów katalogu", countFilter: " dla tego filtra",
+          foundTpl: "Znaleziono: {n}",
+          sec01h: "Rockstar i otwarty świat — wydane",
+          sec01n: "Porty Rockstar — od dekompilacji GTA III po loadery i rekompy z 2026 roku.",
+          callout01: "<strong>Nie znaleziono wydanego portu dla:</strong> GTA IV (WIP — sprzeczne raporty, niedokończony; §07), GTA V (anulowany; §08), Red Dead Redemption (tylko oficjalny; §08).",
+          sec02h: "Dekompilacje i klasyki konsolowe",
+          sec02n: "Dojrzałe dekompilacje klasyków konsolowych — przynieś własny ROM.",
+          sec03h: "Porty źródłowe gier PC — era klasyczna",
+          sec03n: "Klasyczne porty źródłowe PC, głównie od małej grupy autorów.",
+          sec04h: "Eksplozja 2026 roku — porty z loaderem Android",
+          sec04n: "Gry na Android uruchamiane przez warstwę zgodności — przynieś pliki APK.",
+          sec05h: "Eksplozja 2026 roku — statyczne rekompilacje",
+          sec05n: "Statyczne rekompy zbudowane z własnej płyty lub ISO — wczesne (0.x), o ile nie zaznaczono inaczej.",
+          sec06h: "Rekompy N64 / GameCube / Wii / handheldów i fala PC 2026",
+          sec06n: "Reszta fali 2026 roku — porty rodziny Ship są w §02.",
+          sec07h: "W produkcji / zapowiedziane", sec07n: "Brak jeszcze grywalnej publicznej kompilacji.",
+          sec08h: "Anulowane / plotki / port nie istnieje",
+          sec08n: "GTA V / GTA5NX jest anulowany — zamknięty w paź. 2026 r., nigdy nie wydany, każde pobranie to fałszywka.",
+          callout08: "<strong>Każdy legalny port jest darmowy</strong>, z własnymi plikami gry — płatne pakiety „portów na Switch” to oszustwa.",
+          sec09h: "Czego badanie nie mogło zweryfikować", sec09n: "Rzeczy, których badanie nie mogło potwierdzić.",
+          footer1: "Tylko porty nieoficjalne — wymagany zmodyfikowany Switch (Atmosphère) · przynieś własne pliki gry, żaden port nie zawiera gry · każdy legalny port jest darmowy, płatne to oszustwa · większość kompilacji z 2026 roku jest wczesna.",
+          footFrag: { "Sources:": "Źródła:", "master port list": "główna lista portów", "classic-era ports": "porty ery klasycznej", "curated recomps": "wyselekcjonowane rekompy", "scene news": "wiadomości sceny", "release log": "dziennik wydań", "homebrew store": "sklep homebrew", "threads and repos checked directly": "wątki i repozytoria sprawdzone bezpośrednio" },
+          dt: { "Original": "Oryginał", "Author": "Autor", "Authors": "Autorzy", "Performance": "Wydajność", "Projects": "Projekty", "Timeline": "Oś czasu", "What it was": "Czym to było" },
+          src: { "Source": "Źródło", "Sources": "Źródła" },
+          seg: { "Released": "Wydany", "early": "wczesny", "playable": "grywalne", "source-build": "kompilacja ze źródeł", "source-build only": "tylko kompilacja ze źródeł", "early/playable": "wczesny/grywalne", "experimental": "eksperymentalny", "updated": "zaktualizowano", "Playable": "grywalne", "Early": "Wczesny", "Pre-release": "Wersja wstępna", "Unreleased": "Niewydany", "WIP / pre-release": "WIP / wersja wstępna", "not playable": "niegrywalne", "no public download": "brak publicznego pobrania", "no playable build yet": "brak jeszcze grywalnej kompilacji", "hardware untested": "nietestowane na sprzęcie", "conflicting reports — do not call playable": "sprzeczne raporty — nie nazywać grywalnym", "Borderline released / WIP": "Na granicy wydania / WIP", "Cancelled / none": "Anulowane / brak", "Cancelled before wider release": "Anulowany przed szerszym wydaniem" }
+        },
+        nl: {
+          skip: "Naar de resultaten",
+          tid: "ALLEEN ONOFFICIËLE / HOMEBREW-PORTS · GEMODDE SWITCH (ATMOSPHÈRE) VEREIST · BRENG JE EIGEN SPELBESTANDEN MEE · ELKE LEGITIEME PORT IS GRATIS",
+          title: "Alle games geport naar de <span class=\"nx\">Switch</span>",
+          docTitle: "Switch-ports sinds GTA5NX — Alle onofficiële games geport naar de Switch",
+          statGames: "games in deze catalogus", statMaster: "vermeldingen in de hoofdlijst van SwitchPorts",
+          statWeek: "SwitchPorts-updates in één week", statRecomps: "geselecteerde ports op AllRecomps",
+          statErasB: "2 tijdperken", statEras: "klassiekers 2018–2025 · de vloed van 2026",
+          keyHeading: "Zo lees je de statussen.",
+          keyPlayable: "openbare build, door mensen gespeeld.",
+          keyEarly: "openbare build, onaf (v0.1–0.5), deels speelbaar, zelden uit te spelen.",
+          keyWip: "in ontwikkeling, nog geen speelbare openbare build.",
+          keyCancelled: "geannuleerd, of er bestaat geen port.",
+          keyNote: "“Uitgebracht” betekent dat er een openbare build bestond — de meeste builds uit 2026 zijn vroeg en zonder beoordeling: deels speelbaar, niet uit te spelen.",
+          recentHeading: "Onlangs toegevoegd",
+          recentNote: "Ports toegevoegd bij de twee meest recente dagelijkse controles — 19 en 18 november 2026. Kies een titel om direct naar het item te springen. Items van de laatste 7 dagen hebben in de catalogus hieronder ook een NEW-badge.",
+          recentDate1: "19 november 2026", recentAdd1: "— 9 toevoegingen",
+          recentDate2: "18 november 2026", recentAdd2: "— 11 toevoegingen",
+          searchLabel: "Zoek op game, auteur of origineel systeem",
+          searchPlaceholder: "Zoek een game…",
+          catGroup: "Zoeken en filteren op categorie",
+          chipAll: "Alle", chipDecomp: "Decomp. & klassiekers", chipPc: "PC-bronports",
+          chipAndroid: "Android-loaders ’26", chipRecomp: "Recomps ’26",
+          chipWip: "In ontwikkeling", chipCancelled: "Geannuleerd / geen",
+          consoleLabel: "Origineel systeem", chipAllConsoles: "Alle consoles",
+          statusLabel: "Status", chipAllStatuses: "Alle statussen",
+          chipReleased: "Uitgebracht", chipWipStatus: "WIP", chipCancelledStatus: "Geannuleerd",
+          expandAll: "Alles uitklappen", collapseAll: "Alles inklappen",
+          showMore: "Meer tonen", showLess: "Minder tonen",
+          noResults: "Geen port komt overeen met die zoekopdracht. Probeer een kortere naam — of kijk bij Geannuleerd / geen.",
+          fabFilters: "Filters", fabAria: "Terug naar zoeken en filters",
+          countTpl: "{v} van {t} catalogusitems weergegeven", countFilter: " voor dit filter",
+          foundTpl: "{n} gevonden",
+          sec01h: "Rockstar & open wereld — uitgebracht",
+          sec01n: "Rockstar-ports — van de GTA III-decompilatie tot de loaders en recomps van 2026.",
+          callout01: "<strong>Geen uitgebrachte port gevonden voor:</strong> GTA IV (WIP — tegenstrijdige rapporten, niet af; §07), GTA V (geannuleerd; §08), Red Dead Redemption (alleen officieel; §08).",
+          sec02h: "Decompilaties & consoleklassiekers",
+          sec02n: "Volwassen decompilaties van consoleklassiekers — breng je eigen ROM mee.",
+          sec03h: "PC-game-bronports — klassieke tijd",
+          sec03n: "Klassieke PC-bronports, meestal van een kleine groep auteurs.",
+          sec04h: "De explosie van 2026 — Android-loader-ports",
+          sec04n: "Android-games die via een compatibiliteitslaag draaien — breng de APK-bestanden mee.",
+          sec05h: "De explosie van 2026 — statische recompilaties",
+          sec05n: "Statische recomps gebouwd van je eigen disc of ISO — vroeg (0.x), tenzij anders vermeld.",
+          sec06h: "N64- / GameCube- / Wii- / handheld-recomps & PC-golf van 2026",
+          sec06n: "De rest van de golf van 2026 — ports van de Ship-familie staan in §02.",
+          sec07h: "In ontwikkeling / aangekondigd", sec07n: "Nog geen speelbare openbare build.",
+          sec08h: "Geannuleerd / geruchten / geen port",
+          sec08n: "GTA V / GTA5NX is geannuleerd — gestopt in okt. 2026, nooit uitgebracht, elke download is nep.",
+          callout08: "<strong>Elke legitieme port is gratis</strong>, met je eigen spelbestanden — betaalde “Switch-port”-bundels zijn oplichting.",
+          sec09h: "Wat het onderzoek niet kon verifiëren", sec09n: "Dingen die het onderzoek niet kon bevestigen.",
+          footer1: "Alleen onofficiële ports — gemodde Switch (Atmosphère) vereist · breng je eigen spelbestanden mee, geen port bevat het spel · elke legitieme port is gratis, betaalde zijn oplichting · de meeste builds uit 2026 zijn vroeg.",
+          footFrag: { "Sources:": "Bronnen:", "master port list": "hoofdlijst van ports", "classic-era ports": "ports uit de klassieke tijd", "curated recomps": "geselecteerde recomps", "scene news": "scènenieuws", "release log": "releaselog", "homebrew store": "homebrew-winkel", "threads and repos checked directly": "threads en repo's direct gecontroleerd" },
+          dt: { "Original": "Origineel", "Author": "Auteur", "Authors": "Auteurs", "Performance": "Prestaties", "Projects": "Projecten", "Timeline": "Tijdlijn", "What it was": "Wat het was" },
+          src: { "Source": "Bron", "Sources": "Bronnen" },
+          seg: { "Released": "Uitgebracht", "early": "vroeg", "playable": "speelbaar", "source-build": "bronbuild", "source-build only": "alleen bronbuild", "early/playable": "vroeg/speelbaar", "experimental": "experimenteel", "updated": "bijgewerkt", "Playable": "Speelbaar", "Early": "Vroeg", "Pre-release": "Pre-release", "Unreleased": "Niet uitgebracht", "WIP / pre-release": "WIP / pre-release", "not playable": "niet speelbaar", "no public download": "geen openbare download", "no playable build yet": "nog geen speelbare build", "hardware untested": "niet getest op hardware", "conflicting reports — do not call playable": "tegenstrijdige rapporten — niet speelbaar noemen", "Borderline released / WIP": "Net uitgebracht / WIP", "Cancelled / none": "Geannuleerd / geen", "Cancelled before wider release": "Geannuleerd vóór bredere release" }
+        },
+        tr: {
+          skip: "Sonuçlara atla",
+          tid: "YALNIZCA RESMİ OLMAYAN / HOMEBREW PORTLAR · MODLU SWITCH (ATMOSPHÈRE) GEREKLİ · KENDİ OYUN DOSYALARINIZI GETİRİN · HER MEŞRU PORT ÜCRETSİZDİR",
+          title: "Switch'e port edilen tüm oyunlar",
+          docTitle: "GTA5NX'ten bu yana Switch portları — Switch'e port edilen tüm resmi olmayan oyunlar",
+          statGames: "bu katalogdaki oyun", statMaster: "SwitchPorts ana listesindeki kayıt",
+          statWeek: "tek haftada SwitchPorts güncellemesi", statRecomps: "AllRecomps'ta seçilmiş port",
+          statErasB: "2 dönem", statEras: "klasikler 2018–2025 · 2026 seli",
+          keyHeading: "Durumlar nasıl okunur.",
+          keyPlayable: "herkese açık sürüm, insanlarca oynanmış.",
+          keyEarly: "herkese açık sürüm, bitmemiş (v0.1–0.5), kısmen oynanabilir, nadiren bitirilebilir.",
+          keyWip: "geliştirme aşamasında, henüz oynanabilir herkese açık sürüm yok.",
+          keyCancelled: "iptal edildi ya da port mevcut değil.",
+          keyNote: "“Yayımlandı”, herkese açık bir sürümün var olduğu anlamına gelir — 2026 sürümlerinin çoğu erken ve puansızdır: kısmen oynanabilir, bitirilebilir değil.",
+          recentHeading: "Son eklenenler",
+          recentNote: "En son iki günlük kontrolde eklenen portlar — 19 ve 18 Kasım 2026. Bir başlık seçin, doğrudan kaydına gidin. Son 7 günde eklenen kayıtlar aşağıdaki katalogda NEW rozeti de taşır.",
+          recentDate1: "19 Kasım 2026", recentAdd1: "— 9 ekleme",
+          recentDate2: "18 Kasım 2026", recentAdd2: "— 11 ekleme",
+          searchLabel: "Oyuna, yazara veya özgün sisteme göre ara",
+          searchPlaceholder: "Bir oyun ara…",
+          catGroup: "Kategoriye göre ara ve filtrele",
+          chipAll: "Tümü", chipDecomp: "Dekomp. ve klasikler", chipPc: "PC kaynak portları",
+          chipAndroid: "Android yükleyicileri ’26", chipRecomp: "Rekomplar ’26",
+          chipWip: "Geliştirme aşamasında", chipCancelled: "İptal / yok",
+          consoleLabel: "Özgün sistem", chipAllConsoles: "Tüm konsollar",
+          statusLabel: "Durum", chipAllStatuses: "Tüm durumlar",
+          chipReleased: "Yayımlandı", chipWipStatus: "WIP", chipCancelledStatus: "İptal edildi",
+          expandAll: "Tümünü genişlet", collapseAll: "Tümünü daralt",
+          showMore: "Daha fazla göster", showLess: "Daha az göster",
+          noResults: "Bu aramayla eşleşen port yok. Daha kısa bir ad deneyin — ya da İptal / yok bölümüne bakın.",
+          fabFilters: "Filtreler", fabAria: "Arama ve filtrelere dön",
+          countTpl: "Katalogdaki {t} kayıttan {v} tanesi gösteriliyor", countFilter: " bu filtre için",
+          foundTpl: "{n} bulundu",
+          sec01h: "Rockstar ve açık dünya — yayımlandı",
+          sec01n: "Rockstar portları — GTA III dekompilasyonundan 2026 yükleyicilerine ve rekomplarına.",
+          callout01: "<strong>Yayımlanmış port bulunamadı:</strong> GTA IV (WIP — çelişkili raporlar, bitmedi; §07), GTA V (iptal; §08), Red Dead Redemption (yalnızca resmi; §08).",
+          sec02h: "Dekompilasyonlar ve konsol klasikleri",
+          sec02n: "Konsol klasiklerinin olgun dekompilasyonları — kendi ROM'unuzu getirin.",
+          sec03h: "PC oyunu kaynak portları — klasik dönem",
+          sec03n: "Klasik PC kaynak portları, çoğunlukla küçük bir yazar grubundan.",
+          sec04h: "2026 patlaması — Android yükleyici portları",
+          sec04n: "Bir uyumluluk katmanıyla çalışan Android oyunları — APK dosyalarını getirin.",
+          sec05h: "2026 patlaması — statik rekompilasyonlar",
+          sec05n: "Kendi diskinizden veya ISO'nuzdan derlenen statik rekomplar — belirtilmedikçe erken (0.x).",
+          sec06h: "N64 / GameCube / Wii / el konsolu rekompları ve 2026 PC dalgası",
+          sec06n: "2026 dalgasının geri kalanı — Ship ailesi portları §02'de.",
+          sec07h: "Geliştirme aşamasında / duyuruldu", sec07n: "Henüz oynanabilir herkese açık sürüm yok.",
+          sec08h: "İptal / söylenti / port yok",
+          sec08n: "GTA V / GTA5NX iptal edildi — Eki. 2026'da kapatıldı, hiç yayımlanmadı, her indirme sahtedir.",
+          callout08: "<strong>Her meşru port ücretsizdir</strong>, kendi oyun dosyalarınızla — ücretli “Switch portu” paketleri dolandırıcılıktır.",
+          sec09h: "Araştırmanın doğrulayamadıkları", sec09n: "Araştırmanın teyit edemediği şeyler.",
+          footer1: "Yalnızca resmi olmayan portlar — modlu Switch (Atmosphère) gerekli · kendi oyun dosyalarınızı getirin, hiçbir port oyunu içermez · her meşru port ücretsizdir, ücretliler dolandırıcılıktır · 2026 sürümlerinin çoğu erken.",
+          footFrag: { "Sources:": "Kaynaklar:", "master port list": "ana port listesi", "classic-era ports": "klasik dönem portları", "curated recomps": "seçilmiş rekomplar", "scene news": "sahne haberleri", "release log": "sürüm günlüğü", "homebrew store": "homebrew mağazası", "threads and repos checked directly": "konular ve depolar doğrudan kontrol edildi" },
+          dt: { "Original": "Özgün", "Author": "Yazar", "Authors": "Yazarlar", "Performance": "Performans", "Projects": "Projeler", "Timeline": "Zaman çizelgesi", "What it was": "Ne idi" },
+          src: { "Source": "Kaynak", "Sources": "Kaynaklar" },
+          seg: { "Released": "Yayımlandı", "early": "erken", "playable": "oynanabilir", "source-build": "kaynaktan derleme", "source-build only": "yalnızca kaynaktan derleme", "early/playable": "erken/oynanabilir", "experimental": "deneysel", "updated": "güncellendi", "Playable": "Oynanabilir", "Early": "Erken", "Pre-release": "Ön sürüm", "Unreleased": "Yayımlanmadı", "WIP / pre-release": "WIP / ön sürüm", "not playable": "oynanamaz", "no public download": "herkese açık indirme yok", "no playable build yet": "henüz oynanabilir sürüm yok", "hardware untested": "donanımda test edilmedi", "conflicting reports — do not call playable": "çelişkili raporlar — oynanabilir demeyin", "Borderline released / WIP": "Yayımlanmak üzere / WIP", "Cancelled / none": "İptal / yok", "Cancelled before wider release": "Daha geniş sürümden önce iptal edildi" }
+        },
+        ko: {
+          skip: "결과로 건너뛰기",
+          tid: "비공식 / 홈브루 포트만 · 개조된 Switch(ATMOSPHÈRE) 필요 · 게임 파일은 직접 준비 · 정식 포트는 모두 무료",
+          title: "Switch로 이식된 모든 게임",
+          docTitle: "GTA5NX 이후 Switch 포트 — Switch로 이식된 비공식 게임 전체",
+          statGames: "이 카탈로그의 게임 수", statMaster: "SwitchPorts 마스터 목록의 항목 수",
+          statWeek: "한 주 동안의 SwitchPorts 업데이트", statRecomps: "AllRecomps 엄선 포트 수",
+          statErasB: "2개 시대", statEras: "클래식 2018–2025 · 2026년의 홍수",
+          keyHeading: "상태 읽는 법.",
+          keyPlayable: "공개 빌드가 있고, 사람들이 플레이함.",
+          keyEarly: "공개 빌드가 있으나 미완성(v0.1–0.5), 부분적으로 플레이 가능, 클리어 가능한 경우는 드묾.",
+          keyWip: "개발 중, 아직 플레이 가능한 공개 빌드 없음.",
+          keyCancelled: "취소됐거나 포트가 존재하지 않음.",
+          keyNote: "“출시됨”은 공개 빌드가 존재했다는 뜻입니다 — 2026년 빌드 대부분은 초기 단계이고 평가가 없어, 부분적으로 플레이 가능할 뿐 클리어 가능하지는 않습니다.",
+          recentHeading: "최근 추가됨",
+          recentNote: "가장 최근 두 번의 일일 점검(2026년 11월 19일과 18일)에서 추가된 포트입니다. 제목을 선택하면 해당 항목으로 바로 이동합니다. 최근 7일 이내에 추가된 항목은 아래 카탈로그에서 NEW 배지도 표시됩니다.",
+          recentDate1: "2026년 11월 19일", recentAdd1: "— 9개 추가",
+          recentDate2: "2026년 11월 18일", recentAdd2: "— 11개 추가",
+          searchLabel: "게임, 제작자 또는 원래 시스템으로 검색",
+          searchPlaceholder: "게임 검색…",
+          catGroup: "카테고리로 검색 및 필터",
+          chipAll: "전체", chipDecomp: "디컴파일 & 클래식", chipPc: "PC 소스 포트",
+          chipAndroid: "Android 로더 ’26", chipRecomp: "리컴파일 ’26",
+          chipWip: "개발 중", chipCancelled: "취소됨 / 없음",
+          consoleLabel: "원래 시스템", chipAllConsoles: "모든 콘솔",
+          statusLabel: "상태", chipAllStatuses: "모든 상태",
+          chipReleased: "출시됨", chipWipStatus: "WIP", chipCancelledStatus: "취소됨",
+          expandAll: "모두 펼치기", collapseAll: "모두 접기",
+          showMore: "더 보기", showLess: "접기",
+          noResults: "해당 검색과 일치하는 포트가 없습니다. 더 짧은 이름으로 시도하거나 취소됨 / 없음을 확인하세요.",
+          fabFilters: "필터", fabAria: "검색 및 필터로 돌아가기",
+          countTpl: "카탈로그 {t}개 중 {v}개 표시", countFilter: " (이 필터 기준)",
+          foundTpl: "{n}개 찾음",
+          sec01h: "Rockstar & 오픈 월드 — 출시됨",
+          sec01n: "Rockstar 포트 — GTA III 디컴파일부터 2026년 로더와 리컴파일까지.",
+          callout01: "<strong>출시된 포트를 찾을 수 없음:</strong> GTA IV(WIP — 상반된 보고, 미완성; §07), GTA V(취소됨; §08), Red Dead Redemption(공식만; §08).",
+          sec02h: "디컴파일 & 콘솔 클래식",
+          sec02n: "콘솔 클래식의 완성도 높은 디컴파일 — ROM은 직접 준비하세요.",
+          sec03h: "PC 게임 소스 포트 — 클래식 시대",
+          sec03n: "클래식 PC 소스 포트, 대부분 소수 제작자들의 작품.",
+          sec04h: "2026년의 폭발 — Android 로더 포트",
+          sec04n: "호환성 레이어로 실행되는 Android 게임 — APK 파일을 준비하세요.",
+          sec05h: "2026년의 폭발 — 정적 리컴파일",
+          sec05n: "자신의 디스크나 ISO로 만든 정적 리컴파일 — 별도 표기가 없으면 초기 단계(0.x).",
+          sec06h: "N64 / GameCube / Wii / 휴대용 리컴파일 & 2026년 PC 물결",
+          sec06n: "2026년 물결의 나머지 — Ship 계열 포트는 §02에 있습니다.",
+          sec07h: "개발 중 / 발표됨", sec07n: "아직 플레이 가능한 공개 빌드가 없습니다.",
+          sec08h: "취소됨 / 소문 / 포트 없음",
+          sec08n: "GTA V / GTA5NX는 취소됐습니다 — 2026년 10월 종료, 출시된 적 없음, 모든 다운로드는 가짜입니다.",
+          callout08: "<strong>정식 포트는 모두 무료</strong>이며 게임 파일은 직접 준비합니다 — 유료 “Switch 포트” 묶음은 사기입니다.",
+          sec09h: "조사로 확인하지 못한 것", sec09n: "조사로 확인할 수 없었던 사항.",
+          footer1: "비공식 포트만 — 개조된 Switch(Atmosphère) 필요 · 게임 파일은 직접 준비하고 포트에는 게임이 포함되지 않습니다 · 정식 포트는 모두 무료이며 유료인 것은 사기입니다 · 2026년 빌드 대부분은 초기 단계입니다.",
+          footFrag: { "Sources:": "출처:", "master port list": "포트 마스터 목록", "classic-era ports": "클래식 시대 포트", "curated recomps": "엄선 리컴파일", "scene news": "씬 뉴스", "release log": "출시 기록", "homebrew store": "홈브루 스토어", "threads and repos checked directly": "스레드와 저장소를 직접 확인" },
+          dt: { "Original": "원작", "Author": "제작자", "Authors": "제작자", "Performance": "성능", "Projects": "프로젝트", "Timeline": "연표", "What it was": "개요" },
+          src: { "Source": "출처", "Sources": "출처" },
+          seg: { "Released": "출시됨", "early": "초기", "playable": "플레이 가능", "source-build": "소스 빌드", "source-build only": "소스 빌드만", "early/playable": "초기/플레이 가능", "experimental": "실험적", "updated": "업데이트", "Playable": "플레이 가능", "Early": "초기", "Pre-release": "사전 출시", "Unreleased": "미출시", "WIP / pre-release": "WIP / 사전 출시", "not playable": "플레이 불가", "no public download": "공개 다운로드 없음", "no playable build yet": "플레이 가능한 빌드 아직 없음", "hardware untested": "실기 미검증", "conflicting reports — do not call playable": "상반된 보고 — 플레이 가능하다고 부르지 말 것", "Borderline released / WIP": "출시 임박 / WIP", "Cancelled / none": "취소됨 / 없음", "Cancelled before wider release": "더 넓은 출시 전에 취소됨" }
+        },
+        zh: {
+          skip: "跳到结果",
+          tid: "仅非官方 / 自制移植 · 需要改机 Switch（ATMOSPHÈRE）· 自备游戏文件 · 所有正規移植均免费",
+          title: "所有移植到 <span class=\"nx\">Switch</span> 的游戏",
+          docTitle: "GTA5NX 以来的 Switch 移植 — 所有移植到 Switch 的非官方游戏",
+          statGames: "本目录中的游戏", statMaster: "SwitchPorts 主列表中的条目",
+          statWeek: "一周内的 SwitchPorts 更新", statRecomps: "AllRecomps 精选移植",
+          statErasB: "2 个时代", statEras: "经典期 2018–2025 · 2026 年大爆发",
+          keyHeading: "如何看状态。",
+          keyPlayable: "有公开版本，已有人玩过。",
+          keyEarly: "有公开版本，未完成（v0.1–0.5），可部分游玩，很少能通关。",
+          keyWip: "开发中，尚无可游玩的公开版本。",
+          keyCancelled: "已取消，或不存在移植。",
+          keyNote: "“已发布”指曾有公开版本存在 — 2026 年的大多数版本都处于早期且未评级：只能部分游玩，不能通关。",
+          recentHeading: "最近添加",
+          recentNote: "最近两次每日检查（2026 年 11 月 19 日和 18 日）新增的移植。选择标题可直接跳到对应条目。最近 7 天内添加的条目在下方目录中还带有 NEW 徽章。",
+          recentDate1: "2026 年 11 月 19 日", recentAdd1: "— 新增 9 个",
+          recentDate2: "2026 年 11 月 18 日", recentAdd2: "— 新增 11 个",
+          searchLabel: "按游戏、作者或原始系统搜索",
+          searchPlaceholder: "搜索游戏…",
+          catGroup: "按类别搜索和筛选",
+          chipAll: "全部", chipDecomp: "反编译与经典", chipPc: "PC 源码移植",
+          chipAndroid: "Android 加载器 ’26", chipRecomp: "重编译 ’26",
+          chipWip: "开发中", chipCancelled: "已取消 / 无",
+          consoleLabel: "原始系统", chipAllConsoles: "所有主机",
+          statusLabel: "状态", chipAllStatuses: "所有状态",
+          chipReleased: "已发布", chipWipStatus: "WIP", chipCancelledStatus: "已取消",
+          expandAll: "全部展开", collapseAll: "全部折叠",
+          showMore: "显示更多", showLess: "显示更少",
+          noResults: "没有移植与该搜索匹配。试试更短的名称 — 或查看已取消 / 无。",
+          fabFilters: "筛选", fabAria: "返回搜索和筛选",
+          countTpl: "显示 {t} 条目录中的 {v} 条", countFilter: "（当前筛选）",
+          foundTpl: "找到 {n} 条",
+          sec01h: "Rockstar 与开放世界 — 已发布",
+          sec01n: "Rockstar 移植 — 从 GTA III 反编译到 2026 年的加载器与重编译。",
+          callout01: "<strong>未找到已发布的移植：</strong>GTA IV（WIP — 报告相互矛盾，未完成；§07）、GTA V（已取消；§08）、Red Dead Redemption（仅官方；§08）。",
+          sec02h: "反编译与主机经典",
+          sec02n: "成熟的主机经典反编译 — 请自备 ROM。",
+          sec03h: "PC 游戏源码移植 — 经典时代",
+          sec03n: "经典 PC 源码移植，大多出自一小群作者。",
+          sec04h: "2026 年大爆发 — Android 加载器移植",
+          sec04n: "通过兼容层运行的 Android 游戏 — 请自备 APK 文件。",
+          sec05h: "2026 年大爆发 — 静态重编译",
+          sec05n: "用你自己的光盘或 ISO 构建的静态重编译 — 除非另有说明均为早期（0.x）。",
+          sec06h: "N64 / GameCube / Wii / 掌机重编译与 2026 年 PC 浪潮",
+          sec06n: "2026 年浪潮的其余部分 — Ship 系列移植在 §02。",
+          sec07h: "开发中 / 已公布", sec07n: "尚无可游玩的公开版本。",
+          sec08h: "已取消 / 传闻 / 不存在移植",
+          sec08n: "GTA V / GTA5NX 已取消 — 2026 年 10 月关闭，从未发布，任何下载都是假的。",
+          callout08: "<strong>所有正規移植均免费</strong>，需自备游戏文件 — 付费的“Switch 移植”套装都是骗局。",
+          sec09h: "研究未能核实的内容", sec09n: "研究无法确认的事项。",
+          footer1: "仅非官方移植 — 需要改机 Switch（Atmosphère）· 自备游戏文件，移植不包含游戏 · 所有正規移植均免费，收费的都是骗局 · 2026 年的大多数版本都处于早期。",
+          footFrag: { "Sources:": "来源：", "master port list": "移植主列表", "classic-era ports": "经典时代移植", "curated recomps": "精选重编译", "scene news": "场景新闻", "release log": "发布日志", "homebrew store": "自制软件商店", "threads and repos checked directly": "帖子与仓库均已直接核查" },
+          dt: { "Original": "原作", "Author": "作者", "Authors": "作者", "Performance": "性能", "Projects": "项目", "Timeline": "时间线", "What it was": "简介" },
+          src: { "Source": "来源", "Sources": "来源" },
+          seg: { "Released": "已发布", "early": "早期", "playable": "可玩", "source-build": "源码构建", "source-build only": "仅源码构建", "early/playable": "早期/可玩", "experimental": "实验性", "updated": "已更新", "Playable": "可玩", "Early": "早期", "Pre-release": "预发布", "Unreleased": "未发布", "WIP / pre-release": "WIP / 预发布", "not playable": "不可玩", "no public download": "无公开下载", "no playable build yet": "尚无可玩版本", "hardware untested": "未在实机测试", "conflicting reports — do not call playable": "报告相互矛盾 — 勿称可玩", "Borderline released / WIP": "接近发布 / WIP", "Cancelled / none": "已取消 / 无", "Cancelled before wider release": "在更广泛发布前取消" }
+        },
+        ar: {
+          skip: "تخطَّ إلى النتائج",
+          tid: "منافذ غير رسمية / HOMEBREW فقط · يلزم Switch معدّلة (ATMOSPHÈRE) · أحضر ملفات لعبتك بنفسك · كل منفذ شرعي مجاني",
+          title: "كل الألعاب المنقولة إلى <span class=\"nx\">Switch</span>",
+          docTitle: "منافذ Switch منذ GTA5NX — كل الألعاب غير الرسمية المنقولة إلى Switch",
+          statGames: "لعبة في هذا الكتالوج", statMaster: "إدخالًا في قائمة SwitchPorts الرئيسية",
+          statWeek: "تحديثات SwitchPorts في أسبوع واحد", statRecomps: "منافذ مختارة على AllRecomps",
+          statErasB: "عصران", statEras: "الكلاسيكيات 2018–2025 · طوفان 2026",
+          keyHeading: "كيف تقرأ الحالات.",
+          keyPlayable: "إصدار عام، لعبه الناس.",
+          keyEarly: "إصدار عام، غير مكتمل (v0.1–0.5)، قابل للعب جزئيًا، ونادرًا ما يُنهى.",
+          keyWip: "قيد التطوير، لا يوجد إصدار عام قابل للعب بعد.",
+          keyCancelled: "أُلغي، أو لا يوجد منفذ.",
+          keyNote: "«صدر» تعني أن إصدارًا عامًا كان موجودًا — معظم إصدارات 2026 مبكرة وغير مصنّفة: قابلة للعب جزئيًا، لا للإنهاء.",
+          recentHeading: "أُضيف مؤخرًا",
+          recentNote: "منافذ أُضيفت في آخر فحصين يوميين — 19 و18 نوفمبر 2026. اختر عنوانًا للانتقال مباشرة إلى إدخاله. الإدخالات المضافة في آخر 7 أيام تحمل أيضًا شارة NEW في الكتالوج أدناه.",
+          recentDate1: "19 نوفمبر 2026", recentAdd1: "— 9 إضافات",
+          recentDate2: "18 نوفمبر 2026", recentAdd2: "— 11 إضافة",
+          searchLabel: "ابحث حسب اللعبة أو المؤلف أو النظام الأصلي",
+          searchPlaceholder: "ابحث عن لعبة…",
+          catGroup: "البحث والتصفية حسب الفئة",
+          chipAll: "الكل", chipDecomp: "التفكيك والكلاسيكيات", chipPc: "منافذ مصدر PC",
+          chipAndroid: "محمّلات Android ’26", chipRecomp: "إعادة تجميع ’26",
+          chipWip: "قيد التطوير", chipCancelled: "أُلغي / لا شيء",
+          consoleLabel: "النظام الأصلي", chipAllConsoles: "كل الأجهزة",
+          statusLabel: "الحالة", chipAllStatuses: "كل الحالات",
+          chipReleased: "صدر", chipWipStatus: "WIP", chipCancelledStatus: "أُلغي",
+          expandAll: "توسيع الكل", collapseAll: "طيّ الكل",
+          showMore: "عرض المزيد", showLess: "عرض أقل",
+          noResults: "لا منفذ يطابق هذا البحث. جرّب اسمًا أقصر — أو تحقق من أُلغي / لا شيء.",
+          fabFilters: "عوامل التصفية", fabAria: "العودة إلى البحث وعوامل التصفية",
+          countTpl: "عرض {v} من {t} إدخالًا في الكتالوج", countFilter: " لهذا المرشح",
+          foundTpl: "تم العثور على {n}",
+          sec01h: "Rockstar والعالم المفتوح — صدر",
+          sec01n: "منافذ Rockstar — من تفكيك GTA III إلى محمّلات وإعادة تجميع 2026.",
+          callout01: "<strong>لم يُعثر على منفذ صادر لـ:</strong> GTA IV (WIP — تقارير متضاربة، غير مكتمل؛ §07)، GTA V (أُلغي؛ §08)، Red Dead Redemption (رسمي فقط؛ §08).",
+          sec02h: "التفكيكات وكلاسيكيات الأجهزة",
+          sec02n: "تفكيكات ناضجة لكلاسيكيات الأجهزة — أحضر ROM الخاص بك.",
+          sec03h: "منافذ مصدر ألعاب PC — العصر الكلاسيكي",
+          sec03n: "منافذ مصدر PC كلاسيكية، معظمها من مجموعة صغيرة من المؤلفين.",
+          sec04h: "انفجار 2026 — منافذ محمّل Android",
+          sec04n: "ألعاب Android تعمل عبر طبقة توافق — أحضر ملفات APK.",
+          sec05h: "انفجار 2026 — إعادة تجميع ثابتة",
+          sec05n: "إعادة تجميع ثابتة مبنية من قرصك أو ISO الخاص بك — مبكرة (0.x) ما لم يُذكر خلاف ذلك.",
+          sec06h: "إعادة تجميع N64 / GameCube / Wii / المحمولة وموجة PC لعام 2026",
+          sec06n: "بقية موجة 2026 — منافذ عائلة Ship في §02.",
+          sec07h: "قيد التطوير / مُعلن", sec07n: "لا يوجد إصدار عام قابل للعب بعد.",
+          sec08h: "أُلغي / شائعات / لا يوجد منفذ",
+          sec08n: "GTA V / GTA5NX أُلغي — أُغلق في أكتوبر 2026، ولم يصدر أبدًا، وأي تنزيل مزيف.",
+          callout08: "<strong>كل منفذ شرعي مجاني</strong>، مع ملفات لعبتك بنفسك — حزم «منافذ Switch» المدفوعة عمليات احتيال.",
+          sec09h: "ما لم يستطع البحث التحقق منه", sec09n: "أشياء لم يستطع البحث تأكيدها.",
+          footer1: "منافذ غير رسمية فقط — يلزم Switch معدّلة (Atmosphère) · أحضر ملفات لعبتك بنفسك، فلا منفذ يتضمن اللعبة · كل منفذ شرعي مجاني، والمدفوع احتيال · معظم إصدارات 2026 مبكرة.",
+          footFrag: { "Sources:": "المصادر:", "master port list": "قائمة المنافذ الرئيسية", "classic-era ports": "منافذ العصر الكلاسيكي", "curated recomps": "إعادة تجميع مختارة", "scene news": "أخبار المشهد", "release log": "سجل الإصدارات", "homebrew store": "متجر homebrew", "threads and repos checked directly": "تم التحقق من المواضيع والمستودعات مباشرة" },
+          dt: { "Original": "الأصلي", "Author": "المؤلف", "Authors": "المؤلفون", "Performance": "الأداء", "Projects": "المشاريع", "Timeline": "الخط الزمني", "What it was": "ما كان عليه" },
+          src: { "Source": "المصدر", "Sources": "المصادر" },
+          seg: { "Released": "صدر", "early": "مبكر", "playable": "قابل للعب", "source-build": "بناء من المصدر", "source-build only": "بناء من المصدر فقط", "early/playable": "مبكر/قابل للعب", "experimental": "تجريبي", "updated": "حُدّث", "Playable": "قابل للعب", "Early": "مبكر", "Pre-release": "إصدار مسبق", "Unreleased": "لم يصدر", "WIP / pre-release": "WIP / إصدار مسبق", "not playable": "غير قابل للعب", "no public download": "لا تنزيل عام", "no playable build yet": "لا إصدار قابل للعب بعد", "hardware untested": "غير مختبر على الجهاز", "conflicting reports — do not call playable": "تقارير متضاربة — لا تسمّه قابلًا للعب", "Borderline released / WIP": "على وشك الصدور / WIP", "Cancelled / none": "أُلغي / لا شيء", "Cancelled before wider release": "أُلغي قبل إصدار أوسع" }
+        }
+      };
+      window.__lang = "en";
+      window.__tr = function (k) {
+        var d = window.I18N[window.__lang] || window.I18N.en;
+        return (d && d[k] != null) ? d[k] : (window.I18N.en[k] != null ? window.I18N.en[k] : k);
+      };
+      window.__countText = function (v, t, filtered) {
+        var s = window.__tr("countTpl").replace("{v}", "<b>" + v + "</b>").replace("{t}", t);
+        if (filtered) s += window.__tr("countFilter");
+        return s;
+      };
+      window.__foundText = function (n) { return window.__tr("foundTpl").replace("{n}", n); };
+    </script>
 
     <script>
       (function () {
@@ -1646,9 +2549,7 @@
             }
             s.classList.toggle('all-hidden', !any);
           });
-          countEl.innerHTML = 'Showing <b>' + visible + '</b> of ' + items.length + ' catalogue entries' +
-            (activeFilter !== 'all' || activeConsole !== 'all' || activeStatus !== 'all' || term ? ' for this filter' : '') +
-            '';
+          countEl.innerHTML = window.__countText ? window.__countText(visible, items.length, (activeFilter !== 'all' || activeConsole !== 'all' || activeStatus !== 'all' || !!term)) : ('Showing <b>' + visible + '</b> of ' + items.length + ' catalogue entries' + (activeFilter !== 'all' || activeConsole !== 'all' || activeStatus !== 'all' || term ? ' for this filter' : ''));
           noResults.classList.toggle('show', visible === 0);
           if (fabBadge) {
             var activeChip = null;
@@ -1665,7 +2566,7 @@
               fabBadge.textContent = badgeParts.join(' · ');
               fabBadge.hidden = false;
             } else if (term) {
-              fabBadge.textContent = visible + ' found';
+              fabBadge.textContent = window.__foundText ? window.__foundText(visible) : visible + ' found';
               fabBadge.hidden = false;
             } else {
               fabBadge.textContent = '';
@@ -1797,12 +2698,12 @@
         function setCardOpen(entry, open) {
           entry.region.hidden = !open;
           entry.btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-          entry.btn.textContent = open ? 'Show less' : 'Show more';
+          entry.btn.textContent = open ? (window.__tr ? window.__tr('showLess') : 'Show less') : (window.__tr ? window.__tr('showMore') : 'Show more');
         }
         function syncExpandAll() {
           if (!expandAllBtn || !collapsible.length) return;
           var allOpen = collapsible.every(function (e) { return !e.region.hidden; });
-          expandAllBtn.textContent = allOpen ? 'Collapse all' : 'Expand all';
+          expandAllBtn.textContent = allOpen ? (window.__tr ? window.__tr('collapseAll') : 'Collapse all') : (window.__tr ? window.__tr('expandAll') : 'Expand all');
           expandAllBtn.setAttribute('aria-expanded', allOpen ? 'true' : 'false');
         }
         function expandCard(card) {
@@ -1834,7 +2735,7 @@
           btn.className = 'show-more';
           btn.setAttribute('aria-expanded', 'false');
           btn.setAttribute('aria-controls', region.id);
-          btn.textContent = 'Show more';
+          btn.textContent = window.__tr ? window.__tr('showMore') : 'Show more';
           card.appendChild(btn);
           var entry = { card: card, region: region, btn: btn };
           collapsible.push(entry);
@@ -1855,5 +2756,145 @@
         apply();
       })();
     </script>
+    <script>
+      /* Language switcher: pills under the title. Instant, no reload.
+         Choice is remembered in localStorage where available; English is
+         the default and the fallback. Layout stays left-to-right in every
+         language, including Arabic. */
+      (function () {
+        var HTML_LANG = { en: "en", fr: "fr", es: "es", de: "de", it: "it", pt: "pt", ja: "ja", ru: "ru", uk: "uk", pl: "pl", nl: "nl", tr: "tr", ko: "ko", zh: "zh-CN", ar: "ar" };
+        var pills = Array.prototype.slice.call(document.querySelectorAll(".lang-pill"));
+        var q = document.getElementById("q");
+        var q2 = document.getElementById("q2");
+
+        function setOwnText(el, text) {
+          var done = false;
+          Array.prototype.forEach.call(el.childNodes, function (n) {
+            if (n.nodeType === 3) {
+              if (!done && n.nodeValue.trim()) { n.nodeValue = text; done = true; }
+              else if (done) { n.nodeValue = ""; }
+            }
+          });
+          if (!done) el.textContent = text;
+        }
+
+        function translateBadge(orig, seg) {
+          if (!orig) return orig;
+          if (seg[orig]) return seg[orig];
+          return orig.split(" · ").map(function (part) {
+            if (seg[part]) return seg[part];
+            var m = /^updated (\d{4})$/.exec(part);
+            if (m && seg["updated"]) return seg["updated"] + " " + m[1];
+            return part;
+          }).join(" · ");
+        }
+
+        /* Footer sources line: translate only the descriptive fragments in
+           its text nodes; the links themselves stay untouched. */
+        var footerFragNodes = [];
+        var footerP = document.querySelector("footer p[data-i18n-frag]");
+        if (footerP) {
+          var walker = document.createTreeWalker(footerP, NodeFilter.SHOW_TEXT, null);
+          var node;
+          while ((node = walker.nextNode())) footerFragNodes.push({ node: node, orig: node.nodeValue });
+        }
+
+        var CHIP_KEYS = {
+          cat: { all: "chipAll", decomp: "chipDecomp", pc: "chipPc", android: "chipAndroid", recomp: "chipRecomp", wip: "chipWip", cancelled: "chipCancelled" },
+          status: { all: "chipAllStatuses", released: "chipReleased", wip: "chipWipStatus", cancelled: "chipCancelledStatus" }
+        };
+
+        function applyLanguage(lang) {
+          if (!window.I18N[lang]) lang = "en";
+          window.__lang = lang;
+          var dict = window.I18N[lang];
+          document.documentElement.lang = HTML_LANG[lang] || "en";
+          document.title = window.__tr("docTitle");
+
+          pills.forEach(function (p) {
+            p.setAttribute("aria-pressed", p.getAttribute("data-lang") === lang ? "true" : "false");
+          });
+
+          document.querySelectorAll("[data-i18n]").forEach(function (el) {
+            setOwnText(el, window.__tr(el.getAttribute("data-i18n")));
+          });
+          document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+            el.innerHTML = window.__tr(el.getAttribute("data-i18n-html"));
+          });
+
+          document.querySelectorAll(".chip[data-filter]").forEach(function (c) {
+            if (!c.dataset.enText) c.dataset.enText = c.textContent;
+            var k = CHIP_KEYS.cat[c.getAttribute("data-filter")];
+            c.textContent = k ? window.__tr(k) : c.dataset.enText;
+          });
+          document.querySelectorAll(".chip[data-console-filter]").forEach(function (c) {
+            if (!c.dataset.enText) c.dataset.enText = c.textContent;
+            c.textContent = c.getAttribute("data-console-filter") === "all" ? window.__tr("chipAllConsoles") : c.dataset.enText;
+          });
+          document.querySelectorAll(".chip[data-status-filter]").forEach(function (c) {
+            if (!c.dataset.enText) c.dataset.enText = c.textContent;
+            var k = CHIP_KEYS.status[c.getAttribute("data-status-filter")];
+            c.textContent = k ? window.__tr(k) : c.dataset.enText;
+          });
+
+          [q, q2].forEach(function (input) {
+            if (!input) return;
+            input.placeholder = window.__tr("searchPlaceholder");
+            input.setAttribute("aria-label", window.__tr("searchLabel"));
+          });
+          var catRow = document.querySelector(".filter-row");
+          if (catRow) catRow.setAttribute("aria-label", window.__tr("catGroup"));
+          var fab = document.getElementById("filtersFab");
+          if (fab) fab.setAttribute("aria-label", window.__tr("fabAria"));
+
+          document.querySelectorAll(".badge").forEach(function (b) {
+            if (!/(^|\s)status-/.test(b.className)) return;
+            if (!b.dataset.enText) b.dataset.enText = b.textContent;
+            b.textContent = translateBadge(b.dataset.enText, dict.seg || {});
+          });
+          document.querySelectorAll(".facts dt").forEach(function (dt) {
+            if (!dt.dataset.enText) dt.dataset.enText = dt.textContent.trim();
+            if (dict.dt && dict.dt[dt.dataset.enText]) dt.textContent = dict.dt[dt.dataset.enText];
+          });
+          document.querySelectorAll(".src span").forEach(function (s) {
+            if (!s.dataset.enText) s.dataset.enText = s.textContent.trim();
+            if (dict.src && dict.src[s.dataset.enText]) s.textContent = dict.src[s.dataset.enText];
+          });
+
+          footerFragNodes.forEach(function (rec) {
+            var v = rec.orig;
+            if (dict.footFrag) {
+              Object.keys(dict.footFrag).forEach(function (k) {
+                v = v.split(k).join(dict.footFrag[k]);
+              });
+            }
+            rec.node.nodeValue = v;
+          });
+
+          document.querySelectorAll(".show-more").forEach(function (btn) {
+            btn.textContent = btn.getAttribute("aria-expanded") === "true" ? window.__tr("showLess") : window.__tr("showMore");
+          });
+          var expandAllBtn = document.getElementById("expandAll");
+          if (expandAllBtn) {
+            expandAllBtn.textContent = expandAllBtn.getAttribute("aria-expanded") === "true" ? window.__tr("collapseAll") : window.__tr("expandAll");
+          }
+
+          /* Re-run the catalogue's own filter pass so the results count and
+             the floating Filters badge re-render in the new language. */
+          if (q) q.dispatchEvent(new Event("input", { bubbles: true }));
+
+          try { localStorage.setItem("sp-lang", lang); } catch (e) { /* storage unavailable — English next visit */ }
+        }
+
+        pills.forEach(function (p) {
+          p.addEventListener("click", function () { applyLanguage(p.getAttribute("data-lang")); });
+        });
+
+        var saved = null;
+        try { saved = localStorage.getItem("sp-lang"); } catch (e) { saved = null; }
+        applyLanguage(saved && window.I18N[saved] ? saved : "en");
+      })();
+    </script>
+
   </body>
 </html>
