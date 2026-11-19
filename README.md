@@ -1,8 +1,8 @@
 # Switch ports — every unofficial game port for Nintendo Switch
 
-Fan-made, homebrew ports of games to a modded Nintendo Switch. Not official eShop releases.
+Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
-**Start here: [CATALOGUE.md](CATALOGUE.md)** — the full list, in one file. The same catalogue as a rendered web page: **[starkillervv.github.io/switch-ports-daily/catalogue.html](https://starkillervv.github.io/switch-ports-daily/catalogue.html)**.
+**Browse the catalogue:** [CATALOGUE.md](CATALOGUE.md) · **Web page:** [starkillervv.github.io/switch-ports-daily/catalogue.html](https://starkillervv.github.io/switch-ports-daily/catalogue.html)
 
 ## What's new
 
@@ -60,38 +60,35 @@ Fan-made, homebrew ports of games to a modded Nintendo Switch. Not official eSho
 - [2026-11-14](findings/2026-11-14.md) — 1 new port; catalogue 115 games
 - [2026-11-13](findings/2026-11-13.md) — baseline catalogue; 114 games
 
-The daily log is just the changelog. The catalogue is the thing to browse.
-
 ## Before you install anything
 
-- **You need a modded Switch** (Atmosphère / custom firmware). These are homebrew, not eShop games.
-- **You need your own game files.** No port here includes the game itself — you supply the original game / ROM / APK, and follow that port's own instructions.
-- **Every legitimate port here is free.** If someone charges you for one, it is a scam.
-- **Most 2026 builds are early** (v0.1–0.5). They boot and partly play; few are proven completable. Older ports are usually finished.
+- **Modded Switch required** (Atmosphère). These are homebrew, not eShop games.
+- **Bring your own game files.** No port includes the game — you supply the original game / ROM / APK and follow the port's own instructions.
+- **Every legitimate port is free.** If someone charges you, it's a scam.
+- **Most 2026 builds are early** (v0.1–0.5): they boot and partly play, few are proven completable. Older ports are usually finished.
 
 ## Status, in plain words
 
-- **Playable** — a public build exists and people have played it.
-- **Early** — public build, but unfinished (v0.1–0.5).
-- **WIP** — in development, no playable public release yet.
-- **Cancelled / none** — cancelled, or no port exists. Do not trust download links for these.
+- **Playable** — public build, played by people.
+- **Early** — public build, unfinished (v0.1–0.5): playable in part, rarely completable.
+- **WIP** — in development, no playable public build yet.
+- **Cancelled / none** — cancelled, or no port exists. Never trust download links for these.
 
-Two to know right away: **GTA IV is WIP** (conflicting reports, 0.4 FPS in one build, 14–17 FPS in another — not finished), and **GTA V (GTA5NX) is cancelled** (Take-Two shut it down in Oct 2026, nothing was ever released — any "GTA5NX download" is fake).
+Two to know: **GTA IV is WIP** (conflicting reports — not finished), and **GTA V (GTA5NX) is cancelled** (shut down Oct 2026, never released — any "GTA5NX download" is fake).
 
 ## Requests
 
-Missing a port, or an entry is wrong? [Open an issue](https://github.com/StarkillerVv/switch-ports-daily/issues/new/choose) — there is one form to **add a port to the list** and one for a **modification / correction**. Please include a link to the port itself (repo or release page) so it can be verified.
+Missing a port, or an entry is wrong? [Open an issue](https://github.com/StarkillerVv/switch-ports-daily/issues/new/choose) — one form to **add a port**, one for a **modification / correction**. Include a link to the port itself so it can be verified.
 
 ## Sources checked twice a day (5am & 5pm ET)
 
-- SwitchPorts — https://github.com/robzilla10001/switchports (453 entries, 2026-11-13)
+- [SwitchPorts](https://github.com/robzilla10001/switchports)
 - GameBrew — List of Switch homebrew games
-- AllRecomps — https://allrecomps.com/switch-ports/ (66 curated projects, 2026-11-15)
-- GBAtemp / GitHub for major new ports
-- Wololo.net — homebrew news, new Switch ports covered as they appear
+- [AllRecomps](https://allrecomps.com/switch-ports/)
+- Wololo.net — homebrew news
 - SwitchBrew wiki — homebrew release log
-- HB App Store (SwitchBru) — ports published straight to the store
-- GitHub scrub — a direct search of GitHub for Switch game ports not in SwitchPorts, GameBrew or AllRecomps (first run 2026-11-15: 17 ports found, each verified against its own repo)
+- HB App Store (SwitchBru)
+- GBAtemp / GitHub — plus a direct GitHub scrub for ports listed in none of the above, each verified against its own repo
 
 ## Stats
 
@@ -102,4 +99,3 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Catalogue size](https://img.shields.io/badge/games-197-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
-
