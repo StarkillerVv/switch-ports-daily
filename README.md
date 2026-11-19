@@ -6,8 +6,6 @@ Fan-made, homebrew ports of games to a modded Nintendo Switch. Not official eSho
 
 ## What's new
 
-The essentials only — one line per game: name, original console, version. Full detail for each day is in [`findings/`](findings/); the full list is [CATALOGUE.md](CATALOGUE.md).
-
 **2026-11-19** — 9 new ports, catalogue now 197 games ([full day](findings/2026-11-19.md))
 
 - **Deadpool** (Xbox 360) — v1.0.0
