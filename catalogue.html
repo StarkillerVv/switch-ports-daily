@@ -86,15 +86,41 @@
         letter-spacing: .04em;
         color: var(--ink-3);
       }
-      .lang-switch { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 16px; }
-      .lang-pill {
-        font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-weight: 600;
-        letter-spacing: .05em; line-height: 1;
-        background: var(--chip-bg); color: var(--ink-2);
+      .lang-menu-wrap { position: relative; display: inline-block; margin: 4px 0 16px; max-width: 100%; }
+      .lang-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        font: inherit; font-size: 15px; font-weight: 600; line-height: 1;
+        background: var(--bg-raised); color: var(--ink);
         border: 1px solid var(--line); border-radius: 999px;
-        padding: 8px 13px; min-height: 2.25rem; min-width: 44px; cursor: pointer;
+        padding: 10px 16px; min-height: 2.75rem; cursor: pointer;
+        box-shadow: var(--shadow); max-width: 100%;
       }
-      .lang-pill[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+      .lang-btn .lang-globe { font-size: 17px; line-height: 1; }
+      .lang-btn .lang-current { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .lang-btn .lang-chevron { font-size: 12px; color: var(--ink-3); transition: transform .15s ease; }
+      .lang-btn[aria-expanded="true"] .lang-chevron { transform: rotate(180deg); }
+      .lang-btn:focus-visible, .lang-item:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+      .lang-menu {
+        position: absolute; top: calc(100% + 6px); left: 0; z-index: 60;
+        min-width: 230px; max-width: calc(100vw - 36px);
+        max-height: min(60vh, 480px); overflow-y: auto;
+        background: var(--bg-raised); border: 1px solid var(--line); border-radius: 10px;
+        box-shadow: 0 10px 32px rgba(0,0,0,.22), 0 2px 8px rgba(0,0,0,.14);
+        padding: 6px; margin: 0;
+      }
+      .lang-menu[hidden] { display: none; }
+      .lang-item {
+        display: flex; align-items: center; gap: 10px; width: 100%;
+        font: inherit; font-size: 15px; line-height: 1.25; text-align: left;
+        background: transparent; color: var(--ink);
+        border: 0; border-radius: 6px;
+        padding: 10px 12px; min-height: 2.75rem; cursor: pointer;
+      }
+      .lang-item:hover, .lang-item:focus-visible { background: var(--bg-sunken); }
+      .lang-item[aria-checked="true"] { font-weight: 700; }
+      .lang-item .lang-check { flex: none; width: 1em; color: var(--accent-ink); font-weight: 700; visibility: hidden; }
+      .lang-item[aria-checked="true"] .lang-check { visibility: visible; }
+      @media (prefers-reduced-motion: reduce) { .lang-btn .lang-chevron { transition: none; } }
       h1 {
         font-family: "Barlow Condensed", sans-serif;
         font-weight: 700;
@@ -532,22 +558,29 @@
       <header class="top">
         <div class="tid" data-i18n="tid">UNOFFICIAL / HOMEBREW PORTS ONLY · MODDED SWITCH (ATMOSPHÈRE) REQUIRED · BRING YOUR OWN GAME FILES · EVERY LEGITIMATE PORT IS FREE</div>
         <h1 data-i18n-html="title">All games ported to <span class="nx">Switch</span></h1>
-        <div class="lang-switch" role="group" aria-label="Language">
-          <button type="button" class="lang-pill" data-lang="en" aria-pressed="true">ENG</button>
-          <button type="button" class="lang-pill" data-lang="fr" aria-pressed="false">FRA</button>
-          <button type="button" class="lang-pill" data-lang="es" aria-pressed="false">ESP</button>
-          <button type="button" class="lang-pill" data-lang="de" aria-pressed="false">DEU</button>
-          <button type="button" class="lang-pill" data-lang="it" aria-pressed="false">ITA</button>
-          <button type="button" class="lang-pill" data-lang="pt" aria-pressed="false">POR</button>
-          <button type="button" class="lang-pill" data-lang="ja" aria-pressed="false">JPN</button>
-          <button type="button" class="lang-pill" data-lang="ru" aria-pressed="false">RUS</button>
-          <button type="button" class="lang-pill" data-lang="uk" aria-pressed="false">UKR</button>
-          <button type="button" class="lang-pill" data-lang="pl" aria-pressed="false">POL</button>
-          <button type="button" class="lang-pill" data-lang="nl" aria-pressed="false">NED</button>
-          <button type="button" class="lang-pill" data-lang="tr" aria-pressed="false">TUR</button>
-          <button type="button" class="lang-pill" data-lang="ko" aria-pressed="false">KOR</button>
-          <button type="button" class="lang-pill" data-lang="zh" aria-pressed="false">CHS</button>
-          <button type="button" class="lang-pill" data-lang="ar" aria-pressed="false">ARA</button>
+        <div class="lang-menu-wrap">
+          <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu">
+            <span class="lang-globe" aria-hidden="true">🌐</span>
+            <span class="lang-current" id="langCurrent">English</span>
+            <span class="lang-chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu" aria-label="Language" hidden>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="true" data-lang="en" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>English</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="fr" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Français</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="es" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Español</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="de" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Deutsch</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="it" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Italiano</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="pt" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Português</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="ja" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>日本語</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="ru" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Русский</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="uk" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Українська</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="pl" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Polski</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="nl" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Nederlands</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="tr" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>Türkçe</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="ko" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>한국어</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="zh" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>中文（简体）</button>
+            <button type="button" class="lang-item" role="menuitemradio" aria-checked="false" data-lang="ar" tabindex="-1"><span class="lang-check" aria-hidden="true">✓</span>العربية</button>
+          </div>
         </div>
         <div class="stats">
           <div class="stat"><b>197</b><span data-i18n="statGames">games in this catalogue</span></div>
@@ -1565,7 +1598,7 @@
     <script>
       /* Language dictionaries — interface strings only. Catalogue entry data
          (game titles, authors, versions, notes) is never translated. Add a
-         language by adding one entry here plus one pill button. */
+         language by adding one entry here plus one menu item. */
       window.I18N = {
         en: {
           skip: "Skip to results",
@@ -2813,13 +2846,20 @@
       })();
     </script>
     <script>
-      /* Language switcher: pills under the title. Instant, no reload.
-         Choice is remembered in localStorage where available; English is
-         the default and the fallback. Layout stays left-to-right in every
-         language, including Arabic. */
+      /* Language switcher: one button under the title showing the current
+         language's full name, opening a menu of all languages by their
+         native names. Instant, no reload. Choice is remembered in
+         localStorage where available; English is the default and the
+         fallback. Layout stays left-to-right in every language, including
+         Arabic. */
       (function () {
         var HTML_LANG = { en: "en", fr: "fr", es: "es", de: "de", it: "it", pt: "pt", ja: "ja", ru: "ru", uk: "uk", pl: "pl", nl: "nl", tr: "tr", ko: "ko", zh: "zh-CN", ar: "ar" };
-        var pills = Array.prototype.slice.call(document.querySelectorAll(".lang-pill"));
+        var LANG_NAMES = { en: "English", fr: "Français", es: "Español", de: "Deutsch", it: "Italiano", pt: "Português", ja: "日本語", ru: "Русский", uk: "Українська", pl: "Polski", nl: "Nederlands", tr: "Türkçe", ko: "한국어", zh: "中文（简体）", ar: "العربية" };
+        var langBtn = document.getElementById("langBtn");
+        var langMenu = document.getElementById("langMenu");
+        var langCurrent = document.getElementById("langCurrent");
+        var langWrap = langBtn ? langBtn.parentNode : null;
+        var items = Array.prototype.slice.call(document.querySelectorAll(".lang-item"));
         var q = document.getElementById("q");
         var q2 = document.getElementById("q2");
 
@@ -2867,9 +2907,10 @@
           document.documentElement.lang = HTML_LANG[lang] || "en";
           document.title = window.__tr("docTitle");
 
-          pills.forEach(function (p) {
-            p.setAttribute("aria-pressed", p.getAttribute("data-lang") === lang ? "true" : "false");
+          items.forEach(function (it) {
+            it.setAttribute("aria-checked", it.getAttribute("data-lang") === lang ? "true" : "false");
           });
+          if (langCurrent) langCurrent.textContent = LANG_NAMES[lang] || LANG_NAMES.en;
 
           document.querySelectorAll("[data-i18n]").forEach(function (el) {
             setOwnText(el, window.__tr(el.getAttribute("data-i18n")));
@@ -2942,8 +2983,54 @@
           try { localStorage.setItem("sp-lang", lang); } catch (e) { /* storage unavailable — English next visit */ }
         }
 
-        pills.forEach(function (p) {
-          p.addEventListener("click", function () { applyLanguage(p.getAttribute("data-lang")); });
+        /* Menu behaviour: toggle on the button, close on selection, on an
+           outside tap, on Escape or on Tab away. Arrow keys move through
+           the items; the current language is focused when the menu opens. */
+        function menuOpen() { return langMenu && !langMenu.hidden; }
+        function focusItem(it) {
+          items.forEach(function (x) { x.tabIndex = x === it ? 0 : -1; });
+          it.focus();
+        }
+        function openMenu() {
+          if (!langMenu || menuOpen()) return;
+          langMenu.hidden = false;
+          langBtn.setAttribute("aria-expanded", "true");
+          var cur = items.filter(function (x) { return x.getAttribute("aria-checked") === "true"; })[0] || items[0];
+          if (cur) focusItem(cur);
+        }
+        function closeMenu(refocus) {
+          if (!langMenu || !menuOpen()) return;
+          langMenu.hidden = true;
+          langBtn.setAttribute("aria-expanded", "false");
+          if (refocus) langBtn.focus();
+        }
+        if (langBtn && langMenu) {
+          langBtn.addEventListener("click", function () {
+            if (menuOpen()) closeMenu(false); else openMenu();
+          });
+          langBtn.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); openMenu(); }
+          });
+          document.addEventListener("click", function (e) {
+            if (menuOpen() && langWrap && !langWrap.contains(e.target)) closeMenu(false);
+          });
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && menuOpen()) { e.preventDefault(); closeMenu(true); }
+          });
+          langMenu.addEventListener("keydown", function (e) {
+            var idx = items.indexOf(document.activeElement);
+            if (e.key === "ArrowDown") { e.preventDefault(); focusItem(items[(idx + 1) % items.length]); }
+            else if (e.key === "ArrowUp") { e.preventDefault(); focusItem(items[(idx - 1 + items.length) % items.length]); }
+            else if (e.key === "Home") { e.preventDefault(); focusItem(items[0]); }
+            else if (e.key === "End") { e.preventDefault(); focusItem(items[items.length - 1]); }
+            else if (e.key === "Tab") { closeMenu(false); }
+          });
+        }
+        items.forEach(function (it) {
+          it.addEventListener("click", function () {
+            applyLanguage(it.getAttribute("data-lang"));
+            closeMenu(true);
+          });
         });
 
         var saved = null;
