@@ -21,8 +21,42 @@ The essentials only — one line per game: name, original console, version. Full
 - **Manhunt** (Xbox) — v0.2.0, early
 - Updates: Plants vs. Zombies: DLC Edition → Beta 2.5 · Mega Man X → v1.3.0 · Torchlight → v1.0.6 · Minecraft: Horizon NX — new fork build v1.0.0 · Dragon Ball Z: Budokai 3 HD — second port added
 
-- [2026-11-18](findings/2026-11-18.md) — 11 new ports; catalogue 188 games
-- [2026-11-17](findings/2026-11-17.md) — 15 new ports; catalogue 177 games
+**2026-11-18** — 11 new ports, catalogue now 188 games ([full day](findings/2026-11-18.md))
+
+- **Crash Tag Team Racing** (PS2) — source-build, early
+- **Tiny Toon Adventures: Buster's Hidden Treasure** (Genesis) — v1.0
+- **Dragon Ball Z: Budokai 3 HD** (Xbox 360) — v0.1.40, early
+- **Blur** (Xbox 360) — v1.0.0
+- **Need for Speed: Hot Pursuit 2** (PS2) — v1.0
+- **Asphalt 6: Adrenaline** (Android) — v0.8.0
+- **LEGO Batman: The Videogame** (Xbox 360) — v0.1.2, early
+- **Amateur Surgeon 4** (Android) — source-build
+- **Plants vs. Zombies: DLC Edition** (PC) — Beta 2.4
+- **Heroes of Might and Magic IV** (PC) — v0.1
+- **Beat Saber** (Meta Quest) — v0.2.0, WIP
+- Updates: The Witcher 2 → v0.1.4 · Metroid: Samus Returns → v0.6.1 · God of War Collection → v1.3
+
+**2026-11-17** — 17 new ports, catalogue now 177 games ([full day](findings/2026-11-17.md))
+
+- **Minecraft: Java Edition 26.3 — Horizon NX** (PC) — v0.1.0
+- **Final Fantasy XIII** (Xbox 360) — v1.0.0
+- **Final Fantasy XIII-2** (Xbox 360) — v1.1, source-build
+- **Crazy Taxi 3: High Roller** (Xbox) — v0.5.0
+- **Sonic Heroes** (Xbox) — v0.5.0, early
+- **Sonic the Hedgehog 4: Episode I** (Xbox 360) — v0.5.0
+- **Operation Darkness** (Xbox 360) — v1.0.0
+- **Ice Age 2: The Meltdown** (Xbox) — v0.3.2
+- **Your Turn to Die** (PC) — v1.0.5
+- **SegaSonic the Hedgehog** (Arcade) — v1.0.0
+- **Granny: Chapter Two** (Android) — v1.0.0
+- **Granny 3** (Android) — v1.0
+- **Mickey & Donald Collection** (Genesis / Mega Drive) — v1.1.2
+- **Magical Quest Trilogy** (SNES) — beta-v1
+- **Road Rash** (PC) — web builder
+- **Dark Riddle** (Android) — source-build
+- **Ristar** (Genesis / Mega Drive) — beta-v1
+- Updates: Death Rally → v1.2.0 · Dishonored → v0.50 · Super Mario All-Stars → v1.0.1 · New Super Mario Bros. Wii — second port added
+
 - [2026-11-16](findings/2026-11-16.md) — 15 new ports; catalogue 162 games
 - [2026-11-15](findings/2026-11-15.md) — 32 new ports; catalogue 147 games
 - [2026-11-14](findings/2026-11-14.md) — 1 new port; catalogue 115 games
