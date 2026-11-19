@@ -6,15 +6,29 @@ Fan-made, homebrew ports of games to a modded Nintendo Switch. Not official eSho
 
 ## What's new
 
-New ports are added to the catalogue as soon as they are verified, and also logged by day in [`findings/`](findings/) — one file per day, newest first:
+The essentials only — one line per game: name, original console, version. Full detail for each day is in [`findings/`](findings/); the full list is [CATALOGUE.md](CATALOGUE.md).
 
-- [2026-11-19](findings/2026-11-19.md) — Morning run: 5 new verified ports via the GitHub scrub — Deadpool (BanhMi93P, v1.0.0), Titan Souls (siiiimooooon, v1.0.0), SSX (maafeu, source-build), Medabots: Rokusho / Metabee Version (Niecks90, v0.2.0), Sonic Advance (Niecks90, v0.1.0); Plants vs. Zombies: DLC Edition Beta 2.5, Mega Man X v1.3.0; catalogue now 193 games — Second run: 4 new verified ports — PewDiePie: Legend of Brofist (xflipperkast, v1.0.2), Spider-Man 2 (SantiBros, v0.4.1), Mario Party 4 (Yirr777, v0.2.0-preview), Manhunt (baezahuertaelias, v0.2.0); Minecraft: Java Edition 26.3 — Horizon NX KoHaku743 fork v1.0.0, Dragon Ball Z: Budokai 3 HD second port, Torchlight v1.0.6; catalogue now 197 games
-- [2026-11-18](findings/2026-11-18.md) — Morning run: 3 new verified ports via the GitHub scrub / GBAtemp — Crash Tag Team Racing (Eladerino, source-build), Tiny Toon Adventures: Buster's Hidden Treasure (simplePsyduck, v1.0), Dragon Ball Z: Budokai 3 HD (ramonDias07, v0.1.40, source-build); The Witcher 2 v0.1.4, Metroid: Samus Returns v0.6.1; catalogue now 180 games
-- [2026-11-17](findings/2026-11-17.md) — Morning run: Minecraft: Java Edition 26.3 — Horizon NX v0.1.0 added (GitHub scrub); New Super Mario Bros. Wii v0.1.0 (first tagged release, still source-only); the two Switch 2 entries were removed the same day (this catalogue is Switch 1 only) — Second run: SwitchPorts 468 → 492 entries; 15 new verified ports (Final Fantasy XIII v1.0.0, Final Fantasy XIII-2 v1.1, Crazy Taxi 3 v0.5.0, Sonic Heroes v0.5.0, Sonic the Hedgehog 4: Episode I v0.5.0, Operation Darkness v1.0.0, Ice Age 2 v0.3.2, Your Turn to Die v1.0.5, SegaSonic the Hedgehog v1.0.0, Granny: Chapter Two v1.0.0, Granny 3 v1.0, Mickey & Donald Collection v1.1.2; GitHub scrub: Magical Quest Trilogy beta-v1, Road Rash, Dark Riddle); Death Rally v1.2.0, Dishonored v0.50, Super Mario All-Stars v1.0.1; catalogue now 176 games — Evening run: Ristar (simplePsyduck, beta-v1) added via GitHub scrub; catalogue now 177 games — Evening run (2): no new ports; Dark Riddle repo renamed to neighbors-dark-riddle (link updated), New Super Mario Bros. Wii gained a verified second port (leleletus, source-build); catalogue stays 177 games
-- [2026-11-16](findings/2026-11-16.md) — GitHub scrub: Super Paper Mario (spm-nx v0.5.0) added; JSRF Unleashed v0.5.5 — second run: SwitchPorts merged 5 rows (Mario Kart: Super Circuit, Death Rally, Quake 4, Ultimate Spider-Man added; KOF 2002 UM v0.1.2, NFS Carbon v0.7.0), Soulcalibur II second build, HB App Store finds: FNF: V-Slice, IWBTGR Tribute Edition — evening run: SwitchPorts added Far Cry 4, Midnight Club: Los Angeles, TimeShift, The Witcher 2; GitHub scrub: Angry Birds Trilogy first release (promoted from unverified), LEGO Star Wars: The Complete Saga new native port, The Sims 3 v0.1.1 — late evening run: Arcus Odyssey (AODX Recompiled v1.0.0, via SwitchPorts), God of War Collection v1.0 (GitHub scrub), Call of Duty: Black Ops v1.0.0 (campaign completable)
-- [2026-11-15](findings/2026-11-15.md) — F.E.A.R., New Super Mario Bros. Wii, The Simpsons (arcade), Madagascar, Woody Woodpecker — plus a GitHub scrub: 17 more ports found outside all three master lists (Soulcalibur II, StarCraft: Ghost, Jet Set Radio Future ×2, Guitar Hero III, Modern Warfare 2, Silent Hill: Downpour, Buffy, GTA: Vice City Stories, Scooby-Doo, Stupid Zombies, Yume Nikki, Amsterdoom, Biko 3, Warthog, Transformers ×2) — evening second run: The Sims 3, Resident Evil Code: Veronica X, Crash Twinsanity, Smash Remix, and JSRF Unleashed v0.5.4
-- [2026-11-14](findings/2026-11-14.md) — Call of Duty: Black Ops (OpenBLOPS-NX)
-- [2026-11-13](findings/2026-11-13.md) — baseline catalogue: 453 SwitchPorts entries
+**2026-11-19** — 9 new ports, catalogue now 197 games ([full day](findings/2026-11-19.md))
+
+- **Deadpool** (Xbox 360) — v1.0.0
+- **Titan Souls** (Android) — v1.0.0
+- **SSX** (Android) — source-build
+- **Medabots: Rokusho / Metabee Version** (GBA) — v0.2.0, early
+- **Sonic Advance** (GBA) — v0.1.0, early
+- **PewDiePie: Legend of Brofist** (Android) — v1.0.2
+- **Spider-Man 2** (Xbox) — v0.4.1, playable
+- **Mario Party 4** (GameCube) — v0.2.0-preview, early
+- **Manhunt** (Xbox) — v0.2.0, early
+- Updates: Plants vs. Zombies: DLC Edition → Beta 2.5 · Mega Man X → v1.3.0 · Torchlight → v1.0.6 · Minecraft: Horizon NX — new fork build v1.0.0 · Dragon Ball Z: Budokai 3 HD — second port added
+
+Older days, one line each:
+
+- [2026-11-18](findings/2026-11-18.md) — 11 new ports; catalogue 188 games
+- [2026-11-17](findings/2026-11-17.md) — 15 new ports; catalogue 177 games
+- [2026-11-16](findings/2026-11-16.md) — 15 new ports; catalogue 162 games
+- [2026-11-15](findings/2026-11-15.md) — 32 new ports; catalogue 147 games
+- [2026-11-14](findings/2026-11-14.md) — 1 new port; catalogue 115 games
+- [2026-11-13](findings/2026-11-13.md) — baseline catalogue; 114 games
 
 The daily log is just the changelog. The catalogue is the thing to browse.
 
