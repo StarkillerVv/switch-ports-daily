@@ -11,7 +11,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **TMNT: Turtles in Time Re-Shelled** (Xbox 360) — switch-v0.1.1, early
 - **Transformers: War for Cybertron** (Xbox 360) — build-60, early, source-build
 - **Super Stardust Delta** (PS Vita) — source-build
-- Updates: Counting switched to per-game (one row per game) — total restated from 200 rows to 470 games
+- Updates: Horizon NX → v1.3.0 (60 FPS) · Super Stardust Delta → v1 release · Blue Dragon → v1.3.6 · Counting switched to per-game (one row per game) — total restated from 200 rows to 470 games
 
 **2026-11-19** — 11 new ports, catalogue now 199 games ([full day](findings/2026-11-19.md))
 
