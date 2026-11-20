@@ -2,7 +2,7 @@
 
 Every unofficial game port for Nintendo Switch we have verified so far. Plain-language version of the full catalogue — the same list that lives on the [All Games Ported to Switch](https://github.com/StarkillerVv/switch-ports-daily) page.
 
-**Last updated:** 2026-11-20 (manual afternoon run) — SwitchPorts: HEAD 8d1af43d, unchanged since 2026-11-19; 0 open pull requests. AllRecomps: 66 projects, unchanged. Wololo.net: nothing new. GameBrew: recent-changes still behind a Cloudflare check (could not verify directly); nothing GameBrew-only surfaced via the other sources. SwitchBrew wiki / HB App Store: nothing new surfaced. Manual afternoon run 2026-11-20: 2 new verified ports via the GitHub scrub — **Transformers: War for Cybertron** (Aspirata, build-60, source-build) and **Super Stardust Delta** (DevCrashDay, source-build) — and the catalogue switched to **per-game counting** (one row per game): the total is now **365 games** (previously 200 collection rows) (Switch 1 only).
+**Last updated:** 2026-11-20 (manual afternoon run) — SwitchPorts: HEAD 8d1af43d, unchanged since 2026-11-19; 0 open pull requests. AllRecomps: 66 projects, unchanged. Wololo.net: nothing new. GameBrew: recent-changes still behind a Cloudflare check (could not verify directly); nothing GameBrew-only surfaced via the other sources. SwitchBrew wiki / HB App Store: nothing new surfaced. Manual afternoon run 2026-11-20: 2 new verified ports via the GitHub scrub — **Transformers: War for Cybertron** (Aspirata, build-60, source-build) and **Super Stardust Delta** (DevCrashDay, source-build) — and the catalogue switched to **per-game counting** (one row per game): the total is now **470 games** (previously 200 collection rows) (Switch 1 only).
 
 ## How to read this list
 
@@ -21,7 +21,7 @@ Every unofficial game port for Nintendo Switch we have verified so far. Plain-la
 
 One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump to a title, then look it up in the grouped sections below for the full note. Every game has its own row here (per-game counting since 2026-11-20); sections 1D–1F below summarise the 2026 waves in prose.
 
-**365 games listed.**
+**470 games listed.**
 
 
    - **Android-loader flood** (mainly NaGaa95, ChanseyIsTheBest, aks796, Thorhax, etc.): a generic minimal-Android compatibility layer loads the original Android ARM/ARM64 `libGame.so` — dozens of Android games ported in Aug–Nov 2026 alone.

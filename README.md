@@ -6,12 +6,12 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
-**2026-11-20** — 3 new ports, catalogue now 365 games ([full day](findings/2026-11-20.md))
+**2026-11-20** — 3 new ports, catalogue now 470 games ([full day](findings/2026-11-20.md))
 
 - **TMNT: Turtles in Time Re-Shelled** (Xbox 360) — switch-v0.1.1, early
 - **Transformers: War for Cybertron** (Xbox 360) — build-60, early, source-build
 - **Super Stardust Delta** (PS Vita) — source-build
-- Updates: Counting switched to per-game (one row per game) — total restated from 200 rows to 365 games
+- Updates: Counting switched to per-game (one row per game) — total restated from 200 rows to 470 games
 
 **2026-11-19** — 11 new ports, catalogue now 199 games ([full day](findings/2026-11-19.md))
 
@@ -86,6 +86,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-365-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-470-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
