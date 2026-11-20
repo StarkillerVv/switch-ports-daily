@@ -212,7 +212,7 @@
         .filters-fab { transition: none; }
       }
       .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-      .filter-row.console-row, .filter-row.status-row, .filter-row.group-row { margin-top: 10px; }
+      .filter-row.console-row, .filter-row.status-row { margin-top: 10px; }
 
       /* Accessibility helpers */
       .visually-hidden {
@@ -639,27 +639,20 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
             <input id="q" type="search" placeholder="Search by game, author or original system…" aria-label="Search by game, author or original system" />
           </div>
-          <div class="chips">
+          <div class="chips" id="mergedChips">
           <button class="chip" data-filter="all" aria-pressed="true">All</button>
-          <button class="chip" data-filter="rockstar" aria-pressed="false">Rockstar</button>
-          <button class="chip" data-filter="decomp" aria-pressed="false">Decomp &amp; classics</button>
-          <button class="chip" data-filter="pc" aria-pressed="false">PC source ports</button>
-          <button class="chip" data-filter="android" aria-pressed="false">Android loaders ’26</button>
-          <button class="chip" data-filter="recomp" aria-pressed="false">Recomps ’26</button>
-          <button class="chip" data-filter="wip" aria-pressed="false">In development</button>
-          <button class="chip" data-filter="cancelled" aria-pressed="false">Cancelled / none</button>
-          </div>
-        </div>
-        <div class="filter-row group-row" role="group" aria-labelledby="groupFilterLabel">
-          <span class="filter-label" id="groupFilterLabel" data-i18n="groupLabel">Group</span>
-          <div class="chips" id="groupChips">
-          <button class="chip chip-group" data-group-filter="all" aria-pressed="true">All groups</button>
           <button class="chip chip-group" data-group-filter="rockstar" aria-pressed="false">Rockstar</button>
           <button class="chip chip-group" data-group-filter="nintendo" aria-pressed="false">Nintendo</button>
           <button class="chip chip-group" data-group-filter="sega" aria-pressed="false">Sega</button>
           <button class="chip chip-group" data-group-filter="id" aria-pressed="false">id Software</button>
           <button class="chip chip-group" data-group-filter="cod" aria-pressed="false">Call of Duty</button>
           <button class="chip chip-group" data-group-filter="nfs" aria-pressed="false">Need for Speed</button>
+          <button class="chip" data-filter="decomp" aria-pressed="false">Decomp &amp; classics</button>
+          <button class="chip" data-filter="pc" aria-pressed="false">PC source ports</button>
+          <button class="chip" data-filter="android" aria-pressed="false">Android loaders ’26</button>
+          <button class="chip" data-filter="recomp" aria-pressed="false">Recomps ’26</button>
+          <button class="chip" data-filter="wip" aria-pressed="false">In development</button>
+          <button class="chip" data-filter="cancelled" aria-pressed="false">Cancelled / none</button>
           </div>
         </div>
         <div class="filter-row console-row" role="group" aria-labelledby="consoleFilterLabel">
@@ -6857,10 +6850,9 @@
         var filterbar = document.getElementById('filters');
         var fab = document.getElementById('filtersFab');
         var fabBadge = document.getElementById('fabBadge');
-        var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-filter]'));
+        var mergedChips = Array.prototype.slice.call(document.querySelectorAll('#mergedChips .chip'));
         var consoleChips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-console-filter]'));
         var statusChips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-status-filter]'));
-        var groupChips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-group-filter]'));
         var items = Array.prototype.slice.call(document.querySelectorAll('.card[data-cat]'));
         var sections = Array.prototype.slice.call(document.querySelectorAll('section'));
         var countEl = document.getElementById('resultCount');
@@ -6931,10 +6923,9 @@
 
         function clearFilters() {
           activeFilter = 'all'; activeConsole = 'all'; activeStatus = 'all'; activeGroup = 'all';
-          chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-filter') === 'all' ? 'true' : 'false'); });
+          mergedChips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-filter') === 'all' ? 'true' : 'false'); });
           consoleChips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-console-filter') === 'all' ? 'true' : 'false'); });
           statusChips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-status-filter') === 'all' ? 'true' : 'false'); });
-          groupChips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-group-filter') === 'all' ? 'true' : 'false'); });
           q.value = '';
           if (stickyQ) stickyQ.value = '';
           apply();
@@ -6971,17 +6962,14 @@
           countEl.innerHTML = window.__countText ? window.__countText(visible, items.length, (activeFilter !== 'all' || activeGroup !== 'all' || activeConsole !== 'all' || activeStatus !== 'all' || !!term)) : ('Showing <b>' + visible + '</b> of ' + items.length + ' catalogue entries' + (activeFilter !== 'all' || activeGroup !== 'all' || activeConsole !== 'all' || activeStatus !== 'all' || term ? ' for this filter' : ''));
           noResults.classList.toggle('show', visible === 0);
           if (fabBadge) {
-            var activeChip = null;
-            chips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true') activeChip = c; });
+            var activeMergedChip = null;
+            mergedChips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true') activeMergedChip = c; });
             var activeConsoleChip = null;
             consoleChips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true') activeConsoleChip = c; });
             var activeStatusChip = null;
             statusChips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true') activeStatusChip = c; });
-            var activeGroupChip = null;
-            groupChips.forEach(function (c) { if (c.getAttribute('aria-pressed') === 'true') activeGroupChip = c; });
             var badgeParts = [];
-            if (activeFilter !== 'all' && activeChip) badgeParts.push(activeChip.textContent.trim());
-            if (activeGroup !== 'all' && activeGroupChip) badgeParts.push(activeGroupChip.textContent.trim());
+            if ((activeFilter !== 'all' || activeGroup !== 'all') && activeMergedChip) badgeParts.push(activeMergedChip.textContent.trim());
             if (activeConsole !== 'all' && activeConsoleChip) badgeParts.push(activeConsoleChip.textContent.trim());
             if (activeStatus !== 'all' && activeStatusChip) badgeParts.push(activeStatusChip.textContent.trim());
             if (badgeParts.length) {
@@ -7022,11 +7010,17 @@
           }
         }
 
-        chips.forEach(function (chip) {
+        mergedChips.forEach(function (chip) {
           chip.addEventListener('click', function () {
-            chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+            mergedChips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
             chip.setAttribute('aria-pressed', 'true');
-            activeFilter = chip.getAttribute('data-filter');
+            if (chip.hasAttribute('data-group-filter')) {
+              activeGroup = chip.getAttribute('data-group-filter');
+              activeFilter = 'all';
+            } else {
+              activeFilter = chip.getAttribute('data-filter');
+              activeGroup = 'all';
+            }
             apply();
           });
         });
@@ -7046,15 +7040,6 @@
             apply();
           });
         });
-        groupChips.forEach(function (chip) {
-          chip.addEventListener('click', function () {
-            groupChips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
-            chip.setAttribute('aria-pressed', 'true');
-            activeGroup = chip.getAttribute('data-group-filter');
-            apply();
-          });
-        });
-
         // Recently added: jump to the entry, clearing filters first if the
         // target is currently filtered out, then highlight it briefly.
         document.querySelectorAll('[data-recent-target]').forEach(function (link) {
