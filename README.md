@@ -6,6 +6,10 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
+**2026-11-21** — 0 new ports, catalogue now 459 games ([full day](findings/2026-11-21.md))
+
+- Updates: New Super Mario Bros. Wii — third port added (ShubhxYT, NSMBW-native v1.1) · Smash Remix → v2.0.1-port.13
+
 **2026-11-20** — 3 new ports, catalogue now 459 games ([full day](findings/2026-11-20.md))
 
 - **TMNT: Turtles in Time Re-Shelled** (Xbox 360) — switch-v0.1.1, early
@@ -28,21 +32,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Amateur Surgeon 3** (Android) — v1.0
 - Updates: Plants vs. Zombies: DLC Edition → Beta 2.5 · Mega Man X → v1.3.0 · Torchlight → v1.0.6 · Minecraft: Horizon NX — new fork build v1.0.0 · Dragon Ball Z: Budokai 3 HD — second port added · Sonic Advance → v0.1.5 · Amateur Surgeon 4 → v1.0
 
-**2026-11-18** — 11 new ports, catalogue now 188 games ([full day](findings/2026-11-18.md))
-
-- **Crash Tag Team Racing** (PS2) — source-build, early
-- **Tiny Toon Adventures: Buster's Hidden Treasure** (Genesis) — v1.0
-- **Dragon Ball Z: Budokai 3 HD** (Xbox 360) — v0.1.40, early
-- **Blur** (Xbox 360) — v1.0.0
-- **Need for Speed: Hot Pursuit 2** (PS2) — v1.0
-- **Asphalt 6: Adrenaline** (Android) — v0.8.0
-- **LEGO Batman: The Videogame** (Xbox 360) — v0.1.2, early
-- **Amateur Surgeon 4** (Android) — source-build
-- **Plants vs. Zombies: DLC Edition** (PC) — Beta 2.4
-- **Heroes of Might and Magic IV** (PC) — v0.1
-- **Beat Saber** (Meta Quest) — v0.2.0, WIP
-- Updates: The Witcher 2 → v0.1.4 · Metroid: Samus Returns → v0.6.1 · God of War Collection → v1.3
-
+- [2026-11-18](findings/2026-11-18.md) — 11 new ports; catalogue 188 games
 - [2026-11-17](findings/2026-11-17.md) — 17 new ports; catalogue 177 games
 
 - [2026-11-16](findings/2026-11-16.md) — 15 new ports; catalogue 162 games
