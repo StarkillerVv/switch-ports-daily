@@ -2,7 +2,7 @@
 
 Every unofficial game port for Nintendo Switch we have verified so far. Plain-language version of the full catalogue — the same list that lives on the [All Games Ported to Switch](https://github.com/StarkillerVv/switch-ports-daily) page.
 
-**Last updated:** 2026-11-20 (evening run) — SwitchPorts: HEAD 8d1af43d, unchanged since 2026-11-19; 0 open pull requests. AllRecomps: 66 projects, unchanged. Wololo.net: nothing new. GameBrew: recent-changes still behind a Cloudflare check (could not verify directly); nothing GameBrew-only surfaced via the other sources. SwitchBrew wiki / HB App Store: nothing new surfaced. Evening run 2026-11-20: no new ports; updates — **Minecraft: Java Edition 26.3 — Horizon NX** KoHaku743 fork v1.0.0 → **v1.3.0** (60 FPS since v1.2.0), **Super Stardust Delta** gained its v1 source-build release, **Blue Dragon** (reBlue) corrected to v1.3.6. Catalogue total unchanged at **470 games** (per-game counting) (Switch 1 only).
+**Last updated:** 2026-11-20 (evening run) — SwitchPorts: HEAD 8d1af43d, unchanged since 2026-11-19; 0 open pull requests. AllRecomps: 66 projects, unchanged. Wololo.net: nothing new. GameBrew: recent-changes still behind a Cloudflare check (could not verify directly); nothing GameBrew-only surfaced via the other sources. SwitchBrew wiki / HB App Store: nothing new surfaced. Evening run 2026-11-20: no new ports; updates — **Minecraft: Java Edition 26.3 — Horizon NX** KoHaku743 fork v1.0.0 → **v1.3.0** (60 FPS since v1.2.0), **Super Stardust Delta** gained its v1 source-build release, **Blue Dragon** (reBlue) corrected to v1.3.6. Catalogue total restated at **459 games** after the one-card-per-game enforcement (per-game counting) (Switch 1 only).
 
 ## How to read this list
 
