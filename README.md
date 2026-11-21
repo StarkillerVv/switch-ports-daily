@@ -6,9 +6,13 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
-**2026-11-21** — 0 new ports, catalogue now 459 games ([full day](findings/2026-11-21.md))
+**2026-11-21** — 4 new ports, catalogue now 463 games ([full day](findings/2026-11-21.md))
 
-- Updates: New Super Mario Bros. Wii — third port added (ShubhxYT, NSMBW-native v1.1) · Smash Remix → v2.0.1-port.13
+- **Culdcept Saga** (Xbox 360) — v1.0.1
+- **The Simpsons: Tapped Out** (Android) — v0.1.0, early
+- **Zombieville USA 2** (Android) — v1.0, early
+- **Mafia: The City of Lost Heaven** (PC) — source-build, WIP
+- Updates: New Super Mario Bros. Wii — third port added (ShubhxYT, NSMBW-native v1.1) · Smash Remix → v2.0.1-port.13 · LEGO Star Wars: The Complete Saga → v0.5.0 · Call of Duty: Black Ops → v1.1.0 · Slay the Spire 2 — new fork (v0.111.1 compatibility)
 
 **2026-11-20** — 3 new ports, catalogue now 459 games ([full day](findings/2026-11-20.md))
 
@@ -76,6 +80,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-459-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-463-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
