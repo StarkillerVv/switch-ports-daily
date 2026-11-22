@@ -6,7 +6,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
-**2026-11-22** — 7 new ports, catalogue now 470 games ([full day](findings/2026-11-22.md))
+**2026-11-22** — 14 new ports, catalogue now 477 games ([full day](findings/2026-11-22.md))
 
 - **Asphalt 5 HD** (Android) — v0.3.0
 - **Asphalt 7: Heat** (Android) — v0.2.0
@@ -15,7 +15,14 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Shin Megami Tensei: Persona** (PSP) — builder v0.1.6, early
 - **Wangan Midnight Maximum Tune 3DX+** (Arcade) — v1.0.0-switch
 - **Downhill Domination** (PS2) — v0.8.10-switch.1
-- Updates: Jet Set Radio Future Unleashed → v0.5.6-switch · CastleMiner Z → v0.5.1 source release · Manhunt and Modern Warfare 2 gained second ports
+- **Adventure Time: Card Wars** (Android) — v1.0
+- **Samurai II: Vengeance** (Android) — v0.1.0, early
+- **Sonic Dream Team** (Apple Arcade) — v1.0.1 / v1.10.3, two ports
+- **Shadow the Hedgehog** (GameCube) — v0.5.0, early
+- **Command & Conquer: Red Alert 2** (PC) — v1.4.3
+- **Shadow of the Colossus** (PS2) — released, web installer
+- **Sonic the Hedgehog 4: Episode II** (Xbox 360) — v0.5.0, early
+- Updates: Jet Set Radio Future Unleashed → v0.5.6-switch · CastleMiner Z → v0.5.2 source release · Manhunt and Modern Warfare 2 gained second ports · Sonic Advance, The Simpsons (arcade) and New Super Mario Bros. Wii gained additional ports · Soulcalibur II → 0.5.0 · Sonic 4 Episode I → v1.0 · Final Fantasy XIII → v1.0.1 · The Witcher 2 → v0.2.0 · Metroid Prime 2: Echoes → v0.5.1 · Dragon Ball Z: Budokai Tenkaichi 3 → v2.0 · Plants vs. Zombies: DLC Edition → Beta 2.5.2 · Castlevania: Lords of Shadow → v0.5.1
 
 **2026-11-21** — 4 new ports, catalogue now 463 games ([full day](findings/2026-11-21.md))
 
@@ -78,6 +85,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-470-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-477-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
