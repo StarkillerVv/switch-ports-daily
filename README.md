@@ -6,7 +6,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
-**2026-11-22** — 6 new ports, catalogue now 469 games ([full day](findings/2026-11-22.md))
+**2026-11-22** — 7 new ports, catalogue now 470 games ([full day](findings/2026-11-22.md))
 
 - **Asphalt 5 HD** (Android) — v0.3.0
 - **Asphalt 7: Heat** (Android) — v0.2.0
@@ -14,7 +14,8 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **CastleMiner Z** (Xbox 360) — source-build, WIP
 - **Shin Megami Tensei: Persona** (PSP) — builder v0.1.6, early
 - **Wangan Midnight Maximum Tune 3DX+** (Arcade) — v1.0.0-switch
-- Updates: Jet Set Radio Future Unleashed → v0.5.6-switch
+- **Downhill Domination** (PS2) — v0.8.10-switch.1
+- Updates: Jet Set Radio Future Unleashed → v0.5.6-switch · CastleMiner Z → v0.5.1 source release · Manhunt and Modern Warfare 2 gained second ports
 
 **2026-11-21** — 4 new ports, catalogue now 463 games ([full day](findings/2026-11-21.md))
 
@@ -77,6 +78,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-469-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-470-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
