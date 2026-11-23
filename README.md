@@ -6,6 +6,16 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
+**2026-11-23** — 6 new ports, catalogue now 483 games ([full day](findings/2026-11-23.md))
+
+- **Asura's Wrath** (Xbox 360) — v1.0.1
+- **Sonic & All-Stars Racing Transformed** (Xbox 360) — v1.0.0
+- **Star Fox Adventures** (GameCube) — v1.0.0
+- **Harry Potter and the Chamber of Secrets** (PC) — v1.2.0
+- **Dragon Ball Z: Budokai Tenkaichi 4** (PS2) — B14 Rev2
+- **Ridge Racer 6** (Xbox 360) — v1.0.2.1
+- Updates: Titan Souls → v1.0.1 · Sonic the Hedgehog 4: Episode II → v0.5.1 · Super Mario World → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.1 · Sonic Adventure and Downhill Domination gained second ports
+
 **2026-11-22** — 14 new ports, catalogue now 477 games ([full day](findings/2026-11-22.md))
 
 - **Asphalt 5 HD** (Android) — v0.3.0
@@ -32,12 +42,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Mafia: The City of Lost Heaven** (PC) — source-build, WIP
 - Updates: New Super Mario Bros. Wii — third port added (ShubhxYT, NSMBW-native v1.1) · Smash Remix → v2.0.1-port.13 · LEGO Star Wars: The Complete Saga → v0.5.0 · Call of Duty: Black Ops → v1.1.0 · Slay the Spire 2 — new fork (v0.111.1 compatibility)
 
-**2026-11-20** — 3 new ports, catalogue now 459 games ([full day](findings/2026-11-20.md))
-
-- **TMNT: Turtles in Time Re-Shelled** (Xbox 360) — switch-v0.1.1, early
-- **Transformers: War for Cybertron** (Xbox 360) — build-60, early, source-build
-- **Super Stardust Delta** (PS Vita) — source-build
-- Updates: Horizon NX → v1.3.0 (60 FPS) · Super Stardust Delta → v1 release · Blue Dragon → v1.3.6 · Counting switched to per-game (one row per game) — total restated from 200 rows to 459 games
+- [2026-11-20](findings/2026-11-20.md) — 3 new ports; catalogue 459 games
 
 - [2026-11-19](findings/2026-11-19.md) — 11 new ports; catalogue 199 games
 
@@ -85,6 +90,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-477-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-483-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
