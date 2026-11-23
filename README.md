@@ -6,7 +6,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
-**2026-11-23** — 9 new ports, catalogue now 486 games ([full day](findings/2026-11-23.md))
+**2026-11-23** — 14 new ports, catalogue now 491 games ([full day](findings/2026-11-23.md))
 
 - **Asura's Wrath** (Xbox 360) — v1.0.1
 - **Sonic & All-Stars Racing Transformed** (Xbox 360) — v1.0.0
@@ -17,7 +17,12 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Mystical Ninja Starring Goemon** (N64) — v1.0.0, pre-release
 - **NiGHTS into Dreams…** (Xbox 360) — v1.0.3
 - **Dragon Ball: Raging Blast 2** (Xbox 360) — v0.2.0
-- Updates: Titan Souls → v1.0.1 · Sonic the Hedgehog 4: Episode II → v0.5.1 · Super Mario World → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.1 · Deadpool → v1.0.1 · Mortal Kombat: Shaolin Monks → v0.5.0 · Banjo-Kazooie: Nuts & Bolts → v1.0.3 · Sonic Adventure and Downhill Domination gained second ports
+- **Far Cry 3** (Xbox 360) — v1.0.0
+- **X-Men Origins: Wolverine - Uncaged Edition** (Xbox 360) — v0.1.16, WIP
+- **Bejeweled Deluxe** (PC) — v1.0.0
+- **Ultimate Marvel vs. Capcom 3** (PC) — Version 1.0, test release
+- **Pokémon Stadium** (N64) — 0.1.0, source-build
+- Updates: Titan Souls → v1.0.1 · Sonic the Hedgehog 4: Episode II → v0.5.1 · Super Mario World → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.1 · Deadpool → v1.0.1 · Mortal Kombat: Shaolin Monks → v0.5.0 · Banjo-Kazooie: Nuts & Bolts → v1.0.3 · Sonic Adventure and Downhill Domination gained second ports · God of War + God of War II → 1.4 · Heroes of Might and Magic IV → v0.4 · The Simpsons (arcade) → v1.0.4 · TMNT (arcade) → v1.1.1
 
 **2026-11-22** — 14 new ports, catalogue now 477 games ([full day](findings/2026-11-22.md))
 
@@ -93,6 +98,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-486-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-491-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
