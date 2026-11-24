@@ -2,7 +2,7 @@
 
 Every unofficial game port for Nintendo Switch we have verified so far. Plain-language version of the full catalogue — the same list that lives on the [All Games Ported to Switch](https://github.com/StarkillerVv/switch-ports-daily) page.
 
-**Last updated:** 2026-11-24 (morning run) — SwitchPorts HEAD 1564c33d → 0bdcac50 (README/tooling only, no new game rows); 0 open PRs. No new games; version updates: Asura's Wrath v1.0.2, Call of Duty: Black Ops II (Requiem) 0.4.2, Sonic Adventure 2 v1.0.8, Jak Project Switch beta v1.1.4-Beta-deko3D. Catalogue total: **491 games** (per-game counting, one card per game) (Switch 1 only).
+**Last updated:** 2026-11-24 (evening run) — SwitchPorts HEAD unchanged (0bdcac50); 0 open PRs. New game: Handkerchief 2000 v2.0. Version updates: Blur v1.0.1, Sonic & All-Stars Racing Transformed v1.0.1. Catalogue total: **492 games** (per-game counting, one card per game) (Switch 1 only).
 
 ## How to read this list
 
@@ -21,7 +21,7 @@ Every unofficial game port for Nintendo Switch we have verified so far. Plain-la
 
 One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump to a title, then look it up in the grouped sections below for the full note. Every game has its own row here (per-game counting since 2026-11-20); sections 1D–1F below summarise the 2026 waves in prose.
 
-**491 games listed.**
+**492 games listed.**
 
 
    - **Android-loader flood** (mainly NaGaa95, ChanseyIsTheBest, aks796, Thorhax, etc.): a generic minimal-Android compatibility layer loads the original Android ARM/ARM64 `libGame.so` — dozens of Android games ported in Aug–Nov 2026 alone.
@@ -41,6 +41,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Angry Birds Trilogy | Xbox 360, 2012 | Static recompilation (ReXGlue) | slicey64 (rehatched-nx) | Release 1.0, 16 Nov 2026 | [source](https://github.com/slicey64/rehatched-nx) |
 | Another World | Amiga/PC, 1991–95 | Engine reimplementation (RAW), mainly usineur/Cpasjuste | usineur et al. | 2018–2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Harry Potter and the Chamber of Secrets | PC, 2002 | Native port (Unreal Engine 1, OpenGL/libnx) | the-deshpande (hp2_switch) | v1.2.0, 19 Nov 2026 — NSP and NRO, 60 FPS; own PC game files required | [source](https://github.com/the-deshpande/hp2_switch) |
+| Handkerchief 2000 | PC (Windows), 1999 | Static recompilation (x86 to C) | lsyymmilo (Handkerchief2000-NX) | 2.0, 24 Nov 2026 — release provides an install package; Chinese text, save/load/delete slots, native widescreen; own game files required | [source](https://github.com/lsyymmilo/Handkerchief2000-NX) |
 | Heart of the Alien | Amiga/PC, 1991–95 | Engine reimplementation (HOTA), mainly usineur/Cpasjuste | usineur et al. | 2018–2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Flashback | Amiga/PC, 1991–95 | Engine reimplementation (REminiscence), mainly usineur/Cpasjuste | usineur et al. | 2018–2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
 | Fade to Black | Amiga/PC, 1991–95 | Engine reimplementation (f2b), mainly usineur/Cpasjuste | usineur et al. | 2018–2021 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
@@ -60,12 +61,12 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 | Samurai II: Vengeance | Android | Android wrapper | Zumoly (samurai-ii-android-nx) | v0.1.0, 21 Nov 2026 — release ships a Switch zip; own game files required | [source](https://github.com/Zumoly/samurai-ii-android-nx) |
 | Shadow of the Colossus | PS2, 2005 | Native recompilation port (celosia-nx) | lemasterxar5 | Released 21 Nov 2026 via its web installer — the installer ZIP always includes celosia_nx.nro; own NTSC-U disc (SCUS-97472) required | [source](https://github.com/lemasterxar5/celosia-nx) |
 | Shadow the Hedgehog | GameCube, 2005 | Static recompilation | FurryLilManChild (Shadow-nx) | v0.5.0, 20 Nov 2026 — release ships Shadow-nx-0.5.0-switch.zip; own game files required | [source](https://github.com/FurryLilManChild/Shadow-nx) |
-| Sonic & All-Stars Racing Transformed | Xbox 360, 2012 | Static recompilation (ReXGlue, deko3d/Renut) | ChanseyIsTheBest (sasrt-nx) | v1.0.0, 22 Nov 2026 — NRO in release and via web installer from your own game; single player, story and split screen | [source](https://github.com/ChanseyIsTheBest/sasrt-nx) |
+| Sonic & All-Stars Racing Transformed | Xbox 360, 2012 | Static recompilation (ReXGlue, deko3d/Renut) | ChanseyIsTheBest (sasrt-nx) | v1.0.1, 23 Nov 2026 — NRO in release and via web installer from your own game; single player, story and split screen | [source](https://github.com/ChanseyIsTheBest/sasrt-nx) |
 | Sonic Dream Team | Apple Arcade, 2023 | Android/Apple Arcade port — two ports | aks796 (projectdream_nx); Thorhax (SonicDreamTeam-NX) | aks796 v1.0.1, 21 Nov 2026; Thorhax v1.10.3, 20 Nov 2026 — release ships sdt_nx.nro; own game files required | [source](https://github.com/aks796/projectdream_nx) · [second port](https://github.com/Thorhax/SonicDreamTeam-NX) |
 | Sonic the Hedgehog 4: Episode II | Xbox 360 XBLA, 2012 | Static recompilation (ReXGlue) | FurryLilManChild (S4ep2-XBLA-nx) | v0.5.1, 22 Nov 2026 — release ships S4ep2-XBLA-nx-0.5.1-switch.zip; own game files required | [source](https://github.com/FurryLilManChild/S4ep2-XBLA-nx) |
 | The Binding of Isaac: Repentance+ | PC, 2021 | Native port attempt, antoniotorres02 | SwitchPorts lists "*unreleased*", 1 Nov 2026 (a separate Flash-Isaac recomp, IsaacRecomp, IS released [AR] — different project) | [SP][AR] | [catalogue](https://allrecomps.com/switch-ports/) |
 | Blood | PC, 1997 | NXBlood (NBlood), Jan200101 | Jan200101 | WIP, 5 Jun 2019 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
-| Blur | Xbox 360, 2010 | Static recompilation (ReXGlue, reNut/deko3d) | ChanseyIsTheBest (blur-nx) | v1.0.0, 18 Nov 2026 — release ships blur-nx.nro; plays on console per its README (boot, menus, career, races, ~30 FPS at stock clocks); own Xbox 360 disc + title update 2 required | [source](https://github.com/ChanseyIsTheBest/blur-nx) |
+| Blur | Xbox 360, 2010 | Static recompilation (ReXGlue, reNut/deko3d) | ChanseyIsTheBest (blur-nx) | v1.0.1, 24 Nov 2026 — release ships blur-nx.nro; plays on console per its README (boot, menus, career, races, ~30 FPS at stock clocks); own Xbox 360 disc + title update 2 required | [source](https://github.com/ChanseyIsTheBest/blur-nx) |
 | Buffy the Vampire Slayer | Xbox, 2002 | Static recompilation | FOTLabs | v1.0.1, 21 Oct 2026 | [source](https://github.com/FOTLabs/buffy-nx) |
 | Bully: Anniversary Edition | PS2, 2006 — Android 64-bit v1.4.311 used | Android compatibility layer | givethesourceplox (bully_nx) | v0.0.2, 3–6 Apr 2026 | [source](https://gbatemp.net/threads/bully-switch-port-wip.680904/) |
 | Caesar III | PC, 1998 | Julius (reimplementation, bvschaik, v1.8.0 Aug 2025) + Augustus mod (Keriew, v4.0.0 Dec 2023) | multiple | 2023–2025 | [catalogue](https://www.gamebrew.org/index.php?title=List_of_Switch_homebrew_games) |
@@ -294,7 +295,7 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 ### 1. Released and Playable on Switch
 
 - **Asura's Wrath** (Xbox 360, 2012) — static recompilation (ReXGlue, deko3d/Renut), BanhMi93P (asura-nx), **v1.0.2, 23 Nov 2026** — release ships asura-nx-v1.0.2.zip with asurawrath_nx.nro; own Xbox 360 disc files required — [source](https://github.com/BanhMi93P/asura-nx)
-- **Sonic & All-Stars Racing Transformed** (Xbox 360, 2012) — static recompilation (ReXGlue, deko3d/Renut), ChanseyIsTheBest (sasrt-nx), **v1.0.0, 22 Nov 2026** — NRO in release and via web installer from your own game — [source](https://github.com/ChanseyIsTheBest/sasrt-nx)
+- **Sonic & All-Stars Racing Transformed** (Xbox 360, 2012) — static recompilation (ReXGlue, deko3d/Renut), ChanseyIsTheBest (sasrt-nx), **v1.0.1, 23 Nov 2026** — NRO in release and via web installer from your own game — [source](https://github.com/ChanseyIsTheBest/sasrt-nx)
 - **Star Fox Adventures** (GameCube, 2002) — native port (Foxhollow / SFA decompilation), digdat0 (sfa-nx), **v1.0.0, 22 Nov 2026** — release ships SFA-NX.nro plus shader pack; own GameCube disc image required — [source](https://github.com/digdat0/sfa-nx)
 - **Harry Potter and the Chamber of Secrets** (PC, 2002) — native port (Unreal Engine 1, OpenGL/libnx), the-deshpande (hp2_switch), **v1.2.0, 19 Nov 2026** — NSP and NRO, 60 FPS; own PC game files required — [source](https://github.com/the-deshpande/hp2_switch)
 - **Dragon Ball Z: Budokai Tenkaichi 4** (PS2) — port, alexyt2021es (Tenkaichi4-NX), **B14 Rev2** — own compatible game required — [source](https://gitlab.com/alexyt2021es/Tenkaichi4-NX)
@@ -583,7 +584,8 @@ One line per game, alphabetical. Use Ctrl+F / Cmd+F (or GitHub search) to jump t
 - Checked and NOT listed: **Tyrion Cuthbert: Attorney of the Arcane** (sukalibur9/aota_nx — its own README says not yet playable: boots to a black screen and crashes while loading; no release); **The SpongeBob SquarePants Movie** (still no GitHub release); **Blood Omen 2** (repo pushed again 18 Nov 2026, still no release).
 
 **SwitchPorts + GitHub scrub finds, 2026-11-18 (evening run):**
-- **Blur** (Xbox 360, 2010) — static recompilation (ReXGlue, reNut renderer on deko3d), ChanseyIsTheBest (blur-nx), **v1.0.0, 18 Nov 2026** — release ships blur-nx.nro; plays on the console per its README (boot, menus, career and races with full effects, ~30 FPS most of the time at stock clocks, split-screen untested); own Xbox 360 disc + title update 2 required — [source](https://github.com/ChanseyIsTheBest/blur-nx)
+- **Blur** (Xbox 360, 2010) — static recompilation (ReXGlue, reNut renderer on deko3d), ChanseyIsTheBest (blur-nx), **v1.0.1, 24 Nov 2026** — release ships blur-nx.nro; plays on the console per its README (boot, menus, career and races with full effects, ~30 FPS most of the time at stock clocks, split-screen untested); own Xbox 360 disc + title update 2 required — [source](https://github.com/ChanseyIsTheBest/blur-nx)
+- **Handkerchief 2000** (PC (Windows), 1999) — static recompilation (x86 to C), lsyymmilo (Handkerchief2000-NX), **2.0, 24 Nov 2026** — release provides an install package; Chinese text, save/load/delete slots, native widescreen; own game files required — [source](https://github.com/lsyymmilo/Handkerchief2000-NX)
 - **Need for Speed: Hot Pursuit 2** (PS2, 2002) — native decompilation port of the PS2 engine, HDErick (NFSHP2_Switch_Port), **v1.0, 18 Nov 2026** — release ships NFSHP2-Switch.nro (the Switch 1 build); main scene renders at 1280x720 in handheld and docked per its README; own PS2 PAL 1.00 (SLES-50731) disc files (ZDIR.BIN / ZZDATA.BIN) required — [source](https://github.com/HDErick/NFSHP2_Switch_Port)
 - **Asphalt 6: Adrenaline** (Android, 2011) — Android wrapper (32-bit ARMv7 build in AArch32 mode, libnx32), 7UNC46 (a6_nx), **v0.8.0, 18 Nov 2026** — release ships a6_nx.nro; targets Asphalt 6: Adrenaline HD 1.3.3; own APK required — [source](https://github.com/7UNC46/a6_nx)
 - **Asphalt 5 HD** (Android) — Android wrapper (32-bit, libnx32), 7UNC46 (a5_nx), **v0.3.0, 21 Nov 2026** — release ships a5_nx.nro; targets Asphalt 5 HD 3.4.1; own APK required — [source](https://github.com/7UNC46/a5_nx)

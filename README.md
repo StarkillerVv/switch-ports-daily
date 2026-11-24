@@ -6,9 +6,10 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
-**2026-11-24** — 0 new ports, catalogue now 491 games ([full day](findings/2026-11-24.md))
+**2026-11-24** — 1 new port, catalogue now 492 games ([full day](findings/2026-11-24.md))
 
-- Updates: Asura's Wrath → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.2 · Sonic Adventure 2 → v1.0.8 · Jak Project Switch → beta v1.1.4-Beta-deko3D
+- **Handkerchief 2000** (PC) — 2.0
+- Updates: Asura's Wrath → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.2 · Sonic Adventure 2 → v1.0.8 · Jak Project Switch → beta v1.1.4-Beta-deko3D · Blur → v1.0.1 · Sonic & All-Stars Racing Transformed → v1.0.1
 
 **2026-11-23** — 14 new ports, catalogue now 491 games ([full day](findings/2026-11-23.md))
 
@@ -96,6 +97,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-491-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-492-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
