@@ -6,6 +6,10 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
+**2026-11-24** — 0 new ports, catalogue now 491 games ([full day](findings/2026-11-24.md))
+
+- Updates: Asura's Wrath → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.2 · Sonic Adventure 2 → v1.0.8 · Jak Project Switch → beta v1.1.4-Beta-deko3D
+
 **2026-11-23** — 14 new ports, catalogue now 491 games ([full day](findings/2026-11-23.md))
 
 - **Asura's Wrath** (Xbox 360) — v1.0.1
@@ -42,13 +46,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Sonic the Hedgehog 4: Episode II** (Xbox 360) — v0.5.0, early
 - Updates: Jet Set Radio Future Unleashed → v0.5.6-switch · CastleMiner Z → v0.5.2 source release · Manhunt and Modern Warfare 2 gained second ports · Sonic Advance, The Simpsons (arcade) and New Super Mario Bros. Wii gained additional ports · Soulcalibur II → 0.5.0 · Sonic 4 Episode I → v1.0 · Final Fantasy XIII → v1.0.1 · The Witcher 2 → v0.2.0 · Metroid Prime 2: Echoes → v0.5.1 · Dragon Ball Z: Budokai Tenkaichi 3 → v2.0 · Plants vs. Zombies: DLC Edition → Beta 2.5.2 · Castlevania: Lords of Shadow → v0.5.1
 
-**2026-11-21** — 4 new ports, catalogue now 463 games ([full day](findings/2026-11-21.md))
-
-- **Culdcept Saga** (Xbox 360) — v1.0.1
-- **The Simpsons: Tapped Out** (Android) — v0.1.0, early
-- **Zombieville USA 2** (Android) — v1.0, early
-- **Mafia: The City of Lost Heaven** (PC) — source-build, WIP
-- Updates: New Super Mario Bros. Wii — third port added (ShubhxYT, NSMBW-native v1.1) · Smash Remix → v2.0.1-port.13 · LEGO Star Wars: The Complete Saga → v0.5.0 · Call of Duty: Black Ops → v1.1.0 · Slay the Spire 2 — new fork (v0.111.1 compatibility)
+- [2026-11-21](findings/2026-11-21.md) — 4 new ports; catalogue 463 games
 
 - [2026-11-20](findings/2026-11-20.md) — 3 new ports; catalogue 459 games
 
@@ -57,9 +55,9 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - [2026-11-18](findings/2026-11-18.md) — 11 new ports; catalogue 188 games
 - [2026-11-17](findings/2026-11-17.md) — 17 new ports; catalogue 177 games
 
-- [2026-11-16](findings/2026-11-16.md) — 15 new ports; catalogue 162 games
 - [2026-11-15](findings/2026-11-15.md) — 32 new ports; catalogue 147 games
 - [2026-11-13](findings/2026-11-13.md) — baseline catalogue; 114 games
+- Week 47 (Mon Nov 16 – Sun Nov 22) — 15 new ports; catalogue 162 games
 - Week 46 (Mon Nov 09 – Sun Nov 15) — 1 new port; catalogue 115 games
 
 ## Before you install anything
