@@ -6,8 +6,11 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
-**2026-11-25** — 7 new ports, catalogue now 499 games ([full day](findings/2026-11-25.md))
+**2026-11-25** — 10 new ports, catalogue now 502 games ([full day](findings/2026-11-25.md))
 
+- **NieR Gestalt** (Xbox 360) — source-build, playable (first fifth tested)
+- **Lost Planet 3** (Xbox 360) — WIP, not playable yet
+- **Metal Gear Solid: The Twin Snakes** (GameCube) — WIP, not playable yet
 - **LEGO Batman 2: DC Super Heroes** (Xbox 360) — installer, 2026-11-24
 - **Max Payne 2: The Fall of Max Payne** (Xbox) — v1.0.0, source-build
 - **Harvest Moon: Magical Melody** (GameCube) — 0.1.0
@@ -15,7 +18,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Touhou 17: Wily Beast and Weakest Creature** (PC) — v1.00b-r1
 - **Bakugan Battle Brawlers** (Xbox 360) — v0.2.3 (backlog find, released 2026-11-02)
 - **Zuma's Revenge** (PC) — v1.0.2 (backlog card correction)
-- Updates: Bejeweled 3 → v1.0.2 · Zuma → v1.0.2 · Peggle → v1.0.3 · Feeding Frenzy → v1.0.1 · Feeding Frenzy 2 → v1.0.1 · Banjo-Kazooie: Nuts & Bolts → v1.0.4 · The Binding of Isaac: Repentance+ and Max Payne gained additional ports
+- Updates: Bejeweled 3 → v1.0.2 · Zuma → v1.0.2 · Peggle → v1.0.3 · Feeding Frenzy → v1.0.1 · Feeding Frenzy 2 → v1.0.1 · Banjo-Kazooie: Nuts & Bolts → v1.0.4 · The Binding of Isaac: Repentance+ and Max Payne gained additional ports · X-Men Origins: Wolverine — author reports first level playable in build 0.1.27 (release still v0.1.16)
 
 **2026-11-24** — 1 new port, catalogue now 492 games ([full day](findings/2026-11-24.md))
 
@@ -91,6 +94,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-499-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-502-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.

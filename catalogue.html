@@ -583,7 +583,7 @@
           </div>
         </div>
         <div class="stats">
-          <div class="stat"><b>499</b><span data-i18n="statGames">games in this catalogue</span></div>
+          <div class="stat"><b>502</b><span data-i18n="statGames">games in this catalogue</span></div>
           <div class="stat"><b>468</b><span data-i18n="statMaster">entries in the SwitchPorts master list</span></div>
           <div class="stat"><b>138</b><span data-i18n="statWeek">SwitchPorts updates in a single week</span></div>
           <div class="stat"><b>66</b><span data-i18n="statRecomps">curated ports on AllRecomps</span></div>
@@ -5269,6 +5269,18 @@
             <div class="src"><span>Source</span><a href="https://github.com/plv890/F-Cry3-NX">github.com/plv890/F-Cry3-NX</a></div>
           </article>
 
+          <article class="card" data-cat="recomp" data-console="xbox360" data-search="nier gestalt nier-nx lolrd rexglue vulkan xbox 360 static recompilation" id="port-nier-gestalt" data-status="released" data-added="2026-11-25">
+            <h3>NieR Gestalt</h3>
+            <div class="badges"><span class="badge">Static recompilation · ReXGlue</span><span class="badge status-released">Released · source-build</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>Xbox 360, 2010</dd>
+              <dt>Author</dt><dd>LoLrD (nier-nx)</dd>
+              <dt>Switch</dt><dd>Source-build — no prebuilt release; you build the NRO/NSP from your own Xbox 360 disc dump</dd>
+            </dl>
+            <p>Static recompilation (ReXGlue, Vulkan renderer). The author reports the whole game starts, plays, saves and loads at 30 FPS at stock clocks in handheld on a Switch OLED; tested through roughly the first fifth of a playthrough (prologue to the Aerie) with no softlock or crash. Later areas, docked mode and DLC in play are untested.</p>
+            <div class="src"><span>Source</span><a href="https://github.com/LoLrD/nier-nx">github.com/LoLrD/nier-nx</a></div>
+          </article>
+
           <article class="card" data-cat="recomp" data-console="pc ps3 xbox360" data-search="ultimate marvel vs capcom 3 umvc3-switch banid0y pc steam ps3 xbox 360 port community edition" id="port-ultimate-marvel-vs-capcom-3" data-status="released" data-added="2026-11-23">
             <h3>Ultimate Marvel vs. Capcom 3</h3>
             <div class="badges"><span class="badge">Port</span><span class="badge status-released">Released · early / test</span></div>
@@ -6107,7 +6119,32 @@
               <dt>Switch</dt><dd>v0.1.16, 22 Nov 2026 — source-only release</dd>
             </dl>
             <p>Static recompilation (ReXGlue, deko3d, gears2-nx app layer). Reaches gameplay on real hardware at 15–28 FPS with image defects; the author states it is not playable yet.</p>
+            <p><strong>Update, 25 Nov 2026:</strong> the author's GBAtemp update reports the first level is playable on a physical Switch in build 0.1.27 at about 20–30 FPS, with a release coming soon. The GitHub repo README still lists build 0.1.16 and still says not playable yet, so treat 0.1.27 as an author progress report, not a new release.</p>
             <div class="src"><span>Source</span><a href="https://github.com/ramonDias07/XMOW-nx">github.com/ramonDias07/XMOW-nx</a></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-console="xbox360" data-search="lost planet 3 lp3-nx ramondias07 rexglue renut deko3d xbox 360 static recompilation wip" id="port-lost-planet-3" data-status="wip" data-added="2026-11-25">
+            <h3>Lost Planet 3</h3>
+            <div class="badges"><span class="badge">Static recompilation · ReXGlue</span><span class="badge status-planned">WIP · not playable yet</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>Xbox 360, 2013</dd>
+              <dt>Author</dt><dd>ramonDias07 (LP3-nx)</dd>
+              <dt>Switch</dt><dd>No release — work in progress</dd>
+            </dl>
+            <p>Static recompilation (ReXGlue, reNut renderer on deko3d). Very early: on a physical Switch (test 13, 25 Nov 2026) it boots through logos, videos, title and menus into gameplay of the first area with the complete, correctly coloured 3D image, but at 4–15 FPS, with menus missing backgrounds/icons, and it freezes after a few minutes. Build from your own Xbox 360 disc dump.</p>
+            <div class="src"><span>Source</span><a href="https://github.com/ramonDias07/LP3-nx">github.com/ramonDias07/LP3-nx</a></div>
+          </article>
+
+          <article class="card" data-cat="wip" data-console="gamecube" data-search="metal gear solid the twin snakes mgstts-nx ramondias07 dolrecomp deko3d gamecube static recompilation wip" id="port-metal-gear-solid-the-twin-snakes" data-status="wip" data-added="2026-11-25">
+            <h3>Metal Gear Solid: The Twin Snakes</h3>
+            <div class="badges"><span class="badge">Static recompilation · DolRecomp</span><span class="badge status-planned">WIP · not playable yet</span></div>
+            <dl class="facts">
+              <dt>Original</dt><dd>GameCube, 2004</dd>
+              <dt>Author</dt><dd>ramonDias07 (MGSTTS-nx)</dd>
+              <dt>Switch</dt><dd>No release — work in progress</dd>
+            </dl>
+            <p>Static recompilation (DolRecomp, deko3d). Not playable yet: on a physical Switch it reaches gameplay with working controls; the GBAtemp update of 25 Nov 2026 reports GPU rendering at full 50 Hz, about 19–20 FPS in gameplay, with some geometry briefly disappearing and water not rendering correctly; the repo README's own last hardware test (22 Nov 2026) ran at about 42% speed with missing textures/effects. Needs both of your own PAL discs (GGSPA4); USA/Japanese versions do not work yet.</p>
+            <div class="src"><span>Source</span><a href="https://github.com/ramonDias07/MGSTTS-nx">github.com/ramonDias07/MGSTTS-nx</a></div>
           </article>
         </div>
       </section>
