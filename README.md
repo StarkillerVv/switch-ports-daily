@@ -6,6 +6,17 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
+**2026-11-25** — 7 new ports, catalogue now 499 games ([full day](findings/2026-11-25.md))
+
+- **LEGO Batman 2: DC Super Heroes** (Xbox 360) — installer, 2026-11-24
+- **Max Payne 2: The Fall of Max Payne** (Xbox) — v1.0.0, source-build
+- **Harvest Moon: Magical Melody** (GameCube) — 0.1.0
+- **Sonic 3D Blast** (Sega Saturn) — v1.0, source-build
+- **Touhou 17: Wily Beast and Weakest Creature** (PC) — v1.00b-r1
+- **Bakugan Battle Brawlers** (Xbox 360) — v0.2.3 (backlog find, released 2026-11-02)
+- **Zuma's Revenge** (PC) — v1.0.2 (backlog card correction)
+- Updates: Bejeweled 3 → v1.0.2 · Zuma → v1.0.2 · Peggle → v1.0.3 · Feeding Frenzy → v1.0.1 · Feeding Frenzy 2 → v1.0.1 · Banjo-Kazooie: Nuts & Bolts → v1.0.4 · The Binding of Isaac: Repentance+ and Max Payne gained additional ports
+
 **2026-11-24** — 1 new port, catalogue now 492 games ([full day](findings/2026-11-24.md))
 
 - **Handkerchief 2000** (PC) — 2.0
@@ -29,23 +40,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Pokémon Stadium** (N64) — 0.1.0, source-build
 - Updates: Titan Souls → v1.0.1 · Sonic the Hedgehog 4: Episode II → v0.5.1 · Super Mario World → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.1 · Deadpool → v1.0.1 · Mortal Kombat: Shaolin Monks → v0.5.0 · Banjo-Kazooie: Nuts & Bolts → v1.0.3 · Sonic Adventure and Downhill Domination gained second ports · God of War + God of War II → 1.4 · Heroes of Might and Magic IV → v0.4 · The Simpsons (arcade) → v1.0.4 · TMNT (arcade) → v1.1.1
 
-**2026-11-22** — 14 new ports, catalogue now 477 games ([full day](findings/2026-11-22.md))
-
-- **Asphalt 5 HD** (Android) — v0.3.0
-- **Asphalt 7: Heat** (Android) — v0.2.0
-- **Splinter Cell: Pandora Tomorrow** (Xbox) — v0.3.7, early, source-build
-- **CastleMiner Z** (Xbox 360) — source-build, WIP
-- **Shin Megami Tensei: Persona** (PSP) — builder v0.1.6, early
-- **Wangan Midnight Maximum Tune 3DX+** (Arcade) — v1.0.0-switch
-- **Downhill Domination** (PS2) — v0.8.10-switch.1
-- **Adventure Time: Card Wars** (Android) — v1.0
-- **Samurai II: Vengeance** (Android) — v0.1.0, early
-- **Sonic Dream Team** (Apple Arcade) — v1.0.1 / v1.10.3, two ports
-- **Shadow the Hedgehog** (GameCube) — v0.5.0, early
-- **Command & Conquer: Red Alert 2** (PC) — v1.4.3
-- **Shadow of the Colossus** (PS2) — released, web installer
-- **Sonic the Hedgehog 4: Episode II** (Xbox 360) — v0.5.0, early
-- Updates: Jet Set Radio Future Unleashed → v0.5.6-switch · CastleMiner Z → v0.5.2 source release · Manhunt and Modern Warfare 2 gained second ports · Sonic Advance, The Simpsons (arcade) and New Super Mario Bros. Wii gained additional ports · Soulcalibur II → 0.5.0 · Sonic 4 Episode I → v1.0 · Final Fantasy XIII → v1.0.1 · The Witcher 2 → v0.2.0 · Metroid Prime 2: Echoes → v0.5.1 · Dragon Ball Z: Budokai Tenkaichi 3 → v2.0 · Plants vs. Zombies: DLC Edition → Beta 2.5.2 · Castlevania: Lords of Shadow → v0.5.1
+- [2026-11-22](findings/2026-11-22.md) — 14 new ports; catalogue 477 games
 
 - [2026-11-21](findings/2026-11-21.md) — 4 new ports; catalogue 463 games
 
@@ -54,11 +49,10 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - [2026-11-19](findings/2026-11-19.md) — 11 new ports; catalogue 199 games
 
 - [2026-11-18](findings/2026-11-18.md) — 11 new ports; catalogue 188 games
-- [2026-11-17](findings/2026-11-17.md) — 17 new ports; catalogue 177 games
 
 - [2026-11-15](findings/2026-11-15.md) — 32 new ports; catalogue 147 games
 - [2026-11-13](findings/2026-11-13.md) — baseline catalogue; 114 games
-- Week 47 (Mon Nov 16 – Sun Nov 22) — 15 new ports; catalogue 162 games
+- Week 47 (Mon Nov 16 – Sun Nov 22) — 32 new ports; catalogue 477 games
 - Week 46 (Mon Nov 09 – Sun Nov 15) — 1 new port; catalogue 115 games
 
 ## Before you install anything
@@ -97,6 +91,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-492-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-499-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
