@@ -6,6 +6,14 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
+**2026-11-26** — 4 new ports, catalogue now 506 games ([full day](findings/2026-11-26.md))
+
+- **DmC: Devil May Cry** (Xbox 360) — v1.0.0
+- **ilomilo** (Xbox 360) — v1.0.0
+- **Kid Icarus: Uprising** (Nintendo 3DS) — v0.1.2, early
+- **Earn to Die 2** (Android) — v1.0.0 (backlog find)
+- Updates: GTA V, Return to Castle Wolfenstein and Scooby-Doo! Night of 100 Frights gained additional ports
+
 **2026-11-25** — 10 new ports, catalogue now 502 games ([full day](findings/2026-11-25.md))
 
 - **NieR Gestalt** (Xbox 360) — source-build, playable (first fifth tested)
@@ -25,23 +33,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Handkerchief 2000** (PC) — 2.0
 - Updates: Asura's Wrath → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.2 · Sonic Adventure 2 → v1.0.8 · Jak Project Switch → beta v1.1.4-Beta-deko3D · Blur → v1.0.1 · Sonic & All-Stars Racing Transformed → v1.0.1
 
-**2026-11-23** — 14 new ports, catalogue now 491 games ([full day](findings/2026-11-23.md))
-
-- **Asura's Wrath** (Xbox 360) — v1.0.1
-- **Sonic & All-Stars Racing Transformed** (Xbox 360) — v1.0.0
-- **Star Fox Adventures** (GameCube) — v1.0.0
-- **Harry Potter and the Chamber of Secrets** (PC) — v1.2.0
-- **Dragon Ball Z: Budokai Tenkaichi 4** (PS2) — B14 Rev2
-- **Ridge Racer 6** (Xbox 360) — v1.0.2.1
-- **Mystical Ninja Starring Goemon** (N64) — v1.0.0, pre-release
-- **NiGHTS into Dreams…** (Xbox 360) — v1.0.3
-- **Dragon Ball: Raging Blast 2** (Xbox 360) — v0.2.0
-- **Far Cry 3** (Xbox 360) — v1.0.0
-- **X-Men Origins: Wolverine - Uncaged Edition** (Xbox 360) — v0.1.16, WIP
-- **Bejeweled Deluxe** (PC) — v1.0.0
-- **Ultimate Marvel vs. Capcom 3** (PC) — Version 1.0, test release
-- **Pokémon Stadium** (N64) — 0.1.0, source-build
-- Updates: Titan Souls → v1.0.1 · Sonic the Hedgehog 4: Episode II → v0.5.1 · Super Mario World → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.1 · Deadpool → v1.0.1 · Mortal Kombat: Shaolin Monks → v0.5.0 · Banjo-Kazooie: Nuts & Bolts → v1.0.3 · Sonic Adventure and Downhill Domination gained second ports · God of War + God of War II → 1.4 · Heroes of Might and Magic IV → v0.4 · The Simpsons (arcade) → v1.0.4 · TMNT (arcade) → v1.1.1
+- [2026-11-23](findings/2026-11-23.md) — 14 new ports; catalogue 491 games
 
 - [2026-11-22](findings/2026-11-22.md) — 14 new ports; catalogue 477 games
 
@@ -94,6 +86,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-502-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-506-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
