@@ -6,12 +6,14 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
-**2026-11-27** — 3 new ports, catalogue now 509 games ([full day](findings/2026-11-27.md))
+**2026-11-27** — 5 new ports, catalogue now 511 games ([full day](findings/2026-11-27.md))
 
 - **NBA Street Vol. 2** (Xbox) — v1.0.1, playable
 - **Afro Samurai** (Xbox 360) — v0.1.2, early
 - **James Cameron's Avatar** (Android) — v0.1.0, early
-- Updates: Deadpool → v1.0.2 · Metal Gear Rising: Revengeance gained an additional port (Mgrr-nx v0.4)
+- **Pokémon Pinball** (Game Boy Color) — v0.2.0, released
+- **Wario Land 4** (Game Boy Advance) — v0.1.1, released
+- Updates: Deadpool → v1.0.2 · Metal Gear Rising: Revengeance gained an additional port (Mgrr-nx v0.4) · Mystical Ninja Starring Goemon → v1.1.0 · Need for Speed: Carbon (Kaays) → v1.0.0 · Mario Kart: Super Circuit → v0.3.0
 
 **2026-11-26** — 4 new ports, catalogue now 506 games ([full day](findings/2026-11-26.md))
 
@@ -89,6 +91,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-506-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-511-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
