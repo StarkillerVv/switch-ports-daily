@@ -6,6 +6,13 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
+**2026-11-27** — 3 new ports, catalogue now 509 games ([full day](findings/2026-11-27.md))
+
+- **NBA Street Vol. 2** (Xbox) — v1.0.1, playable
+- **Afro Samurai** (Xbox 360) — v0.1.2, early
+- **James Cameron's Avatar** (Android) — v0.1.0, early
+- Updates: Deadpool → v1.0.2 · Metal Gear Rising: Revengeance gained an additional port (Mgrr-nx v0.4)
+
 **2026-11-26** — 4 new ports, catalogue now 506 games ([full day](findings/2026-11-26.md))
 
 - **DmC: Devil May Cry** (Xbox 360) — v1.0.0
@@ -28,10 +35,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Zuma's Revenge** (PC) — v1.0.2 (backlog card correction)
 - Updates: Bejeweled 3 → v1.0.2 · Zuma → v1.0.2 · Peggle → v1.0.3 · Feeding Frenzy → v1.0.1 · Feeding Frenzy 2 → v1.0.1 · Banjo-Kazooie: Nuts & Bolts → v1.0.4 · The Binding of Isaac: Repentance+ and Max Payne gained additional ports · X-Men Origins: Wolverine — author reports first level playable in build 0.1.27 (release still v0.1.16)
 
-**2026-11-24** — 1 new port, catalogue now 492 games ([full day](findings/2026-11-24.md))
-
-- **Handkerchief 2000** (PC) — 2.0
-- Updates: Asura's Wrath → v1.0.2 · Call of Duty: Black Ops II (Requiem) → 0.4.2 · Sonic Adventure 2 → v1.0.8 · Jak Project Switch → beta v1.1.4-Beta-deko3D · Blur → v1.0.1 · Sonic & All-Stars Racing Transformed → v1.0.1
+- [2026-11-24](findings/2026-11-24.md) — 1 new port; catalogue 492 games
 
 - [2026-11-23](findings/2026-11-23.md) — 14 new ports; catalogue 491 games
 
@@ -41,7 +45,6 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 - [2026-11-20](findings/2026-11-20.md) — 3 new ports; catalogue 459 games
 
-- [2026-11-19](findings/2026-11-19.md) — 11 new ports; catalogue 199 games
 
 - [2026-11-18](findings/2026-11-18.md) — 11 new ports; catalogue 188 games
 
