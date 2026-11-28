@@ -13,6 +13,13 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
 ## What's new
 
+**2026-11-28** — 3 new ports, catalogue now 514 games ([full day](findings/2026-11-28.md))
+
+- **Sleeping Dogs** (Xbox 360) — v1.0.1, released
+- **Robert Ludlum's The Bourne Conspiracy** (Xbox 360) — v0.1.0, beta
+- **Call of Duty: Advanced Warfare** (Xbox 360) — v0.1.0, early
+- Updates: Sonic & SEGA All-Stars Racing gained an additional port (ssasr-nx v1.0.0)
+
 **2026-11-27** — 5 new ports, catalogue now 511 games ([full day](findings/2026-11-27.md))
 
 - **NBA Street Vol. 2** (Xbox) — v1.0.1, playable
@@ -30,19 +37,7 @@ Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 - **Earn to Die 2** (Android) — v1.0.0 (backlog find)
 - Updates: GTA V, Return to Castle Wolfenstein and Scooby-Doo! Night of 100 Frights gained additional ports
 
-**2026-11-25** — 10 new ports, catalogue now 502 games ([full day](findings/2026-11-25.md))
-
-- **NieR Gestalt** (Xbox 360) — source-build, playable (first fifth tested)
-- **Lost Planet 3** (Xbox 360) — WIP, not playable yet
-- **Metal Gear Solid: The Twin Snakes** (GameCube) — WIP, not playable yet
-- **LEGO Batman 2: DC Super Heroes** (Xbox 360) — installer, 2026-11-24
-- **Max Payne 2: The Fall of Max Payne** (Xbox) — v1.0.0, source-build
-- **Harvest Moon: Magical Melody** (GameCube) — 0.1.0
-- **Sonic 3D Blast** (Sega Saturn) — v1.0, source-build
-- **Touhou 17: Wily Beast and Weakest Creature** (PC) — v1.00b-r1
-- **Bakugan Battle Brawlers** (Xbox 360) — v0.2.3 (backlog find, released 2026-11-02)
-- **Zuma's Revenge** (PC) — v1.0.2 (backlog card correction)
-- Updates: Bejeweled 3 → v1.0.2 · Zuma → v1.0.2 · Peggle → v1.0.3 · Feeding Frenzy → v1.0.1 · Feeding Frenzy 2 → v1.0.1 · Banjo-Kazooie: Nuts & Bolts → v1.0.4 · The Binding of Isaac: Repentance+ and Max Payne gained additional ports · X-Men Origins: Wolverine — author reports first level playable in build 0.1.27 (release still v0.1.16)
+- [2026-11-25](findings/2026-11-25.md) — 10 new ports; catalogue 502 games
 
 - [2026-11-24](findings/2026-11-24.md) — 1 new port; catalogue 492 games
 
@@ -98,6 +93,6 @@ Missing a port, or an entry is wrong? [Open an issue](https://github.com/Starkil
 [![Forks](https://img.shields.io/github/forks/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/network/members)
 [![Watchers](https://img.shields.io/github/watchers/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/watchers)
 [![Last commit](https://img.shields.io/github/last-commit/StarkillerVv/switch-ports-daily)](https://github.com/StarkillerVv/switch-ports-daily/commits/main)
-[![Catalogue size](https://img.shields.io/badge/games-511-blue)](CATALOGUE.md)
+[![Catalogue size](https://img.shields.io/badge/games-514-blue)](CATALOGUE.md)
 
 187 views (19 unique), 442 clones (165 unique) as of 2026-11-19.
