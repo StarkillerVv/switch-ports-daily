@@ -2,8 +2,11 @@
 
 Fan-made homebrew ports for a modded Switch. Not official eShop releases.
 
-**Web page:** [starkillervv.github.io/switch-ports-daily/catalogue.html](https://starkillervv.github.io/switch-ports-daily/catalogue.html) · 
+**Web page:**
+ [starkillervv.github.io/switch-ports-daily/catalogue.html](https://starkillervv.github.io/switch-ports-daily/catalogue.html)
+
 **Browse the catalogue:** 
+
 [CATALOGUE.md](CATALOGUE.md)
 
 ## What's new
